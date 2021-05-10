@@ -25,7 +25,6 @@ mining_station = {
 	auto_upgrade = yes
 
 	resources = {
-		category = station_gatherers
 		category = station_gatherers_rare
 		cost = {
 			minerals = 100
