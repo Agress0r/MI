@@ -1,3 +1,5 @@
+# Пример из README
+
 #my_piquant_megastructure = {
 #	entity = "bawling_pink_rainbow_graphics"
 #	construction_entity = "bawling_pink_rainbow_graphics_construction"
