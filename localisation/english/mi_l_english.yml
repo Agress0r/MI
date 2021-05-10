@@ -18,6 +18,7 @@
 #	log = "- Root's Solar System: [Root.GetStarName]"
 #	log = "- Root's Owner's Name: [Root.Owner.GetName]"
 #	log = "- Root's Owner's Capital's Name: [Root.Owner.Capital.GetName]"
+
 mi_mining_station_0:0 "REPLACE_ME"
 mi_mining_station_0_DESC:0 "REPLACE_ME"
 mi_mining_station_0_MEGASTRUCTURE_DETAILS:0 "REPLACE_ME"
@@ -30,3 +31,5 @@ tech_mi_research_station_1:0 "REPLACE_ME"
 tech_mi_research_station_1_desc:0 "REPLACE_ME"
 tech_mi_research_station_2:0 "REPLACE_ME"
 tech_mi_research_station_2_desc:0 "REPLACE_ME"
+special_mining_destroyer:0 "REPLACE_ME"
+special_mining_destroyer_plural:0 "REPLACE_ME"
