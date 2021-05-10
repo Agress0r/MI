@@ -7,4 +7,8 @@ station_gatherers_rare = {
 		produces
 		cost
 	}
+	generate_add_modifiers = {
+		produces
+		cost
+	}
 }
