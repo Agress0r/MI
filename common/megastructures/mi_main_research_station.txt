@@ -65,7 +65,7 @@ mi_research_station_0 = {
 	on_build_complete = {
 		fromfrom.planet = {
 			set_planet_flag = has_megastructure
-			set_planet_flag = asteroid_has_mining_drone_station
+			set_planet_flag = asteroid_has_research_drone_station
 			clear_deposits = yes
 		}
 		from = { country_event = { id =  } } # Нужно присобачить сюда ивент после завершения строительства - мейби создать специальный проект
