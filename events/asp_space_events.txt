@@ -8,7 +8,6 @@ ship_event = {
 	show_sound = event_alien_signal
 	hide_window = no
 	is_triggered_only = yes
-	fire_only_once = yes
 
 	trigger = {
 		owner = {
@@ -209,6 +208,24 @@ immediate = {
 						max = @tier3researchmax
 					}
 				}
+			}
+		}
+	}
+}
+# Событие с дополнительными редкими ресурсами
+ship_event = {
+	id = asp.3
+	title = "asp.3.name"
+	desc = "asp.3.desc"
+	picture = GFX_evt_ship_in_orbit
+	show_sound = event_default
+	hide_window = no
+	is_triggered_only = yes
+
+	trigger = {
+		from.from.owner = {
+			NOT = {
+				has_country_flag = asp_leader_gained
 			}
 		}
 	}
