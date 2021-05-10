@@ -1,1 +1,28 @@
 # Экономические категории
+# Базовая вещь, что проверялась в игре
+station_rare_resources_gatherers = {
+	parent = station_gatherers
+
+	generate_mult_modifiers = {
+		produces
+		cost
+	}
+	triggered_produces_modifier = {
+		key = stations
+		modifier_types = {
+			mult
+		}
+		trigger = {
+			is_ship_class = shipclass_mining_station
+			OR = {
+				has_resource = { type = volatile_motes amount > 0 }
+				has_resource = { type = rare_crystals amount > 0 }
+				has_resource = { type = exotic_gases amount > 0 }
+				has_resource = { type = sr_dark_matter amount > 0 }
+				has_resource = { type = nanites amount > 0 }
+				has_resource = { type = sr_zro amount > 0 }
+				has_resource = { type = sr_living_metal amount > 0 }
+			}
+		}
+	}
+}
