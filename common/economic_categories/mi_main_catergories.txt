@@ -1,48 +1,11 @@
 # Экономические категории
 # Базовая вещь, что проверялась в игре
 
-#Залив с ванилы
-country = {
-	hidden = yes
-	generate_mult_modifiers = {
-		produces
-	}
-
-	generate_add_modifiers = {
-		produces
-	}
-}
-#Залив с ванилы
-stations = {
-	use_for_ai_budget = yes
-	ai_use_parent_for_resources_upkeep = {
-		energy
-	}
-
-	generate_mult_modifiers = {
-		produces
-	}
-
-	parent = country
-}
-#Залив с ванилы
-station_gatherers = {
+#Залив и замена с ванилы
+station_researchers = {
 	parent = stations
 
 	generate_mult_modifiers = {
-		produces
-		cost
-	}
-}
-# Вариант другого типа
-station_gatherers_rare = {
-	parent = station_gatherers
-
-	generate_mult_modifiers = {
-		produces
-		cost
-	}
-	generate_add_modifiers = {
 		produces
 		cost
 	}
