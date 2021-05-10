@@ -212,21 +212,57 @@ immediate = {
 		}
 	}
 }
-# Событие с дополнительными редкими ресурсами
+# Инициализатор события с дополнительными редкими ресурсами
 ship_event = {
 	id = asp.3
 	title = "asp.3.name"
 	desc = "asp.3.desc"
-	picture = GFX_evt_ship_in_orbit
-	show_sound = event_default
-	hide_window = no
+	hide_window = yes
 	is_triggered_only = yes
 
 	trigger = {
-		from.from.owner = {
-			NOT = {
-				has_country_flag = asp_leader_gained
+		from = {
+			or = {
+				has_resource = {
+					type = minerals
+					amount > 0
+				}
+				has_resource = {
+					type = rare_crystals
+					amount > 0
+				}
 			}
 		}
+	}
+	immediate = {
+		owner = { country_event = { id = asp.4 } }
+	}
+}
+# Событие с дополнительным редкими ресурсом
+country_event = {
+	id = asp.4
+	title = "asp.4.name"
+	desc = "asp.4.desc"
+	hide_window = no
+	picture = GFX_evt_ship_in_orbit
+	show_sound = event_default
+	is_triggered_only = yes
+
+	trigger = {
+		from.from.from = {
+			or = {
+				has_resource = {
+					type = minerals
+					amount > 0
+				}
+				has_resource = {
+					type = rare_crystals
+					amount > 0
+				}
+			}
+		}
+	}
+	immediate = {
+		owner = { country_event = { id = asp.4 } }
 	}
 }
