@@ -33,7 +33,7 @@ mi_research_station_0 = {
 		}
 		produces = {
 		society_research = 30
-		engineering_research = 30
+		engineering_research = 35
 		physics_research = 30
 		}
 	}
