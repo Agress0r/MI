@@ -281,3 +281,69 @@ country_event = {
 		custom_tooltip = "distar.4.a.tooltip"
 	}
 }
+
+# Событие с найденными артефактами на астероиде
+ship_event = {
+	id = asp.5
+	title = "asp.5.name"
+	desc = "asp.5.desc"
+	hide_window = no
+	picture = GFX_evt_gas_giant_station
+	show_sound = event_default
+	is_triggered_only = yes
+
+	trigger = {
+		owner = { has_ancrel = yes }
+		this = {
+			is_asteroid = yes
+		}
+	}
+	option = {
+		name = OK
+		owner = {
+			locked_random_list = {
+				50 = {
+					owner = { small_artifact_reward = yes}
+				}
+				50 = {
+					owner = { medium_artifact_reward = yes }
+				}
+			}
+		}
+	}
+}
+# Событие с увелчинием производства энергии на объекте
+ship_event = {
+	id = asp.6
+	title = "asp.6.name"
+	desc = "asp.6.desc"
+	hide_window = no
+	picture = GFX_evt_mining_operations
+	show_sound = event_construction
+	is_triggered_only = yes
+
+	trigger = {
+		this = {
+			has_resource = {
+				type = energy
+				amount > 0
+			}
+		}
+	}
+	option = {
+		name = EXCELLENT
+		this = {
+			locked_random_list = {
+				33 = {
+					this = { add_deposit = d_energy_3 }
+				}
+				33 = {
+					this = { add_deposit = d_energy_4 }
+				}
+				33 = {
+					this = { add_deposit = d_energy_5 }
+				}
+			}
+		}
+	}
+}
