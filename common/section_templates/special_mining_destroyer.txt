@@ -33,4 +33,5 @@ ship_section_template = {
 	}
 	
 	medium_utility_slots = 5
+	aux_utility_slots = 2
 }
