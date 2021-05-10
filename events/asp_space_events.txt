@@ -213,16 +213,15 @@ immediate = {
 	}
 }
 # Инициализатор события с дополнительными редкими ресурсами
+# Не знаю на сколько часто будет оно падать, по этому можно рандомные текстовики создать на всякий пожарный
 ship_event = {
 	id = asp.3
-	title = "asp.3.name"
-	desc = "asp.3.desc"
 	hide_window = yes
 	is_triggered_only = yes
 
 	trigger = {
-		from = {
-			or = {
+		this = {
+			OR = {
 				has_resource = {
 					type = minerals
 					amount > 0
@@ -235,10 +234,11 @@ ship_event = {
 		}
 	}
 	immediate = {
+		save_event_target_as = asp_mineral_stockpile
 		owner = { country_event = { id = asp.4 } }
 	}
 }
-# Событие с дополнительным редкими ресурсом
+# Событие с дополнительными редкими ресурсами
 country_event = {
 	id = asp.4
 	title = "asp.4.name"
@@ -249,8 +249,8 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		from.from.from = {
-			or = {
+		event_target:asp_mineral_stockpile = {
+			OR = {
 				has_resource = {
 					type = minerals
 					amount > 0
@@ -262,7 +262,22 @@ country_event = {
 			}
 		}
 	}
-	immediate = {
-		owner = { country_event = { id = asp.4 } }
+
+	option = {
+		name = "distar.4.a"
+		owner = {
+			locked_random_list = {
+				33 = {
+					add_resource = { volatile_motes = 65 }
+				}
+				33 = {
+					add_resource = { rare_crystals = 65 }
+				}
+				33 = {
+					add_resource = { exotic_gases = 65 }
+				}
+			}
+		}
+		custom_tooltip = "distar.4.a.tooltip"
 	}
 }
