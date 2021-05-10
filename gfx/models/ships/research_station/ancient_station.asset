@@ -1,0 +1,9 @@
+
+entity = {
+	name = "ancient_research_station_entity"
+	pdxmesh = "ancient_research_station_mesh"
+	
+	game_data = {
+		size = 10
+	}
+}
