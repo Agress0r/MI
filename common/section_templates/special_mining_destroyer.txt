@@ -1,7 +1,7 @@
 # Корабль
 ship_section_template = {
-	key = "ancient_drone_destroyer_section"
-	ship_size = ancient_destroyer
+	key = "special_mining_destroyer"
+	ship_size = special_mining_destroyer
 	fits_on_slot = mid
 	entity = "ancient_destroyer_hull_entity"
 	icon = "GFX_ship_part_core_mid"
