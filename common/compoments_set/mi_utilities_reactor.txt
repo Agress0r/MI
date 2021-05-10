@@ -29,7 +29,7 @@
 ########################
 
 utility_component_template = {
-	key = "DESTROYER_FISSION_REACTOR"
+	key = "SPECIAL_MINING_DESTROYER_FISSION_REACTOR"
 	size = small
 	icon = "GFX_ship_part_reactor_1"
 	icon_frame = 1
@@ -47,8 +47,8 @@ utility_component_template = {
 
 	prerequisites = { "tech_fission_power" }
 	component_set = "power_core"
-	size_restriction = { destroyer crisis_destroyer }
-	upgrades_to = "DESTROYER_FUSION_REACTOR"
+	size_restriction = { special_mining_destroyer }
+	upgrades_to = "SPECIAL_MINING_DESTROYER_FUSION_REACTOR"
 
 	ai_weight = {
 		weight = 1
@@ -60,7 +60,7 @@ utility_component_template = {
 ########################
 
 utility_component_template = {
-	key = "DESTROYER_FUSION_REACTOR"
+	key = "SPECIAL_MINING_DESTROYER_FUSION_REACTOR"
 	size = small
 	icon = "GFX_ship_part_reactor_2"
 	icon_frame = 1
@@ -75,13 +75,22 @@ utility_component_template = {
 			alloys = 0.026
 		}
 	}
+	prerequisites = { "tech_fusion_power" }
+	component_set = "power_core"
+	size_restriction = { special_mining_destroyer }
+	upgrades_to = "SPECIAL_MINING_DESTROYER_COLD_FUSION_REACTOR"
+
+	ai_weight = {
+		weight = 2
+	}
+}
 
 ########################
 # Cold Fusion Reactors
 ########################
 
 utility_component_template = {
-	key = "DESTROYER_COLD_FUSION_REACTOR"
+	key = "SPECIAL_MINING_DESTROYER_COLD_FUSION_REACTOR"
 	size = small
 	icon = "GFX_ship_part_reactor_3"
 	icon_frame = 1
@@ -96,7 +105,15 @@ utility_component_template = {
 			alloys = 0.034
 		}
 	}
+	prerequisites = { "tech_cold_fusion_power" }
+	component_set = "power_core"
+	size_restriction = { special_mining_destroyer }
+	upgrades_to = "SPECIAL_MINING_DESTROYER_ANTIMATTER_REACTOR"
 
+	ai_weight = {
+		weight = 3
+	}
+}
 ########################
 # Antimatter Reactors
 ########################
@@ -120,8 +137,8 @@ utility_component_template = {
 
 	prerequisites = { "tech_antimatter_power" }
 	component_set = "power_core"
-	size_restriction = { destroyer crisis_destroyer }
-	upgrades_to = "DESTROYER_ZERO_POINT_REACTOR"
+	size_restriction = { special_mining_destroyer }
+	upgrades_to = "SPECIAL_MINING_DESTROYER_ZERO_POINT_REACTOR"
 
 	ai_weight = {
 		weight = 4
@@ -133,7 +150,7 @@ utility_component_template = {
 ########################
 
 utility_component_template = {
-	key = "DESTROYER_ZERO_POINT_REACTOR"
+	key = "SPECIAL_MINING_DESTROYER_ZERO_POINT_REACTOR"
 	size = small
 	icon = "GFX_ship_part_reactor_5"
 	icon_frame = 1
@@ -151,8 +168,8 @@ utility_component_template = {
 
 	prerequisites = { "tech_zero_point_power" }
 	component_set = "power_core"
-	size_restriction = { destroyer crisis_destroyer }
-	upgrades_to = "DESTROYER_DARK_MATTER_REACTOR"
+	size_restriction = { special_mining_destroyer }
+	upgrades_to = "SPECIAL_MINING_DESTROYER_DARK_MATTER_REACTOR"
 
 	ai_weight = {
 		weight = 5
@@ -163,9 +180,8 @@ utility_component_template = {
 # Engimatic Reactors
 ####################
 
-
 utility_component_template = {
-	key = "DESTROYER_DARK_MATTER_REACTOR"
+	key = "SPECIAL_MINING_DESTROYER_DARK_MATTER_REACTOR"
 	size = small
 	icon = "GFX_ship_part_dark_matter_power_core"
 	icon_frame = 1
@@ -183,7 +199,7 @@ utility_component_template = {
 	}
 	prerequisites = { "tech_dark_matter_power_core" }
 	component_set = "power_core"
-	size_restriction = { destroyer crisis_destroyer }
+	size_restriction = { special_mining_destroyer }
 
 	ai_weight = {
 		weight = 6
