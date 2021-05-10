@@ -17,6 +17,8 @@ ship_event = {
 		}
 	}
 
+	mean_time_to_happen = { days = 40 }
+	
 		option = {
 			name = asp.1.a
 			owner = { country_event = { id = asp.2 } }
@@ -219,6 +221,7 @@ ship_event = {
 	hide_window = yes
 	is_triggered_only = yes
 
+
 	trigger = {
 		this = {
 			OR = {
@@ -238,7 +241,7 @@ ship_event = {
 	immediate = {
 		From = {
 		save_event_target_as = asp_mineral_stockpile
-		owner = { country_event = { id = asp.4 } }
+		owner = { country_event = { id = asp.4 days = 30 } }
 		}
 	}
 }
@@ -298,12 +301,16 @@ ship_event = {
 	show_sound = event_default
 	is_triggered_only = yes
 
+
 	trigger = {
 		owner = { has_ancrel = yes }
 		From = {
 			is_asteroid = yes
 		}
 	}
+
+	mean_time_to_happen = { days = 40 }
+
 	option = {
 		name = OK
 		owner = {
@@ -336,6 +343,9 @@ ship_event = {
 			}
 		}
 	}
+
+	mean_time_to_happen = { days = 40 }
+
 	option = {
 		name = EXCELLENT
 		From = {
