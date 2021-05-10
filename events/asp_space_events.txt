@@ -1,0 +1,215 @@
+namespace = asp
+# Событие с лидером - роботом.
+ship_event = {
+	id = asp.1
+	title = "asp.1.name"
+	desc = "asp.1.desc"
+	picture = GFX_evt_ship_travel
+	show_sound = event_alien_signal
+	hide_window = no
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	trigger = {
+		owner = {
+			NOT = {
+				has_country_flag = asp_leader_gained
+			}
+		}
+	}
+
+		option = {
+			name = asp.1.a
+			owner = { country_event = { id = story.5 days = 30 } }
+		}
+
+	    option = {
+		name = asp.1.b
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = @tier2researchreward
+				min = @tier2researchmin
+				max = @tier2researchmax
+			}
+		}
+	}
+}
+
+# Само событие с лидером
+country_event = {
+	id = asp.2
+	title = "asp.2.name"
+	desc = "asp.2.desc"
+	hide_window = no
+	show_sound = event_mystic_reveal_light
+
+	diplomatic = yes
+
+	is_triggered_only = yes
+
+	picture_event_data = {
+		portrait = ai_crisis_2
+	}
+	
+	trigger = {
+		owner = {
+			NOT = {
+				has_country_flag = asp_leader_gained
+			}
+		}
+	}
+
+immediate = {
+			if = {
+				limit = {
+				   owner = {
+					   NOT = {
+					     	has_country_flag = asp_leader_gained
+					         }
+				}
+			 }
+			 create_species = {
+				name = "NAME_asp_mechanical_species"
+				class = MACHINE #Можно оставить MACHINE, но в таком раскладе врядли ли синтетика получится начислить.
+				portrait = ai_crisis_2
+				namelist = "AI"
+				traits = {
+					trait = trait_mechanical
+					trait = trait_robot_mass_produced
+					trait = trait_robot_luxurious
+					trait = trait_robot_learning_algorithms
+					trait = trait_robot_high_maintenance
+					trait = trait_robot_logic_engines
+				}
+				effect = {
+					save_global_event_target_as = asp_leader_robo_species
+				}
+			}
+		}
+      }
+			 # Решил остановиться на синтах или машинах, потом подумаю и возможно изменю решение
+			 # По возможности добавить комнату где ИИ "типо говорит" и даёт выбор, нежели просто событие с кнопками.
+					 option = {
+						name = asp_game_start.2.a
+						trigger = {
+							has_authority = auth_machine_intelligence # Лидер губернатор будет доступен только для машин т.к если выбрать губера из портретов кризиса то там он слишком убого (в отображении на планете, в лидерах все ок)
+						}
+                        custom_tooltip = aos.leader.accepted.tooltip
+					    create_leader = {
+						event_leader = yes
+						class = governor
+						name = "Executive unit F90"
+						species = event_target:as_leader_robo_species
+						skill = 5
+					 }
+                    hidden_effect = { last_created_leader = {set_age = 314 } }
+				 }
+
+					option = {
+						name = asp_game_start.2.b
+						custom_tooltip = aos.leader.accepted.tooltip
+					    create_leader = {
+						event_leader = yes
+						class = scientist
+						name = "Executive unit F99"
+						species = event_target:aos_leader_robo_species
+						skill = 5
+					}
+					hidden_effect = { last_created_leader = {set_age = 314 } }
+				 }
+
+					option = {
+						name = asp_game_start.2.c
+						custom_tooltip = aos.leader.accepted.tooltip
+					    create_leader = {
+						event_leader = yes
+						class = admiral
+						name = "Executive unit F91"
+						species = event_target:aos_leader_robo_species
+						skill = 5
+					}
+					hidden_effect = { last_created_leader = {set_age = 314 } }
+				 }
+
+					option = {
+						name = asp_game_start.2.d
+						custom_tooltip = asp.leader.accepted.tooltip
+					    create_leader = {
+						event_leader = yes
+						class = general
+						name = "Executive unit F93"
+						species = event_target:asp_leader_robo_species
+						skill = 5
+					}
+					hidden_effect = { last_created_leader = {set_age = 314 } }
+				 }
+                 # Можно эффект на проверку создать дабы кучу текста таким макаром не создавать в основном файле с событием, по типу give_next_ai_tech_option_effect из ивента федерации
+				 option = {
+					name = asp_game_start.2.e
+					if = {
+						limit = {
+						NOT = { has_technology = "tech_administrative_ai" }	
+						}
+						add_tech_progress = {
+							tech = tech_administrative_ai
+							progress = 0.50
+						}
+					}
+						else_if = {
+							limit = {
+								 has_technology = "tech_administrative_ai"
+								 NOT = { has_technology = "tech_self_aware_logic" }
+								}
+								add_tech_progress = {
+									tech = tech_self_aware_logic
+									progress = 0.35
+						}
+				}
+				else_if = {
+					limit = {
+						has_technology = "tech_administrative_ai"
+						has_technology = "tech_self_aware_logic"
+						NOT = { has_technology = "tech_sapient_ai" }
+					}
+					add_tech_progress = {
+						tech = tech_sapient_ai
+						progress = 0.25
+			 }
+		   }
+		   else = {
+			   random_list = {
+				   33 = {
+					add_monthly_resource_mult = {
+						resource = society_research
+						value = @tier3researchreward
+						min = @tier3researchmin
+						max = @tier3researchmax
+					}
+				   }
+				   33 = {
+					add_monthly_resource_mult = {
+						resource = engineering_research
+						value = @tier3researchreward
+						min = @tier3researchmin
+						max = @tier3researchmax
+					}
+				   }
+				   33 = {
+					add_monthly_resource_mult = {
+						resource = physics_research
+						value = @tier3researchreward
+						min = @tier3researchmin
+						max = @tier3researchmax
+					}
+				}
+			}
+		}
+	}
+}
