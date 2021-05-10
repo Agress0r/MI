@@ -34,7 +34,7 @@ station_gatherers = {
 		cost
 	}
 }
-
+# Вариант другого типа
 station_gatherers_rare = {
 	parent = station_gatherers
 

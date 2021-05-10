@@ -86,7 +86,9 @@ mi_mining_station_0 = {
 		}
 	}
 	country_modifier = {
-		#station_gatherers_rare_produces_mult = 1
+		station_gatherers_produces_mult = 0.1
+		station_gatherers_cost_mult = -0.1
+		shipclass_mining_station_build_speed_mult = 0.50
 	}
 
 	placement_rules = {
