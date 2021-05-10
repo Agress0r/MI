@@ -20,7 +20,7 @@ ship_event = {
 
 		option = {
 			name = asp.1.a
-			owner = { country_event = { id = story.5 days = 30 } }
+			owner = { country_event = { id = asp.2 } }
 		}
 
 	    option = {
