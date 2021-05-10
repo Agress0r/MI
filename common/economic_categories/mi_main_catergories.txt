@@ -1,7 +1,7 @@
 # Экономические категории
 # Базовая вещь, что проверялась в игре
-rare_resources_gatherers = {
-	parent = station
+station_gatherers_rare = {
+	parent = station_gatherers
 
 	generate_mult_modifiers = {
 		produces
