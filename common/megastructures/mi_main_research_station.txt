@@ -29,7 +29,7 @@ mi_research_station_0 = {
 		}
 		upkeep = {
 			energy = 45
-			exoric_gases = 2
+			exotic_gases = 2
 		}
 		produces = {
 		society_research = 30
