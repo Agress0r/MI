@@ -222,6 +222,7 @@ ship_event = {
 	trigger = {
 		this = {
 			OR = {
+				From = {
 				has_resource = {
 					type = minerals
 					amount > 0
@@ -230,12 +231,15 @@ ship_event = {
 					type = rare_crystals
 					amount > 0
 				}
+			  }
 			}
 		}
 	}
 	immediate = {
+		From = {
 		save_event_target_as = asp_mineral_stockpile
 		owner = { country_event = { id = asp.4 } }
+		}
 	}
 }
 # Событие с дополнительными редкими ресурсами
@@ -251,6 +255,7 @@ country_event = {
 	trigger = {
 		event_target:asp_mineral_stockpile = {
 			OR = {
+				From = {
 				has_resource = {
 					type = minerals
 					amount > 0
@@ -259,6 +264,7 @@ country_event = {
 					type = rare_crystals
 					amount > 0
 				}
+			  }
 			}
 		}
 	}
@@ -294,7 +300,7 @@ ship_event = {
 
 	trigger = {
 		owner = { has_ancrel = yes }
-		this = {
+		From = {
 			is_asteroid = yes
 		}
 	}
@@ -323,7 +329,7 @@ ship_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		this = {
+		From = {
 			has_resource = {
 				type = energy
 				amount > 0
@@ -332,16 +338,16 @@ ship_event = {
 	}
 	option = {
 		name = EXCELLENT
-		this = {
+		From = {
 			locked_random_list = {
 				33 = {
-					this = { add_deposit = d_energy_3 }
+					From = { add_deposit = d_energy_3 }
 				}
 				33 = {
-					this = { add_deposit = d_energy_4 }
+					From = { add_deposit = d_energy_4 }
 				}
 				33 = {
-					this = { add_deposit = d_energy_5 }
+					From = { add_deposit = d_energy_5 }
 				}
 			}
 		}
