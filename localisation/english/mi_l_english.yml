@@ -19,7 +19,7 @@
 #	log = "- Root's Owner's Name: [Root.Owner.GetName]"
 #	log = "- Root's Owner's Capital's Name: [Root.Owner.Capital.GetName]"
 
-tech_mi_mining_station_1:0 "REPLACE_ME"
+tech_mi_mining_station_1:0 "REPLACE_ME111"
 tech_mi_mining_station_1_desc:0 "REPLACE_ME"
 tech_mi_mining_station_2:0 "REPLACE_ME"
 tech_mi_mining_station_2_desc:0 "REPLACE_ME"
