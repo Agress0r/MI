@@ -85,7 +85,7 @@ mi_mining_station_0 = {
         minerals = 100
 		}
 	}
-	modifier = {
+	country_modifier = {
 		rare_resources_gatherers_produces_mult = 1
 	}
 
