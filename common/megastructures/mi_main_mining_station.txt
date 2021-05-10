@@ -1,0 +1,116 @@
+#my_piquant_megastructure = {
+#	entity = "bawling_pink_rainbow_graphics"
+#	construction_entity = "bawling_pink_rainbow_graphics_construction"
+#	portrait = "GFX_my_piquant_megastructure_background"
+#	upgrade_desc = default|hide		# default: 'default'. Use 'hide' to hide to hide this stage from the upgrade list.
+#	upgrade_from = {
+#		my_flamboyant_megastructure
+#	}
+#	prerequisites = { "tech" }		# required technologies
+#	potential = {}					# trigger, scope: country
+#	possible = {}					# trigger, scope: galactic object, from: country
+#	build_time = 5					# days
+#   victory_score = 1000			# Victory score for the player who owns that megastructure
+#	build_cost = {
+#		minerals = 8
+#		energy = 13
+#		influence = 21
+#	}
+#	monthly_production = {
+#		energy = 34
+#	}
+#	maintenance = {
+#		energy = 10
+#	}
+#	country_modifier = {}
+#
+#	placement_rules = {
+#		planet_possible = {}		# trigger, scope: planet
+#	}
+#
+#	on_build_start = {}				# effects, scope: galactic object, from: country, fromfrom: megastructure instance (when upgrading existing megastructure)
+#	on_build_cancel = {}			# effects, scope: galactic object, from: country
+#	on_build_complete = {}			# effects, scope: galactic object, from: country, fromfrom: megastructure instance
+#
+#	ai_weight = {					# scope = country, default = 100
+#		modifier = {
+#			weight = 0
+#			NOT = {
+#				has_ethic = ethic_militarist
+#			}
+#		}
+#	}
+#
+#	construction_blocked_by_others = no # default yes, set to no if other constructions in same system
+#										should block construction of this type
+#}
+
+# Основная станка. Основной концепт нужно продумать до деталей.
+mi_mining_station_0 = {
+	entity = "ancient_drone_01_mining_station_entity"
+	construction_entity = "ancient_drone_01_mining_station_entity"
+	portrait = "GFX_megastructure_construction_background" # Мб заменить, ибо на неё игрок будет натыкаться иногда
+	
+	upgrade_desc = hide		# default: 'default'. Use 'hide' to hide to hide this stage from the upgrade list.
+
+	prerequisites = { "tech_mi_mining_station_1" }		# Нужно добавить зависимость от технологии
+
+	#potential = {}					# trigger, scope: country
+
+	possible = {
+		custom_tooltip = { fail_text = "requires_inside_border" is_inside_border = from }	
+	}
+	victory_score = 1600
+	
+	place_entity_on_planet_plane = no
+
+	construction_blocks_others = no
+
+	entity_offset = { x = -7 y = -7 }
+
+	build_time = 1800
+	resources = {
+		cost = {
+			alloys = 4400
+			minerals = 2500
+			influence = 150
+		}
+		upkeep = {
+			energy = 45
+			volatile_motes = 2
+		}
+		produces = {
+        minerals = 100
+		}
+	}
+
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = { fail_text = "requires_no_anomaly" NOT = { has_anomaly = yes } }
+			custom_tooltip = { fail_text = "requires_no_orbital_station" has_orbital_station = no }
+			custom_tooltip = { fail_text = "requires_asteroid" is_asteroid = yes }
+			custom_tooltip = {
+				fail_text = "requires_no_existing_megastructure"
+				NOR = {
+					has_planet_flag = megastructure
+					has_planet_flag = has_megastructure
+					solar_system = { has_star_flag = ring_world_built }
+				}
+			}		
+		}
+	}
+
+	construction_blocked_by_others = yes
+
+	ai_weight = { factor = 8 } # Тут надо подумать т.к иишка тоже будет строить эту дичь
+	on_build_start = {}
+	on_build_cancel = {}
+	on_build_complete = {
+		fromfrom.planet = {
+			set_planet_flag = has_megastructure
+			set_planet_flag = asteroid_has_mining_drone_station
+			clear_deposits = yes
+		}
+		from = { country_event = { id =  } }
+	}
+}

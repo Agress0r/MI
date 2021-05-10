@@ -1,0 +1,25 @@
+﻿l_russian:
+# Need to translate all of this - if you find mistakes, let me know (Yet English is not my primary language)
+
+#	log = "- Printing the current scopes (trigger) -"
+#	log = "- This: [This.GetName]"
+#	log = "- Root: [Root.GetName]"
+#	log = "- Prev: [Prev.GetName]"
+#	log = "- PrevPrev: [Prev.Prev.GetName]"
+#	log = "- PrevPrevPrev: [Prev.Prev.Prev.GetName]"
+#	log = "- PrevPrevPrevPrev: [Prev.Prev.Prev.Prev.GetName]"
+#	log = "- From: [From.GetName]"
+#	log = "- FromFrom: [From.From.GetName]"
+#	log = "- FromFromFrom: [From.From.From.GetName]"
+#	log = "- FromFromFromFrom: [From.From.From.From.GetName]"
+#	log = "- This's Solar System: [This.GetStarName]"
+#	log = "- This's Planet: [This.Planet.GetName]"
+#	log = "- This's Sector: [This.Sector.GetName]"
+#	log = "- Root's Solar System: [Root.GetStarName]"
+#	log = "- Root's Owner's Name: [Root.Owner.GetName]"
+#	log = "- Root's Owner's Capital's Name: [Root.Owner.Capital.GetName]"
+
+tech_mi_mining_station_1:0 "REPLACE_ME"
+tech_mi_mining_station_1_desc:0 "REPLACE_ME"
+tech_mi_mining_station_2:0 "REPLACE_ME"
+tech_mi_mining_station_2_desc:0 "REPLACE_ME"
