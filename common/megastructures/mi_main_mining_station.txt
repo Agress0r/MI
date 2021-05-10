@@ -86,7 +86,7 @@ mi_mining_station_0 = {
 		}
 	}
 	country_modifier = {
-		rare_resources_gatherers_produces_mult = 0.1
+		rare_resources_gatherers_produces_mult = 1
 	}
 
 	placement_rules = {
