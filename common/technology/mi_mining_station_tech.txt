@@ -48,7 +48,7 @@ tech_mi_mining_station_2 = {
 	is_rare = yes
 
 	modifier = {
-		rare_resources_gatherers_produces_mult = 1
+		#station_gatherers_produces_mult = 0.15 # Нужно сделать модификатор, который бы накладывался только на редкие ресурсы
 	}
 
 	weight_modifier = {
