@@ -52,9 +52,6 @@ mi_mining_station_0 = {
 	entity = "ancient_drone_01_mining_station_entity"
 	construction_entity = "ancient_drone_01_mining_station_entity"
 	portrait = "GFX_megastructure_construction_background" # Мб заменить, ибо на неё игрок будет натыкаться иногда
-	
-	upgrade_desc = hide		# default: 'default'. Use 'hide' to hide to hide this stage from the upgrade list.
-
 	prerequisites = { "tech_mi_mining_station_1" }		# Нужно добавить зависимость от технологии
 
 	#potential = {}					# trigger, scope: country
@@ -73,7 +70,7 @@ mi_mining_station_0 = {
 	build_time = 1800
 	resources = {
 		cost = {
-			alloys = 4400
+			alloys = 5000
 			minerals = 2500
 			influence = 150
 		}
@@ -88,7 +85,7 @@ mi_mining_station_0 = {
 	country_modifier = {
 		station_gatherers_produces_mult = 0.1
 		station_gatherers_cost_mult = -0.1
-		shipclass_mining_station_build_speed_mult = 0.50
+		shipclass_mining_station_build_speed_mult = 0.20 # С каждым уровнем можно по 20 накидывать - работает
 	}
 
 	placement_rules = {
@@ -113,11 +110,81 @@ mi_mining_station_0 = {
 	on_build_start = {}
 	on_build_cancel = {}
 	on_build_complete = {
+		set_star_flag = mi_minig_station_builded
 		fromfrom.planet = {
 			set_planet_flag = has_megastructure
 			set_planet_flag = asteroid_has_mining_drone_station
 			clear_deposits = yes
 		}
-		from = { country_event = { id =  } } # Нужно присобачить сюда ивент после завершения строительства - мейби создать специальный проект
+		from = { set_country_flag = mi_minig_station_created} # Нужно присобачить сюда ивент после завершения строительства - мейби создать специальный проект
+	}
+}
+
+mi_mining_station_1 = {
+	entity = "ancient_drone_01_mining_station_entity"
+	construction_entity = "ancient_drone_01_mining_station_entity"
+	portrait = "GFX_megastructure_construction_background" # Мб заменить, ибо на неё игрок будет натыкаться иногда
+	prerequisites = { "tech_mi_mining_station_2" }		# Нужно добавить зависимость от технологии
+	place_entity_on_planet_plane = no
+	entity_offset = { x = -7 y = -7 }
+	build_time = 1800
+	resources = {
+		cost = {
+			alloys = 7000
+			minerals = 10000
+		}
+		upkeep = {
+			energy = 65
+			volatile_motes = 2
+			exotic_gases = 2
+		}
+		produces = {
+        minerals = 250
+		alloys = 50
+		}
+	}
+
+	upgrade_from = {
+		mi_mining_station_0
+	}
+	country_modifier = {
+		station_gatherers_produces_mult = 0.2
+		station_gatherers_cost_mult = -0.2
+		shipclass_mining_station_build_speed_mult = 0.40 # С каждым уровнем можно по 20 накидывать - работает
+	}
+}
+
+mi_mining_station_2 = {
+	entity = "ancient_drone_01_mining_station_entity"
+	construction_entity = "ancient_drone_01_mining_station_entity"
+	portrait = "GFX_megastructure_construction_background" # Мб заменить, ибо на неё игрок будет натыкаться иногда
+	prerequisites = { "tech_mi_mining_station_2" }		# Нужно добавить зависимость от технологии
+	place_entity_on_planet_plane = no
+	entity_offset = { x = -7 y = -7 }
+	build_time = 1800
+	resources = {
+		cost = {
+			alloys = 10000
+			minerals = 15000
+		}
+		upkeep = {
+			energy = 85
+			volatile_motes = 2
+			exotic_gases = 2
+			rare_crystals = 2
+		}
+		produces = {
+        minerals = 450
+		alloys = 100
+		}
+	}
+
+	upgrade_from = {
+		mi_mining_station_1
+	}
+	country_modifier = {
+		station_gatherers_produces_mult = 0.3
+		station_gatherers_cost_mult = -0.3
+		shipclass_mining_station_build_speed_mult = 0.60 # С каждым уровнем можно по 20 накидывать - работает
 	}
 }

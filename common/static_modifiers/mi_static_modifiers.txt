@@ -1,5 +1,1 @@
 # Модификаторы
-
-mi_rare_resource_prod = {
-	rare_resources_gatherers_produces_mult = 0.1
-}
