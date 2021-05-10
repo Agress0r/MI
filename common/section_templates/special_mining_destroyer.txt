@@ -1,8 +1,9 @@
 # Корабль
 ship_section_template = {
-	key = "special_mining_destroyer"
+	key = "MI_DESTROYER_1L_2M_2S"
 	ship_size = special_mining_destroyer
 	fits_on_slot = bow
+	should_draw_components = yes
 	entity = "ancient_destroyer_hull_entity"
 	icon = "GFX_ship_part_core_bow"
 	
@@ -31,6 +32,5 @@ ship_section_template = {
 		cost = { alloys = 228 }
 	}
 	
-	medium_utility_slots = 3
-	large_utility_slots = 1
+	medium_utility_slots = 5
 }
