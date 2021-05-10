@@ -1,61 +1,9 @@
-# Пример из README
-
-#my_piquant_megastructure = {
-#	entity = "bawling_pink_rainbow_graphics"
-#	construction_entity = "bawling_pink_rainbow_graphics_construction"
-#	portrait = "GFX_my_piquant_megastructure_background"
-#	upgrade_desc = default|hide		# default: 'default'. Use 'hide' to hide to hide this stage from the upgrade list.
-#	upgrade_from = {
-#		my_flamboyant_megastructure
-#	}
-#	prerequisites = { "tech" }		# required technologies
-#	potential = {}					# trigger, scope: country
-#	possible = {}					# trigger, scope: galactic object, from: country
-#	build_time = 5					# days
-#   victory_score = 1000			# Victory score for the player who owns that megastructure
-#	build_cost = {
-#		minerals = 8
-#		energy = 13
-#		influence = 21
-#	}
-#	monthly_production = {
-#		energy = 34
-#	}
-#	maintenance = {
-#		energy = 10
-#	}
-#	country_modifier = {}
-#
-#	placement_rules = {
-#		planet_possible = {}		# trigger, scope: planet
-#	}
-#
-#	on_build_start = {}				# effects, scope: galactic object, from: country, fromfrom: megastructure instance (when upgrading existing megastructure)
-#	on_build_cancel = {}			# effects, scope: galactic object, from: country
-#	on_build_complete = {}			# effects, scope: galactic object, from: country, fromfrom: megastructure instance
-#
-#	ai_weight = {					# scope = country, default = 100
-#		modifier = {
-#			weight = 0
-#			NOT = {
-#				has_ethic = ethic_militarist
-#			}
-#		}
-#	}
-#
-#	construction_blocked_by_others = no # default yes, set to no if other constructions in same system
-#										should block construction of this type
-#}
-
 # Основная станка. Основной концепт нужно продумать до деталей.
 mi_mining_station_0 = {
 	entity = "ancient_drone_01_mining_station_entity"
 	construction_entity = "ancient_drone_01_mining_station_entity"
 	portrait = "GFX_megastructure_construction_background" # Мб заменить, ибо на неё игрок будет натыкаться иногда
 	prerequisites = { "tech_mi_mining_station_1" }		# Нужно добавить зависимость от технологии
-
-	#potential = {}					# trigger, scope: country
-
 	possible = {
 		custom_tooltip = { fail_text = "requires_inside_border" is_inside_border = from }	
 	}
@@ -69,6 +17,7 @@ mi_mining_station_0 = {
 
 	build_time = 1800
 	resources = {
+		category = megastructures
 		cost = {
 			alloys = 5000
 			minerals = 2500
@@ -83,9 +32,9 @@ mi_mining_station_0 = {
 		}
 	}
 	country_modifier = {
-		station_gatherers_produces_mult = 0.1
-		station_gatherers_cost_mult = -0.1
-		shipclass_mining_station_build_speed_mult = 0.20 # С каждым уровнем можно по 20 накидывать - работает
+		station_gatherers_produces_mult = 0.15
+		station_gatherers_cost_mult = -0.15
+		shipclass_mining_station_build_speed_mult = 0.30 # С каждым уровнем можно по 20 накидывать - работает
 	}
 
 	placement_rules = {
@@ -120,49 +69,16 @@ mi_mining_station_0 = {
 	}
 }
 
-mi_mining_station_1 = {
-	entity = "ancient_drone_01_mining_station_entity"
-	construction_entity = "ancient_drone_01_mining_station_entity"
-	portrait = "GFX_megastructure_construction_background" # Мб заменить, ибо на неё игрок будет натыкаться иногда
-	prerequisites = { "tech_mi_mining_station_2" }		# Нужно добавить зависимость от технологии
-	place_entity_on_planet_plane = no
-	entity_offset = { x = -7 y = -7 }
-	build_time = 1800
-	resources = {
-		cost = {
-			alloys = 7000
-			minerals = 10000
-		}
-		upkeep = {
-			energy = 65
-			volatile_motes = 2
-			exotic_gases = 2
-		}
-		produces = {
-        minerals = 250
-		alloys = 50
-		}
-	}
-
-	upgrade_from = {
-		mi_mining_station_0
-	}
-	country_modifier = {
-		station_gatherers_produces_mult = 0.2
-		station_gatherers_cost_mult = -0.2
-		shipclass_mining_station_build_speed_mult = 0.40 # С каждым уровнем можно по 20 накидывать - работает
-	}
-}
-
 mi_mining_station_2 = {
-	entity = "ancient_drone_01_mining_station_entity"
-	construction_entity = "ancient_drone_01_mining_station_entity"
+	entity = "drone_homebase_hull_entity"
+	construction_entity = "drone_homebase_hull_entity"
 	portrait = "GFX_megastructure_construction_background" # Мб заменить, ибо на неё игрок будет натыкаться иногда
 	prerequisites = { "tech_mi_mining_station_2" }		# Нужно добавить зависимость от технологии
 	place_entity_on_planet_plane = no
 	entity_offset = { x = -7 y = -7 }
 	build_time = 1800
 	resources = {
+		category = megastructures
 		cost = {
 			alloys = 10000
 			minerals = 15000
@@ -180,11 +96,11 @@ mi_mining_station_2 = {
 	}
 
 	upgrade_from = {
-		mi_mining_station_1
+		mi_mining_station_0
 	}
 	country_modifier = {
 		station_gatherers_produces_mult = 0.3
 		station_gatherers_cost_mult = -0.3
-		shipclass_mining_station_build_speed_mult = 0.60 # С каждым уровнем можно по 20 накидывать - работает
+		shipclass_mining_station_build_speed_mult = 0.60
 	}
 }
