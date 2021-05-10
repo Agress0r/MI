@@ -8,12 +8,11 @@ rare_resources_gatherers = {
 		cost
 	}
 	triggered_produces_modifier = {
-		key = stations
+		key = station_gatherers
 		modifier_types = {
 			mult
 		}
 		trigger = {
-			is_ship_class = shipclass_mining_station
 			OR = {
 				has_resource = { type = volatile_motes amount > 0 }
 				has_resource = { type = rare_crystals amount > 0 }
