@@ -111,6 +111,6 @@ mi_mining_station_0 = {
 			set_planet_flag = asteroid_has_mining_drone_station
 			clear_deposits = yes
 		}
-		from = { country_event = { id =  } }
+		from = { country_event = { id =  } } # Нужно присобачить сюда ивент после завершения строительства - мейби создать специальный проект
 	}
 }
