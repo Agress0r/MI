@@ -1,48 +1,68 @@
-#tech_mi_research_station_1 = {
-#	cost = @tier1cost4
-#	area = physic
-#	tier = 2
-#	category = { computing }
-#	prerequisites = { "tech_space_science_3" } # Сделаю зависимость от появления
-#	weight = @tier1weight3
-#	is_rare = yes
-#
-#	modifier = {
-#		#station_gatherers_produces_mult = 0.15 # Нужно сделать модификатор, который бы накладывался только на редкие ресурсы
-#	}
-#
-#	weight_modifier = {
-#		modifier = {
-#				area = physics
-#			}
-#	ai_weight = {
-#			research_leader = {
-#				area = physics
-#				has_trait = "leader_trait_expertise_computing"
-#			}
-#		}
-#	}
-#}
-#tech_mi_research_station_2 = {
-#	weight = @tier1weight5
-#	modifier = {
-#	}
-#		modifier = {
-#				area = physics
-#			}
-#				area = physics
-#				has_trait = "leader_trait_maniacal"
-#			}
-#	}
-#
-#	ai_weight = {
-#		modifier = {
-#			factor = 1.15
-#			research_leader = {
-#				area = physics
-#				has_trait = "leader_trait_expertise_computing"
-#			}
-#		}
-#	}
-#}
+tech_mi_research_station_1 = {
+	cost = @tier1cost4
+	area = physics
+	tier = 2
+	category = { computing }
+	prerequisites = { "tech_space_science_3" } # Сделаю зависимость от появления
+    weight = @tier1weight3
+	is_rare = yes
+
+	modifier = {
+		#station_gatherers_produces_mult = 0.15 # Нужно сделать модификатор, который бы накладывался только на редкие ресурсы
+	}
+	weight_modifier = {
+		modifier = {
+			factor = 1.15
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_maniacal"
+			}
+		}
+	}
+
+	ai_weight = {
+		modifier = {
+			factor = 1.15
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+	}
+}
+tech_mi_research_station_2 = {
+	cost = @tier1cost5
+	area = physics
+	tier = 5
+	category = { computing }
+	prerequisites = { "tech_mi_research_station_2" }
+	weight = @tier1weight5
+	weight_modifier = {
+		modifier = {
+			factor = 1.15
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_maniacal"
+			}
+		}
+	}
+
+	ai_weight = {
+		modifier = {
+			factor = 1.15
+			research_leader = {
+				area = physics
+				has_trait = "leader_trait_expertise_computing"
+			}
+		}
+	}
+}
 
