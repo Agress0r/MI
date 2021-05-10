@@ -10,7 +10,7 @@ rare_resources_gatherers = {
 	triggered_produces_modifier = {
 		key = station_gatherers
 		modifier_types = {
-			mult
+			produces
 		}
 		trigger = {
 			OR = {
