@@ -1,13 +1,10 @@
+# Первый уровень
 mi_research_station_0 = {
 	entity = "ancient_drone_01_research_station_entity"
 	construction_entity = "ancient_drone_01_research_station_entity"
 	portrait = "GFX_megastructure_construction_background" # Мб заменить, ибо на неё игрок будет натыкаться иногда
-	
-	upgrade_desc = hide		# default: 'default'. Use 'hide' to hide to hide this stage from the upgrade list.
 
 	prerequisites = { "tech_mi_research_station_1" }		# Нужно добавить зависимость от технологии
-
-	#potential = {}					# trigger, scope: country
 
 	possible = {
 		custom_tooltip = { fail_text = "requires_inside_border" is_inside_border = from }	
@@ -38,7 +35,10 @@ mi_research_station_0 = {
 		}
 	}
 	country_modifier = {
-	station_researchers_produces_mult = 0.20
+	station_researchers_produces_mult = 0.15
+	station_researchers_cost_mult = 0.15
+	shipclass_research_station_build_speed_mult = 0.30 # С каждым уровнем можно по 20 накидывать - работает
+	all_technology_research_speed = 0.03
 	}
 
 	placement_rules = {
@@ -69,5 +69,41 @@ mi_research_station_0 = {
 			clear_deposits = yes
 		}
 		from = { country_event = { id =  } } # Нужно присобачить сюда ивент после завершения строительства - мейби создать специальный проект
+	}
+}
+# Второй уровень
+mi_research_station_2 = {
+	entity = "ancient_drone_01_research_station_entity"
+	construction_entity = "ancient_drone_01_research_station_entity"
+	portrait = "GFX_megastructure_construction_background" # Мб заменить, ибо на неё игрок будет натыкаться иногда
+	prerequisites = { "tech_mi_research_station_2" }		# Нужно добавить зависимость от технологии
+	place_entity_on_planet_plane = no
+	entity_offset = { x = -7 y = -7 }
+
+	upgrade_from = {
+		mi_research_station_0
+	}
+	build_time = 1800
+	resources = {
+		cost = {
+			alloys = 4400
+			minerals = 2500
+			influence = 150
+		}
+		upkeep = {
+			energy = 45
+			exotic_gases = 2
+		}
+		produces = {
+		society_research = 30
+		engineering_research = 35
+		physics_research = 30
+		}
+	}
+	country_modifier = {
+		station_researchers_produces_mult = 0.30
+		station_researchers_cost_mult = 0.30
+		shipclass_research_station_build_speed_mult = 0.60 # С каждым уровнем можно по 20 накидывать - работает
+		all_technology_research_speed = 0.06
 	}
 }

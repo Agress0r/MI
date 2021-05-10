@@ -1,6 +1,6 @@
 # Возможные корабли
 special_mining_destroyer = {
-	formation_priority = @destroyer_formation_priority
+	#formation_priority = @destroyer_formation_priority
 	max_speed = @speed_fast
 	acceleration = 0.3
 	rotation_speed = 0.2
