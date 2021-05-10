@@ -85,6 +85,9 @@ mi_mining_station_0 = {
         minerals = 100
 		}
 	}
+	country_modifier = {
+		rare_resources_gatherers_produces_mult = 0.1
+	}
 
 	placement_rules = {
 		planet_possible = {
