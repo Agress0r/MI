@@ -111,6 +111,7 @@ immediate = {
 						skill = 5
 					 }
                     hidden_effect = { last_created_leader = {set_age = 314 } }
+					set_country_flag = asp_leader_gained
 				 }
 
 					option = {
@@ -124,6 +125,7 @@ immediate = {
 						skill = 5
 					}
 					hidden_effect = { last_created_leader = {set_age = 314 } }
+					set_country_flag = asp_leader_gained
 				 }
 
 					option = {
@@ -137,6 +139,7 @@ immediate = {
 						skill = 5
 					}
 					hidden_effect = { last_created_leader = {set_age = 314 } }
+					set_country_flag = asp_leader_gained
 				 }
 
 					option = {
@@ -150,6 +153,7 @@ immediate = {
 						skill = 5
 					}
 					hidden_effect = { last_created_leader = {set_age = 314 } }
+					set_country_flag = asp_leader_gained
 				 }
                  # Можно эффект на проверку создать дабы кучу текста таким макаром не создавать в основном файле с событием, по типу give_next_ai_tech_option_effect из ивента федерации
 				 option = {
