@@ -116,8 +116,8 @@ asp_research_station_0 = {
 }
 # Второй уровень
 asp_research_station_2 = {
-	entity = "ancient_research_station_entity"
-	construction_entity = "ancient_research_station_entity"
+	entity = "ancient_research_station_2_entity"
+	construction_entity = "ancient_research_station_2_entity"
 	portrait = "GFX_megastructure_construction_background" # Мб заменить, ибо на неё игрок будет натыкаться иногда
 	prerequisites = { "tech_asp_research_station_2" }		# Нужно добавить зависимость от технологии
 	place_entity_on_planet_plane = no

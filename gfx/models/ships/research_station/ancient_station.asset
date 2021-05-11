@@ -24,3 +24,12 @@ entity = {
 		size = 10
 	}
 }
+
+entity = {
+	name = "ancient_research_station_2_entity"
+	pdxmesh = "ancient_research_station_2_mesh"
+	
+	game_data = {
+		size = 10
+	}
+}
