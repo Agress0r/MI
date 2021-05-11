@@ -407,3 +407,77 @@ ship_event = {
 		}
 	}
 }
+### Потерянный корабль угасшей империи - нужны границы рядом с угашкой
+ship_event = {
+	id = asp.8
+	title = "asp.8.name"
+	desc = "asp.8.desc"
+	hide_window = no
+	picture = GFX_evt_ship_in_orbit_2
+	show_sound = event_sensor_ping
+	is_triggered_only = yes
+
+	trigger = {
+		closest_system = {
+			max_steps = 2
+			limit = {
+				exists = owner
+				owner = {
+					is_country_type = fallen_empire
+					is_country_type = awakened_fallen_empire
+				}
+				prev.owner = { has_communications = root }
+			}
+		}
+	}
+
+	immediate = {
+		this.planet = { 
+		create_fleet = {
+			settings = {
+				spawn_debris = no
+				can_change_composition = no
+				uses_naval_capacity = yes
+			}
+			effect = {
+				set_owner = root
+				create_ship = {
+					name = Xentoras
+					design = "Lexon"
+				}
+				set_location = {
+					target = prev
+					distance = 20
+					angle = 0
+				}
+				set_fleet_stance = passive
+				set_aggro_range_measure_from = self
+				set_aggro_range = 350
+				save_event_target_as = asp_fallen_empire_ship
+			}
+		}
+	  }
+	}
+
+	option = {
+		name = asp.8.a
+		custom_tooltip = asp.8.a.tooltip
+	}
+
+	option = {
+		name = asp.8.b
+		custom_tooltip = asp.8.b.tooltip
+		hidden_effect = {
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier3researchreward
+				min = @tier2researchmin
+				max = @tier3researchmax
+			}
+			add_resource = {
+				alloys = 760
+			}
+			destroy_fleet = event_target:asp_fallen_empire_ship
+		}
+	}
+}
