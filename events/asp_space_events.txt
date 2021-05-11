@@ -1,5 +1,5 @@
 namespace = asp
-# Событие с лидером - роботом.
+### Событие с лидером - роботом - инициализатор
 ship_event = {
 	id = asp.1
 	title = "asp.1.name"
@@ -44,7 +44,7 @@ ship_event = {
 	}
 }
 
-# Само событие с лидером
+# Само событие с лидером Роботом
 country_event = {
 	id = asp.2
 	title = "asp.2.name"
@@ -101,7 +101,7 @@ immediate = {
 					 option = {
 						name = asp_game_start.2.a
 						trigger = {
-							has_authority = auth_machine_intelligence # Лидер губернатор будет доступен только для машин т.к если выбрать губера из портретов кризиса то там он слишком убого (в отображении на планете, в лидерах все ок)
+							has_authority = auth_machine_intelligence # Лидер губернатор будет доступен только для машин т.к если выбрать губера из портретов кризиса то там он слишком убого отображается ( речь о отображении на планете, в лидерах все ок)
 						}
                         custom_tooltip = asp.leader.accepted.tooltip
 					    create_leader = {
@@ -219,8 +219,8 @@ immediate = {
 		}
 	}
 }
+
 # Инициализатор события с дополнительными редкими ресурсами
-# Не знаю на сколько часто будет оно падать, по этому можно рандомные текстовики создать на всякий пожарный
 ship_event = {
 	id = asp.3
 	hide_window = yes
@@ -248,6 +248,7 @@ ship_event = {
 				  }
 				}
 	}
+
 	immediate = {
 		from.planet = {
 		save_event_target_as = asp_mineral_stockpile
@@ -287,13 +288,13 @@ country_event = {
 		owner = {
 			locked_random_list = {
 				33 = {
-					add_resource = { volatile_motes = 65 }
+					add_resource = { volatile_motes = 85 }
 				}
 				33 = {
-					add_resource = { rare_crystals = 65 }
+					add_resource = { rare_crystals = 85 }
 				}
 				33 = {
-					add_resource = { exotic_gases = 65 }
+					add_resource = { exotic_gases = 85 }
 				}
 			}
 		}
@@ -302,6 +303,7 @@ country_event = {
 }
 
 # Событие с найденными артефактами на астероиде
+# Ancrel це Ancient Relics т.е проверка длс - зачем кому-то релики если нету длс?
 ship_event = {
 	id = asp.5
 	title = "asp.5.name"
@@ -311,9 +313,9 @@ ship_event = {
 	show_sound = event_default
 	is_triggered_only = yes
 
-
+      
 	trigger = {
-		owner = { has_ancrel = yes
+		owner = { has_ancrel = yes 
 		NOT = {
 			has_country_flag = asp_artifact_event_cooldown
 		      } 
@@ -510,5 +512,117 @@ ship_event = {
 			}
 			destroy_fleet = event_target:asp_fallen_empire_ship
 		}
+	}
+}
+# Событие с увелчинием производства минералов на объекте
+ship_event = {
+	id = asp.9
+	title = "asp.9.name"
+	desc = "asp.9.desc"
+	hide_window = no
+	picture = GFX_evt_mining_operations
+	show_sound = event_construction
+	is_triggered_only = yes
+
+	trigger = {
+		from.planet = {
+			has_resource = {
+				type = minerals
+				amount > 0
+			}
+		}
+		owner = { 
+		NOT = {
+			has_country_flag = asp_mineral_event_cooldown
+		      }
+			}
+	}
+
+	#mean_time_to_happen = { days = 40 }
+
+	option = {
+		name = EXCELLENT
+		From = {
+			locked_random_list = {
+				33 = {
+					From = { add_deposit = d_minerals_3 }
+				}
+				33 = {
+					From = { add_deposit = d_minerals_4 }
+				}
+				33 = {
+					From = { add_deposit = d_minerals_5 }
+				}
+			}
+		}
+		set_timed_country_flag = { flag = asp_mineral_event_cooldown days = 670 }
+	}
+}
+# Событие с увелчинием производства редкого ресурса на объекте
+ship_event = {
+	id = asp.10
+	title = "asp.10.name"
+	desc = "asp.10.desc"
+	hide_window = no
+	picture = GFX_evt_mining_operations
+	show_sound = event_construction
+	is_triggered_only = yes
+
+	trigger = {
+		from.planet = {
+			has_resource = {
+				type = rare_crystals
+				amount > 0
+			}
+			has_resource = {
+				type = exotic_gases
+				amount > 0
+			}
+			has_resource = {
+				type = volatile_motes
+				amount > 0
+			}
+		}
+		owner = {
+		NOT = {
+			has_country_flag = asp_rare_resource_cooldown
+		      }
+			}
+	}
+
+	#mean_time_to_happen = { days = 40 }
+
+	option = {
+		name = EXCELLENT
+		From = {
+			if = {
+				limit = {		
+					from.planet = {
+					has_resource = {
+						type = rare_crystals
+						amount > 0
+					}
+				  }
+			    }
+				add_deposit = d_rare_crystals_1
+			}
+			else_if = {
+				limit = {
+					from.planet = {
+						has_resource = {
+							type = exotic_gases
+							amount > 0
+						}
+					  }
+				}
+				add_deposit = d_exotic_gases_1
+			}
+			else = {
+				from.planet = {
+					add_deposit = d_volatile_motes_1
+				  }
+			}
+		}
+		set_timed_country_flag = { flag = asp_rare_resource_cooldown days = 780 }
 	}
 }
