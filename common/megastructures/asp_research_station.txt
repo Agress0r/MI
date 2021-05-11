@@ -42,7 +42,7 @@ asp_research_station_0 = {
 
 	entity_offset = { x = -7 y = -7 }
 
-	build_time = 1800
+	build_time = 2200
 	resources = {
 		category = megastructures
 		cost = {
@@ -126,7 +126,7 @@ asp_research_station_2 = {
 	upgrade_from = {
 		asp_research_station_0
 	}
-	build_time = 2400
+	build_time = 2800
 	resources = {
 		category = megastructures
 		cost = {

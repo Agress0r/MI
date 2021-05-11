@@ -111,7 +111,7 @@ asp_mining_station_2 = {
 	prerequisites = { "tech_asp_mining_station_2" }		# Нужно добавить зависимость от технологии
 	place_entity_on_planet_plane = no
 	entity_offset = { x = -7 y = -7 }
-	build_time = 1800
+	build_time = 2800
 	resources = {
 		category = megastructures
 		cost = {
