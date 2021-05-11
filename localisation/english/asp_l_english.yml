@@ -18,7 +18,11 @@
 #	log = "- Root's Solar System: [Root.GetStarName]"
 #	log = "- Root's Owner's Name: [Root.Owner.GetName]"
 #	log = "- Root's Owner's Capital's Name: [Root.Owner.Capital.GetName]"
-
+asp_research_station_0:0 "REPLACE_ME"
+asp_research_station_0_DESC:0 "REPLACE_ME"
+asp_research_station_0_MEGASTRUCTURE_DETAILS:0 "REPLACE_ME"
+asp_research_station_2:0 "REPLACE_ME"
+asp_research_station_2_DESC:0 "REPLACE_ME"
 asp_mining_station_0:0 "REPLACE_ME"
 asp_mining_station_0_DESC:0 "REPLACE_ME"
 asp_mining_station_0_MEGASTRUCTURE_DETAILS:0 "REPLACE_ME"
