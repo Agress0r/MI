@@ -4,9 +4,34 @@ asp_mining_station_0 = {
 	construction_entity = "ancient_drone_01_mining_station_entity"
 	portrait = "GFX_megastructure_construction_background" # Мб заменить, ибо на неё игрок будет натыкаться иногда
 	prerequisites = { "tech_asp_mining_station_1" }		# Нужно добавить зависимость от технологии
+
 	possible = {
-		custom_tooltip = { fail_text = "requires_inside_border" is_inside_border = from }	
+		exists = starbase
+		custom_tooltip = {
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_existing_megastructure"
+			has_no_non_gate_megastructure = yes
+		}
+		custom_tooltip = {
+			fail_text = "requires_surveyed_system"
+			NOT = {
+				any_system_planet = {
+					is_surveyed = {
+						who = prev.from
+						status = no
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_existing_asp_mining_station"
+			from = { NOT = { has_country_flag = asp_minig_station_created } }
+		}
 	}
+
 	victory_score = 1600
 	
 	place_entity_on_planet_plane = no
@@ -37,11 +62,6 @@ asp_mining_station_0 = {
 		station_gatherers_cost_mult = -0.15
 		shipclass_mining_station_build_speed_mult = 0.30 # С каждым уровнем можно по 20 накидывать - работает
 		country_resource_max_add = 25000
-	}
-
-	custom_tooltip = {
-		fail_text = "requires_no_existing_mining_station"
-		from = { NOT = { has_country_flag = asp_minig_station_created } }
 	}
 	
 	placement_rules = {

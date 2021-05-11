@@ -1,14 +1,39 @@
 # Первый уровень
+
 asp_research_station_0 = {
 	entity = "ancient_research_station_entity"
 	construction_entity = "ancient_research_station_entity"
 	portrait = "GFX_megastructure_construction_background" # Мб заменить, ибо на неё игрок будет натыкаться иногда
-
 	prerequisites = { "tech_asp_research_station_1" }		# Нужно добавить зависимость от технологии
 
 	possible = {
-		custom_tooltip = { fail_text = "requires_inside_border" is_inside_border = from }	
+		exists = starbase
+		custom_tooltip = {
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_existing_megastructure"
+			has_no_non_gate_megastructure = yes
+		}
+		custom_tooltip = {
+			fail_text = "requires_surveyed_system"
+			NOT = {
+				any_system_planet = {
+					is_surveyed = {
+						who = prev.from
+						status = no
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_existing_research_station"
+			from = { NOT = { has_country_flag = asp_science_station_created } }
+		}
 	}
+
+
 	victory_score = 1600
 	
 	place_entity_on_planet_plane = no
@@ -43,11 +68,6 @@ asp_research_station_0 = {
 	ship_anomaly_generation_chance_mult = 0.05
 	}
 
-	custom_tooltip = {
-		fail_text = "requires_no_existing_research_station"
-		from = { NOT = { has_country_flag = asp_science_station_created } }
-	}
-}
     # Добавить возможность постройки только там, где есть наука над планетой ИЛИ только там где есть больше N-ого количества науки на планете
 	placement_rules = {
 		planet_possible = {
