@@ -382,6 +382,7 @@ ship_event = {
 			NOT = {
 				exists = archaeological_site
 			}
+			is_star = no
 		}
 		owner = { has_ancrel = yes
 		NOT = {
