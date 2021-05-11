@@ -1,7 +1,8 @@
-spriteTypes = {	
+spriteTypes = {
 
 spriteType = {
-	name = "GFX_mod_station_gatherers_cost_mult"
-	texturefile = "gfx/interface/icons/modifiers/mod_station_gatherers_cost_mult.dds"
+	name = "GFX_mod_cost_mult"
+	texturefile = "gfx/interface/icons/modifiers/mod_starbase_ship_build_cost_mult.dds"
   }
+
 }
