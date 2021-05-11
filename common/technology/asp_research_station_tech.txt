@@ -1,4 +1,4 @@
-tech_mi_research_station_1 = {
+tech_asp_research_station_1 = {
 	cost = @tier1cost4
 	area = physics
 	tier = 2
@@ -34,7 +34,7 @@ tech_mi_research_station_1 = {
 		}
 	}
 }
-tech_mi_research_station_2 = {
+tech_asp_research_station_2 = {
 	cost = @tier1cost5
 	area = physics
 	tier = 5

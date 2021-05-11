@@ -102,12 +102,12 @@ immediate = {
 						trigger = {
 							has_authority = auth_machine_intelligence # Лидер губернатор будет доступен только для машин т.к если выбрать губера из портретов кризиса то там он слишком убого (в отображении на планете, в лидерах все ок)
 						}
-                        custom_tooltip = aos.leader.accepted.tooltip
+                        custom_tooltip = asp.leader.accepted.tooltip
 					    create_leader = {
 						event_leader = yes
 						class = governor
 						name = "Executive unit F90"
-						species = event_target:as_leader_robo_species
+						species = event_target:asp_leader_robo_species
 						skill = 5
 					 }
                     hidden_effect = { last_created_leader = {set_age = 314 } }
@@ -115,12 +115,12 @@ immediate = {
 
 					option = {
 						name = asp_game_start.2.b
-						custom_tooltip = aos.leader.accepted.tooltip
+						custom_tooltip = asp.leader.accepted.tooltip
 					    create_leader = {
 						event_leader = yes
 						class = scientist
 						name = "Executive unit F99"
-						species = event_target:aos_leader_robo_species
+						species = event_target:asp_leader_robo_species
 						skill = 5
 					}
 					hidden_effect = { last_created_leader = {set_age = 314 } }
@@ -128,12 +128,12 @@ immediate = {
 
 					option = {
 						name = asp_game_start.2.c
-						custom_tooltip = aos.leader.accepted.tooltip
+						custom_tooltip = asp.leader.accepted.tooltip
 					    create_leader = {
 						event_leader = yes
 						class = admiral
 						name = "Executive unit F91"
-						species = event_target:aos_leader_robo_species
+						species = event_target:asp_leader_robo_species
 						skill = 5
 					}
 					hidden_effect = { last_created_leader = {set_age = 314 } }
@@ -395,6 +395,9 @@ ship_event = {
 
 	option = {
 		name = EXCELLENT
+		owner = {
+			set_country_flag = asp_ancrel_site
+		}
 		From.planet = {
 			create_archaeological_site = asp_ancrel_site
 		}

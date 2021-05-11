@@ -1,6 +1,6 @@
 # Основная технология + её зависимости от техологий
 
-tech_mi_mining_station_1 = {
+tech_asp_mining_station_1 = {
 	cost = @tier1cost4
 	area = engineering
 	tier = 2
@@ -38,7 +38,7 @@ tech_mi_mining_station_1 = {
 	}
 }
 
-tech_mi_mining_station_2 = {
+tech_asp_mining_station_2 = {
 	cost = @tier1cost5
 	area = engineering
 	tier = 5
