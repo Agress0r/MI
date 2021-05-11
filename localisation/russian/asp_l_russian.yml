@@ -19,21 +19,33 @@
 #	log = "- Root's Owner's Name: [Root.Owner.GetName]"
 #	log = "- Root's Owner's Capital's Name: [Root.Owner.Capital.GetName]"
 
-asp_research_station_0:0 "REPLACE_ME"
-asp_research_station_0_DESC:0 "REPLACE_ME"
-asp_research_station_0_MEGASTRUCTURE_DETAILS:0 "REPLACE_ME"
-asp_research_station_2:0 "REPLACE_ME"
-asp_research_station_2_DESC:0 "REPLACE_ME"
 
+################################################
+### Мегасооружение - Комплекс анализа данных ###
+################################################
+asp_research_station_0:0 "Комплекс анализа данных"
+asp_research_station_0_DESC:0 "Данное научное сооружение улучшает эффективность всех научных подразделенний в космосе, начиная от §Yнаучных станций§! и заканчивая §Yнаучными кораблями§!."
+asp_research_station_0_MEGASTRUCTURE_DETAILS:0 "§Y$asp_research_station_0$§! улучшает эффективность работы §Yнаучных станций§! и §Yнаучных кораблей§!."
+asp_research_station_2:0 "Комплекс анализа данных"
+asp_research_station_2_DESC:0 "Данное научное сооружение улучшает эффективность всех научных подразделенний в космосе, начиная от §Yнаучных станций§! и заканчивая §Yнаучными кораблями§!."
+
+
+####################################################
+### Мегасооружение - Комплекс обработки ресурсов ###
+####################################################
 asp_mining_station_0:0 "Комплекс обработки ресурсов"
 asp_mining_station_0_DESC:0 "Данный комплекс не только обогащает и обрабатывает все ресурсы что были добыты в космосе, но так же обеспечивает все §Yстроительные корабли§! более передовыми технологиями шаблонной застройки."
 asp_mining_station_0_MEGASTRUCTURE_DETAILS:0 "§Y$asp_mining_station_0$§! обогащает и обрабатывает все ресурсы что были добыты в космосе."
 asp_mining_station_2:0 "Комплекс обработки ресурсов"
 asp_mining_station_2_DESC:0 "Данный комплекс не только обогащает и обрабатывает все ресурсы что были добыты в космосе, но так же обеспечивает все строительные корабли более передовыми технологиями шаблонной застройки."
 
+
+mod_station_researchers_cost_mult:0 "Стоимость строительства научной станции:"
+mod_shipclass_research_station_build_speed_mult:0 "Скорость строительства научной станции:"
 mod_shipclass_mining_station_build_speed_mult:0 "Скорость строительства добывающей станции:"
 
-requires_asteroid:0 "REPLACE_ME"
+
+requires_asteroid:0 "Требуется астероид"
 
 special_mi_constructor:0 "REPLACE_ME"
 special_mi_constructor_plural:0 "REPLACE_ME"

@@ -21,41 +21,64 @@ asp_research_station_0 = {
 	resources = {
 		category = megastructures
 		cost = {
+			influence = 150
 			alloys = 4400
 			minerals = 2500
-			influence = 150
 		}
 		upkeep = {
 			energy = 45
 			exotic_gases = 2
 		}
 		produces = {
-		society_research = 30
-		engineering_research = 35
-		physics_research = 30
+		society_research = 50
+		engineering_research = 50
+		physics_research = 50
 		}
 	}
 	country_modifier = {
 	station_researchers_produces_mult = 0.15
 	station_researchers_cost_mult = -0.15
 	shipclass_research_station_build_speed_mult = 0.30 # С каждым уровнем можно по 20 накидывать - работает
-	all_technology_research_speed = 0.03
+	science_ship_survey_speed = 0.15
+	ship_anomaly_generation_chance_mult = 0.05
 	}
+
+	custom_tooltip = {
+		fail_text = "requires_no_existing_research_station"
+		from = { NOT = { has_country_flag = asp_science_station_created } }
+	}
+}
     # Добавить возможность постройки только там, где есть наука над планетой ИЛИ только там где есть больше N-ого количества науки на планете
 	placement_rules = {
 		planet_possible = {
-			custom_tooltip = { fail_text = "requires_no_anomaly" NOT = { has_anomaly = yes } }
-			custom_tooltip = { fail_text = "requires_no_orbital_station" has_orbital_station = no }
-			custom_tooltip = { fail_text = "requires_asteroid" is_asteroid = yes }
 			custom_tooltip = {
-				fail_text = "requires_no_existing_megastructure"
-				NOR = {
-					has_planet_flag = megastructure
-					has_planet_flag = has_megastructure
-					solar_system = { has_star_flag = ring_world_built }
+				fail_text = "requires_survey_not_habitable"
+				is_surveyed = {			# prevent leaking habitability information
+					who = prev.from
+					status = yes
 				}
-			}		
-		}
+				colonizeable_planet = no
+			}
+			custom_tooltip = {
+				fail_text = "requires_no_anomaly"
+				NOT = { has_anomaly = yes }
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_minor_planetary_body"
+				NOR = {
+					is_asteroid = yes
+					is_moon = yes
+				}
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_star"
+				is_star = no
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_ring_world"
+				is_ringworld = no
+			}
+		} # use these for all non-star megastructures
 	}
 
 	construction_blocked_by_others = yes
@@ -66,7 +89,6 @@ asp_research_station_0 = {
 	on_build_complete = {
 		fromfrom.planet = {
 			set_planet_flag = has_megastructure
-			set_planet_flag = asteroid_has_research_drone_station
 			clear_deposits = yes
 		}
 		from = { set_country_flag = asp_science_station_created } # Нужно присобачить сюда ивент после завершения строительства - мейби создать специальный проект
@@ -84,28 +106,29 @@ asp_research_station_2 = {
 	upgrade_from = {
 		asp_research_station_0
 	}
-	build_time = 1800
+	build_time = 2400
 	resources = {
 		category = megastructures
 		cost = {
-			alloys = 4400
-			minerals = 2500
-			influence = 150
+			alloys = 9000
+			minerals = 6700
 		}
 		upkeep = {
 			energy = 45
 			exotic_gases = 2
+			sr_dark_matter = 2
 		}
 		produces = {
-		society_research = 30
-		engineering_research = 35
-		physics_research = 30
+		society_research = 100
+		engineering_research = 100
+		physics_research = 100
 		}
 	}
 	country_modifier = {
 		station_researchers_produces_mult = 0.30
 		station_researchers_cost_mult = -0.30
 		shipclass_research_station_build_speed_mult = 0.60 # С каждым уровнем можно по 20 накидывать - работает
-		all_technology_research_speed = 0.06
+		science_ship_survey_speed = 0.30
+		ship_anomaly_generation_chance_mult = 0.10
 	}
 }

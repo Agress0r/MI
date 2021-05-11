@@ -15,7 +15,7 @@ asp_mining_station_0 = {
 
 	entity_offset = { x = -7 y = -7 }
 
-	build_time = 1800
+	build_time = 2100
 	resources = {
 		category = megastructures
 		cost = {
@@ -39,8 +39,21 @@ asp_mining_station_0 = {
 		country_resource_max_add = 25000
 	}
 
+	custom_tooltip = {
+		fail_text = "requires_no_existing_mining_station"
+		from = { NOT = { has_country_flag = asp_minig_station_created } }
+	}
+	
 	placement_rules = {
 		planet_possible = {
+			custom_tooltip = {
+				fail_text = "requires_survey_not_habitable"
+				is_surveyed = {			# prevent leaking habitability information
+					who = prev.from
+					status = yes
+				}
+				colonizeable_planet = no
+			}
 			custom_tooltip = { fail_text = "requires_no_anomaly" NOT = { has_anomaly = yes } }
 			custom_tooltip = { fail_text = "requires_no_orbital_station" has_orbital_station = no }
 			custom_tooltip = { fail_text = "requires_asteroid" is_asteroid = yes }
