@@ -104,6 +104,5 @@ asp_mining_station_2 = {
 		station_gatherers_cost_mult = -0.3
 		shipclass_mining_station_build_speed_mult = 0.60
 		country_resource_max_add = 50000
-		station_gatherers_upkeep_mult = -0.3
 	}
 }
