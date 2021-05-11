@@ -36,11 +36,11 @@ mi_research_station_0 = {
 	}
 	country_modifier = {
 	station_researchers_produces_mult = 0.15
-	station_researchers_cost_mult = 0.15
+	station_researchers_cost_mult = -0.15
 	shipclass_research_station_build_speed_mult = 0.30 # С каждым уровнем можно по 20 накидывать - работает
 	all_technology_research_speed = 0.03
 	}
-
+    # Добавить возможность постройки только там, где есть наука над планетой ИЛИ только там где есть больше N-ого количества науки на планете
 	placement_rules = {
 		planet_possible = {
 			custom_tooltip = { fail_text = "requires_no_anomaly" NOT = { has_anomaly = yes } }
@@ -102,7 +102,7 @@ mi_research_station_2 = {
 	}
 	country_modifier = {
 		station_researchers_produces_mult = 0.30
-		station_researchers_cost_mult = 0.30
+		station_researchers_cost_mult = -0.30
 		shipclass_research_station_build_speed_mult = 0.60 # С каждым уровнем можно по 20 накидывать - работает
 		all_technology_research_speed = 0.06
 	}
