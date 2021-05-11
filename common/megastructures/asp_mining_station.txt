@@ -1,5 +1,5 @@
 # Основная станка. Основной концепт нужно продумать до деталей.
-mi_mining_station_0 = {
+asp_mining_station_0 = {
 	entity = "ancient_drone_01_mining_station_entity"
 	construction_entity = "ancient_drone_01_mining_station_entity"
 	portrait = "GFX_megastructure_construction_background" # Мб заменить, ибо на неё игрок будет натыкаться иногда
@@ -69,7 +69,7 @@ mi_mining_station_0 = {
 	}
 }
 
-mi_mining_station_2 = {
+asp_mining_station_2 = {
 	entity = "drone_homebase_hull_entity"
 	construction_entity = "drone_homebase_hull_entity"
 	portrait = "GFX_megastructure_construction_background" # Мб заменить, ибо на неё игрок будет натыкаться иногда
@@ -96,7 +96,7 @@ mi_mining_station_2 = {
 	}
 
 	upgrade_from = {
-		mi_mining_station_0
+		asp_mining_station_0
 	}
 	country_modifier = {
 		station_gatherers_produces_mult = 0.3
