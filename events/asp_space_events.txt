@@ -11,6 +11,7 @@ ship_event = {
 
 	trigger = {
 		owner = {
+			is_ai = no
 			NOT = {
 				has_country_flag = asp_leader_event_happened
 			}
@@ -241,6 +242,11 @@ ship_event = {
 			  }
 			}
 		}
+		owner = { 
+			NOT = {
+				has_country_flag = asp_rare_resources_event_cooldown
+				  }
+				}
 	}
 	immediate = {
 		from.planet = {
@@ -291,6 +297,7 @@ country_event = {
 				}
 			}
 		}
+		set_timed_country_flag = { flag = asp_rare_resources_event_cooldown days = 540 }
 	}
 }
 
@@ -329,7 +336,7 @@ ship_event = {
 					owner = { medium_artifact_reward = yes }
 				}
 			}
-			set_timed_country_flag = { flag = asp_artifact_event_cooldown days = 720 }
+			set_timed_country_flag = { flag = asp_artifact_event_cooldown days = 540 }
 		}
 	}
 }
@@ -350,6 +357,11 @@ ship_event = {
 				amount > 0
 			}
 		}
+		owner = { 
+		NOT = {
+			has_country_flag = asp_energy_event_cooldown
+		      }
+			}
 	}
 
 	#mean_time_to_happen = { days = 40 }
@@ -369,6 +381,7 @@ ship_event = {
 				}
 			}
 		}
+		set_timed_country_flag = { flag = asp_energy_event_cooldown days = 670 }
 	}
 }
 # Событие с найденной раскопкой - раскопку же нужно продумать
@@ -380,8 +393,10 @@ ship_event = {
 	picture = GFX_evt_ancient_records
 	show_sound = event_finding_loot
 	is_triggered_only = yes
+	fire_only_once = yes
 
 	trigger = {
+		is_ai = no
 		from.planet = {
 			NOT = {
 				exists = archaeological_site
@@ -416,23 +431,39 @@ ship_event = {
 	picture = GFX_evt_ship_in_orbit_2
 	show_sound = event_sensor_ping
 	is_triggered_only = yes
+	fire_only_once = yes
+
 
 	trigger = {
+		is_ai = no
 		closest_system = {
-			max_steps = 2
+			max_steps = 1
 			limit = {
 				exists = owner
 				owner = {
+					OR = {
 					is_country_type = fallen_empire
 					is_country_type = awakened_fallen_empire
+					}
 				}
-				prev.owner = { has_communications = root }
 			}
 		}
 	}
 
 	immediate = {
-		this.planet = { 
+		closest_system = {
+			max_steps = 1
+			limit = {
+				exists = owner
+				owner = {
+					OR = {
+					is_country_type = fallen_empire
+					is_country_type = awakened_fallen_empire
+					}
+				}
+			}
+			this.owner = { save_event_target_as = asp_fe_empire }
+		}
 		create_fleet = {
 			settings = {
 				spawn_debris = no
@@ -440,13 +471,13 @@ ship_event = {
 				uses_naval_capacity = yes
 			}
 			effect = {
-				set_owner = root
+				set_owner = event_target:asp_fe_empire
 				create_ship = {
 					name = Xentoras
 					design = "Lexon"
 				}
 				set_location = {
-					target = prev
+					target = root
 					distance = 20
 					angle = 0
 				}
@@ -454,9 +485,9 @@ ship_event = {
 				set_aggro_range_measure_from = self
 				set_aggro_range = 350
 				save_event_target_as = asp_fallen_empire_ship
+				set_owner = root
 			}
 		}
-	  }
 	}
 
 	option = {
