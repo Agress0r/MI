@@ -17,10 +17,10 @@ Stellaris 3.0.1 (Dick)
 Основным языком мода является английский, но если вы желаете перевести мод на другие языки то я с радостью приму вашу помощью.
 
 * Braz/Por: 
-* Chinese: [Nazrin720](https://github.com/Nazrin720)
-* English: [Oskar94](https://github.com/oskar94) 
-* French: [HowYouBear](https://github.com/HowYouBear) 
-* German: [Null-ARC](https://github.com/Null-ARC) 
+* Chinese:
+* English:
+* French:
+* German:
 * Polish: 
-* Russian: [Agress0r](https://github.com/Agress0r)
+* Russian: [Agress0r](https://github.com/Agress0r) [Rafomom](https://github.com/Rafomom)
 * Spanish: 
