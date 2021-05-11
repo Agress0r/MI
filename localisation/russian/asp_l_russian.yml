@@ -24,14 +24,21 @@ asp_research_station_0_DESC:0 "REPLACE_ME"
 asp_research_station_0_MEGASTRUCTURE_DETAILS:0 "REPLACE_ME"
 asp_research_station_2:0 "REPLACE_ME"
 asp_research_station_2_DESC:0 "REPLACE_ME"
-asp_mining_station_0:0 "REPLACE_ME"
-asp_mining_station_0_DESC:0 "REPLACE_ME"
-asp_mining_station_0_MEGASTRUCTURE_DETAILS:0 "REPLACE_ME"
+
+asp_mining_station_0:0 "Комплекс обработки ресурсов"
+asp_mining_station_0_DESC:0 "Данный комплекс не только обогащает и обрабатывает все ресурсы что были добыты в космосе, но так же обеспечивает все §Yстроительные корабли§! более передовыми технологиями шаблонной застройки."
+asp_mining_station_0_MEGASTRUCTURE_DETAILS:0 "§Y$asp_mining_station_0$§! обогащает и обрабатывает все ресурсы что были добыты в космосе."
+asp_mining_station_2:0 "Комплекс обработки ресурсов"
+asp_mining_station_2_DESC:0 "Данный комплекс не только обогащает и обрабатывает все ресурсы что были добыты в космосе, но так же обеспечивает все строительные корабли более передовыми технологиями шаблонной застройки."
+
+mod_shipclass_mining_station_build_speed_mult:0 "Скорость строительства добывающей станции:"
+
 requires_asteroid:0 "REPLACE_ME"
-asp_mining_station_2:0 "REPLACE_ME"
-asp_mining_station_2_DESC:0 "REPLACE_ME"
+
 special_mi_constructor:0 "REPLACE_ME"
 special_mi_constructor_plural:0 "REPLACE_ME"
+
+
 tech_asp_research_station_1:0 "REPLACE_ME"
 tech_asp_research_station_1_desc:0 "REPLACE_ME"
 tech_asp_research_station_2:0 "REPLACE_ME"

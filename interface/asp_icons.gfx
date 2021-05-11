@@ -1,0 +1,7 @@
+spriteTypes = {	
+
+spriteType = {
+	name = "GFX_mod_shipclass_mining_station_build_speed_mult"
+	texturefile = "gfx/interface/icons/modifiers/mod_shipclass_mining_station_build_speed.dds"
+  }
+}
