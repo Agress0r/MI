@@ -1,0 +1,39 @@
+# Прописка всех раскопок
+asp_ancrel_site = {
+	desc = asp_ancrel_site_desc
+	picture = GFX_evt_satellite_in_orbit
+	stages = 3
+	max_instances = 1 # Отвечает за уникальность данной раскопки, можно больше одной на всю галактику сделать но тут на наше усмотрение
+	allow = {
+		is_ship_class = shipclass_science_ship
+		exists = leader
+	}
+	visible = {
+		default_site_visible_trigger = yes
+	}
+	on_visible = {
+		country_event = { id = story.5 days = 30 }
+	}
+	
+	stage = {
+		difficulty = 1
+		icon = GFX_archaeology_runes_F1
+		event = asp_ancrel.1
+	}
+	stage = {
+		difficulty = 2
+		icon = GFX_archaeology_runes_F2
+		event = asp_ancrel.2
+	}
+	stage = {
+		difficulty = 3
+		icon = GFX_archaeology_runes_F3
+		event = asp_ancrel.3
+	}
+
+	on_roll_failed = {
+		from = {
+			standard_archaeological_site_on_roll_failed = { RANDOM_EVENTS = all_random_events }
+		}
+	}
+}

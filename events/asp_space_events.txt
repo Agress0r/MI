@@ -12,15 +12,15 @@ ship_event = {
 	trigger = {
 		owner = {
 			NOT = {
-				has_country_flag = asp_leader_gained
+				has_country_flag = asp_leader_event_happened
 			}
 		}
 	}
 
-	mean_time_to_happen = { days = 40 }
 	
 		option = {
 			name = asp.1.a
+			set_country_flag = asp_leader_event_happened
 			owner = { country_event = { id = asp.2 } }
 		}
 
@@ -62,7 +62,7 @@ country_event = {
 	trigger = {
 		owner = {
 			NOT = {
-				has_country_flag = asp_leader_gained
+				has_country_flag = asp_leader_event_happened
 			}
 		}
 	}
@@ -225,7 +225,7 @@ ship_event = {
 	trigger = {
 		this = {
 			OR = {
-				From = {
+				from.planet = {
 				has_resource = {
 					type = minerals
 					amount > 0
@@ -239,7 +239,7 @@ ship_event = {
 		}
 	}
 	immediate = {
-		From = {
+		from.planet = {
 		save_event_target_as = asp_mineral_stockpile
 		owner = { country_event = { id = asp.4 days = 30 } }
 		}
@@ -258,7 +258,7 @@ country_event = {
 	trigger = {
 		event_target:asp_mineral_stockpile = {
 			OR = {
-				From = {
+				from.planet = {
 				has_resource = {
 					type = minerals
 					amount > 0
@@ -303,13 +303,17 @@ ship_event = {
 
 
 	trigger = {
-		owner = { has_ancrel = yes }
-		From = {
+		owner = { has_ancrel = yes
+		NOT = {
+			has_country_flag = asp_artifact_event_cooldown
+		      } 
+	    }
+		from.planet = {
 			is_asteroid = yes
 		}
 	}
 
-	mean_time_to_happen = { days = 40 }
+	#mean_time_to_happen = { days = 40 }
 
 	option = {
 		name = OK
@@ -322,6 +326,7 @@ ship_event = {
 					owner = { medium_artifact_reward = yes }
 				}
 			}
+			set_timed_country_flag = { flag = asp_artifact_event_cooldown days = 720 }
 		}
 	}
 }
@@ -336,7 +341,7 @@ ship_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		From = {
+		from.planet = {
 			has_resource = {
 				type = energy
 				amount > 0
@@ -344,7 +349,7 @@ ship_event = {
 		}
 	}
 
-	mean_time_to_happen = { days = 40 }
+	#mean_time_to_happen = { days = 40 }
 
 	option = {
 		name = EXCELLENT
@@ -360,6 +365,38 @@ ship_event = {
 					From = { add_deposit = d_energy_5 }
 				}
 			}
+		}
+	}
+}
+# Событие с найденной раскопкой - раскопку же нужно продумать
+ship_event = {
+	id = asp.7
+	title = "asp.7.name"
+	desc = "asp.7.desc"
+	hide_window = no
+	picture = GFX_evt_ancient_records
+	show_sound = event_finding_loot
+	is_triggered_only = yes
+
+	trigger = {
+		from.planet = {
+			NOT = {
+				exists = archaeological_site
+			}
+		}
+		owner = { has_ancrel = yes
+		NOT = {
+			has_country_flag = asp_ancrel_site
+		      }
+			}
+		}
+
+	#mean_time_to_happen = { days = 40 }
+
+	option = {
+		name = EXCELLENT
+		From.planet = {
+			create_archaeological_site = asp_ancrel_site
 		}
 	}
 }

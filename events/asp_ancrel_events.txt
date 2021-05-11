@@ -1,0 +1,126 @@
+# Все прописанные события из ивентов с раскопками
+
+namespace = asp_ancrel
+
+## Событие с раскопкой №1 - ОБЯЗАТЕЛЬНО НАПОЛНИТЬ ТЕКСТОМ И НОРМАЛЬНЫМИ НАГРАДАМИ
+### Часть 1
+fleet_event = {
+	id = asp_ancrel.1
+	title = "asp_ancrel.1.name"
+	desc = asp_ancrel.1.desc
+	picture = GFX_evt_relic_world_street
+	show_sound = event_wind_ruins
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = OK
+		owner = {
+			locked_random_list = {
+				33 = {
+					add_monthly_resource_mult = {
+     					resource = society_research
+     					value = @tier2researchreward
+     					min = @tier2researchmin
+     					max = @tier2researchmax
+     				}
+				}
+				33 = {
+					add_monthly_resource_mult = {
+     					resource = engineering_research
+     					value = @tier2researchreward
+     					min = @tier2researchmin
+     					max = @tier2researchmax
+     				}
+				}
+				33 = {
+					add_monthly_resource_mult = {
+     					resource = physics_research
+     					value = @tier2researchreward
+     					min = @tier2researchmin
+     					max = @tier2researchmax
+     				}
+				}
+			}
+		}
+	}
+}
+## Событие с раскопкой №1
+### Часть 2
+fleet_event = {
+	id = asp_ancrel.2
+	title = "asp_ancrel.2.name"
+	desc = asp_ancrel.2.desc
+	picture = GFX_evt_relic_world_street
+	show_sound = event_wind_ruins
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = OK
+		owner = {
+			locked_random_list = {
+				50 = {
+					add_monthly_resource_mult = {
+     					resource = society_research
+     					value = @tier3researchreward
+     					min = @tier3researchmin
+     					max = @tier3researchmax
+     				}
+				}
+				50 = {
+					add_monthly_resource_mult = {
+     					resource = engineering_research
+     					value = @tier3researchreward
+     					min = @tier3researchmin
+     					max = @tier3researchmax
+     				}
+				}
+			}
+		}
+	}
+}
+## Событие с раскопкой №1
+### Часть 3 - конец
+fleet_event = {
+	id = asp_ancrel.3
+	title = "asp_ancrel.3.name"
+	desc = asp_ancrel.3.desc
+	picture = GFX_evt_relic_world_street
+	show_sound = event_wind_ruins
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = OK
+		owner = {
+			locked_random_list = {
+				50 = {
+					add_monthly_resource_mult = {
+     					resource = society_research
+     					value = @tier3researchreward
+     					min = @tier3researchmin
+     					max = @tier3researchmax
+     				}
+				}
+				50 = {
+					add_monthly_resource_mult = {
+     					resource = engineering_research
+     					value = @tier3researchreward
+     					min = @tier3researchmin
+     					max = @tier3researchmax
+     				}
+				}
+			}
+		}
+	}
+}
