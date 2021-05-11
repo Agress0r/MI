@@ -1,10 +1,10 @@
 tech_asp_research_station_1 = {
-	cost = @tier1cost4
+	cost = @tier3cost1
 	area = physics
 	tier = 2
 	category = { computing }
 	prerequisites = { "tech_space_science_3" } # Сделаю зависимость от появления
-    weight = @tier1weight3
+    weight = @tier2weight2
 	is_rare = yes
 
 	modifier = {
@@ -35,12 +35,12 @@ tech_asp_research_station_1 = {
 	}
 }
 tech_asp_research_station_2 = {
-	cost = @tier1cost5
+	cost = @tier5cost3
 	area = physics
 	tier = 5
 	category = { computing }
-	prerequisites = { "tech_mi_research_station_2" }
-	weight = @tier1weight5
+	prerequisites = { "tech_asp_research_station_2" }
+	weight = @tier3weight2
 	weight_modifier = {
 		modifier = {
 			factor = 1.15

@@ -1,10 +1,10 @@
 # Первый уровень
-mi_research_station_0 = {
+asp_research_station_0 = {
 	entity = "ancient_research_station_entity"
 	construction_entity = "ancient_research_station_entity"
 	portrait = "GFX_megastructure_construction_background" # Мб заменить, ибо на неё игрок будет натыкаться иногда
 
-	prerequisites = { "tech_mi_research_station_1" }		# Нужно добавить зависимость от технологии
+	prerequisites = { "tech_asp_research_station_1" }		# Нужно добавить зависимость от технологии
 
 	possible = {
 		custom_tooltip = { fail_text = "requires_inside_border" is_inside_border = from }	
@@ -19,6 +19,7 @@ mi_research_station_0 = {
 
 	build_time = 1800
 	resources = {
+		category = megastructures
 		cost = {
 			alloys = 4400
 			minerals = 2500
@@ -68,23 +69,24 @@ mi_research_station_0 = {
 			set_planet_flag = asteroid_has_research_drone_station
 			clear_deposits = yes
 		}
-		from = { country_event = { id =  } } # Нужно присобачить сюда ивент после завершения строительства - мейби создать специальный проект
+		from = { set_country_flag = asp_science_station_created } # Нужно присобачить сюда ивент после завершения строительства - мейби создать специальный проект
 	}
 }
 # Второй уровень
-mi_research_station_2 = {
+asp_research_station_2 = {
 	entity = "ancient_research_station_entity"
 	construction_entity = "ancient_research_station_entity"
 	portrait = "GFX_megastructure_construction_background" # Мб заменить, ибо на неё игрок будет натыкаться иногда
-	prerequisites = { "tech_mi_research_station_2" }		# Нужно добавить зависимость от технологии
+	prerequisites = { "tech_asp_research_station_2" }		# Нужно добавить зависимость от технологии
 	place_entity_on_planet_plane = no
 	entity_offset = { x = -7 y = -7 }
 
 	upgrade_from = {
-		mi_research_station_0
+		asp_research_station_0
 	}
 	build_time = 1800
 	resources = {
+		category = megastructures
 		cost = {
 			alloys = 4400
 			minerals = 2500

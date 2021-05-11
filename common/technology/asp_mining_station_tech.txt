@@ -1,12 +1,12 @@
 # Основная технология + её зависимости от техологий
 
 tech_asp_mining_station_1 = {
-	cost = @tier1cost4
+	cost = @tier3cost1
 	area = engineering
 	tier = 2
 	category = { industry }
 	prerequisites = { "tech_space_mining_3" } # Сделаю зависимость от появления
-	weight = @tier1weight3
+	weight = @tier2weight2
 	is_rare = yes
 
 	modifier = {
@@ -39,12 +39,12 @@ tech_asp_mining_station_1 = {
 }
 
 tech_asp_mining_station_2 = {
-	cost = @tier1cost5
+	cost = @tier5cost2
 	area = engineering
 	tier = 5
 	category = { industry }
-	prerequisites = { "tech_mi_mining_station_1" } # Сделаю зависимость от появления
-	weight = @tier1weight5
+	prerequisites = { "tech_asp_mining_station_1" } # Сделаю зависимость от появления
+	weight = @tier3weight2
 	is_rare = yes
 
 	modifier = {

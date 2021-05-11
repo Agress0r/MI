@@ -32,7 +32,7 @@ special_mining_destroyer = {
 	class = shipclass_military
 	construction_type = starbase_shipyard
 
-	required_component_set = "FISSION_REACTOR" #power_core
+	#required_component_set = "FISSION_REACTOR" #power_core
 	required_component_set = "ftl_components"
 	required_component_set = "thruster_components"
 	required_component_set = "sensor_components"
