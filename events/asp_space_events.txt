@@ -273,7 +273,7 @@ country_event = {
 	}
 
 	option = {
-		name = "distar.4.a"
+		name = "asp.4.a"
 		owner = {
 			locked_random_list = {
 				33 = {
@@ -287,7 +287,6 @@ country_event = {
 				}
 			}
 		}
-		custom_tooltip = "distar.4.a.tooltip"
 	}
 }
 
