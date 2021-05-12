@@ -139,6 +139,10 @@ asp.4.a:0 "Это пригодится"
 asp.5.name:0 "§YНайдены артефакты§!"
 asp.5.desc:0 "Во время строительства станции над планетой §Y[From.Planet.GetName]§! были найдены несколько контейнеров разной формы и цвета. Как оказалось внутри них хранились разного рода артефакты."
 
+### Событие с увеличением производства энергии на объекте
+asp.6.name:0 "§YУвеличение номинальной мощности§!"
+asp.6.desc:0 "Данные с датчиков §Y[This.GetName]§! и со станции над объектом §Y[From.Planet.GetName]§! сильно разняться. Номинальная производительность оказалась на несколько уровней выше ранее заявленных значений. "
+
 asp_ancrel_site:0 "REPLACE_ME"
 asp_ancrel_site_desc:0 "REPLACE_ME"
 asp_ancrel.1.name:0 "REPLACE_ME"
@@ -147,8 +151,6 @@ asp_ancrel.2.name:0 "REPLACE_ME"
 asp_ancrel.2.desc:0 "REPLACE_ME"
 asp_ancrel.3.name:0 "REPLACE_ME"
 asp_ancrel.3.desc:0 "REPLACE_ME"
-asp.6.name:0 "REPLACE_ME"
-asp.6.desc:0 "REPLACE_ME"
 asp.7.name:0 "REPLACE_ME"
 asp.7.desc:0 "REPLACE_ME"
 
