@@ -5,13 +5,9 @@ tech_asp_mining_station_1 = {
 	area = engineering
 	tier = 2
 	category = { industry }
-	prerequisites = { "tech_space_mining_3" } # Сделаю зависимость от появления
+	prerequisites = { "tech_space_mining_3" } # Сделаю зависимость от появления - базируется на 3 техе по добыче минералов из космоса
 	weight = @tier2weight2
 	is_rare = yes
-
-	modifier = {
-		#station_gatherers_produces_mult = 0.15 # Нужно сделать модификатор, который бы накладывался только на редкие ресурсы
-	}
 
 	prereqfor_desc = {
 		custom = {
@@ -54,7 +50,7 @@ tech_asp_mining_station_2 = {
 	area = engineering
 	tier = 4
 	category = { industry }
-	prerequisites = { "tech_asp_mining_station_1" } # Сделаю зависимость от появления
+	prerequisites = { "tech_asp_mining_station_1" } # Сделаю зависимость от появления имеющейся технологии первого уровня
 	weight = @tier3weight2
 	is_rare = yes
 

@@ -102,7 +102,7 @@ asp_mining_station_0 = {
 		}
 		from = { 
 			set_country_flag = asp_minig_station_created
-			country_event = { id = achievement.1 }
+			country_event = { id = asp.11 }
 		 } # Нужно присобачить сюда ивент после завершения строительства - мейби создать специальный проект
 	}
 }

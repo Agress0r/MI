@@ -179,3 +179,9 @@ asp.10.desc:0 "Thanks to more accurate equipment tuning, the crew of the §Y[Thi
 
 requires_asteroid:0 "Asteroid required"
 fallen_empire_warship_small_key:0 "Escort ship"
+
+asp.11.name:0 "§YResource Processing Complex — ready to serve§!"
+asp.11.desc:0 "This complex will not only enrich and process all the resources that have been mined in space, but it will also be able to provide all §Yconstruction ships§! with more advanced technologies of template building."
+
+asp.12.name:0 "§YData Analysis Complex — ready to serve§!"
+asp.12.desc:0 "This scientific facility will improve the efficiency of all scientific units in space, from §Yscience stations§! to §Yscience ships§!."

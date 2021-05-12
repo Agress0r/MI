@@ -3,7 +3,7 @@ tech_asp_research_station_1 = {
 	area = physics
 	tier = 2
 	category = { computing }
-	prerequisites = { "tech_space_science_3" } # Сделаю зависимость от появления
+	prerequisites = { "tech_space_science_3" } # Сделаю зависимость от появления - базируется на 3 техе по добыче науки из космоса
     weight = @tier2weight2
 	is_rare = yes
 
@@ -47,7 +47,7 @@ tech_asp_research_station_2 = {
 	area = physics
 	tier = 4
 	category = { computing }
-	prerequisites = { "tech_asp_research_station_2" }
+	prerequisites = { "tech_asp_research_station_2" } # Сделаю зависимость от появления имеющейся технологии первого уровня
 	weight = @tier3weight2
 	is_rare = yes
 
