@@ -13,6 +13,9 @@ tech_asp_mining_station_1 = {
 		#station_gatherers_produces_mult = 0.15 # Нужно сделать модификатор, который бы накладывался только на редкие ресурсы
 	}
 
+	feature_flags = {
+		asp_station_gatherers_policy
+	}
 	weight_modifier = {
 		modifier = {
 			factor = 9

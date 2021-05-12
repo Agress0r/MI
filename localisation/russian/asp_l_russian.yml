@@ -45,6 +45,23 @@ mod_station_researchers_cost_mult:0 "Стоимость строительств
 mod_shipclass_research_station_build_speed_mult:0 "Скорость строительства научной станции:"
 mod_shipclass_mining_station_build_speed_mult:0 "Скорость строительства добывающей станции:"
 
+policy_asp_station_gatherers_policy:0 "Приоритет добычи станций"
+policy_asp_station_gatherers_policy_desc:0 "Выделение большего бюджета для определённых задач позволит оптимизировать эффективность космической"
+
+asp_station_gatherers_policy_balanced:0 "Сбалансированая добыча"
+asp_station_gatherers_policy_balanced_name:0 "$asp_station_gatherers_policy_balanced$"
+asp_station_gatherers_policy_balanced_desc:0 "Стандартное разделение бюджета.\n\n§EБонусы или штрафы на добычу ресурсов отсутствуют.§!"
+
+asp_station_gatherers_policy_minerals:0 "Приоритет: Минералы"
+asp_station_gatherers_policy_minerals_name:0 "$asp_station_gatherers_policy_minerals$"
+asp_station_gatherers_policy_minerals_desc:0 "Большая часть бюджета уходит на добычу минеральных ископаемых."
+
+asp_station_gatherers_policy_energy:0 "Приоритет: Энергия"
+asp_station_gatherers_policy_energy_name:0 "$asp_station_gatherers_policy_minerals$"
+asp_station_gatherers_policy_energy_desc:0 "Большая часть бюджета уходит на добычу энегретических ресурсов."
+
+feature_asp_station_gatherers_policy:0 "Политика космической добычи"
+feature_asp_station_gatherers_policy_desc:0 "Открывает доступк к политике $policy_asp_station_gatherers_policy$."
 
 requires_asteroid:0 "Требуется астероид"
 
