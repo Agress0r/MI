@@ -141,7 +141,14 @@ fleet_event = {
 				progress = 0.25
 	    }
 	  }
-	  el
+	  else = {
+		add_monthly_resource_mult = {
+			resource = engineering_research
+			value = @tier4researchreward
+			min = @tier4researchmin
+			max = @tier4researchmax
+		}
+	  }
 	}
   }
 }
