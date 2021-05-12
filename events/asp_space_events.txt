@@ -22,6 +22,7 @@ ship_event = {
 		owner = {
 			is_ai = no
 			NOT = {
+				has_country_flag = asp_leader_gained
 				has_country_flag = asp_leader_event_happened
 			}
 		}
@@ -31,7 +32,7 @@ ship_event = {
 		option = {
 			name = asp.1.a
 			set_country_flag = asp_leader_event_happened
-			owner = { country_event = { id = asp.2 } }
+			owner = { country_event = { id = asp.2} }
 		}
 
 	    option = {
@@ -39,15 +40,18 @@ ship_event = {
 		owner = {
 			add_monthly_resource_mult = {
 				resource = society_research
-				value = @tier2researchreward
-				min = @tier2researchmin
-				max = @tier2researchmax
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
 			}
 			add_monthly_resource_mult = {
 				resource = physics_research
-				value = @tier2researchreward
-				min = @tier2researchmin
-				max = @tier2researchmax
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+			}
+			add_resource = {
+				alloys = 350
 			}
 		}
 	}
@@ -72,7 +76,7 @@ country_event = {
 	trigger = {
 		owner = {
 			NOT = {
-				has_country_flag = asp_leader_event_happened
+				has_country_flag = asp_leader_gained
 			}
 		}
 	}
@@ -95,12 +99,32 @@ immediate = {
 					trait = trait_mechanical
 					trait = trait_robot_mass_produced
 					trait = trait_robot_luxurious
-					trait = trait_robot_learning_algorithms
 					trait = trait_robot_high_maintenance
 					trait = trait_robot_logic_engines
+					trait = trait_robot_enhanced_memory
+					trait = trait_robot_learning_algorithms
 				}
 				effect = {
 					save_global_event_target_as = asp_leader_robo_species
+				}
+			}
+
+			create_species = {
+				name = "NAME_asp_mechanical_species_gov"
+				class = ROBOT
+				portrait = "sd_mol_robot"
+				namelist = "AI"
+				traits = {
+					trait = trait_mechanical
+					trait = trait_robot_mass_produced
+					trait = trait_robot_luxurious
+					trait = trait_robot_high_maintenance
+					trait = trait_robot_logic_engines
+					trait = trait_robot_enhanced_memory
+					trait = trait_robot_learning_algorithms
+				}
+				effect = {
+					save_global_event_target_as = asp_leader_robo_species_gov
 				}
 			}
 		}
@@ -109,15 +133,12 @@ immediate = {
 			 # По возможности добавить комнату где ИИ "типо говорит" и даёт выбор, нежели просто событие с кнопками.
 					 option = {
 						name = asp_game_start.2.a
-						trigger = {
-							has_authority = auth_machine_intelligence # Лидер губернатор будет доступен только для машин т.к если выбрать губера из портретов кризиса то там он слишком убого отображается ( речь о отображении на планете, в лидерах все ок)
-						}
                         custom_tooltip = asp.leader.accepted.tooltip
 					    create_leader = {
 						event_leader = yes
 						class = governor
 						name = "Executive unit F90"
-						species = event_target:asp_leader_robo_species
+						species = event_target:asp_leader_robo_species_gov
 						skill = 5
 					 }
                     hidden_effect = { last_created_leader = {set_age = 314 } }
@@ -229,44 +250,8 @@ immediate = {
 	}
 }
 
-# Инициализатор события с дополнительными редкими ресурсами
-ship_event = {
-	id = asp.3
-	hide_window = yes
-	is_triggered_only = yes
-
-
-	trigger = {
-		this = {
-			OR = {
-				from.planet = {
-				has_resource = {
-					type = minerals
-					amount > 0
-				}
-				has_resource = {
-					type = rare_crystals
-					amount > 0
-				}
-			  }
-			}
-		}
-		owner = { 
-			NOT = {
-				has_country_flag = asp_rare_resources_event_cooldown
-				  }
-				}
-	}
-
-	immediate = {
-		from.planet = {
-		save_event_target_as = asp_mineral_stockpile
-		owner = { country_event = { id = asp.4 days = 30 } }
-		}
-	}
-}
 # Событие с дополнительными редкими ресурсами
-country_event = {
+ship_event = {
 	id = asp.4
 	title = "asp.4.name"
 	desc = "asp.4.desc"
@@ -276,34 +261,46 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		event_target:asp_mineral_stockpile = {
-			OR = {
-				from.planet = {
+		from.planet = {
 				has_resource = {
 					type = minerals
 					amount > 0
 				}
-				has_resource = {
-					type = rare_crystals
-					amount > 0
-				}
-			  }
-			}
+	  }
+           owner = { 
+	          NOT = {
+		           has_country_flag = asp_rare_resources_event_cooldown
+		  }
 		}
-	}
+ }
 
 	option = {
 		name = "asp.4.a"
 		owner = {
 			locked_random_list = {
 				33 = {
-					add_resource = { volatile_motes = 85 }
+					add_monthly_resource_mult = { 
+						resource = volatile_motes
+						value = 100
+						min = 40
+						max = 100
+					}
 				}
 				33 = {
-					add_resource = { rare_crystals = 85 }
+					add_monthly_resource_mult = { 
+						resource = rare_crystals
+						value = 100
+						min = 40
+						max = 99
+					}
 				}
 				33 = {
-					add_resource = { exotic_gases = 85 }
+					add_monthly_resource_mult = { 
+						resource = exotic_gases 
+						value = 100
+						min = 40
+						max = 100 
+					}
 				}
 			}
 		}

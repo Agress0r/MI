@@ -1,23 +1,9 @@
 ﻿l_russian:
-# Need to translate all of this - if you find mistakes, let me know (Yet English is not my primary language)
 
-#	log = "- Printing the current scopes (trigger) -"
-#	log = "- This: [This.GetName]"
-#	log = "- Root: [Root.GetName]"
-#	log = "- Prev: [Prev.GetName]"
-#	log = "- PrevPrev: [Prev.Prev.GetName]"
-#	log = "- PrevPrevPrev: [Prev.Prev.Prev.GetName]"
-#	log = "- PrevPrevPrevPrev: [Prev.Prev.Prev.Prev.GetName]"
-#	log = "- From: [From.GetName]"
-#	log = "- FromFrom: [From.From.GetName]"
-#	log = "- FromFromFrom: [From.From.From.GetName]"
-#	log = "- FromFromFromFrom: [From.From.From.From.GetName]"
-#	log = "- This's Solar System: [This.GetStarName]"
-#	log = "- This's Planet: [This.Planet.GetName]"
-#	log = "- This's Sector: [This.Sector.GetName]"
-#	log = "- Root's Solar System: [Root.GetStarName]"
-#	log = "- Root's Owner's Name: [Root.Owner.GetName]"
-#	log = "- Root's Owner's Capital's Name: [Root.Owner.Capital.GetName]"
+##########################################
+# Русская локализация для мода ASP
+# Написал и отредактировал Agress0r Komarov
+##########################################
 
 
 ################################################
@@ -41,10 +27,30 @@ asp_mining_station_2:0 "Усовершенствованный комплекс 
 asp_mining_station_2_DESC:0 "Данный комплекс не только обогащает и обрабатывает все ресурсы что были добыты в космосе, но так же обеспечивает все строительные корабли более передовыми технологиями шаблонной застройки."
 requires_no_existing_asp_mining_station:0 "$TRIGGER_FAIL$Нельзя построить больше одного комплекса обработки ресурсов."
 
+#######################################################
+### Переменные стоимости, обсуживания, производства ###
+#######################################################
 mod_station_researchers_cost_mult:0 "Стоимость строительства научной станции:"
 mod_shipclass_research_station_build_speed_mult:0 "Скорость строительства научной станции:"
 mod_shipclass_mining_station_build_speed_mult:0 "Скорость строительства добывающей станции:"
 
+mod_station_gatherers_exotic_gases_produces_mult:0 "Добывающие станции — производство газов"
+mod_station_gatherers_rare_crystals_produces_mult:0 "Добывающие станции — производство кристалов"
+mod_station_gatherers_volatile_motes_produces_mult:0 "Добывающие станции — производство пылинок"
+
+mod_station_researchers_engineering_research_produces_mult:0 "Производство очков инженерных исследований научными станциями"
+mod_station_researchers_society_research_produces_mult:0 "Производство очков физических исследований научными станциями"
+mod_station_researchers_physics_research_produces_mult:0 "Производство очков социологических исследований научными станциями"
+
+#############
+### Указы ###
+#############
+edict_asp_rare_resources_production:0 "Обработка редких ресурсов"
+edict_asp_rare_resources_production_desc:0 "Добыча редких космических ресурсов весьма трудное занятие, по этому их правильная обработка поможет увеличить качество и количество."
+
+################
+### Политики ###
+################
 policy_asp_station_gatherers_policy:0 "Приоритет добывающих станций"
 policy_asp_station_gatherers_policy_desc:0 "Выделение большего бюджета для определённых задач позволит оптимизировать эффективность космической добычи."
 
@@ -63,45 +69,32 @@ asp_station_gatherers_policy_energy_desc:0 "Большая часть бюдже
 option_station_gatherers_policy:0 "§HПолитика:§! Приоритет добывающих станций"
 option_station_gatherers_policy_desc:0 "Открывает доступк к политике §Y$policy_asp_station_gatherers_policy$§!."
 
-edict_asp_rare_resources_production:0 "Обработка редких ресурсов"
-edict_asp_rare_resources_production_desc:0 "Добыча редких космических ресурсов весьма трудное занятие, по этому их правильная обработка поможет увеличить качество и количество."
-
-requires_asteroid:0 "Требуется астероид"
-
-mod_station_gatherers_exotic_gases_produces_mult:0 "Добывающие станции — производство газов"
-mod_station_gatherers_rare_crystals_produces_mult:0 "Добывающие станции — производство кристалов"
-mod_station_gatherers_volatile_motes_produces_mult:0 "Добывающие станции — производство пылинок"
-
-mod_station_researchers_engineering_research_produces_mult:0 "Производство очков инженерных исследований научными станциями"
-mod_station_researchers_society_research_produces_mult:0 "Производство очков физических исследований научными станциями"
-mod_station_researchers_physics_research_produces_mult:0 "Производство очков социологических исследований научными станциями"
-
 policy_asp_station_researchers_policy:0 "Приоритет научных станций"
 policy_asp_station_researchers_policy_desc:0 "Научные подразделения в космосе имеют несколько направлений - перераспределение приоритетов увеличит эффективность одной отрасли, но ослабит другие."
+
 asp_station_researchers_policy_balanced:0 "Сбалансированое распределение"
 asp_station_researchers_policy_balanced_desc:0 "Стандартное разделение бюджета.\n\n§EБонусы или штрафы на добычу ресурсов отсутствуют.§!"
+
 asp_station_researchers_policy_eng:0 "Приоритет: инженерия"
 asp_station_researchers_policy_eng_desc:0 "Повышен приоритет для инженерных исследований."
+
 asp_station_researchers_policy_phys:0 "Приоритет: физика"
 asp_station_researchers_policy_phys_desc:0 "Повышен приоритет для физических исследований."
+
 asp_station_researchers_policy_soci:0 "Приоритет: социология"
 asp_station_researchers_policy_soci_desc:0 "Повышен приоритет для социологических исследований."
 
 option_station_researchers_policy:0 "§HПолитика:§! Приоритет научных станций"
 option_station_researchers_policy_desc:0 "Открывает доступк к политике §Y$policy_asp_station_researchers_policy$§!."
 
-special_mi_constructor:0 "REPLACE_ME"
-special_mi_constructor_plural:0 "REPLACE_ME"
-
+##################
+### Технологии ###
+##################
 tech_asp_research_station_1:0 "$asp_research_station_0$"
 tech_asp_research_station_1_desc:0 "$asp_research_station_0_MEGASTRUCTURE_DETAILS$"
 
 tech_asp_research_station_2:0 "$asp_research_station_2$"
 tech_asp_research_station_2_desc:0 "$asp_research_station_0_MEGASTRUCTURE_DETAILS$"
-
-special_mining_destroyer:0 "REPLACE_ME"
-special_mining_destroyer_plural:0 "REPLACE_ME"
-MIDESTROYER:0 "REPLACE_ME"
 
 tech_asp_mining_station_1:0 "$asp_mining_station_0$"
 tech_asp_mining_station_1_desc:0 "$asp_mining_station_0_MEGASTRUCTURE_DETAILS$"
@@ -109,22 +102,38 @@ tech_asp_mining_station_1_desc:0 "$asp_mining_station_0_MEGASTRUCTURE_DETAILS$"
 tech_asp_mining_station_2:0 "$asp_mining_station_2$"
 tech_asp_mining_station_2_desc:0 "$asp_mining_station_0_MEGASTRUCTURE_DETAILS$"
 
-MI_DESTROYER_1L_2M_2S:0 "REPLACE_ME"
-destroyer_combat_computers:0 "REPLACE_ME"
-asp.1.name:0 "REPLACE_ME"
-asp.1.desc:0 "REPLACE_ME"
-asp.1.a:0 "REPLACE_ME"
-asp.1.b:0 "REPLACE_ME"
-asp.2.name:0 "REPLACE_ME"
-asp.2.desc:0 "REPLACE_ME"
-NAME_asp_mechanical_species:0 "REPLACE_ME"
-asp_game_start.2.a:0 "REPLACE_ME"
-aos.leader.accepted.tooltip:0 "REPLACE_ME"
-asp_game_start.2.b:0 "REPLACE_ME"
-asp_game_start.2.c:0 "REPLACE_ME"
-asp_game_start.2.d:0 "REPLACE_ME"
-asp.leader.accepted.tooltip:0 "REPLACE_ME"
-asp_game_start.2.e:0 "REPLACE_ME"
+#############################
+### Все возможные события ###
+#############################
+
+### Событие с ИИ на планете
+asp.1.name:0 "Энергетическая сигнатура"
+asp.1.desc:0 "Во время строительства §Y[This.GetName]§! обнаружил странные сигналы, исходящие от §Y[From.Planet.GetName]§!.\n\nСудя по всему это некое подобие хранилища данных, а главный компьютер похоже всё ещё в строю. Из извлечённых данных можно понять что некогда это был §RИИ§! занимавший одну из руководящих должностей, в империи, данных о которой практически не осталось.\n\n§YПроизвести реактивацию матрицы ИИ§!?"
+asp.1.a:0 "§YНачать процесс реактивации§!"
+asp.1.b:0 "Разберите и детально изучите останки"
+
+aos_game_start.115.a:0 "Загрузить матрицу Губернатора"
+aos_game_start.115.b:0 "Загрузить матрицу Исследователя"
+aos_game_start.115.c:0 "Загрузить матрицу Адмирала"
+aos_game_start.115.d:0 "Загрузить матрицу Генерала"
+aos_game_start.115.e:0 "Разобрать ИИ"
+
+asp.2.name:0 "Исполнитель VSX-03"
+asp.2.desc:0 "§GАктивация завершена...§! §YВывод остальных компонентов из режима ожидания...§!\n\nПосле томительного ожидания на экране начали появляться сообщения. После их анализа и перевода стало ясно, что ранее этот §YИИ§! мог спокойно адаптироваться под разные правительственные должности, а после последней активации из за сбоев в системе распознавания он принял нас за своих, по этому был запущен и инициализирован стандартный протокол.\n\nСтоит ли нам воспользоваться возможность или же лучше разобрать его?"
+asp_game_start.2.a:0 "Загрузить матрицу Губернатора"
+asp_game_start.2.b:0 "Загрузить матрицу Исследователя"
+asp_game_start.2.c:0 "Загрузить матрицу Адмирала"
+asp_game_start.2.d:0 "Загрузить матрицу Генерала"
+asp_game_start.2.e:0 "Разобрать ИИ"
+
+asp.leader.accepted.tooltip:0 "ИИ будет активирован и §Yдобавлен в список лидеров§!."
+NAME_asp_mechanical_species:0 "Executive unit"
+NAME_asp_mechanical_species_gov:0 "Alges"
+
+### Событие с дополнительным редким ресурсом
+asp.4.name:0 "§YНайдены ресурсы§!"
+asp.4.desc:0 "Во время строительства станции над планетой §Y[From.Planet.GetName]§! были найдены несколько контейнеров. Как оказалось внутри было некоторое количество редких ресурсов."
+asp.4.a:0 "Это пригодится"
 
 asp_ancrel_site:0 "REPLACE_ME"
 asp_ancrel_site_desc:0 "REPLACE_ME"
@@ -134,9 +143,6 @@ asp_ancrel.2.name:0 "REPLACE_ME"
 asp_ancrel.2.desc:0 "REPLACE_ME"
 asp_ancrel.3.name:0 "REPLACE_ME"
 asp_ancrel.3.desc:0 "REPLACE_ME"
-asp.4.name:0 "REPLACE_ME"
-asp.4.a:0 "REPLACE_ME"
-asp.4.desc:0 "REPLACE_ME"
 asp.5.name:0 "REPLACE_ME"
 asp.5.desc:0 "REPLACE_ME"
 asp.6.name:0 "REPLACE_ME"
@@ -157,3 +163,9 @@ asp.9.desc:0 "REPLACE_ME"
 
 asp.10.name:0 "REPLACE_ME"
 asp.10.desc:0 "REPLACE_ME"
+
+##############
+### Другое ###
+##############
+
+requires_asteroid:0 "Требуется астероид"
