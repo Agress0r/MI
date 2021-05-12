@@ -10,6 +10,14 @@ tech_asp_research_station_1 = {
 	modifier = {
 		#station_gatherers_produces_mult = 0.15 # Нужно сделать модификатор, который бы накладывался только на редкие ресурсы
 	}
+
+	prereqfor_desc = {
+		custom = {
+			title = option_station_researchers_policy
+			desc = option_station_researchers_policy_desc
+		}
+	}
+
 	weight_modifier = {
 		modifier = {
 			factor = 9
