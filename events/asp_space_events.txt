@@ -279,27 +279,18 @@ ship_event = {
 		owner = {
 			locked_random_list = {
 				33 = {
-					add_monthly_resource_mult = { 
-						resource = volatile_motes
-						value = 100
-						min = 40
-						max = 100
+					add_resource = { 
+						volatile_motes = 85
 					}
 				}
 				33 = {
-					add_monthly_resource_mult = { 
-						resource = rare_crystals
-						value = 100
-						min = 40
-						max = 99
+					add_resource = {
+						rare_crystals = 85
 					}
 				}
 				33 = {
-					add_monthly_resource_mult = { 
-						resource = exotic_gases 
-						value = 100
-						min = 40
-						max = 100 
+					add_resource = { 
+						exotic_gases = 85
 					}
 				}
 			}
