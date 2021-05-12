@@ -1,5 +1,5 @@
 # Модовые компании
-
+ ## Компания по дополнительному производству редких ресурсов на 10 лет + 15%
 asp_rare_resources_production = {
 	length = 3600
 	icon = "GFX_edict_type_time"

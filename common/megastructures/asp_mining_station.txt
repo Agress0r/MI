@@ -2,8 +2,8 @@
 asp_mining_station_0 = {
 	entity = "ancient_drone_01_mining_station_entity"
 	construction_entity = "ancient_drone_01_mining_station_entity"
-	portrait = "GFX_megastructure_construction_background" # Мб заменить, ибо на неё игрок будет натыкаться иногда
-	prerequisites = { "tech_asp_mining_station_1" }		# Нужно добавить зависимость от технологии
+	portrait = "GFX_evt_mining_station" # Заменил на Mining Station - было megastructure_construction
+	prerequisites = { "tech_asp_mining_station_1" }	
 
 	possible = {
 		exists = starbase
@@ -32,7 +32,7 @@ asp_mining_station_0 = {
 		}
 	}
 	show_prereqs = yes
-	victory_score = 1600
+	victory_score = 1900
 	
 	place_entity_on_planet_plane = no
 
@@ -46,7 +46,7 @@ asp_mining_station_0 = {
 		cost = {
 			alloys = 5000
 			influence = 150
-			minerals = 2500
+			minerals = 7500
 		}
 		upkeep = {
 			energy = 45
@@ -59,10 +59,9 @@ asp_mining_station_0 = {
 	}
 	country_modifier = {
 		station_gatherers_produces_mult = 0.15
-		#shipclass_mining_station_build_cost_mult = -0.15
 		station_gatherers_cost_mult = -0.15
-		shipclass_mining_station_build_speed_mult = 0.30 # С каждым уровнем можно по 20 накидывать - работает
-		country_resource_max_add = 25000
+		shipclass_mining_station_build_speed_mult = 0.30 # С каждым уровнем можно по 30 накидывать - работает
+		country_resource_max_add = 25000 # Приятный бонус сверху
 	}
 	
 	placement_rules = {
@@ -91,7 +90,7 @@ asp_mining_station_0 = {
 
 	construction_blocked_by_others = yes
 
-	ai_weight = { factor = 8 } # Тут надо подумать т.к иишка тоже будет строить эту дичь
+	ai_weight = { factor = 8 } # Тут надо подумать т.к иишка тоже будет строить эту дичь - тесты работяг после релиза покажут + сам потестирую :D
 	on_build_start = {}
 	on_build_cancel = {}
 	on_build_complete = {
@@ -101,15 +100,18 @@ asp_mining_station_0 = {
 			set_planet_flag = asteroid_has_mining_drone_station
 			clear_deposits = yes
 		}
-		from = { set_country_flag = asp_minig_station_created } # Нужно присобачить сюда ивент после завершения строительства - мейби создать специальный проект
+		from = { 
+			set_country_flag = asp_minig_station_created
+			country_event = { id = achievement.1 }
+		 } # Нужно присобачить сюда ивент после завершения строительства - мейби создать специальный проект
 	}
 }
 
 asp_mining_station_2 = {
 	entity = "drone_homebase_hull_entity"
 	construction_entity = "drone_homebase_hull_entity"
-	portrait = "GFX_megastructure_construction_background" # Мб заменить, ибо на неё игрок будет натыкаться иногда
-	prerequisites = { "tech_asp_mining_station_2" }		# Нужно добавить зависимость от технологии
+	portrait = "GFX_evt_mining_station" # Заменил на Mining Station - было megastructure_construction
+	prerequisites = { "tech_asp_mining_station_2" }	
 	place_entity_on_planet_plane = no
 	entity_offset = { x = -7 y = -7 }
 	build_time = 2800

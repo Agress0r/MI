@@ -626,3 +626,34 @@ ship_event = {
 		set_timed_country_flag = { flag = asp_rare_resource_cooldown days = 780 }
 	}
 }
+
+### Завершение строительства комплекса по переработке
+country_event = {
+	id = asp.11
+	title = "asp.11.name"
+	desc = "asp.11.desc"
+	picture = GFX_evt_mining_station
+	show_sound = event_radio_chatter
+	location = FROM
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EXCELLENT
+	}
+}
+### Завершение строительства комлекса анализа данных
+country_event = {
+	id = asp.12
+	title = "asp.12.name"
+	desc = "asp.12.desc"
+	picture = GFX_evt_atmospheric_entry
+	show_sound = event_radio_chatter
+	location = FROM
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EXCELLENT
+	}
+}
