@@ -33,7 +33,7 @@ asp_research_station_0 = {
 		}
 	}
 
-
+	show_prereqs = yes
 	victory_score = 1600
 	
 	place_entity_on_planet_plane = no
@@ -46,8 +46,8 @@ asp_research_station_0 = {
 	resources = {
 		category = megastructures
 		cost = {
-			influence = 150
 			alloys = 4400
+			influence = 150
 			minerals = 2500
 		}
 		upkeep = {
@@ -144,6 +144,7 @@ asp_research_station_2 = {
 		physics_research = 100
 		}
 	}
+	show_prereqs = yes
 	country_modifier = {
 		station_researchers_produces_mult = 0.30
 		station_researchers_cost_mult = -0.30

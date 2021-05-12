@@ -31,7 +31,7 @@ asp_mining_station_0 = {
 			from = { NOT = { has_country_flag = asp_minig_station_created } }
 		}
 	}
-
+	show_prereqs = yes
 	victory_score = 1600
 	
 	place_entity_on_planet_plane = no
@@ -45,12 +45,12 @@ asp_mining_station_0 = {
 		category = megastructures
 		cost = {
 			alloys = 5000
-			minerals = 2500
 			influence = 150
+			minerals = 2500
 		}
 		upkeep = {
 			energy = 45
-			volatile_motes = 2
+			rare_crystals = 3
 		}
 		produces = {
         minerals = 100
@@ -120,16 +120,14 @@ asp_mining_station_2 = {
 		}
 		upkeep = {
 			energy = 85
-			volatile_motes = 2
-			exotic_gases = 2
-			rare_crystals = 2
+			rare_crystals = 6
 		}
 		produces = {
         minerals = 450
 		alloys = 100
 		}
 	}
-
+	show_prereqs = yes
 	upgrade_from = {
 		asp_mining_station_0
 	}
