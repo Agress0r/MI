@@ -500,7 +500,6 @@ ship_event = {
 
 	option = {
 		name = asp.8.b
-		custom_tooltip = asp.8.b.tooltip
 		hidden_effect = {
 			add_monthly_resource_mult = {
 				resource = engineering_research
@@ -542,7 +541,7 @@ ship_event = {
 	#mean_time_to_happen = { days = 40 }
 
 	option = {
-		name = EXCELLENT
+		name = UNDERSTOOD
 		From = {
 			locked_random_list = {
 				33 = {
@@ -594,7 +593,7 @@ ship_event = {
 	#mean_time_to_happen = { days = 40 }
 
 	option = {
-		name = EXCELLENT
+		name = MAKE_IT_SO
 		From = {
 			if = {
 				limit = {		
