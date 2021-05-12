@@ -60,8 +60,8 @@ asp_station_gatherers_policy_energy:0 "Приоритет: Энергия"
 asp_station_gatherers_policy_energy_name:0 "$asp_station_gatherers_policy_minerals$"
 asp_station_gatherers_policy_energy_desc:0 "Большая часть бюджета уходит на добычу энегретических ресурсов."
 
-feature_asp_station_gatherers_policy:0 "Политика космической добычи"
-feature_asp_station_gatherers_policy_desc:0 "Открывает доступк к политике $policy_asp_station_gatherers_policy$."
+feature_station_gatherers_policy:0 "Политика космической добычи"
+feature_station_gatherers_policy_desc:0 "Открывает доступк к политике $policy_asp_station_gatherers_policy$."
 
 requires_asteroid:0 "Требуется астероид"
 
