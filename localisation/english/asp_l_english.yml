@@ -18,19 +18,63 @@
 #	log = "- Root's Solar System: [Root.GetStarName]"
 #	log = "- Root's Owner's Name: [Root.Owner.GetName]"
 #	log = "- Root's Owner's Capital's Name: [Root.Owner.Capital.GetName]"
-asp_research_station_0:0 "REPLACE_ME"
-asp_research_station_0_DESC:0 "REPLACE_ME"
-asp_research_station_0_MEGASTRUCTURE_DETAILS:0 "REPLACE_ME"
-asp_research_station_2:0 "REPLACE_ME"
-asp_research_station_2_DESC:0 "REPLACE_ME"
-asp_mining_station_0:0 "REPLACE_ME"
-asp_mining_station_0_DESC:0 "REPLACE_ME"
-asp_mining_station_0_MEGASTRUCTURE_DETAILS:0 "REPLACE_ME"
-requires_asteroid:0 "REPLACE_ME"
-asp_mining_station_2:0 "REPLACE_ME"
-asp_mining_station_2_DESC:0 "REPLACE_ME"
+
+
+################################################
+### Мегасооружение - Комплекс анализа данных ###
+################################################
+asp_research_station_0:0 "Комплекс анализа данных"
+asp_research_station_0_DESC:0 "Данное научное сооружение улучшает эффективность всех научных подразделенний в космосе, начиная от §Yнаучных станций§! и заканчивая §Yнаучными кораблями§!."
+asp_research_station_0_MEGASTRUCTURE_DETAILS:0 "§Y$asp_research_station_0$§! улучшает эффективность работы §Yнаучных станций§! и §Yнаучных кораблей§!."
+asp_research_station_2:0 "Усовершенствованный комплекс анализа данных"
+asp_research_station_2_DESC:0 "Данное научное сооружение улучшает эффективность всех научных подразделенний в космосе, начиная от §Yнаучных станций§! и заканчивая §Yнаучными кораблями§!."
+requires_no_existing_research_station:0 "$TRIGGER_FAIL$Нельзя построить больше одного комплекса анализа данных."
+
+
+####################################################
+### Мегасооружение - Комплекс обработки ресурсов ###
+####################################################
+asp_mining_station_0:0 "Комплекс обработки ресурсов"
+asp_mining_station_0_DESC:0 "Данный комплекс не только обогащает и обрабатывает все ресурсы что были добыты в космосе, но так же обеспечивает все §Yстроительные корабли§! более передовыми технологиями шаблонной застройки."
+asp_mining_station_0_MEGASTRUCTURE_DETAILS:0 "§Y$asp_mining_station_0$§! обогащает и обрабатывает все ресурсы что были добыты в космосе."
+asp_mining_station_2:0 "Усовершенствованный комплекс обработки ресурсов"
+asp_mining_station_2_DESC:0 "Данный комплекс не только обогащает и обрабатывает все ресурсы что были добыты в космосе, но так же обеспечивает все строительные корабли более передовыми технологиями шаблонной застройки."
+requires_no_existing_asp_mining_station:0 "$TRIGGER_FAIL$Нельзя построить больше одного комплекса обработки ресурсов."
+
+mod_station_researchers_cost_mult:0 "Стоимость строительства научной станции:"
+mod_shipclass_research_station_build_speed_mult:0 "Скорость строительства научной станции:"
+mod_shipclass_mining_station_build_speed_mult:0 "Скорость строительства добывающей станции:"
+
+policy_asp_station_gatherers_policy:0 "Приоритет добычи станций"
+policy_asp_station_gatherers_policy_desc:0 "Выделение большего бюджета для определённых задач позволит оптимизировать эффективность космической"
+
+asp_station_gatherers_policy_balanced:0 "Сбалансированая добыча"
+asp_station_gatherers_policy_balanced_name:0 "$asp_station_gatherers_policy_balanced$"
+asp_station_gatherers_policy_balanced_desc:0 "Стандартное разделение бюджета.\n\n§EБонусы или штрафы на добычу ресурсов отсутствуют.§!"
+
+asp_station_gatherers_policy_minerals:0 "Приоритет: Минералы"
+asp_station_gatherers_policy_minerals_name:0 "$asp_station_gatherers_policy_minerals$"
+asp_station_gatherers_policy_minerals_desc:0 "Большая часть бюджета уходит на добычу минеральных ископаемых."
+
+asp_station_gatherers_policy_energy:0 "Приоритет: Энергия"
+asp_station_gatherers_policy_energy_name:0 "$asp_station_gatherers_policy_minerals$"
+asp_station_gatherers_policy_energy_desc:0 "Большая часть бюджета уходит на добычу энегретических ресурсов."
+
+option_station_gatherers_policy:0 "§HПолитика:§! Приоритет добычи станций"
+option_station_gatherers_policy_desc:0 "Открывает доступк к политике §Y$policy_asp_station_gatherers_policy$§!."
+
+edict_asp_rare_resources_production:0 "Обработка редких ресурсов"
+edict_asp_rare_resources_production_desc:0 "Добыча редких космических ресурсов весьма трудное занятие, по этому их правильная обработка поможет увеличить качество и количество."
+
+requires_asteroid:0 "Требуется астероид"
+
+mod_station_gatherers_exotic_gases_produces_mult:0 "Добывающие станции — производство газов"
+mod_station_gatherers_rare_crystals_produces_mult:0 "Добывающие станции — производство кристалов"
+mod_station_gatherers_volatile_motes_produces_mult:0 "Добывающие станции — производство пылинок"
+
 special_mi_constructor:0 "REPLACE_ME"
 special_mi_constructor_plural:0 "REPLACE_ME"
+
 tech_asp_research_station_1:0 "REPLACE_ME"
 tech_asp_research_station_1_desc:0 "REPLACE_ME"
 tech_asp_research_station_2:0 "REPLACE_ME"
@@ -38,12 +82,13 @@ tech_asp_research_station_2_desc:0 "REPLACE_ME"
 special_mining_destroyer:0 "REPLACE_ME"
 special_mining_destroyer_plural:0 "REPLACE_ME"
 MIDESTROYER:0 "REPLACE_ME"
-requires_no_existing_asp_mining_station:0 "REPLACE_ME"
-requires_no_existing_research_station:0 "REPLACE_ME"
-tech_asp_mining_station_1:0 "REPLACE_ME"
-tech_asp_mining_station_1_desc:0 "REPLACE_ME"
-tech_asp_mining_station_2:0 "REPLACE_ME"
-tech_asp_mining_station_2_desc:0 "REPLACE_ME"
+
+tech_asp_mining_station_1:0 "$asp_mining_station_0$"
+tech_asp_mining_station_1_desc:0 "$asp_mining_station_0_MEGASTRUCTURE_DETAILS$"
+
+tech_asp_mining_station_2:0 "$asp_mining_station_2$"
+tech_asp_mining_station_2_desc:0 "$asp_mining_station_0_MEGASTRUCTURE_DETAILS$"
+
 MI_DESTROYER_1L_2M_2S:0 "REPLACE_ME"
 destroyer_combat_computers:0 "REPLACE_ME"
 asp.1.name:0 "REPLACE_ME"
