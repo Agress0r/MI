@@ -59,7 +59,7 @@ tech_asp_mining_station_2 = {
 	is_rare = yes
 
 	modifier = {
-		#station_gatherers_rare_produces_mult = 0.5 # Нужно сделать модификатор, который бы накладывался только на редкие ресурсы
+		station_researchers_produces_mult = 0.15
 	}
 
 	weight_modifier = {

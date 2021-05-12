@@ -52,7 +52,7 @@ asp_research_station_0 = {
 		}
 		upkeep = {
 			energy = 45
-			exotic_gases = 2
+			exotic_gases = 3
 		}
 		produces = {
 		society_research = 50
@@ -134,9 +134,8 @@ asp_research_station_2 = {
 			minerals = 6700
 		}
 		upkeep = {
-			energy = 45
-			exotic_gases = 2
-			sr_dark_matter = 2
+			energy = 85
+			exotic_gases = 6
 		}
 		produces = {
 		society_research = 100
