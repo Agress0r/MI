@@ -53,7 +53,8 @@ asp_mining_station_0 = {
 			rare_crystals = 3
 		}
 		produces = {
-        minerals = 100
+        minerals = 225
+		alloys = 50
 		}
 	}
 	country_modifier = {

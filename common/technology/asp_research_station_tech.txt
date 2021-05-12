@@ -7,10 +7,6 @@ tech_asp_research_station_1 = {
     weight = @tier2weight2
 	is_rare = yes
 
-	modifier = {
-		#station_gatherers_produces_mult = 0.15 # Нужно сделать модификатор, который бы накладывался только на редкие ресурсы
-	}
-
 	prereqfor_desc = {
 		custom = {
 			title = option_station_researchers_policy
@@ -47,7 +43,7 @@ tech_asp_research_station_1 = {
 	}
 }
 tech_asp_research_station_2 = {
-	cost = @tier5cost3
+	cost = 38000
 	area = physics
 	tier = 4
 	category = { computing }
@@ -55,6 +51,9 @@ tech_asp_research_station_2 = {
 	weight = @tier3weight2
 	is_rare = yes
 
+	modifier = {
+		station_researchers_produces_mult = 0.15
+	}
 
 	weight_modifier = {
 		modifier = {

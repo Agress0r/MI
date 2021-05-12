@@ -50,7 +50,7 @@ tech_asp_mining_station_1 = {
 }
 
 tech_asp_mining_station_2 = {
-	cost = @tier5cost2
+	cost = 35000
 	area = engineering
 	tier = 4
 	category = { industry }
@@ -59,7 +59,6 @@ tech_asp_mining_station_2 = {
 	is_rare = yes
 
 	modifier = {
-		station_researchers_produces_mult = 0.15
 	}
 
 	weight_modifier = {

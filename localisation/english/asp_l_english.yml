@@ -52,11 +52,11 @@ asp_station_gatherers_policy_balanced:0 "Сбалансированая добы
 asp_station_gatherers_policy_balanced_name:0 "$asp_station_gatherers_policy_balanced$"
 asp_station_gatherers_policy_balanced_desc:0 "Стандартное разделение бюджета.\n\n§EБонусы или штрафы на добычу ресурсов отсутствуют.§!"
 
-asp_station_gatherers_policy_minerals:0 "Приоритет: Минералы"
+asp_station_gatherers_policy_minerals:0 "Приоритет: минералы"
 asp_station_gatherers_policy_minerals_name:0 "$asp_station_gatherers_policy_minerals$"
 asp_station_gatherers_policy_minerals_desc:0 "Большая часть бюджета уходит на добычу минеральных ископаемых."
 
-asp_station_gatherers_policy_energy:0 "Приоритет: Энергия"
+asp_station_gatherers_policy_energy:0 "Приоритет: энергия"
 asp_station_gatherers_policy_energy_name:0 "$asp_station_gatherers_policy_minerals$"
 asp_station_gatherers_policy_energy_desc:0 "Большая часть бюджета уходит на добычу энегретических ресурсов."
 
@@ -71,6 +71,10 @@ requires_asteroid:0 "Требуется астероид"
 mod_station_gatherers_exotic_gases_produces_mult:0 "Добывающие станции — производство газов"
 mod_station_gatherers_rare_crystals_produces_mult:0 "Добывающие станции — производство кристалов"
 mod_station_gatherers_volatile_motes_produces_mult:0 "Добывающие станции — производство пылинок"
+
+mod_station_researchers_engineering_research_produces_mult:0 "Производство очков инженерных исследований научными станциями"
+mod_station_researchers_society_research_produces_mult:0 "Производство очков физических исследований научными станциями"
+mod_station_researchers_physics_research_produces_mult:0 "Производство очков социологических исследований научными станциями"
 
 policy_asp_station_researchers_policy:0 "Приоритет научных станций"
 policy_asp_station_researchers_policy_desc:0 "Научные подразделения в космосе имеют несколько направлений - перераспределение приоритетов увеличит эффективность одной отрасли, но ослабит другие."
@@ -89,10 +93,12 @@ option_station_researchers_policy_desc:0 "Открывает доступк к �
 special_mi_constructor:0 "REPLACE_ME"
 special_mi_constructor_plural:0 "REPLACE_ME"
 
-tech_asp_research_station_1:0 "REPLACE_ME"
-tech_asp_research_station_1_desc:0 "REPLACE_ME"
-tech_asp_research_station_2:0 "REPLACE_ME"
-tech_asp_research_station_2_desc:0 "REPLACE_ME"
+tech_asp_research_station_1:0 "$asp_research_station_0$"
+tech_asp_research_station_1_desc:0 "$asp_research_station_0_MEGASTRUCTURE_DETAILS$"
+
+tech_asp_research_station_2:0 "$asp_research_station_2$"
+tech_asp_research_station_2_desc:0 "$asp_research_station_0_MEGASTRUCTURE_DETAILS$"
+
 special_mining_destroyer:0 "REPLACE_ME"
 special_mining_destroyer_plural:0 "REPLACE_ME"
 MIDESTROYER:0 "REPLACE_ME"
