@@ -45,8 +45,8 @@ mod_station_researchers_cost_mult:0 "Стоимость строительств
 mod_shipclass_research_station_build_speed_mult:0 "Скорость строительства научной станции:"
 mod_shipclass_mining_station_build_speed_mult:0 "Скорость строительства добывающей станции:"
 
-policy_asp_station_gatherers_policy:0 "Приоритет добычи станций"
-policy_asp_station_gatherers_policy_desc:0 "Выделение большего бюджета для определённых задач позволит оптимизировать эффективность космической"
+policy_asp_station_gatherers_policy:0 "Приоритет добывающих станций"
+policy_asp_station_gatherers_policy_desc:0 "Выделение большего бюджета для определённых задач позволит оптимизировать эффективность космической добычи."
 
 asp_station_gatherers_policy_balanced:0 "Сбалансированая добыча"
 asp_station_gatherers_policy_balanced_name:0 "$asp_station_gatherers_policy_balanced$"
@@ -60,7 +60,7 @@ asp_station_gatherers_policy_energy:0 "Приоритет: Энергия"
 asp_station_gatherers_policy_energy_name:0 "$asp_station_gatherers_policy_minerals$"
 asp_station_gatherers_policy_energy_desc:0 "Большая часть бюджета уходит на добычу энегретических ресурсов."
 
-option_station_gatherers_policy:0 "§HПолитика:§! Приоритет добычи станций"
+option_station_gatherers_policy:0 "§HПолитика:§! Приоритет добывающих станций"
 option_station_gatherers_policy_desc:0 "Открывает доступк к политике §Y$policy_asp_station_gatherers_policy$§!."
 
 edict_asp_rare_resources_production:0 "Обработка редких ресурсов"
@@ -71,6 +71,20 @@ requires_asteroid:0 "Требуется астероид"
 mod_station_gatherers_exotic_gases_produces_mult:0 "Добывающие станции — производство газов"
 mod_station_gatherers_rare_crystals_produces_mult:0 "Добывающие станции — производство кристалов"
 mod_station_gatherers_volatile_motes_produces_mult:0 "Добывающие станции — производство пылинок"
+
+policy_asp_station_researchers_policy:0 "Приоритет научных станций"
+policy_asp_station_researchers_policy_desc:0 "Научные подразделения в космосе имеют несколько направлений - перераспределение приоритетов увеличит эффективность одной отрасли, но ослабит другие."
+asp_station_researchers_policy_balanced:0 "Сбалансированое распределение"
+asp_station_researchers_policy_balanced_desc:0 "Стандартное разделение бюджета.\n\n§EБонусы или штрафы на добычу ресурсов отсутствуют.§!"
+asp_station_researchers_policy_eng:0 "Приоритет: инженерия"
+asp_station_researchers_policy_eng_desc:0 "Повышен приоритет для инженерных исследований."
+asp_station_researchers_policy_phys:0 "Приоритет: физика"
+asp_station_researchers_policy_phys_desc:0 "Повышен приоритет для физических исследований."
+asp_station_researchers_policy_soci:0 "Приоритет: социология"
+asp_station_researchers_policy_soci_desc:0 "Повышен приоритет для социологических исследований."
+
+option_station_researchers_policy:0 "§HПолитика:§! Приоритет научных станций"
+option_station_researchers_policy_desc:0 "Открывает доступк к политике §Y$policy_asp_station_researchers_policy$§!."
 
 special_mi_constructor:0 "REPLACE_ME"
 special_mi_constructor_plural:0 "REPLACE_ME"
