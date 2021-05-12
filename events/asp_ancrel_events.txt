@@ -8,8 +8,8 @@ fleet_event = {
 	id = asp_ancrel.1
 	title = "asp_ancrel.1.name"
 	desc = asp_ancrel.1.desc
-	picture = GFX_evt_relic_world_street
-	show_sound = event_wind_ruins
+	picture = GFX_evt_ancient_databank
+	show_sound = event_big_door_opening
 	location = from
 
 	archaeology = yes
@@ -17,33 +17,26 @@ fleet_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = OK
+		name = INTERESTING
 		owner = {
-			locked_random_list = {
-				33 = {
+			        medium_artifact_reward = yes
 					add_monthly_resource_mult = {
      					resource = society_research
      					value = @tier2researchreward
      					min = @tier2researchmin
      					max = @tier2researchmax
      				}
+					 add_monthly_resource_mult = {
+						resource = engineering_research
+						value = @tier2researchreward
+						min = @tier2researchmin
+						max = @tier2researchmax
 				}
-				33 = {
 					add_monthly_resource_mult = {
-     					resource = engineering_research
-     					value = @tier2researchreward
-     					min = @tier2researchmin
-     					max = @tier2researchmax
-     				}
-				}
-				33 = {
-					add_monthly_resource_mult = {
-     					resource = physics_research
-     					value = @tier2researchreward
-     					min = @tier2researchmin
-     					max = @tier2researchmax
-     				}
-				}
+						resource = physics_research
+						value = @tier2researchreward
+						min = @tier2researchmin
+						max = @tier2researchmax
 			}
 		}
 	}
@@ -54,8 +47,8 @@ fleet_event = {
 	id = asp_ancrel.2
 	title = "asp_ancrel.2.name"
 	desc = asp_ancrel.2.desc
-	picture = GFX_evt_relic_world_street
-	show_sound = event_wind_ruins
+	picture = GFX_evt_crusher_droid
+	show_sound = event_dig_site
 	location = from
 
 	archaeology = yes
@@ -65,35 +58,30 @@ fleet_event = {
 	option = {
 		name = OK
 		owner = {
-			locked_random_list = {
-				50 = {
-					add_monthly_resource_mult = {
-     					resource = society_research
-     					value = @tier3researchreward
-     					min = @tier3researchmin
-     					max = @tier3researchmax
-     				}
-				}
-				50 = {
-					add_monthly_resource_mult = {
-     					resource = engineering_research
-     					value = @tier3researchreward
-     					min = @tier3researchmin
-     					max = @tier3researchmax
-     				}
-				}
-			}
-		}
+			medium_artifact_reward = yes
+			add_monthly_resource_mult = {
+				 resource = society_research
+				 value = @tier3researchreward
+				 min = @tier3researchmin
+				 max = @tier3researchmax
+			 }
+			 add_monthly_resource_mult = {
+				resource = engineering_research
+				value = @tier3researchreward
+				min = @tier3researchmin
+				max = @tier3researchmax
+		    }
+	    }
 	}
 }
 ## Событие с раскопкой №1
-### Часть 3 - конец
+### Часть 3
 fleet_event = {
 	id = asp_ancrel.3
 	title = "asp_ancrel.3.name"
 	desc = asp_ancrel.3.desc
-	picture = GFX_evt_relic_world_street
-	show_sound = event_wind_ruins
+	picture = GFX_evt_sabotaged_ship
+	show_sound = event_conversation
 	location = from
 
 	archaeology = yes
@@ -101,26 +89,59 @@ fleet_event = {
 	is_triggered_only = yes
 
 	option = {
-		name = OK
+		name = INTERESTING
+		owner = { small_artifact_reward = yes }
+	}
+}
+## Событие с раскопкой №1
+### Часть 4 - конец
+fleet_event = {
+	id = asp_ancrel.4
+	title = "asp_ancrel.4.name"
+	desc = asp_ancrel.4.desc
+	picture = GFX_evt_hangar_bay
+	show_sound = event_airlock
+	location = from
+
+	archaeology = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = INCREDIBLE
 		owner = {
-			locked_random_list = {
-				50 = {
-					add_monthly_resource_mult = {
-     					resource = society_research
-     					value = @tier3researchreward
-     					min = @tier3researchmin
-     					max = @tier3researchmax
-     				}
+			add_resource = { influence = 100 alloys = 480 }
+			if = {
+				limit = {
+				NOT = { has_technology = "tech_destroyers" }	
 				}
-				50 = {
-					add_monthly_resource_mult = {
-     					resource = engineering_research
-     					value = @tier3researchreward
-     					min = @tier3researchmin
-     					max = @tier3researchmax
-     				}
+				add_tech_progress = {
+					tech = tech_destroyers
+					progress = 0.25
 				}
 			}
+				else_if = {
+					limit = {
+						 has_technology = "tech_destroyers"
+						 NOT = { has_technology = "tech_cruisers" }
+						}
+						add_tech_progress = {
+							tech = tech_cruisers
+							progress = 0.25
+				}
 		}
+		else_if = {
+			limit = {
+				has_technology = "tech_destroyers"
+				has_technology = "tech_cruisers"
+				NOT = { has_technology = "tech_battleships" }
+			}
+			add_tech_progress = {
+				tech = tech_battleships
+				progress = 0.25
+	    }
+	  }
+	  el
 	}
+  }
 }
