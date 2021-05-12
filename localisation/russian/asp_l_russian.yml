@@ -63,11 +63,13 @@ asp_station_gatherers_policy_energy_desc:0 "Большая часть бюдже
 option_station_gatherers_policy:0 "§HПолитика:§! Приоритет добычи станций"
 option_station_gatherers_policy_desc:0 "Открывает доступк к политике §Y$policy_asp_station_gatherers_policy$§!."
 
+edict_asp_rare_resources_production:0 "Обработка редких ресурсов"
+edict_asp_rare_resources_production_desc:0 "REPLACE_ME"
+
 requires_asteroid:0 "Требуется астероид"
 
 special_mi_constructor:0 "REPLACE_ME"
 special_mi_constructor_plural:0 "REPLACE_ME"
-
 
 tech_asp_research_station_1:0 "REPLACE_ME"
 tech_asp_research_station_1_desc:0 "REPLACE_ME"
