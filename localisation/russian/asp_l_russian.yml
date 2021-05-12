@@ -64,9 +64,13 @@ option_station_gatherers_policy:0 "§HПолитика:§! Приоритет д
 option_station_gatherers_policy_desc:0 "Открывает доступк к политике §Y$policy_asp_station_gatherers_policy$§!."
 
 edict_asp_rare_resources_production:0 "Обработка редких ресурсов"
-edict_asp_rare_resources_production_desc:0 "REPLACE_ME"
+edict_asp_rare_resources_production_desc:0 "Добыча редких космических ресурсов весьма трудное занятие, по этому их правильная обработка поможет увеличить качество и количество."
 
 requires_asteroid:0 "Требуется астероид"
+
+mod_station_gatherers_exotic_gases_produces_mult:0 "Добывающие станции — производство газов"
+mod_station_gatherers_rare_crystals_produces_mult:0 "Добывающие станции — производство кристалов"
+mod_station_gatherers_volatile_motes_produces_mult:0 "Добывающие станции — производство пылинок"
 
 special_mi_constructor:0 "REPLACE_ME"
 special_mi_constructor_plural:0 "REPLACE_ME"

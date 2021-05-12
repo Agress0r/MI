@@ -15,11 +15,12 @@ asp_rare_resources_production = {
 		station_gatherers_rare_crystals_produces_mult = 0.15
 		station_gatherers_volatile_motes_produces_mult = 0.15
 	}
-
+	prerequisites = {
+		"tech_asp_mining_station_2"
+	}
 	potential = {
 		has_technology = tech_asp_mining_station_2
 	}
-
 	ai_weight = {
 		weight = 1
 	}
