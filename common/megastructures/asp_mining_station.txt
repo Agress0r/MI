@@ -2,7 +2,7 @@
 asp_mining_station_0 = {
 	entity = "ancient_drone_01_mining_station_entity"
 	construction_entity = "ancient_drone_01_mining_station_entity"
-	portrait = "GFX_evt_mining_station" # Заменил на Mining Station - было megastructure_construction
+	portrait = "GFX_megastructure_construction_background"
 	prerequisites = { "tech_asp_mining_station_1" }	
 
 	possible = {
@@ -110,7 +110,7 @@ asp_mining_station_0 = {
 asp_mining_station_2 = {
 	entity = "drone_homebase_hull_entity"
 	construction_entity = "drone_homebase_hull_entity"
-	portrait = "GFX_evt_mining_station" # Заменил на Mining Station - было megastructure_construction
+	portrait = "GFX_megastructure_construction_background"
 	prerequisites = { "tech_asp_mining_station_2" }	
 	place_entity_on_planet_plane = no
 	entity_offset = { x = -7 y = -7 }
