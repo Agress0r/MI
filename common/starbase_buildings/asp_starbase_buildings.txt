@@ -7,17 +7,16 @@ crew_quarters = {
 
 	resources = {
 		category = starbase_buildings
-		cost = {
-			alloys = 50
-		}
-
-		upkeep = {
-			energy = 1
-		}
+		cost = { alloys = 250 }
+		upkeep = { energy = 2 }
 	}
 
+	potential = {
+		enough_minerals_in_system_1 = yes
+		exists = owner
+	}
 	system_modifier = {
-		asp_system_mineral_check = yes
+		planet_jobs_minerals_produces_mult = 0.04
 	}
 
 	ai_build_at_chokepoint = yes

@@ -4,12 +4,7 @@ asp_system_mineral_check = {
 	every_system_planet = {
 			if = {
 				limit = {
-					AND = {
 						num_minerals > 20
-						any_owned_planet = {
-						is_planet_class = pc_habitat
-					}
-				}
 			}
 				add_modifier = { modifier = habs_mineral_output_4 }
 		}

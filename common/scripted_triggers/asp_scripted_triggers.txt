@@ -1,0 +1,24 @@
+# Директория для сооружений на звёздной базе
+enough_minerals_in_system_1 = {
+	any_system_planet = {
+			num_minerals > 20
+	}
+}
+
+enough_minerals_in_system_2 = {
+	any_system_planet = {
+			num_minerals > 12
+	}
+}
+
+enough_minerals_in_system_3 = {
+	any_system_planet = {
+			num_minerals > 8
+	}
+}
+
+enough_minerals_in_system_4 = {
+	any_system_planet = {
+			num_minerals > 4
+	}
+}
