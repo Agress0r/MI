@@ -16,15 +16,8 @@ crew_quarters = {
 		}
 	}
 
-	triggered_station_modifier = {
-		potential = {
-			hidden_trigger = { exists = this }
-
-			exists = owner
-			from.owner = {
-				has_system_minerals > 90
-			}
-		}
+	system_modifier = {
+		asp_system_mineral_check = yes
 	}
 
 	ai_build_at_chokepoint = yes

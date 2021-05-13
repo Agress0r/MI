@@ -1,13 +1,13 @@
 # Директория для модификаторов на зданиях звёздной базы
 habs_mineral_output_4 = {
-
+	planet_jobs_minerals_produces_mult = -0.16
 }
 habs_mineral_output_3 = {
-	
+	planet_jobs_minerals_produces_mult = -0.12
 }
 habs_mineral_output_2 = {
-	
+	planet_jobs_minerals_produces_mult = -0.8
 }
 habs_mineral_output_1 = {
-	
+	planet_jobs_minerals_produces_mult = -0.4
 }
