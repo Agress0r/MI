@@ -1,27 +1,100 @@
 # Директория для сооружений на звёздной базе
-crew_quarters = {
-	icon = "GFX_spaceport_module_crew_quarters"
-	construction_days = 180
-
-	initial = yes
+asp_habitat_miners_guild_1 = {
+	icon = "GFX_spaceport_nebula_refinery"
+	construction_days = 280
 
 	resources = {
 		category = starbase_buildings
-		cost = { alloys = 250 }
-		upkeep = { energy = 2 }
+		cost = { alloys = 225 }
+		upkeep = { energy = 4 }
+	}
+
+	potential = {
+		enough_minerals_in_system_4 = yes
+		exists = owner
+	}
+
+	system_modifier = {
+		planet_jobs_minerals_produces_mult = 0.04
+	}
+	ai_build_at_chokepoint = yes
+	ai_build_outside_chokepoint = yes
+	ai_weight = {
+		weight = 100
+	}
+}
+
+asp_habitat_miners_guild_2 = {
+	icon = "GFX_spaceport_nebula_refinery"
+	construction_days = 280
+
+	resources = {
+		category = starbase_buildings
+		cost = { alloys = 225 }
+		upkeep = { energy = 4 }
+	}
+
+	potential = {
+		enough_minerals_in_system_3 = yes
+		exists = owner
+	}
+
+	system_modifier = {
+		planet_jobs_minerals_produces_mult = 0.08
+	}
+	ai_build_at_chokepoint = yes
+	ai_build_outside_chokepoint = yes
+	ai_weight = {
+		weight = 100
+	}
+}
+
+asp_habitat_miners_guild_3 = {
+	icon = "GFX_spaceport_nebula_refinery"
+	construction_days = 280
+
+	resources = {
+		category = starbase_buildings
+		cost = { alloys = 225 }
+		upkeep = { energy = 4 }
+	}
+
+	potential = {
+		enough_minerals_in_system_2 = yes
+		exists = owner
+	}
+
+	system_modifier = {
+		planet_jobs_minerals_produces_mult = 0.12
+	}
+	ai_build_at_chokepoint = yes
+	ai_build_outside_chokepoint = yes
+	ai_weight = {
+		weight = 100
+	}
+}
+
+asp_habitat_miners_guild_4 = {
+	icon = "GFX_spaceport_nebula_refinery"
+	construction_days = 280
+
+	resources = {
+		category = starbase_buildings
+		cost = { alloys = 225 }
+		upkeep = { energy = 4 }
 	}
 
 	potential = {
 		enough_minerals_in_system_1 = yes
 		exists = owner
 	}
-	system_modifier = {
-		planet_jobs_minerals_produces_mult = 0.04
-	}
 
+	system_modifier = {
+		planet_jobs_minerals_produces_mult = 0.20
+	}
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
-		weight = 50
+		weight = 100
 	}
 }
