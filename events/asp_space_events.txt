@@ -22,7 +22,6 @@ ship_event = {
 		owner = {
 			is_ai = no
 			NOT = {
-				has_country_flag = asp_leader_gained
 				has_country_flag = asp_leader_event_happened
 			}
 		}
@@ -380,7 +379,7 @@ ship_event = {
 				}
 			}
 		}
-		set_timed_country_flag = { flag = asp_energy_event_cooldown days = 670 }
+		set_timed_country_flag = { flag = asp_energy_event_cooldown days = 540 }
 	}
 }
 # Событие с найденной раскопкой - раскопку же нужно продумать
@@ -448,6 +447,9 @@ ship_event = {
 					is_country_type = fallen_empire
 					is_country_type = awakened_fallen_empire
 					}
+					NOT = {
+						has_country_flag = asp_ancrel_site
+						  }
 				}
 			}
 		}
@@ -555,7 +557,7 @@ ship_event = {
 				}
 			}
 		}
-		set_timed_country_flag = { flag = asp_mineral_event_cooldown days = 670 }
+		set_timed_country_flag = { flag = asp_mineral_event_cooldown days = 540 }
 	}
 }
 # Событие с увелчинием производства редкого ресурса на объекте
@@ -623,7 +625,7 @@ ship_event = {
 				  }
 			}
 		}
-		set_timed_country_flag = { flag = asp_rare_resource_cooldown days = 780 }
+		set_timed_country_flag = { flag = asp_rare_resource_cooldown days = 680 }
 	}
 }
 
