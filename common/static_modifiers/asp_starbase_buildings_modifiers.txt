@@ -1,0 +1,13 @@
+# Директория для модификаторов на зданиях звёздной базы
+habs_mineral_output_4 = {
+
+}
+habs_mineral_output_3 = {
+	
+}
+habs_mineral_output_2 = {
+	
+}
+habs_mineral_output_1 = {
+	
+}
