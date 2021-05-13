@@ -12,7 +12,7 @@
 #############################################
 asp_research_station_0:0 "Data Analysis Complex"
 asp_research_station_0_DESC:0 "This scientific facility improves the efficiency of all scientific units in space, ranging from §Yscience stations§! and ending with §Yscience ships§!."
-asp_research_station_0_MEGASTRUCTURE_DETAILS:0 "§Y$asp_research_station_0$§! improves the efficiency of §Yscience stations§! и §Yscience ships§!."
+asp_research_station_0_MEGASTRUCTURE_DETAILS:0 "§Y$asp_research_station_0$§! improves the efficiency of §Yscience stations§! and §Yscience ships§!."
 asp_research_station_2:0 "Advanced Data Analysis Complex"
 asp_research_station_2_DESC:0 "This scientific facility improves the efficiency of all scientific units in space, ranging from §Yscience stations§! and ending with §Yscience ships§!."
 requires_no_existing_research_station:0 "$TRIGGER_FAIL$You cannot build more than one Data Analysis Complex."
@@ -24,7 +24,7 @@ requires_no_existing_research_station:0 "$TRIGGER_FAIL$You cannot build more tha
 asp_mining_station_0:0 "Resource Processing Complex"
 asp_mining_station_0_DESC:0 "This complex not only enriches and processes all the resources that have been mined in space, but also provides all §Yconstruction ships§! with more advanced technologies of template building."
 asp_mining_station_0_MEGASTRUCTURE_DETAILS:0 "§Y$asp_mining_station_0$§! enriches and processes all the resources that have been mined in space."
-asp_mining_station_2:0 "Advanced Сomplex Resource Processing"
+asp_mining_station_2:0 "Advanced Complex Resource Processing"
 asp_mining_station_2_DESC:0 "This complex not only enriches and processes all the resources that have been mined in space, but also provides all §Yconstruction ships§! with more advanced technologies of template building."
 requires_no_existing_asp_mining_station:0 "$TRIGGER_FAIL$You cannot build more than one Resource Processing Complex."
 
@@ -37,7 +37,7 @@ mod_shipclass_mining_station_build_speed_mult:0 "Mining station construction spe
 
 mod_station_gatherers_exotic_gases_produces_mult:0 "Mining stations - exotic gases extraction"
 mod_station_gatherers_rare_crystals_produces_mult:0 "Mining stations - rare crystals extraction"
-mod_station_gatherers_volatile_motes_produces_mult:0 "Mining stations — volatile motes extraction"
+mod_station_gatherers_volatile_motes_produces_mult:0 "Mining stations - volatile motes extraction"
 
 mod_station_researchers_engineering_research_produces_mult:0 "Engineering Research points production by science stations"
 mod_station_researchers_society_research_produces_mult:0 "Society Research points production by science stations"
@@ -85,7 +85,7 @@ asp_station_researchers_policy_phys_desc:0 "Increased priority for physics resea
 asp_station_researchers_policy_soci:0 "Priority: Society"
 asp_station_researchers_policy_soci_desc:0 "Increased priority for society research."
 
-option_station_researchers_policy:0 "§HPolicy:§! priority of science stations"
+option_station_researchers_policy:0 "§HPolicy:§! Priority of science stations"
 option_station_researchers_policy_desc:0 "Provides access to policy §Y$policy_asp_station_researchers_policy$§!."
 
 ##################
@@ -180,8 +180,8 @@ asp.10.desc:0 "Thanks to more accurate equipment tuning, the crew of the §Y[Thi
 requires_asteroid:0 "Asteroid required"
 fallen_empire_warship_small_key:0 "Escort ship"
 
-asp.11.name:0 "§YResource Processing Complex — ready to serve§!"
+asp.11.name:0 "§YResource Processing Complex - ready to serve§!"
 asp.11.desc:0 "This complex will not only enrich and process all the resources that have been mined in space, but it will also be able to provide all §Yconstruction ships§! with more advanced technologies of template building."
 
-asp.12.name:0 "§YData Analysis Complex — ready to serve§!"
+asp.12.name:0 "§YData Analysis Complex - ready to serve§!"
 asp.12.desc:0 "This scientific facility will improve the efficiency of all scientific units in space, from §Yscience stations§! to §Yscience ships§!."
