@@ -1,0 +1,28 @@
+# Директория для скриптовых событий
+
+asp_starbase_system_minerals_check = {
+	set_variable = {
+		which = minerals_in_system_check
+		value = 0
+	}
+ owner = {
+	every_system_planet = {
+		limit = {
+			if = {
+				planet = {
+					has_resource = {
+						type = minerals
+						amount = 1
+					}
+				}
+			}
+         root = {
+			change_variable = { 
+				which = minerals_in_system_check
+				value = 1
+			 }
+		 }
+		}
+	}
+   }
+}
