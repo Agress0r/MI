@@ -2,7 +2,10 @@
 enough_minerals_in_system_1 = {
 	AND = {
 		any_system_planet = {
-			num_minerals > 16
+			has_resource = {
+				type = minerals
+				amount = 14
+			}
 	}
 	any_system_planet = {
 		is_planet_class = pc_habitat
@@ -13,7 +16,10 @@ enough_minerals_in_system_1 = {
 enough_minerals_in_system_2 = {
 	AND = {
 		any_system_planet = {
-			num_minerals > 12
+			has_resource = {
+				type = minerals
+				amount = 10
+			}
 	}
 	any_system_planet = {
 		is_planet_class = pc_habitat
@@ -24,7 +30,10 @@ enough_minerals_in_system_2 = {
 enough_minerals_in_system_3 = {
 	AND = {
 		any_system_planet = {
-			num_minerals > 8
+			has_resource = {
+				type = minerals
+				amount = 6
+			}
 	}
 	any_system_planet = {
 		is_planet_class = pc_habitat
@@ -35,7 +44,10 @@ enough_minerals_in_system_3 = {
 enough_minerals_in_system_4 = {
 	AND = {
 		any_system_planet = {
-			num_minerals > 4
+			has_resource = {
+				type = minerals
+				amount = 3
+			}
 	}
 	any_system_planet = {
 		is_planet_class = pc_habitat
