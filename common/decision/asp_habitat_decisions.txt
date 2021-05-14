@@ -2,32 +2,31 @@
 asp_habitat_mineral_production_boost = {
 	owned_planets_only = yes
 	sound = event_administrative_work
-	icon = decision_politics
+	icon = decision_satellite_in_orbit
 
-	potential = {
-		is_planet_class = pc_habitat
-		owner = exist
-		has_technology = "tech_asp_mining_station_1" # Либо отдельной техой либо прикрепить к имеющимся - я бы отдельной техой запульнул, после изучения и постройки комплекса по переработке asp_habitat_production_optimisation
-		any_owned_megastructure = {
-			OR = {
-				is_megastructure_type = asp_mining_station_1
-				is_megastructure_type = asp_mining_station_2
-			}
-		}
-		NOT = {
-		has_modifier = "habs_mineral_output_1"
-		has_modifier = "habs_mineral_output_2" 
-		has_modifier = "habs_mineral_output_3" 
-		has_modifier = "habs_mineral_output_4" 
-	  }
-	}
-	
+	enactment_time = 30
+
 	resources = {
 		category = decisions
 		cost = {
 			energy = 5012
 		}
 	}
+
+	potential = {
+		is_planet_class = pc_habitat
+		exist = owner
+		owner = {
+			has_technology = "tech_asp_mining_station_1" # Либо отдельной техой либо прикрепить к имеющимся - я бы отдельной техой запульнул, после изучения и постройки комплекса по переработке asp_habitat_production_optimisation
+			any_owned_megastructure = {
+				OR = {
+					is_megastructure_type = asp_mining_station_1
+					is_megastructure_type = asp_mining_station_2
+				}
+			}
+		}
+	}
+	
 
 	effect = {
 		IF = {

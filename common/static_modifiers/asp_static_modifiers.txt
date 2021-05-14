@@ -1,13 +1,17 @@
 # Директория для модификаторов на зданиях звёздной базы
 habs_mineral_output_1 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_asteroid_belt.dds"
 	planet_jobs_minerals_produces_mult = 0.16
 }
 habs_mineral_output_2 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_asteroid_belt.dds"
 	planet_jobs_minerals_produces_mult = 0.12
 }
 habs_mineral_output_3 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_asteroid_belt.dds"
 	planet_jobs_minerals_produces_mult = 0.08
 }
 habs_mineral_output_4 = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_asteroid_belt.dds"
 	planet_jobs_minerals_produces_mult = 0.04
 }
