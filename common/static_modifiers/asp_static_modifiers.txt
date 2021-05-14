@@ -1,4 +1,4 @@
-# Директория для модификаторов на зданиях звёздной базы
+# Директория для модификаторов глобального плана
 habs_mineral_output_1 = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_asteroid_belt.dds"
 	planet_jobs_minerals_produces_mult = 0.16

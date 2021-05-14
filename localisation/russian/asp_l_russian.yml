@@ -189,3 +189,6 @@ habs_mineral_output_4:0 "REPLACE_ME"
 habs_mineral_output_3:0 "REPLACE_ME"
 habs_mineral_output_2:0 "REPLACE_ME"
 habs_mineral_output_1:0 "REPLACE_ME"
+
+asp_habitat_mineral_production_boost:0 "REPLACE_ME"
+asp_habitat_mineral_production_boost_desc:0 "REPLACE_ME"
