@@ -659,3 +659,41 @@ country_event = {
 		name = EXCELLENT
 	}
 }
+### Ивент с научной станкой
+ship_event = {
+	id = asp.13
+	title = "asp.13.name"
+	desc = "asp.13.desc"
+	hide_window = no
+	picture = GFX_evt_glitchy_matrix
+	show_sound = event_administrative_work
+	is_triggered_only = yes
+	location = from
+
+	trigger = {
+		from.planet = {
+			has_resource = {
+				type = engineering_research
+				amount > 0
+			}
+		}
+		owner = { 
+		NOT = {
+			has_country_flag = asp_engineering_research_event_cooldown
+		      }
+			}
+	}
+
+	#mean_time_to_happen = { days = 40 }
+
+	option = {
+		name = asp.13.a
+			From = { add_deposit = d_engineering_3 }
+			add_resource = { energy = -225 }
+		set_timed_country_flag = { flag = asp_engineering_research_event_cooldown days = 540 }
+	}
+	option = {
+		name = NOTIME
+		set_timed_country_flag = { flag = asp_engineering_research_event_cooldown days = 540 }
+	}
+}
