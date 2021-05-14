@@ -63,8 +63,8 @@ country_event = {
 	desc = "asp.2.desc"
 	hide_window = no
 	show_sound = event_mystic_reveal_light
-
-	diplomatic = yes
+    diplomatic = yes
+	location = from
 
 	is_triggered_only = yes
 
@@ -258,7 +258,7 @@ ship_event = {
 	picture = GFX_evt_ship_in_orbit
 	show_sound = event_default
 	is_triggered_only = yes
-
+	location = from
 	trigger = {
 		from.planet = {
 				has_resource = {
@@ -347,7 +347,7 @@ ship_event = {
 	picture = GFX_evt_mining_operations
 	show_sound = event_construction
 	is_triggered_only = yes
-
+	location = from
 	trigger = {
 		from.planet = {
 			has_resource = {
@@ -391,6 +391,7 @@ ship_event = {
 	picture = GFX_evt_ancient_records
 	show_sound = event_super_explosion
 	is_triggered_only = yes
+	location = from
 
 	trigger = {
 		from.planet = {
@@ -434,7 +435,7 @@ ship_event = {
 	show_sound = event_sensor_ping
 	is_triggered_only = yes
 	fire_only_once = yes
-
+	location = from
 
 	trigger = {
 		is_ai = no
@@ -525,6 +526,7 @@ ship_event = {
 	picture = GFX_evt_mining_operations
 	show_sound = event_construction
 	is_triggered_only = yes
+	location = from
 
 	trigger = {
 		from.planet = {
@@ -569,6 +571,7 @@ ship_event = {
 	picture = GFX_evt_mining_operations
 	show_sound = event_construction
 	is_triggered_only = yes
+	location = from
 
 	trigger = {
 		from.planet = {
@@ -688,12 +691,59 @@ ship_event = {
 
 	option = {
 		name = asp.13.a
-			From = { add_deposit = d_engineering_3 }
-			add_resource = { energy = -225 }
-		set_timed_country_flag = { flag = asp_engineering_research_event_cooldown days = 540 }
+			From = { 			
+				locked_random_list = {
+				11 = {
+					From = { add_deposit = d_engineering_1 }
+				}
+				11 = {
+					From = { add_deposit = d_engineering_2 }
+				}
+				11 = {
+					From = { add_deposit = d_engineering_3 }
+				}
+				11 = {
+					From = { add_deposit = d_society_1 }
+				}
+				11 = {
+					From = { add_deposit = d_society_2 }
+				}
+				11 = {
+					From = { add_deposit = d_society_3 }
+				}
+				11 = {
+					From = { add_deposit = d_physics_1 }
+				}
+				11 = {
+					From = { add_deposit = d_physics_2 }
+				}
+				11 = {
+					From = { add_deposit = d_physics_3 }
+				}
+			}
+		 }
+	add_resource = { energy = -175 }
+	set_timed_country_flag = { flag = asp_engineering_research_event_cooldown days = 540 }
 	}
+
 	option = {
 		name = NOTIME
 		set_timed_country_flag = { flag = asp_engineering_research_event_cooldown days = 540 }
 	}
 }
+
+### Пока не придумал )00
+#ship_event = {
+#	id = asp.14
+#	title = "asp.14.name"
+#	desc = "asp.14.desc"
+#	picture = GFX_evt_atmospheric_entry
+#	show_sound = event_radio_chatter
+#	location = FROM
+#	
+#	is_triggered_only = yes
+#	
+#	option = {
+#		name = EXCELLENT
+#	}
+#}
