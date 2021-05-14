@@ -12,11 +12,13 @@ asp_habitat_miners_guild_1 = {
 	potential = {
 		enough_minerals_in_system_4 = yes
 		exists = owner
+		owner = { has_technology = tech_asp_mining_station_1 }
 	}
 
 	system_modifier = {
 		planet_jobs_minerals_produces_mult = 0.04
 	}
+
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
@@ -37,11 +39,13 @@ asp_habitat_miners_guild_2 = {
 	potential = {
 		enough_minerals_in_system_3 = yes
 		exists = owner
+		owner = { has_technology = tech_asp_mining_station_1 }
 	}
 
 	system_modifier = {
 		planet_jobs_minerals_produces_mult = 0.08
 	}
+
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
@@ -62,6 +66,7 @@ asp_habitat_miners_guild_3 = {
 	potential = {
 		enough_minerals_in_system_2 = yes
 		exists = owner
+		owner = { has_technology = tech_asp_mining_station_1 }
 	}
 
 	system_modifier = {
@@ -87,6 +92,7 @@ asp_habitat_miners_guild_4 = {
 	potential = {
 		enough_minerals_in_system_1 = yes
 		exists = owner
+		owner = { has_technology = tech_asp_mining_station_1 }
 	}
 
 	system_modifier = {

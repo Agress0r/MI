@@ -1,28 +1,44 @@
 # Директория для сооружений на звёздной базе
 enough_minerals_in_system_1 = {
-	any_system_planet = {
-			num_minerals > 20
-			is_planet_class = pc_habitat
+	AND = {
+		any_system_planet = {
+			num_minerals > 16
 	}
+	any_system_planet = {
+		is_planet_class = pc_habitat
+    }
+   }
 }
 
 enough_minerals_in_system_2 = {
-	any_system_planet = {
+	AND = {
+		any_system_planet = {
 			num_minerals > 12
-			is_planet_class = pc_habitat
 	}
+	any_system_planet = {
+		is_planet_class = pc_habitat
+    }
+   }
 }
 
 enough_minerals_in_system_3 = {
-	any_system_planet = {
+	AND = {
+		any_system_planet = {
 			num_minerals > 8
-			is_planet_class = pc_habitat
 	}
+	any_system_planet = {
+		is_planet_class = pc_habitat
+    }
+   }
 }
 
 enough_minerals_in_system_4 = {
-	any_system_planet = {
+	AND = {
+		any_system_planet = {
 			num_minerals > 4
-			is_planet_class = pc_habitat
 	}
+	any_system_planet = {
+		is_planet_class = pc_habitat
+    }
+   }
 }
