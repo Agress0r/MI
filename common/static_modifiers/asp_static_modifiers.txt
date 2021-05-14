@@ -1,21 +1,21 @@
 # Директория для модификаторов глобального плана
 habs_mineral_output_1 = {
-	icon = "gfx/interface/icons/planet_modifiers/pm_asteroid_belt.dds"
+	icon = "gfx/interface/icons/planet_modifiers/asp_space_mining_drones.dds"
 	icon_frame = 1
 	planet_jobs_minerals_produces_mult = 0.20
 }
 habs_mineral_output_2 = {
-	icon = "gfx/interface/icons/planet_modifiers/pm_asteroid_belt.dds"
+	icon = "gfx/interface/icons/planet_modifiers/asp_space_mining_drones.dds"
 	icon_frame = 1
 	planet_jobs_minerals_produces_mult = 0.15
 }
 habs_mineral_output_3 = {
-	icon = "gfx/interface/icons/planet_modifiers/pm_asteroid_belt.dds"
+	icon = "gfx/interface/icons/planet_modifiers/asp_space_mining_drones.dds"
 	icon_frame = 1
 	planet_jobs_minerals_produces_mult = 0.010
 }
 habs_mineral_output_4 = {
-	icon = "gfx/interface/icons/planet_modifiers/pm_asteroid_belt.dds"
+	icon = "gfx/interface/icons/planet_modifiers/asp_space_mining_drones.dds"
 	icon_frame = 1
 	planet_jobs_minerals_produces_mult = 0.05
 }
