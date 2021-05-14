@@ -25,30 +25,46 @@ asp_habitat_mineral_production_boost = {
 			}
 		}
 	}
-	
+
+	allow = {
+		NOT = {
+			has_modifier = habs_mineral_output_1
+			has_modifier = habs_mineral_output_2
+			has_modifier = habs_mineral_output_3
+			has_modifier = habs_mineral_output_4
+		 }
+	}
 
 	effect = {
 		IF = {
 			limit = {
-				enough_minerals_in_system_1 = yes
+				solar_system = {
+					enough_minerals_in_system_1 = yes
+				}
 			}
 			add_modifier = { modifier = "habs_mineral_output_1" }
 		}
 		else_if = {
 			limit = {
-				enough_minerals_in_system_2 = yes
+				solar_system = {
+					enough_minerals_in_system_2 = yes
+				}
 			}
 			add_modifier = { modifier = "habs_mineral_output_2" }
 		}
 		else_if = {
 			limit = {
-				enough_minerals_in_system_3 = yes
+				solar_system = {
+					enough_minerals_in_system_3 = yes
+				}
 			}
 			add_modifier = { modifier = "habs_mineral_output_3" }
 		}
 		else_if = {
 			limit = {
-				enough_minerals_in_system_4 = yes
+				solar_system = {
+					enough_minerals_in_system_4 = yes
+				}
 			}
 			add_modifier = { modifier = "habs_mineral_output_4" }
 		}
