@@ -31,7 +31,7 @@ ship_event = {
 		option = {
 			name = asp.1.a
 			set_country_flag = asp_leader_event_happened
-			owner = { country_event = { id = asp.2} }
+			owner = { country_event = { id = asp.2 } }
 		}
 
 	    option = {
@@ -910,6 +910,83 @@ country_event = {
 	option = {
 		name = WORRYING
 		custom_tooltip = asp.17.a
+	}
+
+}
+### Бафф на темп исследований от станции - инициализатор
+ship_event = {
+	id = asp.18
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		from.planet = {
+			OR = {
+			has_resource = {
+				type = engineering_research
+				amount > 2
+			}
+			has_resource = {
+				type = society_research
+				amount > 2
+			}
+			has_resource = {
+				type = physics_research
+				amount > 2
+			}
+			}
+		}
+		owner = {
+		NOT = {
+			has_country_flag = asp_science_buff_event_cooldown
+		      }
+		}
+	}
+
+	immediate = {
+		from.planet = {
+			save_event_target_as = asp_science_buff_planet
+		}
+		owner = {
+			set_timed_country_flag = { flag = asp_science_buff_event_cooldown days = 2801 }
+			country_event = { id = asp.19 days = 1400 random = 1400 } # 1400 400
+		}
+	}
+}
+### Бафф на темп исследований от станции - сам ивент
+country_event = {
+	id = asp.19
+	title = "asp.19.name"
+	desc = "asp.19.desc"
+	picture = GFX_evt_physics_research
+	show_sound = event_radio_chatter
+	location = event_target:asp_science_buff_planet
+	is_triggered_only = yes
+
+	trigger = {
+		owner = {
+			has_country_flag = asp_science_buff_event_cooldown
+			}
+	}
+
+	immediate = {
+		event_target:asp_science_buff_planet = {
+			if = {
+				limit = {
+					exists = research_station
+				}
+				save_event_target_as = asp_science_station_buff
+			}
+		}
+	}
+
+	option = {
+		name = FASCINATING
+		hidden_effect = {
+			add_modifier = {
+				modifier = science_station_research_speed_boost days = 2400
+			}
+		}
 	}
 
 }
