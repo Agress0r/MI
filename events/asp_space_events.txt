@@ -740,7 +740,48 @@ ship_event = {
 	
 	trigger = {
 		from.planet = {
-			has_resource = yes
+			OR = {
+			has_resource = {
+				type = minerals
+				amount > 0
+			}
+			has_resource = {
+				type = energy
+				amount > 0
+			}
+			has_resource = {
+				type = alloys
+				amount > 0
+			}
+			has_resource = {
+				type = rare_crystals
+				amount > 0
+			}
+			has_resource = {
+				type = exotic_gases
+				amount > 0
+			}
+			has_resource = {
+				type = volatile_motes
+				amount > 0
+			}
+			has_resource = {
+				type = sr_dark_matter
+				amount > 0
+			}
+			has_resource = {
+				type = sr_living_metal
+				amount > 0
+			}
+			has_resource = {
+				type = sr_zro
+				amount > 0
+			}
+			has_resource = {
+				type = nanites
+				amount > 0
+			}
+		}
 		}
 		owner = {
 		NOT = {
@@ -754,7 +795,7 @@ ship_event = {
 			save_event_target_as = asp_planet_station_destroy
 		}
 		owner = {
-			country_event = { id = asp.15 days = 100 random = 1 } # 1400 400
+			country_event = { id = asp.15 days = 200 random = 1 } # 1400 400
 		}
 	}
 }
@@ -802,7 +843,20 @@ ship_event = {
 	
 	trigger = {
 		from.planet = {
-			has_resource = yes
+			OR = {
+			has_resource = {
+				type = engineering_research
+				amount > 0
+			}
+			has_resource = {
+				type = society_research
+				amount > 0
+			}
+			has_resource = {
+				type = physics_research
+				amount > 0
+			}
+			}
 		}
 		owner = {
 		NOT = {
@@ -817,7 +871,7 @@ ship_event = {
 			save_event_target_as = asp_planet_science_station_destroy
 		}
 		owner = {
-			country_event = { id = asp.17 days = 100 random = 1 } # 1400 400
+			country_event = { id = asp.17 days = 200 random = 1 } # 1400 400
 		}
 	}
 }
