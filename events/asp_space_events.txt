@@ -989,12 +989,11 @@ country_event = {
 		}
 	}
 }
-### Научный представитель со станции - инициализатор - одноразовый ивент
+### Научный представитель со станции - инициализатор
 ship_event = {
 	id = asp.20
 	hide_window = yes
 	is_triggered_only = yes
-	fire_only_once = yes
 	
 	trigger = {
 		from.planet = {
@@ -1011,9 +1010,9 @@ ship_event = {
 				type = physics_research
 				amount > 0
 			}
-			}
 		}
 	}
+ }
 
 	immediate = {
 		from.planet = {
@@ -1024,7 +1023,7 @@ ship_event = {
 		}
 	}
 }
-### Сам ивент с учёным
+### Сам ивент с учёным - одноразовый запуск
 country_event = {
 	id = asp.21
 	title = "asp.21.name"
