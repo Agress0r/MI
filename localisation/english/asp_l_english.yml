@@ -188,9 +188,16 @@ asp.17.name:0 "§RScience Station destroyed§!"
 asp.17.desc:0 "Communication with the §Y[asp_gg_science_station.GetName]§! science station has just been lost. Apparently the station was completely destroyed ... But what caused the explosion? Was it Sabotage? Or carelessness of scientists? The answer to this question is no longer known."
 asp.17.a:0 "Science station §Y[asp_gg_science_station.GetName]§! destroyed."
 
+### Событие с баффом от научной станции
+asp.19.name:0 "§TAmazing discovery§!"
+asp.19.desc:0 "The diligence and resourcefulness of the scientists from §Y[asp_science_station_buff.GetName]§! station bore fruit. Thanks to their discoveries and local achievements, our empire will be able to accelerate technological progress in many scientific fields."
+
 #############
 ### Other ###
 #############
+
+science_station_research_speed_boost:0 "Трудолюбие учёных"
+science_station_research_speed_boost_desc:0 "Благодаря трудолюбию учёных с научной станции, мы можем ускорить наш общий прогресс технологического развития."
 
 requires_asteroid:0 "Asteroid required"
 fallen_empire_warship_small_key:0 "Escort ship"
