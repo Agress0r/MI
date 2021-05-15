@@ -732,18 +732,120 @@ ship_event = {
 	}
 }
 
-### Пока не придумал )00
-#ship_event = {
-#	id = asp.14
-#	title = "asp.14.name"
-#	desc = "asp.14.desc"
-#	picture = GFX_evt_atmospheric_entry
-#	show_sound = event_radio_chatter
-#	location = FROM
-#	
-#	is_triggered_only = yes
-#	
-#	option = {
-#		name = EXCELLENT
-#	}
-#}
+### Уничтожение минеральной станции - инициализатор
+ship_event = {
+	id = asp.14
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		from.planet = {
+			has_resource = yes
+		}
+		owner = {
+		NOT = {
+			has_country_flag = asp_mining_station_destroy_event_cooldown
+		      }
+			}
+	}
+	immediate = {
+		set_timed_country_flag = { flag = asp_mining_station_destroy_event_cooldown days = 1801 }
+		from.planet = {
+			save_event_target_as = asp_planet_station_destroy
+			country_event = { id = asp.15 days = 1400 random = 400 }
+		}
+	}
+}
+
+### Уничтожение минеральной станции - само событие
+country_event = {
+	id = asp.15
+	title = "asp.15.name"
+	desc = "asp.15.desc"
+	picture = GFX_evt_space_debris
+	show_sound = event_super_explosion
+	location = FROM
+	is_triggered_only = yes
+
+	trigger = {
+		owner = {
+			has_country_flag = asp_mining_station_destroy_event_cooldown
+			}
+	}
+
+	immediate = {
+		event_target:asp_planet_station_destroy = {
+			if = {
+				limit = {
+					exists = mining_station
+				}
+				mining_station = {
+					destroy_fleet = this
+				}
+			}
+		}
+	}
+
+	option = {
+		name = WORRYING
+	}
+
+}
+### Уничтожение научной станции - инициализатор
+ship_event = {
+	id = asp.16
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		from.planet = {
+			has_resource = yes
+		}
+		owner = {
+		NOT = {
+			has_country_flag = asp_science_station_destroy_event_cooldown
+		      }
+			}
+	}
+	immediate = {
+		set_timed_country_flag = { flag = asp_science_station_destroy_event_cooldown days = 1801 }
+		from.planet = {
+			save_event_target_as = asp_planet_science_station_destroy
+			country_event = { id = asp.15 days = 1400 random = 400 }
+		}
+	}
+}
+### Уничтожение научной станции - само событие
+country_event = {
+	id = asp.17
+	title = "asp.17.name"
+	desc = "asp.17.desc"
+	picture = GFX_evt_space_debris
+	show_sound = event_super_explosion
+	location = FROM
+	is_triggered_only = yes
+
+	trigger = {
+		owner = {
+			has_country_flag = asp_science_station_destroy_event_cooldown
+			}
+	}
+
+	immediate = {
+		event_target:asp_planet_station_destroy = {
+			if = {
+				limit = {
+					exists = mining_station
+				}
+				mining_station = {
+					destroy_fleet = this
+				}
+			}
+		}
+	}
+
+	option = {
+		name = WORRYING
+	}
+
+}
