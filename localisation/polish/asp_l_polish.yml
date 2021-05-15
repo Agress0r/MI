@@ -178,9 +178,31 @@ asp.13.name:0 "§YAdditional expenses§!"
 asp.13.desc:0 "The planned research station over the §Y[From.Planet.GetName]§! may require additional costs. The crew of §Y[This.GetName]§! made a proposal: potential of §Y[From.Planet.GetName]§! in terms of scientific research can be much higher if the object is provided with an additional budget."
 asp.13.a:0 "Allocate additional resources"
 
-##############
-### Другое ###
-##############
+### Event with the destruction of the mining station above the object
+asp.15.name:0 "§RMining Station destroyed§!"
+asp.15.desc:0 "Communication with the §Y[asp_gg_mining_station.GetName]§! mining station has just been lost. Apparently the station was completely destroyed ... But what caused the explosion? Was it Sabotage? Or builders in the construction of the station somewhere missed a couple of details? The answer to this question can no longer be found."
+asp.15.a:0 "Mining station §Y[asp_gg_mining_station.GetName]§! destroyed."
+
+### The event with the destruction of the science station above the object
+asp.17.name:0 "§RScience Station destroyed§!"
+asp.17.desc:0 "Communication with the §Y[asp_gg_science_station.GetName]§! science station has just been lost. Apparently the station was completely destroyed ... But what caused the explosion? Was it Sabotage? Or carelessness of scientists? The answer to this question is no longer known."
+asp.17.a:0 "Science station §Y[asp_gg_science_station.GetName]§! destroyed."
+
+### Событие с баффом от научной станции
+asp.19.name:0 "§TAmazing discovery§!"
+asp.19.desc:0 "The diligence and resourcefulness of the scientists from §Y[asp_science_station_buff.GetName]§! station bore fruit. Thanks to their discoveries and local achievements, our empire will be able to accelerate technological progress in many scientific fields."
+
+### Событие с учёным от научной станции
+asp.21.name:0 "§TSkillful laboratory assistant§!"
+asp.21.desc:0 "The scientific representative of §Y[asp_science_station_leader.GetName]§! science station addressed us with a personal request. One of his laboratory assistants shows high results on tests, is well versed in theory and has excellent results in practice, so the station representative asked us to raise a laboratory assistant to a senior scientist so that his talent would not be wasted."
+asp.21.a:0 "§YScientist§! will be added to our recruited Leader Pool"
+
+#############
+### Other ###
+#############
+
+science_station_research_speed_boost:0 "Diligence of scientists"
+science_station_research_speed_boost_desc:0 "Thanks to the hard work of scientists from the science station, we can accelerate our overall progress in technological development."
 
 requires_asteroid:0 "Asteroid required"
 fallen_empire_warship_small_key:0 "Escort ship"

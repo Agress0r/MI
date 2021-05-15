@@ -1019,7 +1019,7 @@ ship_event = {
 			save_event_target_as = asp_science_leader_planet
 		}
 		owner = {
-			country_event = { id = asp.21 days = 1789 random = 1902 } # ~1900 ~1900
+			country_event = { id = asp.21 days = 1898 random = 1756 } # ~1900 ~1900
 		}
 	}
 }
@@ -1047,6 +1047,7 @@ country_event = {
 
 	option = {
 		name = SPLENDID
+		custom_tooltip = asp.21.a
 		locked_random_list = {
 		33 = {
 			create_leader = {
