@@ -1,3 +1,4 @@
+
 # Триггеры для проверки
 enough_minerals_in_system_1 = {
 		any_system_planet = {
@@ -47,3 +48,12 @@ enough_minerals_in_system_4 = {
 	}
 }
 #count_ Мог бы попробовать просчитать но нету тригера для обсчёта миников
+
+enough_minerals_in_system_algorithm_check = {
+	any_system_planet = {
+		has_resource = {
+			type = minerals
+			amount = 5
+		}
+    }
+}

@@ -10,13 +10,3 @@ station_researchers = {
 		cost
 	}
 }
-# Залив и замена с ванилы - производящие районы
-planet_districts = {
-	parent = planet_structures
-
-	generate_mult_modifiers = {
-		cost
-		upkeep
-		produces
-	}
-}
