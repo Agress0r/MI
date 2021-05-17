@@ -1,12 +1,22 @@
 # Экономические категории
 # Базовая вещь, что проверялась в игре
 
-#Залив и замена с ванилы
+#Залив и замена с ванилы - добывающие станции
 station_researchers = {
 	parent = stations
 
 	generate_mult_modifiers = {
 		produces
 		cost
+	}
+}
+# Залив и замена с ванилы - производящие районы
+planet_districts = {
+	parent = planet_structures
+
+	generate_mult_modifiers = {
+		cost
+		upkeep
+		produces
 	}
 }
