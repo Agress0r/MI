@@ -1,6 +1,6 @@
 # Директория для скриптовых событий
 
-enough_minerals_in_system_algorithm_check = {
+# enough_minerals_in_system_algorithm_check = {
 	owner = {
 		set_variable = { which = minerals_in_system value = 0 }
 	}

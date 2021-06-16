@@ -18,23 +18,23 @@
 
 # NOTE: Remember to add Resolutions to a Resolution Category! - gotch ya
 
-asp_resolution_space_mining = {
-	icon = ""
-
-	resources = {
-		category = resolutions
-		cost = {
-			influence = 150
-		}
-	}
-
-	target = no
-
-	harmful = no
-
-	modifier = {
-		station_gatherers_produces_mult = 0.05
-		shipclass_starbase_build_speed_mult = 0.08 # Надо проверить на что сводится данный прицел - на старпорты или на все звёздные базы сразу
-	}
-
-}
+#asp_resolution_space_mining = {
+#	icon = ""
+#
+#	resources = {
+#		category = resolutions
+#		cost = {
+#			influence = 150
+#		}
+#	}
+#
+#	target = no
+#
+#	harmful = no
+#
+#	modifier = {
+#		station_gatherers_produces_mult = 0.05
+#		shipclass_starbase_build_speed_mult = 0.08 # Надо проверить на что сводится данный прицел - на старпорты или на все звёздные базы сразу
+#	}
+#
+#}
