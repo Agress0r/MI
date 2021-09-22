@@ -1,5 +1,5 @@
 # Основная станка. Основной концепт нужно продумать до деталей.
-asp_mining_station_0 = {
+asp_agr_mining_station_0 = {
 	entity = "ancient_drone_01_mining_station_entity"
 	construction_entity = "ancient_drone_01_mining_station_entity"
 	portrait = "GFX_megastructure_construction_background"

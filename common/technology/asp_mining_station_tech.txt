@@ -1,6 +1,6 @@
 # Основная технология + её зависимости от техологий
 
-tech_asp_mining_station_1 = {
+tech_asp_agr_mining_station_1 = {
 	cost = @tier3cost1
 	area = engineering
 	tier = 2
@@ -45,12 +45,12 @@ tech_asp_mining_station_1 = {
 	}
 }
 
-tech_asp_mining_station_2 = {
+tech_asp_agr_mining_station_2 = {
 	cost = 35000
 	area = engineering
 	tier = 4
 	category = { industry }
-	prerequisites = { "tech_asp_mining_station_1" } # Сделаю зависимость от появления имеющейся технологии первого уровня
+	prerequisites = { "tech_asp_agr_mining_station_1" } # Сделаю зависимость от появления имеющейся технологии первого уровня
 	weight = @tier3weight2
 	is_rare = yes
 

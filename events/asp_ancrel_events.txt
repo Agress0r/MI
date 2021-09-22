@@ -1,13 +1,13 @@
 # Все прописанные события из ивентов с раскопками
 
-namespace = asp_ancrel
+namespace = asp_agr_ancrel
 
 ## Событие с раскопкой №1 - ОБЯЗАТЕЛЬНО НАПОЛНИТЬ ТЕКСТОМ И НОРМАЛЬНЫМИ НАГРАДАМИ
 ### Часть 1
 fleet_event = {
-	id = asp_ancrel.1
-	title = "asp_ancrel.1.name"
-	desc = asp_ancrel.1.desc
+	id = asp_agr_ancrel.1
+	title = "asp_agr_ancrel.1.name"
+	desc = asp_agr_ancrel.1.desc
 	picture = GFX_evt_ancient_databank
 	show_sound = event_big_door_opening
 	location = from
@@ -44,9 +44,9 @@ fleet_event = {
 ## Событие с раскопкой №1
 ### Часть 2
 fleet_event = {
-	id = asp_ancrel.2
-	title = "asp_ancrel.2.name"
-	desc = asp_ancrel.2.desc
+	id = asp_agr_ancrel.2
+	title = "asp_agr_ancrel.2.name"
+	desc = asp_agr_ancrel.2.desc
 	picture = GFX_evt_crusher_droid
 	show_sound = event_dig_site
 	location = from
@@ -77,9 +77,9 @@ fleet_event = {
 ## Событие с раскопкой №1
 ### Часть 3
 fleet_event = {
-	id = asp_ancrel.3
-	title = "asp_ancrel.3.name"
-	desc = asp_ancrel.3.desc
+	id = asp_agr_ancrel.3
+	title = "asp_agr_ancrel.3.name"
+	desc = asp_agr_ancrel.3.desc
 	picture = GFX_evt_sabotaged_ship
 	show_sound = event_conversation
 	location = from
@@ -96,9 +96,9 @@ fleet_event = {
 ## Событие с раскопкой №1
 ### Часть 4 - конец
 fleet_event = {
-	id = asp_ancrel.4
-	title = "asp_ancrel.4.name"
-	desc = asp_ancrel.4.desc
+	id = asp_agr_ancrel.4
+	title = "asp_agr_ancrel.4.name"
+	desc = asp_agr_ancrel.4.desc
 	picture = GFX_evt_hangar_bay
 	show_sound = event_airlock
 	location = from

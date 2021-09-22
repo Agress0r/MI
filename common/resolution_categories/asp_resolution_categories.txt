@@ -5,6 +5,6 @@
 #	icon = "GFX_resolution_industrial_development"
 #
 #	resolution_types = {
-#		"asp_resolution_space_mining"
+#		"asp_agr_resolution_space_mining"
 #	}
 #}

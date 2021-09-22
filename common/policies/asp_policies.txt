@@ -1,13 +1,13 @@
 # Модовые политики
 
 ## Переключатель производства энергии и минералов на добывающих станциях
-asp_station_gatherers_policy = {
+asp_agr_station_gatherers_policy = {
 	potential = {
-		has_technology = tech_asp_mining_station_1
+		has_technology = tech_asp_agr_mining_station_1
 	}
 
 	option = {
-		name = "asp_station_gatherers_policy_balanced"
+		name = "asp_agr_station_gatherers_policy_balanced"
 
 		modifier = {}
 
@@ -17,7 +17,7 @@ asp_station_gatherers_policy = {
 	}
 
 	option = {
-		name = "asp_station_gatherers_policy_minerals"
+		name = "asp_agr_station_gatherers_policy_minerals"
 
 		modifier = {
 			station_gatherers_energy_produces_mult = -0.2
@@ -30,7 +30,7 @@ asp_station_gatherers_policy = {
 	}
 
 	option = {
-		name = "asp_station_gatherers_policy_energy"
+		name = "asp_agr_station_gatherers_policy_energy"
 
 		modifier = {
 			station_gatherers_energy_produces_mult = 0.2
@@ -44,13 +44,13 @@ asp_station_gatherers_policy = {
 }
 
 ## Переключатель производства науки на научных станциях
-asp_station_researchers_policy = {
+asp_agr_station_researchers_policy = {
 	potential = {
-		has_technology = tech_asp_research_station_1
+		has_technology = tech_asp_agr_research_station_1
 	}
 
 	option = {
-		name = "asp_station_researchers_policy_balanced"
+		name = "asp_agr_station_researchers_policy_balanced"
 
 		modifier = {}
 
@@ -60,7 +60,7 @@ asp_station_researchers_policy = {
 	}
 
 	option = {
-		name = "asp_station_researchers_policy_eng"
+		name = "asp_agr_station_researchers_policy_eng"
 		modifier = {
 			station_researchers_engineering_research_produces_mult = 0.25
 			station_researchers_society_research_produces_mult = -0.10
@@ -73,7 +73,7 @@ asp_station_researchers_policy = {
 	}
 
 	option = {
-		name = "asp_station_researchers_policy_phys"
+		name = "asp_agr_station_researchers_policy_phys"
 
 		modifier = {
 			station_researchers_physics_research_produces_mult = 0.25
@@ -87,7 +87,7 @@ asp_station_researchers_policy = {
 	}
 
 	option = {
-		name = "asp_station_researchers_policy_soci"
+		name = "asp_agr_station_researchers_policy_soci"
 
 		modifier = {
 			station_researchers_society_research_produces_mult = 0.25

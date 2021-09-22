@@ -1,4 +1,4 @@
-tech_asp_research_station_1 = {
+tech_asp_agr_research_station_1 = {
 	cost = @tier3cost1
 	area = physics
 	tier = 2
@@ -42,12 +42,12 @@ tech_asp_research_station_1 = {
 		}
 	}
 }
-tech_asp_research_station_2 = {
+tech_asp_agr_research_station_2 = {
 	cost = 38000
 	area = physics
 	tier = 4
 	category = { computing }
-	prerequisites = { "tech_asp_research_station_1" } # Сделаю зависимость от появления имеющейся технологии первого уровня
+	prerequisites = { "tech_asp_agr_research_station_1" } # Сделаю зависимость от появления имеющейся технологии первого уровня
 	weight = @tier3weight2
 	is_rare = yes
 

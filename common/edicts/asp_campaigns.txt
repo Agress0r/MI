@@ -1,6 +1,6 @@
 # Модовые компании
  ## Компания по дополнительному производству редких ресурсов на 10 лет + 15%
-asp_rare_resources_production = {
+ asp_agr_rare_resources_production = {
 	length = 3600
 	icon = "GFX_edict_type_time"
 	resources = {
@@ -16,10 +16,10 @@ asp_rare_resources_production = {
 		station_gatherers_volatile_motes_produces_mult = 0.15
 	}
 	prerequisites = {
-		"tech_asp_mining_station_2"
+		"tech_asp_agr_mining_station_2"
 	}
 	potential = {
-		has_technology = tech_asp_mining_station_2
+		has_technology = tech_asp_agr_mining_station_2
 	}
 	ai_weight = {
 		weight = 1

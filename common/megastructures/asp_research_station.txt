@@ -1,10 +1,10 @@
 # Первый уровень
 
-asp_research_station_0 = {
+asp_agr_research_station_0 = {
 	entity = "ancient_research_station_entity"
 	construction_entity = "ancient_research_station_entity"
 	portrait = "GFX_megastructure_construction_background" # Мб заменить, ибо на неё игрок будет натыкаться иногда
-	prerequisites = { "tech_asp_research_station_1" }		# Нужно добавить зависимость от технологии
+	prerequisites = { "tech_asp_agr_research_station_1" }		# Нужно добавить зависимость от технологии
 
 	possible = {
 		exists = starbase
@@ -29,7 +29,7 @@ asp_research_station_0 = {
 		}
 		custom_tooltip = {
 			fail_text = "requires_no_existing_research_station"
-			from = { NOT = { has_country_flag = asp_science_station_created } }
+			from = { NOT = { has_country_flag = asp_agr_science_station_created } }
 		}
 	}
 
@@ -112,22 +112,22 @@ asp_research_station_0 = {
 			clear_deposits = yes
 		}
 		from = { 
-			set_country_flag = asp_science_station_created
-			country_event = { id = asp.12 }
+			set_country_flag = asp_agr_science_station_created
+			country_event = { id = asp_agr.12 }
 		 } # Нужно присобачить сюда ивент после завершения строительства - мейби создать специальный проект
 	}
 }
 # Второй уровень
-asp_research_station_2 = {
+asp_agr_research_station_2 = {
 	entity = "ancient_research_station_2_entity"
 	construction_entity = "ancient_research_station_2_entity"
 	portrait = "GFX_megastructure_construction_background" # Мб заменить, ибо на неё игрок будет натыкаться иногда
-	prerequisites = { "tech_asp_research_station_2" }		# Нужно добавить зависимость от технологии
+	prerequisites = { "tech_asp_agr_research_station_2" }		# Нужно добавить зависимость от технологии
 	place_entity_on_planet_plane = no
 	entity_offset = { x = -7 y = -7 }
 
 	upgrade_from = {
-		asp_research_station_0
+		asp_agr_research_station_0
 	}
 	build_time = 2800
 	resources = {

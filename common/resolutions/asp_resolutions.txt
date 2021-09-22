@@ -18,7 +18,7 @@
 
 # NOTE: Remember to add Resolutions to a Resolution Category! - gotch ya
 
-#asp_resolution_space_mining = {
+#asp_agr_resolution_space_mining = {
 #	icon = ""
 #
 #	resources = {

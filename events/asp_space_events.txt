@@ -1,4 +1,4 @@
-namespace = asp
+namespace = asp_agr
 
 ##########################################
 # All possible events from the ASP mod
@@ -10,9 +10,9 @@ namespace = asp
 
 ### Событие с лидером - роботом - инициализатор
 ship_event = {
-	id = asp.1
-	title = "asp.1.name"
-	desc = "asp.1.desc"
+	id = asp_agr.1
+	title = "asp_agr.1.name"
+	desc = "asp_agr.1.desc"
 	picture = GFX_evt_ship_travel
 	show_sound = event_alien_signal
 	hide_window = no
@@ -29,13 +29,13 @@ ship_event = {
 
 	
 		option = {
-			name = asp.1.a
-			set_country_flag = asp_leader_event_happened
+			name = asp_agr.1.a
+			set_country_flag = asp_agr_leader_event_happened
 			owner = { country_event = { id = asp.2 } }
 		}
 
 	    option = {
-		name = asp.1.b
+		name = asp_agr.1.b
 		owner = {
 			add_monthly_resource_mult = {
 				resource = society_research
@@ -52,16 +52,16 @@ ship_event = {
 			add_resource = {
 				alloys = 350
 			}
-			set_country_flag = asp_leader_event_happened
+			set_country_flag = asp_agr_leader_event_happened
 		}
 	}
 }
 
 # Само событие с лидером Роботом
 country_event = {
-	id = asp.2
-	title = "asp.2.name"
-	desc = "asp.2.desc"
+	id = asp_agr.2
+	title = "asp_agr.2.name"
+	desc = "asp_agr.2.desc"
 	hide_window = no
 	show_sound = event_mystic_reveal_light
     diplomatic = yes
@@ -76,7 +76,7 @@ country_event = {
 	trigger = {
 		owner = {
 			NOT = {
-				has_country_flag = asp_leader_event_happened
+				has_country_flag = asp_agr_leader_event_happened
 			}
 		}
 	}
@@ -86,7 +86,7 @@ immediate = {
 				limit = {
 				   owner = {
 					   NOT = {
-					     	has_country_flag = asp_leader_event_happened
+					     	has_country_flag = asp_agr_leader_event_happened
 					         }
 				}
 			 }
@@ -105,7 +105,7 @@ immediate = {
 					trait = trait_robot_learning_algorithms
 				}
 				effect = {
-					save_global_event_target_as = asp_leader_robo_species
+					save_global_event_target_as = asp_agr_leader_robo_species
 				}
 			}
 
@@ -124,7 +124,7 @@ immediate = {
 					trait = trait_robot_learning_algorithms
 				}
 				effect = {
-					save_global_event_target_as = asp_leader_robo_species_gov
+					save_global_event_target_as = asp_agr_leader_robo_species_gov
 				}
 			}
 		}
@@ -132,63 +132,63 @@ immediate = {
 			 # Решил остановиться на синтах или машинах, потом подумаю и возможно изменю решение
 			 # По возможности добавить комнату где ИИ "типо говорит" и даёт выбор, нежели просто событие с кнопками.
 					 option = {
-						name = asp_game_start.2.a
-                        custom_tooltip = asp.leader.accepted.tooltip
+						name = asp_agr_game_start.2.a
+                        custom_tooltip = asp_agr.leader.accepted.tooltip
 					    create_leader = {
 						event_leader = yes
 						class = governor
 						name = "Executive unit F90"
-						species = event_target:asp_leader_robo_species_gov
+						species = event_target:asp_agr_leader_robo_species_gov
 						skill = 5
 					 }
                     hidden_effect = { last_created_leader = {set_age = 314 } }
-					set_country_flag = asp_leader_event_happened
+					set_country_flag = asp_agr_leader_event_happened
 				 }
 
 					option = {
-						name = asp_game_start.2.b
-						custom_tooltip = asp.leader.accepted.tooltip
+						name = asp_agr_game_start.2.b
+						custom_tooltip = asp_agr.leader.accepted.tooltip
 					    create_leader = {
 						event_leader = yes
 						class = scientist
 						name = "Executive unit F99"
-						species = event_target:asp_leader_robo_species
+						species = event_target:asp_agr_leader_robo_species
 						skill = 5
 					}
 					hidden_effect = { last_created_leader = {set_age = 314 } }
-					set_country_flag = asp_leader_event_happened
+					set_country_flag = asp_agr_leader_event_happened
 				 }
 
 					option = {
-						name = asp_game_start.2.c
-						custom_tooltip = asp.leader.accepted.tooltip
+						name = asp_agr_game_start.2.c
+						custom_tooltip = asp_agr.leader.accepted.tooltip
 					    create_leader = {
 						event_leader = yes
 						class = admiral
 						name = "Executive unit F91"
-						species = event_target:asp_leader_robo_species
+						species = event_target:asp_agr_leader_robo_species
 						skill = 5
 					}
 					hidden_effect = { last_created_leader = {set_age = 314 } }
-					set_country_flag = asp_leader_event_happened
+					set_country_flag = asp_agr_leader_event_happened
 				 }
 
 					option = {
-						name = asp_game_start.2.d
-						custom_tooltip = asp.leader.accepted.tooltip
+						name = asp_agr_game_start.2.d
+						custom_tooltip = asp_agr.leader.accepted.tooltip
 					    create_leader = {
 						event_leader = yes
 						class = general
 						name = "Executive unit F93"
-						species = event_target:asp_leader_robo_species
+						species = event_target:asp_agr_leader_robo_species
 						skill = 5
 					}
 					hidden_effect = { last_created_leader = {set_age = 314 } }
-					set_country_flag = asp_leader_event_happened
+					set_country_flag = asp_agr_leader_event_happened
 				 }
                  # Можно эффект на проверку создать дабы кучу текста таким макаром не создавать в основном файле с событием, по типу give_next_ai_tech_option_effect из ивента федерации
 				 option = {
-					name = asp_game_start.2.e
+					name = asp_agr_game_start.2.e
 					if = {
 						limit = {
 						NOT = { has_technology = "tech_administrative_ai" }	
@@ -252,9 +252,9 @@ immediate = {
 
 # Событие с дополнительными редкими ресурсами
 ship_event = {
-	id = asp.4
-	title = "asp.4.name"
-	desc = "asp.4.desc"
+	id = asp_agr.4
+	title = "asp_agr.4.name"
+	desc = "asp_agr.4.desc"
 	hide_window = no
 	picture = GFX_evt_ship_in_orbit
 	show_sound = event_default
@@ -269,13 +269,13 @@ ship_event = {
 	  }
            owner = { 
 	          NOT = {
-		           has_country_flag = asp_rare_resources_event_cooldown
+		           has_country_flag = asp_agr_rare_resources_event_cooldown
 		  }
 		}
  }
 
 	option = {
-		name = "asp.4.a"
+		name = "asp_agr.4.a"
 		owner = {
 			locked_random_list = {
 				33 = {
@@ -295,16 +295,16 @@ ship_event = {
 				}
 			}
 		}
-		set_timed_country_flag = { flag = asp_rare_resources_event_cooldown days = 540 }
+		set_timed_country_flag = { flag = asp_agr_rare_resources_event_cooldown days = 540 }
 	}
 }
 
 # Событие с найденными артефактами на астероиде
 # Ancrel це Ancient Relics т.е проверка длс - зачем кому-то релики если нету длс?
 ship_event = {
-	id = asp.5
-	title = "asp.5.name"
-	desc = "asp.5.desc"
+	id = asp_agr.5
+	title = "asp_agr.5.name"
+	desc = "asp_agr.5.desc"
 	hide_window = no
 	picture = GFX_evt_gas_giant_station
 	show_sound = event_default
@@ -314,7 +314,7 @@ ship_event = {
 	trigger = {
 		owner = { has_ancrel = yes 
 		NOT = {
-			has_country_flag = asp_artifact_event_cooldown
+			has_country_flag = asp_agr_artifact_event_cooldown
 		      } 
 	    }
 		from.planet = {
@@ -335,15 +335,15 @@ ship_event = {
 					owner = { medium_artifact_reward = yes }
 				}
 			}
-			set_timed_country_flag = { flag = asp_artifact_event_cooldown days = 540 }
+			set_timed_country_flag = { flag = asp_agr_artifact_event_cooldown days = 540 }
 		}
 	}
 }
 # Событие с увелчинием производства энергии на объекте
 ship_event = {
-	id = asp.6
-	title = "asp.6.name"
-	desc = "asp.6.desc"
+	id = asp_agr.6
+	title = "asp_agr.6.name"
+	desc = "asp_agr.6.desc"
 	hide_window = no
 	picture = GFX_evt_mining_operations
 	show_sound = event_construction
@@ -358,7 +358,7 @@ ship_event = {
 		}
 		owner = { 
 		NOT = {
-			has_country_flag = asp_energy_event_cooldown
+			has_country_flag = asp_agr_energy_event_cooldown
 		      }
 			}
 	}
@@ -380,14 +380,14 @@ ship_event = {
 				}
 			}
 		}
-		set_timed_country_flag = { flag = asp_energy_event_cooldown days = 540 }
+		set_timed_country_flag = { flag = asp_agr_energy_event_cooldown days = 540 }
 	}
 }
 # Событие с найденной раскопкой - раскопку же нужно продумать
 ship_event = {
-	id = asp.7
-	title = "asp.7.name"
-	desc = "asp.7.desc"
+	id = asp_agr.7
+	title = "asp_agr.7.name"
+	desc = "asp_agr.7.desc"
 	hide_window = no
 	picture = GFX_evt_ancient_records
 	show_sound = event_super_explosion
@@ -406,7 +406,7 @@ ship_event = {
 		has_ancrel = yes
 		is_ai = no
 		NOT = {
-			has_country_flag = asp_ancrel_site
+			has_country_flag = asp_agr_ancrel_site
 		      }
 			}
 	}
@@ -414,10 +414,10 @@ ship_event = {
 	option = {
 		name = EXCELLENT
 		owner = {
-			set_country_flag = asp_ancrel_site
+			set_country_flag = asp_agr_ancrel_site
 		}
 		From.planet = {
-			create_archaeological_site = asp_ancrel_site
+			create_archaeological_site = asp_agr_ancrel_site
 		}
 		root = {
 			fleet = {
@@ -428,9 +428,9 @@ ship_event = {
 }
 ### Потерянный корабль угасшей империи - нужны границы рядом с угашкой
 ship_event = {
-	id = asp.8
-	title = "asp.8.name"
-	desc = "asp.8.desc"
+	id = asp_agr.8
+	title = "asp_agr.8.name"
+	desc = "asp_agr.8.desc"
 	hide_window = no
 	picture = GFX_evt_ship_in_orbit_2
 	show_sound = event_sensor_ping
@@ -450,7 +450,7 @@ ship_event = {
 					is_country_type = awakened_fallen_empire
 					}
 					NOT = {
-						has_country_flag = asp_ancrel_site
+						has_country_flag = asp_agr_ancrel_site
 						  }
 				}
 			}
@@ -469,7 +469,7 @@ ship_event = {
 					}
 				}
 			}
-			this.owner = { save_event_target_as = asp_fe_empire }
+			this.owner = { save_event_target_as = asp_agr_fe_empire }
 		}
 		create_fleet = {
 			settings = {
@@ -478,7 +478,7 @@ ship_event = {
 				uses_naval_capacity = yes
 			}
 			effect = {
-				set_owner = event_target:asp_fe_empire
+				set_owner = event_target:asp_agr_fe_empire
 				create_ship = {
 					name = Xentoras
 					design = "Lexon"
@@ -491,19 +491,19 @@ ship_event = {
 				set_fleet_stance = passive
 				set_aggro_range_measure_from = self
 				set_aggro_range = 350
-				save_event_target_as = asp_fallen_empire_ship
+				save_event_target_as = asp_agr_fallen_empire_ship
 				set_owner = root
 			}
 		}
 	}
 
 	option = {
-		name = asp.8.a
-		custom_tooltip = asp.8.a.tooltip
+		name = asp_agr.8.a
+		custom_tooltip = asp_agr.8.a.tooltip
 	}
 
 	option = {
-		name = asp.8.b
+		name = asp_agr.8.b
 		hidden_effect = {
 			add_monthly_resource_mult = {
 				resource = engineering_research
@@ -514,15 +514,15 @@ ship_event = {
 			add_resource = {
 				alloys = 760
 			}
-			destroy_fleet = event_target:asp_fallen_empire_ship
+			destroy_fleet = event_target:asp_agr_fallen_empire_ship
 		}
 	}
 }
 # Событие с увелчинием производства минералов на объекте
 ship_event = {
-	id = asp.9
-	title = "asp.9.name"
-	desc = "asp.9.desc"
+	id = asp_agr.9
+	title = "asp_agr.9.name"
+	desc = "asp_agr.9.desc"
 	hide_window = no
 	picture = GFX_evt_mining_operations
 	show_sound = event_construction
@@ -538,7 +538,7 @@ ship_event = {
 		}
 		owner = { 
 		NOT = {
-			has_country_flag = asp_mineral_event_cooldown
+			has_country_flag = asp_agr_mineral_event_cooldown
 		      }
 			}
 	}
@@ -560,14 +560,14 @@ ship_event = {
 				}
 			}
 		}
-		set_timed_country_flag = { flag = asp_mineral_event_cooldown days = 540 }
+		set_timed_country_flag = { flag = asp_agr_mineral_event_cooldown days = 540 }
 	}
 }
 # Событие с увелчинием производства редкого ресурса на объекте
 ship_event = {
-	id = asp.10
-	title = "asp.10.name"
-	desc = "asp.10.desc"
+	id = asp_agr.10
+	title = "asp_agr.10.name"
+	desc = "asp_agr.10.desc"
 	hide_window = no
 	picture = GFX_evt_mining_operations
 	show_sound = event_construction
@@ -591,7 +591,7 @@ ship_event = {
 		}
 		owner = {
 		NOT = {
-			has_country_flag = asp_rare_resource_cooldown
+			has_country_flag = asp_agr_rare_resource_cooldown
 		      }
 			}
 	}
@@ -629,15 +629,15 @@ ship_event = {
 				  }
 			}
 		}
-		set_timed_country_flag = { flag = asp_rare_resource_cooldown days = 680 }
+		set_timed_country_flag = { flag = asp_agr_rare_resource_cooldown days = 680 }
 	}
 }
 
 ### Завершение строительства комплекса по переработке
 country_event = {
-	id = asp.11
-	title = "asp.11.name"
-	desc = "asp.11.desc"
+	id = asp_agr.11
+	title = "asp_agr.11.name"
+	desc = "asp_agr.11.desc"
 	picture = GFX_evt_mining_station
 	show_sound = event_radio_chatter
 	location = FROM
@@ -650,9 +650,9 @@ country_event = {
 }
 ### Завершение строительства комлекса анализа данных
 country_event = {
-	id = asp.12
-	title = "asp.12.name"
-	desc = "asp.12.desc"
+	id = asp_agr.12
+	title = "asp_agr.12.name"
+	desc = "asp_agr.12.desc"
 	picture = GFX_evt_atmospheric_entry
 	show_sound = event_radio_chatter
 	location = FROM
@@ -665,9 +665,9 @@ country_event = {
 }
 ### Ивент с научной станкой
 ship_event = {
-	id = asp.13
-	title = "asp.13.name"
-	desc = "asp.13.desc"
+	id = asp_agr.13
+	title = "asp_agr.13.name"
+	desc = "asp_agr.13.desc"
 	hide_window = no
 	picture = GFX_evt_glitchy_matrix
 	show_sound = event_administrative_work
@@ -683,7 +683,7 @@ ship_event = {
 		}
 		owner = { 
 		NOT = {
-			has_country_flag = asp_engineering_research_event_cooldown
+			has_country_flag = asp_agr_engineering_research_event_cooldown
 		      }
 			}
 	}
@@ -691,7 +691,7 @@ ship_event = {
 	#mean_time_to_happen = { days = 40 }
 
 	option = {
-		name = asp.13.a
+		name = asp_agr.13.a
 			From = { 			
 				locked_random_list = {
 				11 = {
@@ -724,18 +724,18 @@ ship_event = {
 			}
 		 }
 	add_resource = { energy = -175 }
-	set_timed_country_flag = { flag = asp_engineering_research_event_cooldown days = 540 }
+	set_timed_country_flag = { flag = asp_agr_engineering_research_event_cooldown days = 540 }
 	}
 
 	option = {
 		name = NOTIME
-		set_timed_country_flag = { flag = asp_engineering_research_event_cooldown days = 540 }
+		set_timed_country_flag = { flag = asp_agr_engineering_research_event_cooldown days = 540 }
 	}
 }
 
 ### Уничтожение минеральной станции - инициализатор
 ship_event = {
-	id = asp.14
+	id = asp_agr.14
 	hide_window = yes
 	is_triggered_only = yes
 	
@@ -786,27 +786,27 @@ ship_event = {
 		}
 		owner = {
 		NOT = {
-			has_country_flag = asp_mining_station_destroy_event_cooldown
+			has_country_flag = asp_agr_mining_station_destroy_event_cooldown
 		      }
 			}
 	}
 
 	immediate = {
 		from.planet = {
-			save_event_target_as = asp_planet_station_destroy
+			save_event_target_as = asp_agr_planet_station_destroy
 		}
 		owner = {
-			set_timed_country_flag = { flag = asp_mining_station_destroy_event_cooldown days = 1801 }
-			country_event = { id = asp.15 days = 1400 random = 400 } # 1400 400
+			set_timed_country_flag = { flag = asp_agr_mining_station_destroy_event_cooldown days = 1801 }
+			country_event = { id = asp_agr.15 days = 1400 random = 400 } # 1400 400
 		}
 	}
 }
 
 ### Уничтожение минеральной станции - само событие
 country_event = {
-	id = asp.15
-	title = "asp.15.name"
-	desc = "asp.15.desc"
+	id = asp_agr.15
+	title = "asp_agr.15.name"
+	desc = "asp_agr.15.desc"
 	picture = GFX_evt_space_debris
 	show_sound = event_super_explosion
 	location = event_target:asp_planet_station_destroy
@@ -814,17 +814,17 @@ country_event = {
 
 	trigger = {
 		owner = {
-			has_country_flag = asp_mining_station_destroy_event_cooldown
+			has_country_flag = asp_agr_mining_station_destroy_event_cooldown
 		}
 	}
 
 	immediate = {
-		event_target:asp_planet_station_destroy = {
+		event_target:asp_agr_planet_station_destroy = {
 			if = {
 				limit = {
 					exists = mining_station
 				}
-				save_event_target_as = asp_gg_mining_station
+				save_event_target_as = asp_agr_gg_mining_station
 				mining_station = {
 					destroy_fleet = this
 				}
@@ -842,7 +842,7 @@ country_event = {
 }
 ### Уничтожение научной станции - инициализатор
 ship_event = {
-	id = asp.16
+	id = asp_agr.16
 	hide_window = yes
 	is_triggered_only = yes
 	
@@ -865,44 +865,44 @@ ship_event = {
 		}
 		owner = {
 		NOT = {
-			has_country_flag = asp_science_station_destroy_event_cooldown
+			has_country_flag = asp_agr_science_station_destroy_event_cooldown
 		      }
 			}
 	}
 
 	immediate = {
 		from.planet = {
-			save_event_target_as = asp_planet_science_station_destroy
+			save_event_target_as = asp_agr_planet_science_station_destroy
 		}
 		owner = {
-			set_timed_country_flag = { flag = asp_science_station_destroy_event_cooldown days = 1801 }
-			country_event = { id = asp.17 days = 1400 random = 400 } # 1400 400
+			set_timed_country_flag = { flag = asp_agr_science_station_destroy_event_cooldown days = 1801 }
+			country_event = { id = asp_agr.17 days = 1400 random = 400 } # 1400 400
 		}
 	}
 }
 ### Уничтожение научной станции - само событие
 country_event = {
-	id = asp.17
-	title = "asp.17.name"
-	desc = "asp.17.desc"
+	id = asp_agr.17
+	title = "asp_agr.17.name"
+	desc = "asp_agr.17.desc"
 	picture = GFX_evt_space_debris
 	show_sound = event_super_explosion
-	location = event_target:asp_planet_science_station_destroy
+	location = event_target:asp_agr_planet_science_station_destroy
 	is_triggered_only = yes
 
 	trigger = {
 		owner = {
-			has_country_flag = asp_science_station_destroy_event_cooldown
+			has_country_flag = asp_agr_science_station_destroy_event_cooldown
 			}
 	}
 
 	immediate = {
-		event_target:asp_planet_science_station_destroy = {
+		event_target:asp_agr_planet_science_station_destroy = {
 			if = {
 				limit = {
 					exists = research_station
 				}
-				save_event_target_as = asp_gg_science_station
+				save_event_target_as = asp_agr_gg_science_station
 				research_station = {
 					destroy_fleet = this
 				}
@@ -914,13 +914,13 @@ country_event = {
 
 	option = {
 		name = WORRYING
-		custom_tooltip = asp.17.a
+		custom_tooltip = asp_agr.17.a
 	}
 
 }
 ### Бафф на темп исследований от станции - инициализатор
 ship_event = {
-	id = asp.18
+	id = asp_agr.18
 	hide_window = yes
 	is_triggered_only = yes
 	
@@ -943,44 +943,44 @@ ship_event = {
 		}
 		owner = {
 		NOT = {
-			has_country_flag = asp_science_buff_event_cooldown
+			has_country_flag = asp_agr_science_buff_event_cooldown
 		      }
 		}
 	}
 
 	immediate = {
 		from.planet = {
-			save_event_target_as = asp_science_buff_planet
+			save_event_target_as = asp_agr_science_buff_planet
 		}
 		owner = {
-			set_timed_country_flag = { flag = asp_science_buff_event_cooldown days = 2801 }
-			country_event = { id = asp.19 days = 1400 random = 1400 } # 1400 1400
+			set_timed_country_flag = { flag = asp_agr_science_buff_event_cooldown days = 2801 }
+			country_event = { id = asp_agr.19 days = 1400 random = 1400 } # 1400 1400
 		}
 	}
 }
 ### Бафф на темп исследований от станции - сам ивент
 country_event = {
-	id = asp.19
+	id = asp_agr.19
 	title = "asp.19.name"
 	desc = "asp.19.desc"
 	picture = GFX_evt_physics_research
 	show_sound = event_radio_chatter
-	location = event_target:asp_science_buff_planet
+	location = event_target:asp_agr_science_buff_planet
 	is_triggered_only = yes
 
 	trigger = {
 		owner = {
-			has_country_flag = asp_science_buff_event_cooldown
+			has_country_flag = asp_agr_science_buff_event_cooldown
 			}
 	}
 
 	immediate = {
-		event_target:asp_science_buff_planet = {
+		event_target:asp_agr_science_buff_planet = {
 			if = {
 				limit = {
 					exists = research_station
 				}
-				save_event_target_as = asp_science_station_buff
+				save_event_target_as = asp_agr_science_station_buff
 			}
 		}
 	}
@@ -996,7 +996,7 @@ country_event = {
 }
 ### Научный представитель со станции - инициализатор
 ship_event = {
-	id = asp.20
+	id = asp_agr.20
 	hide_window = yes
 	is_triggered_only = yes
 	
@@ -1021,38 +1021,38 @@ ship_event = {
 
 	immediate = {
 		from.planet = {
-			save_event_target_as = asp_science_leader_planet
+			save_event_target_as = asp_agr_science_leader_planet
 		}
 		owner = {
-			country_event = { id = asp.21 days = 1898 random = 1756 } # ~1900 ~1900
+			country_event = { id = asp_agr.21 days = 1898 random = 1756 } # ~1900 ~1900
 		}
 	}
 }
 ### Сам ивент с учёным - одноразовый запуск
 country_event = {
-	id = asp.21
-	title = "asp.21.name"
-	desc = "asp.21.desc"
+	id = asp_agr.21
+	title = "asp_agr.21.name"
+	desc = "asp_agr.21.desc"
 	picture = GFX_evt_acquire_asset
 	show_sound = event_default
-	location = event_target:asp_science_leader_planet
+	location = event_target:asp_agr_science_leader_planet
 	is_triggered_only = yes
 	fire_only_once = yes
 
 	immediate = {
-		event_target:asp_science_leader_planet = {
+		event_target:asp_agr_science_leader_planet = {
 			if = {
 				limit = {
 					exists = research_station
 				}
-				save_event_target_as = asp_science_station_leader
+				save_event_target_as = asp_agr_science_station_leader
 			}
 		}
 	}
 
 	option = {
 		name = SPLENDID
-		custom_tooltip = asp.21.a
+		custom_tooltip = asp_agr.21.a
 		locked_random_list = {
 		33 = {
 			create_leader = {
@@ -1065,7 +1065,7 @@ country_event = {
 					trait = leader_trait_expertise_biology
 				}
 			}
-			last_created_leader = { save_event_target_as = asp_scientist }
+			last_created_leader = { save_event_target_as = asp_agr_scientist }
 		}
 		33 = {
 			create_leader = {
@@ -1078,7 +1078,7 @@ country_event = {
 					trait = leader_trait_expertise_computing
 				}
 			}
-			last_created_leader = { save_event_target_as = asp_scientist }
+			last_created_leader = { save_event_target_as = asp_agr_scientist }
 		}
 		33 = {
 			create_leader = {
@@ -1091,7 +1091,7 @@ country_event = {
 					trait = leader_trait_expertise_industry
 				}
 			}
-			last_created_leader = { save_event_target_as = asp_scientist }
+			last_created_leader = { save_event_target_as = asp_agr_scientist }
 		}
 	  }
 	}
