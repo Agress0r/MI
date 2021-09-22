@@ -22,7 +22,7 @@ ship_event = {
 		owner = {
 			is_ai = no
 			NOT = {
-				has_country_flag = asp_leader_event_happened
+				has_country_flag = asp_agr_leader_event_happened
 			}
 		}
 	}
@@ -91,7 +91,7 @@ immediate = {
 				}
 			 }
 			 create_species = {
-				name = "NAME_asp_mechanical_species"
+				name = "NAME_asp_agr_mechanical_species"
 				class = MACHINE #Можно оставить MACHINE, но в таком раскладе врядли ли синтетика получится начислить.
 				portrait = ai_crisis_2
 				namelist = "AI"
@@ -110,7 +110,7 @@ immediate = {
 			}
 
 			create_species = {
-				name = "NAME_asp_mechanical_species_gov"
+				name = "NAME_asp_agr_mechanical_species_gov"
 				class = ROBOT
 				portrait = "sd_mol_robot"
 				namelist = "AI"
@@ -836,7 +836,7 @@ country_event = {
 
 	option = {
 		name = WORRYING
-		custom_tooltip = asp.15.a
+		custom_tooltip = asp_agr.15.a
 	}
 
 }
@@ -961,8 +961,8 @@ ship_event = {
 ### Бафф на темп исследований от станции - сам ивент
 country_event = {
 	id = asp_agr.19
-	title = "asp.19.name"
-	desc = "asp.19.desc"
+	title = "asp_agr.19.name"
+	desc = "asp_agr.19.desc"
 	picture = GFX_evt_physics_research
 	show_sound = event_radio_chatter
 	location = event_target:asp_agr_science_buff_planet
