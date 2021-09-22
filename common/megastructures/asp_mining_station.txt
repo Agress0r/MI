@@ -3,7 +3,7 @@ asp_agr_mining_station_0 = {
 	entity = "ancient_drone_01_mining_station_entity"
 	construction_entity = "ancient_drone_01_mining_station_entity"
 	portrait = "GFX_megastructure_construction_background"
-	prerequisites = { "tech_asp_mining_station_1" }	
+	prerequisites = { "tech_asp_agr_mining_station_1" }	
 
 	possible = {
 		exists = starbase
@@ -27,8 +27,8 @@ asp_agr_mining_station_0 = {
 			}
 		}
 		custom_tooltip = {
-			fail_text = "requires_no_existing_asp_mining_station"
-			from = { NOT = { has_country_flag = asp_minig_station_created } }
+			fail_text = "requires_no_existing_asp_agr_mining_station"
+			from = { NOT = { has_country_flag = asp_agr_minig_station_created } }
 		}
 	}
 	show_prereqs = yes
@@ -101,17 +101,17 @@ asp_agr_mining_station_0 = {
 			clear_deposits = yes
 		}
 		from = { 
-			set_country_flag = asp_minig_station_created
-			country_event = { id = asp.11 }
+			set_country_flag = asp_agr_minig_station_created
+			country_event = { id = asp_agr.11 }
 		 } # Нужно присобачить сюда ивент после завершения строительства - мейби создать специальный проект
 	}
 }
 
-asp_mining_station_2 = {
+asp_agr_mining_station_2 = {
 	entity = "drone_homebase_hull_entity"
 	construction_entity = "drone_homebase_hull_entity"
 	portrait = "GFX_megastructure_construction_background"
-	prerequisites = { "tech_asp_mining_station_2" }	
+	prerequisites = { "tech_asp_agr_mining_station_2" }	
 	place_entity_on_planet_plane = no
 	entity_offset = { x = -7 y = -7 }
 	build_time = 2800
@@ -132,7 +132,7 @@ asp_mining_station_2 = {
 	}
 	show_prereqs = yes
 	upgrade_from = {
-		asp_mining_station_0
+		asp_agr_mining_station_0
 	}
 	country_modifier = {
 		station_gatherers_produces_mult = 0.3
