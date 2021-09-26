@@ -77,7 +77,7 @@ asp_agr_research_station_0 = {
 					who = prev.from
 					status = yes
 				}
-				colonizeable_planet = no
+				colonizable_planet = no
 			}
 			custom_tooltip = {
 				fail_text = "requires_no_anomaly"
@@ -98,7 +98,15 @@ asp_agr_research_station_0 = {
 				fail_text = "requires_not_ring_world"
 				is_ringworld = no
 			}
-		} # use these for all non-star megastructures
+			custom_tooltip = {
+				fail_text = "requires_no_existing_megastructure"
+				NOR = {
+					has_planet_flag = megastructure
+					has_planet_flag = has_megastructure
+					solar_system = { has_star_flag = ring_world_built }
+				}
+			}	
+		}
 	}
 
 	construction_blocked_by_others = yes
