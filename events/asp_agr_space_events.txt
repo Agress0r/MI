@@ -30,8 +30,8 @@ ship_event = {
 	
 		option = {
 			name = asp_agr.1.a
-			set_country_flag = asp_agr_leader_event_happened
-			owner = { country_event = { id = asp.2 } }
+			owner = { set_country_flag = asp_agr_leader_event_happened
+				country_event = { id = asp.2 } }
 		}
 
 	    option = {
@@ -295,7 +295,9 @@ ship_event = {
 				}
 			}
 		}
-		set_timed_country_flag = { flag = asp_agr_rare_resources_event_cooldown days = 540 }
+		owner = {
+			set_timed_country_flag = { flag = asp_agr_rare_resources_event_cooldown days = 540 }
+		}
 	}
 }
 
@@ -379,8 +381,10 @@ ship_event = {
 					From = { add_deposit = d_energy_5 }
 				}
 			}
+		} 
+		owner = {
+			set_timed_country_flag = { flag = asp_agr_energy_event_cooldown days = 540 }
 		}
-		set_timed_country_flag = { flag = asp_agr_energy_event_cooldown days = 540 }
 	}
 }
 # Событие с найденной раскопкой - раскопку же нужно продумать
@@ -439,7 +443,9 @@ ship_event = {
 	location = from
 
 	trigger = {
-		is_ai = no
+		owner = {
+			is_ai = no
+		}
 		closest_system = {
 			max_steps = 1
 			limit = {
@@ -505,14 +511,16 @@ ship_event = {
 	option = {
 		name = asp_agr.8.b
 		hidden_effect = {
-			add_monthly_resource_mult = {
-				resource = engineering_research
-				value = @tier3researchreward
-				min = @tier2researchmin
-				max = @tier3researchmax
-			}
-			add_resource = {
-				alloys = 760
+			owner = {
+				add_monthly_resource_mult = {
+					resource = engineering_research
+					value = @tier3researchreward
+					min = @tier2researchmin
+					max = @tier3researchmax
+				}
+				add_resource = {
+					alloys = 760
+				}
 			}
 			destroy_fleet = event_target:asp_agr_fallen_empire_ship
 		}
@@ -560,7 +568,9 @@ ship_event = {
 				}
 			}
 		}
-		set_timed_country_flag = { flag = asp_agr_mineral_event_cooldown days = 540 }
+		owner = {
+			set_timed_country_flag = { flag = asp_agr_mineral_event_cooldown days = 540 }
+		}
 	}
 }
 # Событие с увелчинием производства редкого ресурса на объекте
@@ -629,7 +639,9 @@ ship_event = {
 				  }
 			}
 		}
-		set_timed_country_flag = { flag = asp_agr_rare_resource_cooldown days = 680 }
+		owner = {
+			set_timed_country_flag = { flag = asp_agr_rare_resource_cooldown days = 680 }
+		}
 	}
 }
 
@@ -723,13 +735,17 @@ ship_event = {
 				}
 			}
 		 }
-	add_resource = { energy = -175 }
-	set_timed_country_flag = { flag = asp_agr_engineering_research_event_cooldown days = 540 }
+		 owner = {
+			add_resource = { energy = -175 }
+			set_timed_country_flag = { flag = asp_agr_engineering_research_event_cooldown days = 540 }
+		 }
 	}
 
 	option = {
 		name = NOTIME
-		set_timed_country_flag = { flag = asp_agr_engineering_research_event_cooldown days = 540 }
+		owner = {
+			set_timed_country_flag = { flag = asp_agr_engineering_research_event_cooldown days = 540 }
+		}
 	}
 }
 
