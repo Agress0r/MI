@@ -31,7 +31,7 @@ ship_event = {
 		option = {
 			name = asp_agr.1.a
 			owner = { set_country_flag = asp_agr_leader_event_happened
-				country_event = { id = asp.2 } }
+				country_event = { id = asp_agr.2 } }
 		}
 
 	    option = {
