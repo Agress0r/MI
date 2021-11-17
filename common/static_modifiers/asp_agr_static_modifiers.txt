@@ -3,7 +3,13 @@
  # Резолюция на бонус добычи 1
 asp_agr_resolution_space_mining = {
 	station_gatherers_produces_mult = 0.05
-	shipclass_starbase_build_speed_mult = 0.08 # Надо проверить на что сводится данный прицел - на старпорты или на все звёздные базы сразу
+	station_researchers_produces_mult = 0.05
+}
+asp_agr_resolution_rare_resources_space_mining = {
+	station_gatherers_exotic_gases_produces_mult = 0.05
+	station_gatherers_rare_crystals_produces_mult = 0.05
+	station_gatherers_volatile_motes_produces_mult = 0.05
+	station_gatherers_upkeep_mult = 0.08 # Вроде как повышает на 8% обслуживание в энергии (и не только в энергии) у всех станций.
 }
 
 habs_mineral_output_1 = {

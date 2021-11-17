@@ -8,5 +8,16 @@ station_researchers = {
 	generate_mult_modifiers = {
 		produces
 		cost
+		upkeep
+	}
+}
+
+station_gatherers = {
+	parent = stations
+
+	generate_mult_modifiers = {
+		produces
+		cost
+		upkeep
 	}
 }

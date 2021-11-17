@@ -224,3 +224,8 @@ habs_mineral_output_4_desc:0 "REPLACE_ME"
 
 asp_agr_habitat_mineral_production_boost:0 "REPLACE_ME"
 asp_agr_habitat_mineral_production_boost_desc:0 "REPLACE_ME"
+
+resolution_category_asp_agr_space_industry:0 "Космическая промышленность"
+asp_agr_space_industry:0 "Космические станции"
+asp_agr_resolution_space_mining:0 "Общие шаблоны космической добычи"
+asp_agr_resolution_space_mining_desc:0 "Благодаря более тесному сотрудничеству и выработке общих шаблонов мы сможем оптимизировать добычу всех наших космических станций."

@@ -38,7 +38,7 @@ asp_agr_resolution_space_mining = {
 	resources = {
 		category = resolutions
 		cost = {
-			influence = @resolution_cost_t2 # Глобальная переменная, в начале файла указана
+			influence = @resolution_cost_t1 # Глобальная переменная, в начале файла указана
 		}
 	}
 
@@ -78,6 +78,78 @@ asp_agr_resolution_space_mining = {
 				is_active_resolution = "asp_agr_resolution_space_mining"
 			}
 		}
+	}
+	
+    # Нужно будет подумать над тем, кому эта резолюция будет больше всего интересна.
+	ai_weight = {
+		weight = @resolution_weight_loved
+
+		modifier = {
+			factor = 1.2
+			is_authoritarian = yes
+		}
+
+		modifier = {
+			factor = 1.2
+			is_slaver = yes
+		}
+
+		modifier = {
+			factor = 0.5
+			has_valid_civic = civic_environmentalist
+		}
+
+		modifier = {
+			factor = 0.5
+			has_valid_civic = civic_agrarian_idyll
+		}
+	}
+}
+
+
+ # Вторая реза
+asp_agr_resolution_space_mining_1 = {
+	icon = "GFX_resolution_space_industry"
+
+	resources = {
+		category = resolutions
+		cost = {
+			influence = @resolution_cost_t2 # Глобальная переменная, в начале файла указана
+		}
+	}
+
+	target = no
+	level = 2
+
+	modifier = {
+		asp_agr_resolution_space_mining = 1 # В статичных модификаторах это весит
+		asp_agr_resolution_rare_resources_space_mining = 1 # В статичных модификаторах это весит
+	}
+
+    # Флаг ограничитель для дпиломатических кулдаунов во время выбора и предложения резолюции
+	effect = {
+		hidden_effect = {
+			set_global_flag = galactic_community_resolution_passed
+			set_timed_country_flag = { flag = galactic_community_resolution_passed_space_mining days = @resolution_flag_timer }
+			add_modifier = {
+				modifier = resolution_passed_diplomatic_weight
+				days = 2200
+			}
+		}
+	}
+
+	fail_effects = {
+		hidden_effect = {
+			set_timed_country_flag = { flag = galactic_community_resolution_failed_space_mining days = @resolution_flag_timer }
+			add_modifier = {
+				modifier = resolution_failed_diplomatic_weight
+				days = 2200
+			}
+		}
+	}
+
+	allow = {
+		is_active_resolution = "asp_agr_resolution_space_mining"
 	}
 	
     # Нужно будет подумать над тем, кому эта резолюция будет больше всего интересна.
