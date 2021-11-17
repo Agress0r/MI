@@ -34,9 +34,9 @@ mod_station_researchers_cost_mult:0 "Стоимость строительств
 mod_shipclass_research_station_build_speed_mult:0 "Скорость строительства научной станции:"
 mod_shipclass_mining_station_build_speed_mult:0 "Скорость строительства добывающей станции:"
 
-mod_station_gatherers_exotic_gases_produces_mult:0 "Добывающие станции — производство газов"
-mod_station_gatherers_rare_crystals_produces_mult:0 "Добывающие станции — производство кристалов"
-mod_station_gatherers_volatile_motes_produces_mult:0 "Добывающие станции — производство пылинок"
+mod_station_gatherers_exotic_gases_produces_mult:0 "Добывающие станции — производство £exotic_gases£ газов"
+mod_station_gatherers_rare_crystals_produces_mult:0 "Добывающие станции — производство £rare_crystals£ кристалов"
+mod_station_gatherers_volatile_motes_produces_mult:0 "Добывающие станции — производство £volatile_motes£ пылинок"
 
 mod_station_researchers_engineering_research_produces_mult:0 "Производство очков инженерных исследований научными станциями"
 mod_station_researchers_society_research_produces_mult:0 "Производство очков физических исследований научными станциями"
@@ -226,6 +226,15 @@ asp_agr_habitat_mineral_production_boost:0 "REPLACE_ME"
 asp_agr_habitat_mineral_production_boost_desc:0 "REPLACE_ME"
 
 resolution_category_asp_agr_space_industry:0 "Космическая промышленность"
+
 asp_agr_space_industry:0 "Космические станции"
-asp_agr_resolution_space_mining:0 "Общие шаблоны космической добычи"
+
+asp_agr_resolution_space_mining:0 "Общий манифест космической добычи"
 asp_agr_resolution_space_mining_desc:0 "Благодаря более тесному сотрудничеству и выработке общих шаблонов мы сможем оптимизировать добычу всех наших космических станций."
+
+asp_agr_resolution_space_mining_1:0 "Обработка редких ресурсов"
+asp_agr_resolution_space_mining_1_desc:0 "Если увеличить бюджет станций что заняты добычей редких ресурсов, то их эффективность может значительно возрасти."
+
+asp_agr_resolution_rare_resources_space_mining:0 "Обработка редких ресурсов"
+
+mod_station_gatherers_upkeep_mult:0 "Стоимость £job_maintenance_drone£ обслуживания космических станций"
