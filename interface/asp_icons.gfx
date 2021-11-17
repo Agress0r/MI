@@ -4,4 +4,9 @@ spriteType = {
 	name = "GFX_mod_cost_mult"
 	texturefile = "gfx/interface/icons/modifiers/mod_starbase_ship_build_cost_mult.dds"
   }
+  # Спрайт что отвечает за эконку резолюций
+  spriteType = {
+    name = "GFX_resolution_space_industry"
+    textureFile = "gfx/interface/icons/resolutions/resolution_space_industry.dds"
+  }
 }
