@@ -127,6 +127,7 @@ immediate = {
 					save_global_event_target_as = asp_agr_leader_robo_species_gov
 				}
 			}
+			set_country_flag = asp_agr_leader_event_happened # Подсейв на тот случай если флаг выше не активировался.
 		}
       }
 			 # Решил остановиться на синтах или машинах, потом подумаю и возможно изменю решение
@@ -260,6 +261,7 @@ ship_event = {
 	show_sound = event_default
 	is_triggered_only = yes
 	location = from
+	
 	trigger = {
 		from.planet = {
 				has_resource = {

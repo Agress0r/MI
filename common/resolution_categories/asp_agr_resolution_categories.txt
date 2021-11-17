@@ -1,10 +1,12 @@
 # Резолюции для галактического сообщества
+ # Это под резолюции, нужно создать новую ветку с ними дабы они отображались так же как и все остальное. 
 
-#resolution_category_space_industry = {
-#	group = commerce_industry
-#	icon = "GFX_resolution_industrial_development"
-#
-#	resolution_types = {
-#		"asp_agr_resolution_space_mining"
-#	}
-#}
+resolution_category_asp_agr_space_industry = {
+	group = asp_agr_space_industry
+	icon = "GFX_resolution_space_industry"
+
+    # Тут уже весь список резолюций что будут находится в категории
+	resolution_types = {
+		"asp_agr_resolution_space_mining"
+	}
+}
