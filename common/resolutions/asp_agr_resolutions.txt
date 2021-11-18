@@ -32,7 +32,7 @@
 
 # NOTE: Remember to add Resolutions to a Resolution Category! - gotch ya
 
-asp_agr_resolution_space_mining = {
+asp_agr_resolution_space_mining_0 = {
 	icon = "GFX_resolution_space_industry"
 
 	resources = {
@@ -46,7 +46,7 @@ asp_agr_resolution_space_mining = {
 	level = 1
 
 	modifier = {
-		asp_agr_resolution_space_mining = 1 # В статичных модификаторах это весит
+		asp_agr_resolution_space_mining_0 = 1 # В статичных модификаторах это весит
 	}
 
     # Флаг ограничитель для дпиломатических кулдаунов во время выбора и предложения резолюции
@@ -75,7 +75,7 @@ asp_agr_resolution_space_mining = {
 		custom_tooltip = {
 			fail_text = "resolution_already_active"
 			NOR = {
-				is_active_resolution = "asp_agr_resolution_space_mining"
+				is_active_resolution = "asp_agr_resolution_space_mining_0"
 			}
 		}
 	}
@@ -122,8 +122,7 @@ asp_agr_resolution_space_mining_1 = {
 	level = 2
 
 	modifier = {
-		asp_agr_resolution_space_mining = 1 # В статичных модификаторах это весит
-		asp_agr_resolution_rare_resources_space_mining = 1 # В статичных модификаторах это весит
+		asp_agr_resolution_space_mining_1 = 1 # В статичных модификаторах это весит
 	}
 
     # Флаг ограничитель для дпиломатических кулдаунов во время выбора и предложения резолюции
@@ -149,7 +148,7 @@ asp_agr_resolution_space_mining_1 = {
 	}
 
 	allow = {
-		is_active_resolution = "asp_agr_resolution_space_mining"
+		is_active_resolution = "asp_agr_resolution_space_mining_0"
 	}
 	
     # Нужно будет подумать над тем, кому эта резолюция будет больше всего интересна.
@@ -194,12 +193,11 @@ asp_agr_resolution_space_mining_2 = {
 
 	modifier = {
 		asp_agr_resolution_space_mining_2 = 1 # В статичных модификаторах это весит
-		asp_agr_resolution_rare_resources_space_mining = 1 # В статичных модификаторах это весит
-		asp_agr_resolution_starbase_constructions_production = 1 # В статичных модификаторах это весит
 	}
 
     # Флаг ограничитель для дпиломатических кулдаунов во время выбора и предложения резолюции
 	effect = {
+		custom_tooltip = asp_agr_resolution_space_mining_2_tooltip
 		hidden_effect = {
 			set_global_flag = galactic_community_resolution_passed
 			set_timed_country_flag = { flag = galactic_community_resolution_passed_space_mining days = @resolution_flag_timer }

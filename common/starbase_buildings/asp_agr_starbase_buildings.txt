@@ -1,1 +1,40 @@
 # Директория для сооружений на звёздной базе
+
+asp_agr_space_resource_enrichment = {
+	icon = "GFX_spaceport_nebula_refinery" # Нужно будет сделать (спиздить) иконку где-то для этого домика, пока с рефайнери возьму.
+	construction_days = 320
+
+	potential = {
+		exists = owner
+		is_active_resolution = "asp_agr_resolution_space_mining_2"
+	}
+
+	possible = {
+		custom_tooltip = {
+			fail_text = "requires_starport"
+			has_starbase_size >= starbase_starport
+		}
+	}
+
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 200
+		}
+
+		upkeep = {
+			energy = 4
+		}
+	}
+    # Сюда модификатор на дополнительные ресурсы с системы
+	system_modifier = {
+		station_gatherers_produces_mult = 0.25
+		station_researchers_produces_mult = 0.25
+	}
+
+	ai_build_at_chokepoint = yes
+	ai_build_outside_chokepoint = yes
+	ai_weight = {
+		weight = 90
+	}
+}
