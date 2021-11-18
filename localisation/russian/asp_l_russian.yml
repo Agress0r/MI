@@ -246,4 +246,4 @@ mod_starbase_constructions_upkeep_mult:0 "Стоимость £job_maintenance_d
 mod_starbase_constructions_produces_mult:0 "Производительность модулей космических станций"
 
 sm_asp_agr_space_resource_enrichment:0 "Ресурно-системный комплекс"
-sm_asp_agr_space_resource_enrichment_desc:0 "Здесь обрабатываются и обогащаются все добываемые в системе ресурсы, а так же фильтруются и сортируются любые данные с научных станций."
+sm_asp_agr_space_resource_enrichment_desc:0 "Здесь обрабатываются и об`огащаются все добываемые в системе ресурсы, а так же фильтруются и сортируются любые данные с научных станций.\n"

@@ -6,7 +6,7 @@ asp_agr_space_resource_enrichment = {
 
 	potential = {
 		exists = owner
-		#is_active_resolution = "asp_agr_resolution_space_mining_2"
+		is_active_resolution = "asp_agr_resolution_space_mining_2" # Если активна резолюция, то будет открыт доступ к новому домику.
 	}
 
 	possible = {
