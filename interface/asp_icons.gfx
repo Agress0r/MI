@@ -4,9 +4,14 @@ spriteType = {
 	name = "GFX_mod_cost_mult"
 	texturefile = "gfx/interface/icons/modifiers/mod_starbase_ship_build_cost_mult.dds"
   }
-  # Спрайт что отвечает за эконку резолюций
+  # Спрайт что отвечает за иконку резолюций
   spriteType = {
     name = "GFX_resolution_space_industry"
     textureFile = "gfx/interface/icons/resolutions/resolution_space_industry.dds"
+  }
+  # Спрайт что отвечает за иконку модуля станции
+  spriteType = {
+    name = "GFX_asp_agr_space_resource_enrichment"
+    textureFile = "gfx/interface/icons/modules/asp_agr_space_resource_enrichment.dds"
   }
 }

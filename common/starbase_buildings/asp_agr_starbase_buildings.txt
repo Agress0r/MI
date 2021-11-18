@@ -1,12 +1,12 @@
 # Директория для сооружений на звёздной базе
 
 asp_agr_space_resource_enrichment = {
-	icon = "GFX_spaceport_nebula_refinery" # Нужно будет сделать (спиздить) иконку где-то для этого домика, пока с рефайнери возьму.
+	icon = "GFX_asp_agr_space_resource_enrichment" # Нужно будет сделать (спиздить) иконку где-то для этого домика, пока с рефайнери возьму.
 	construction_days = 320
 
 	potential = {
 		exists = owner
-		is_active_resolution = "asp_agr_resolution_space_mining_2"
+		#is_active_resolution = "asp_agr_resolution_space_mining_2"
 	}
 
 	possible = {
