@@ -759,6 +759,9 @@ ship_event = {
 	
 	trigger = {
 		from.planet = {
+			NOT = {
+				is_planet_class = pc_habitat
+			}
 			OR = {
 			has_resource = {
 				type = minerals
@@ -866,6 +869,9 @@ ship_event = {
 	
 	trigger = {
 		from.planet = {
+			NOT = {
+				is_planet_class = pc_habitat
+			}
 			OR = {
 			has_resource = {
 				type = engineering_research

@@ -225,6 +225,7 @@ habs_mineral_output_4_desc:0 "REPLACE_ME"
 asp_agr_habitat_mineral_production_boost:0 "REPLACE_ME"
 asp_agr_habitat_mineral_production_boost_desc:0 "REPLACE_ME"
 
+### Есть в игре, надо доработать
 resolution_category_asp_agr_space_industry:0 "Космическая промышленность"
 
 asp_agr_space_industry:0 "Космические станции"
@@ -238,3 +239,6 @@ asp_agr_resolution_space_mining_1_desc:0 "Если увеличить бюдже
 asp_agr_resolution_rare_resources_space_mining:0 "Обработка редких ресурсов"
 
 mod_station_gatherers_upkeep_mult:0 "Стоимость £job_maintenance_drone£ обслуживания космических станций"
+
+mod_starbase_constructions_upkeep_mult:0 "Стоимость £job_maintenance_drone£ обслуживания модулей звёздных баз"
+mod_starbase_constructions_produces_mult:0 "Производительность модулей космических станций"

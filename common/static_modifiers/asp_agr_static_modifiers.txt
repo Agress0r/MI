@@ -5,13 +5,23 @@ asp_agr_resolution_space_mining = {
 	station_gatherers_produces_mult = 0.05
 	station_researchers_produces_mult = 0.05
 }
+
+asp_agr_resolution_space_mining_2 = {
+	station_gatherers_produces_mult = 0.1
+	station_researchers_produces_mult = 0.1
+}
+ # Резолюция на бонус добычи 2
 asp_agr_resolution_rare_resources_space_mining = {
 	station_gatherers_exotic_gases_produces_mult = 0.05
 	station_gatherers_rare_crystals_produces_mult = 0.05
 	station_gatherers_volatile_motes_produces_mult = 0.05
 	station_gatherers_upkeep_mult = 0.08 # Вроде как повышает на 8% обслуживание в энергии (и не только в энергии) у всех станций.
 }
-
+ # Резолюция на бонус добычи 3 - сюда нужно добавить что-то интересное, типо указа, проекта или ещё чего-либо.
+asp_agr_resolution_starbase_constructions_production = {
+	starbase_constructions_produces_mult = 0.1
+	starbase_constructions_upkeep_mult = 0.08
+}
 habs_mineral_output_1 = {
 	icon = "gfx/interface/icons/planet_modifiers/asp_space_mining_drones.dds"
 	icon_frame = 1

@@ -9,5 +9,6 @@ resolution_category_asp_agr_space_industry = {
 	resolution_types = {
 		"asp_agr_resolution_space_mining"
 		"asp_agr_resolution_space_mining_1"
+		"asp_agr_resolution_space_mining_2"
 	}
 }

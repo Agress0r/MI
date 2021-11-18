@@ -21,3 +21,12 @@ station_gatherers = {
 		upkeep
 	}
 }
+
+starbase_constructions = {
+	parent = starbases
+
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+}

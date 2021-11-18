@@ -61,7 +61,7 @@ asp_agr_mining_station_0 = {
 		station_gatherers_produces_mult = 0.15
 		station_gatherers_cost_mult = -0.15
 		shipclass_mining_station_build_speed_mult = 0.30 # С каждым уровнем можно по 30 накидывать - работает
-		country_resource_max_add = 25000 # Приятный бонус сверху
+		country_resource_max_add = 20000 # Приятный бонус сверху
 	}
 	
 	placement_rules = {
@@ -154,6 +154,6 @@ asp_agr_mining_station_2 = {
 		station_gatherers_produces_mult = 0.3
 		station_gatherers_cost_mult = -0.3
 		shipclass_mining_station_build_speed_mult = 0.60
-		country_resource_max_add = 50000
+		country_resource_max_add = 40000
 	}
 }
