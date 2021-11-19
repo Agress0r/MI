@@ -227,3 +227,38 @@ asp_agr_habitat_mineral_production_boost:0 "REPLACE_ME"
 asp_agr_habitat_mineral_production_boost_desc:0 "REPLACE_ME"
 #asp_agr_habitat_mineral_production_boost_effects:0 "COCK_city"
 asp_agr_habitat_mineral_production_boost_short:0 "COCK_City"
+
+### Есть в игре, надо доработать
+resolution_category_asp_agr_space_industry:0 "Космическая промышленность"
+
+asp_agr_space_industry:0 "Космические станции"
+
+asp_agr_resolution_space_mining_0:0 "Общий манифест космической добычи"
+asp_agr_resolution_space_mining_0_desc:0 "Благодаря более тесному сотрудничеству и выработке общих шаблонов мы сможем оптимизировать добычу всех наших космических станций."
+
+asp_agr_resolution_space_mining_1:0 "Обработка редких ресурсов"
+asp_agr_resolution_space_mining_1_desc:0 "Если увеличить бюджет станций что заняты добычей редких ресурсов, то их эффективность может значительно возрасти."
+
+asp_agr_resolution_space_mining_2:0 "Оптимизация космической-переработки"
+asp_agr_resolution_space_mining_2_desc:0 "Для обеспечения наибольшей эффективности обработки сырых ресурсов, следует разработать локально-системное сооружение для обогащения ресурсов."
+asp_agr_resolution_space_mining_2_tooltip:0 "Открывает доступ к §Yуникальному сооружению§! на космических станциях."
+
+mod_station_gatherers_upkeep_mult:0 "Стоимость £job_maintenance_drone£ обслуживания станций космо-добычи"
+
+mod_starbase_constructions_upkeep_mult:0 "Стоимость £job_maintenance_drone£ обслуживания модулей звёздных баз"
+mod_starbase_constructions_produces_mult:0 "Производительность модулей космических станций"
+
+sm_asp_agr_space_resource_enrichment:0 "Ресурно-системный комплекс"
+sm_asp_agr_space_resource_enrichment_desc:0 "Здесь обрабатываются и обогащаются все добываемые в системе ресурсы, а так же фильтруются и сортируются любые данные с научных станций.\n"
+
+asp_agr_resolution_space_mining_repeal_0:0 "§RАннулировать резолюцию $asp_agr_resolution_space_mining_0$§!"
+asp_agr_resolution_space_mining_repeal_0_desc:0 "[global_event_country.GetGalCommunityOrGalImperium] не имеет причин вмешиваться в дела космической-промышленности. Мы не станем навязывать свою точку зрения другим государствам."
+asp_agr_resolution_space_mining_repeal_0_effect_success:0 "Аннулирует резолюцию §Y$asp_agr_resolution_space_mining_0$§!."
+
+asp_agr_resolution_space_mining_repeal_1:0 "§RАннулировать резолюцию $asp_agr_resolution_space_mining_1$§!"
+asp_agr_resolution_space_mining_repeal_1_desc:0 "$asp_agr_resolution_space_mining_repeal_0_desc$"
+asp_agr_resolution_space_mining_repeal_1_effect_success:0 "Аннулирует резолюцию §Y$asp_agr_resolution_space_mining_1$§!, тем самым внедряя галактический закон §Y$asp_agr_resolution_space_mining_0$§!."
+
+asp_agr_resolution_space_mining_repeal_2:0 "§RАннулировать резолюцию $asp_agr_resolution_space_mining_2$§!"
+asp_agr_resolution_space_mining_repeal_2_desc:0 "$asp_agr_resolution_space_mining_repeal_0_desc$"
+asp_agr_resolution_space_mining_repeal_2_effect_success:0 "Аннулирует резолюцию §Y$asp_agr_resolution_space_mining_2$§!, тем самым внедряя галактический закон §Y$asp_agr_resolution_space_mining_1$§!."
