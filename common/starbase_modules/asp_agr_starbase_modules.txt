@@ -25,9 +25,14 @@ asp_agr_asteroid_drones = {
 				OR = {
 					AND = {
 							count_system_planet = {
-								limit = { is_asteroid = yes }
+								limit = {
+									OR = {
+										is_planet_class = pc_asteroid
+										is_planet_class = pc_rare_crystal_asteroid
+									}
+								}
 								count >= 1
-						}
+							}
 						starbase = {
 							count_starbase_modules = {
 								type = asp_agr_asteroid_drones
@@ -36,9 +41,14 @@ asp_agr_asteroid_drones = {
 						}
 					}
 					AND = {
-						count_system_planet = {
-							limit = { is_asteroid = yes }
-							count >= 2
+					count_system_planet = {
+						limit = {
+							OR = {
+								is_planet_class = pc_asteroid
+								is_planet_class = pc_rare_crystal_asteroid
+							}
+						}
+						count >= 2
 					}
 					starbase = {
 						count_starbase_modules = {
@@ -49,9 +59,14 @@ asp_agr_asteroid_drones = {
 				 }
 				 AND = {
 					count_system_planet = {
-						limit = { is_asteroid = yes }
+						limit = {
+							OR = {
+								is_planet_class = pc_asteroid
+								is_planet_class = pc_rare_crystal_asteroid
+							}
+						}
 						count >= 3
-				}
+					}
 				starbase = {
 					count_starbase_modules = {
 						type = asp_agr_asteroid_drones
@@ -61,9 +76,14 @@ asp_agr_asteroid_drones = {
 			}
 			AND = {
 				count_system_planet = {
-					limit = { is_asteroid = yes }
+					limit = {
+						OR = {
+							is_planet_class = pc_asteroid
+							is_planet_class = pc_rare_crystal_asteroid
+						}
+					}
 					count >= 4
-			}
+				}
 			starbase = {
 				count_starbase_modules = {
 					type = asp_agr_asteroid_drones
@@ -73,9 +93,14 @@ asp_agr_asteroid_drones = {
 		}
 		AND = {
 			count_system_planet = {
-				limit = { is_asteroid = yes }
+				limit = {
+					OR = {
+						is_planet_class = pc_asteroid
+						is_planet_class = pc_rare_crystal_asteroid
+					}
+				}
 				count >= 5
-		}
+			}
 		starbase = {
 			count_starbase_modules = {
 				type = asp_agr_asteroid_drones
@@ -85,12 +110,14 @@ asp_agr_asteroid_drones = {
 	}
 	AND = {
 		count_system_planet = {
-			limit = { 
-				is_asteroid = yes
-				asp_agr_icy_asteroid = yes
-			 }
+			limit = {
+				OR = {
+					is_planet_class = pc_asteroid
+					is_planet_class = pc_rare_crystal_asteroid
+				}
+			}
 			count >= 6
-	}
+		}
 	starbase = {
 		count_starbase_modules = {
 			type = asp_agr_asteroid_drones

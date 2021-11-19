@@ -1,11 +1,5 @@
 
 # Триггеры для проверки
-asp_agr_icy_asteroid = {
-	any_system_planet = {
-		is_asteroid = yes
-		is_planet_class = pc_ice_asteroid
-	}
-}
 enough_minerals_in_system_1 = {
 		any_system_planet = {
 			has_resource = {
