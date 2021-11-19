@@ -28,13 +28,52 @@ asp_agr_space_resource_enrichment = {
 	}
     # Сюда модификатор на дополнительные ресурсы с системы
 	system_modifier = {
-		station_gatherers_produces_mult = 0.25
-		station_researchers_produces_mult = 0.25
+		station_gatherers_produces_mult = 0.35
+		station_researchers_produces_mult = 0.35
 	}
 
 	ai_build_at_chokepoint = yes
 	ai_build_outside_chokepoint = yes
 	ai_weight = {
 		weight = 90
+		# По логике здесь я проверяю систему и все корабли в ней, ищу копалды, считаю их и если возвращается ДА то умножаю 90 на 3
+		modifier = {
+			factor = 3
+			solar_system = {
+				any_fleet_in_system = {
+						any_owned_ship = { is_ship_size = mining_station }
+						count_owned_ship = {
+							limit = { is_ship_size = mining_station }
+							count >= 5
+						}
+				}
+			}
+		}
+		# А тут если копалд было мало, то приоритет в строительстве будет меньше
+		modifier = {
+			factor = 1.5
+			solar_system = {
+				any_fleet_in_system = {
+						any_owned_ship = { is_ship_size = mining_station }
+						count_owned_ship = {
+							limit = { is_ship_size = mining_station }
+							count <= 3
+						}
+				}
+			}
+		}
+		# А тут если копалд 0-1, то строить этот модуль в системе смысла 0
+		modifier = {
+			factor = 0
+			solar_system = {
+				any_fleet_in_system = {
+						any_owned_ship = { is_ship_size = mining_station }
+						count_owned_ship = {
+							limit = { is_ship_size = mining_station }
+							count <= 1
+						}
+				}
+			}
+		}
 	}
 }

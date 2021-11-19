@@ -7,6 +7,9 @@ resolution_category_asp_agr_space_industry = {
 
     # Тут уже весь список резолюций что будут находится в категории
 	resolution_types = {
+		"asp_agr_resolution_space_mining_repeal_0"
+		"asp_agr_resolution_space_mining_repeal_1"
+		"asp_agr_resolution_space_mining_repeal_2"
 		"asp_agr_resolution_space_mining_0"
 		"asp_agr_resolution_space_mining_1"
 		"asp_agr_resolution_space_mining_2"
