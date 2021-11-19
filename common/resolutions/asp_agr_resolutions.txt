@@ -14,6 +14,7 @@
 @resolution_cost_denounce = 25
 
 @resolution_flag_timer = 360
+
 #example_resolution = {
 #	icon = "name of the icon key"
 #	resources = {} # cost and category
@@ -33,7 +34,7 @@
 # NOTE: Remember to add Resolutions to a Resolution Category! - gotch ya
 
 asp_agr_resolution_space_mining_0 = {
-	icon = "GFX_resolution_space_industry"
+	icon = "GFX_resolution_space_industry" # Мейби всем уникальные накинуть, но если они из одной ветки то хз зачем
 
 	resources = {
 		category = resolutions
@@ -76,26 +77,46 @@ asp_agr_resolution_space_mining_0 = {
 			fail_text = "resolution_already_active"
 			NOR = {
 				is_active_resolution = "asp_agr_resolution_space_mining_0"
+				is_active_resolution = "asp_agr_resolution_space_mining_1"
+				is_active_resolution = "asp_agr_resolution_space_mining_2"
 			}
 		}
 	}
 	
     # Нужно будет подумать над тем, кому эта резолюция будет больше всего интересна.
 	ai_weight = {
-		weight = @resolution_weight_loved
+		weight = @resolution_weight_popular
 
+        # Если империя стартует на истоке сред обитания, то у неё большая заинтересованность в увеличении космо-добычи.
 		modifier = {
-			factor = 1.2
-			is_authoritarian = yes
+			factor = 2
+			OR = {
+				has_origin = origin_void_dwellers
+				has_origin = origin_shattered_ring
+			}
 		}
-
+        # Машины больше всех заинтересованы в оптимизации космо добычи
 		modifier = {
-			factor = 1.2
-			is_slaver = yes
+			factor = 2.2
+			is_machine_empire = yes
 		}
-
+        # Хайв империи же наоборот, меньше заинтересованы в оптимизации космо добычи
 		modifier = {
 			factor = 0.5
+			is_hive_empire = yes
+		}
+        # Если империя имеет майнинг гильдии машинные и не только, то у неё большая заинтересованность в увеличении космо-добычи.
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_valid_civic = civic_machine_rockbreakers
+				has_valid_civic = civic_mining_guilds
+			}
+		}
+        # Т.к это космо-добыча, то влияние на природу планеты меньше, а следовательно империи что заинтересованы в сохранении природы на планете
+		# так же заинтересованы в этой резолюции
+		modifier = {
+			factor = 1.2
 			has_valid_civic = civic_environmentalist
 		}
 
@@ -128,7 +149,6 @@ asp_agr_resolution_space_mining_1 = {
     # Флаг ограничитель для дпиломатических кулдаунов во время выбора и предложения резолюции
 	effect = {
 		hidden_effect = {
-			set_global_flag = galactic_community_resolution_passed
 			set_timed_country_flag = { flag = galactic_community_resolution_passed_space_mining days = @resolution_flag_timer }
 			add_modifier = {
 				modifier = resolution_passed_diplomatic_weight
@@ -153,20 +173,38 @@ asp_agr_resolution_space_mining_1 = {
 	
     # Нужно будет подумать над тем, кому эта резолюция будет больше всего интересна.
 	ai_weight = {
-		weight = @resolution_weight_loved
+		weight = @resolution_weight_popular
 
+        # Если империя стартует на истоке сред обитания, то у неё большая заинтересованность в увеличении космо-добычи.
 		modifier = {
-			factor = 1.2
-			is_authoritarian = yes
+			factor = 2
+			OR = {
+				has_origin = origin_void_dwellers
+				has_origin = origin_shattered_ring
+			}
 		}
-
+        # Машины больше всех заинтересованы в оптимизации космо добычи
 		modifier = {
-			factor = 1.2
-			is_slaver = yes
+			factor = 2.2
+			is_machine_empire = yes
 		}
-
+        # Хайв империи же наоборот, меньше заинтересованы в оптимизации космо добычи
 		modifier = {
 			factor = 0.5
+			is_hive_empire = yes
+		}
+        # Если империя имеет майнинг гильдии машинные и не только, то у неё большая заинтересованность в увеличении космо-добычи.
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_valid_civic = civic_machine_rockbreakers
+				has_valid_civic = civic_mining_guilds
+			}
+		}
+        # Т.к это космо-добыча, то влияние на природу планеты меньше, а следовательно империи что заинтересованы в сохранении природы на планете
+		# так же заинтересованы в этой резолюции
+		modifier = {
+			factor = 1.2
 			has_valid_civic = civic_environmentalist
 		}
 
@@ -199,7 +237,6 @@ asp_agr_resolution_space_mining_2 = {
 	effect = {
 		custom_tooltip = asp_agr_resolution_space_mining_2_tooltip
 		hidden_effect = {
-			set_global_flag = galactic_community_resolution_passed
 			set_timed_country_flag = { flag = galactic_community_resolution_passed_space_mining days = @resolution_flag_timer }
 			add_modifier = {
 				modifier = resolution_passed_diplomatic_weight
@@ -223,26 +260,292 @@ asp_agr_resolution_space_mining_2 = {
 	}
 	
     # Нужно будет подумать над тем, кому эта резолюция будет больше всего интересна.
+    # Нужно будет подумать над тем, кому эта резолюция будет больше всего интересна.
 	ai_weight = {
-		weight = @resolution_weight_loved
+		weight = @resolution_weight_popular
 
+        # Если империя стартует на истоке сред обитания, то у неё большая заинтересованность в увеличении космо-добычи.
 		modifier = {
-			factor = 1.2
-			is_authoritarian = yes
+			factor = 2
+			OR = {
+				has_origin = origin_void_dwellers
+				has_origin = origin_shattered_ring
+			}
 		}
-
+        # Машины больше всех заинтересованы в оптимизации космо добычи
 		modifier = {
-			factor = 1.2
-			is_slaver = yes
+			factor = 2.2
+			is_machine_empire = yes
 		}
-
+        # Хайв империи же наоборот, меньше заинтересованы в оптимизации космо добычи
 		modifier = {
 			factor = 0.5
+			is_hive_empire = yes
+		}
+        # Если империя имеет майнинг гильдии машинные и не только, то у неё большая заинтересованность в увеличении космо-добычи.
+		modifier = {
+			factor = 1.5
+			OR = {
+				has_valid_civic = civic_machine_rockbreakers
+				has_valid_civic = civic_mining_guilds
+			}
+		}
+        # Т.к это космо-добыча, то влияние на природу планеты меньше, а следовательно империи что заинтересованы в сохранении природы на планете
+		# так же заинтересованы в этой резолюции
+		modifier = {
+			factor = 1.2
 			has_valid_civic = civic_environmentalist
 		}
 
 		modifier = {
 			factor = 0.5
+			has_valid_civic = civic_agrarian_idyll
+		}
+	}
+}
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+# # # Резолюции, что отвечают за аннулирование результатов # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
+
+asp_agr_resolution_space_mining_repeal_0 = {
+	icon = "GFX_repeal_orange"
+
+	resources = {
+		category = resolutions
+		cost = {
+			influence = @resolution_cost_t1
+		}
+	}
+	target = no
+	fire_and_forget = yes
+
+	effect = {
+		custom_tooltip = asp_agr_resolution_space_mining_repeal_0_effect_success
+		hidden_effect = {
+			cancel_resolution = "asp_agr_resolution_space_mining_0"
+			set_timed_country_flag = { flag = galactic_community_resolution_passed_space_mining_repeal days = @resolution_flag_timer }
+			add_modifier = {
+				modifier = resolution_passed_diplomatic_weight
+				days = 2200
+			}
+		}
+	}
+
+	fail_effects = {
+		hidden_effect = {
+			set_timed_country_flag = { flag = galactic_community_resolution_failed_space_mining_repeal days = @resolution_flag_timer }
+			add_modifier = {
+				modifier = resolution_failed_diplomatic_weight
+				days = 2200
+			}
+		}
+	}
+
+	potential = {
+		is_active_resolution = "asp_agr_resolution_space_mining_0"
+	}
+    # Т.к это обратный результат, то тут вес уходит в непопулярное русло у тех империй, что хотел выбрать эту резу.
+	ai_weight = {
+		weight = @resolution_weight_unpopular
+
+        # Если империя стартует на истоке сред обитания, то у неё большая заинтересованность в увеличении космо-добычи.
+		modifier = {
+			factor = 0.8
+			OR = {
+				has_origin = origin_void_dwellers
+				has_origin = origin_shattered_ring
+			}
+		}
+        # Машины больше всех заинтересованы в оптимизации космо добычи
+		modifier = {
+			factor = 0.6
+			is_machine_empire = yes
+		}
+        # Хайв империи же наоборот, меньше заинтересованы в оптимизации космо добычи
+		modifier = {
+			factor = 1.5
+			is_hive_empire = yes
+		}
+        # Если империя имеет майнинг гильдии машинные и не только, то у неё большая заинтересованность в увеличении космо-добычи.
+		modifier = {
+			factor = 0.8
+			OR = {
+				has_valid_civic = civic_machine_rockbreakers
+				has_valid_civic = civic_mining_guilds
+			}
+		}
+        # Т.к это космо-добыча, то влияние на природу планеты меньше, а следовательно империи что заинтересованы в сохранении природы на планете
+		# так же заинтересованы в этой резолюции
+		modifier = {
+			factor = 1
+			has_valid_civic = civic_environmentalist
+		}
+
+		modifier = {
+			factor = 1.2
+			has_valid_civic = civic_agrarian_idyll
+		}
+	}
+}
+
+asp_agr_resolution_space_mining_repeal_1 = {
+	icon = "GFX_repeal_orange"
+
+	resources = {
+		category = resolutions
+		cost = {
+			influence = @resolution_cost_t2
+		}
+	}
+	target = no
+	fire_and_forget = yes
+
+	effect = {
+		custom_tooltip = asp_agr_resolution_space_mining_repeal_1_effect_success
+		hidden_effect = {
+			cancel_resolution = "asp_agr_resolution_space_mining_1"
+			set_timed_country_flag = { flag = galactic_community_resolution_passed_space_mining_repeal days = @resolution_flag_timer }
+			add_modifier = {
+				modifier = resolution_passed_diplomatic_weight
+				days = 2200
+			}
+		}
+	}
+
+	fail_effects = {
+		hidden_effect = {
+			set_timed_country_flag = { flag = galactic_community_resolution_failed_space_mining_repeal days = @resolution_flag_timer }
+			add_modifier = {
+				modifier = resolution_failed_diplomatic_weight
+				days = 2200
+			}
+		}
+	}
+
+	potential = {
+		is_active_resolution = "asp_agr_resolution_space_mining_1"
+	}
+    # Т.к это обратный результат, то тут вес уходит в непопулярное русло у тех империй, что хотел выбрать эту резу.
+	ai_weight = {
+		weight = @resolution_weight_unpopular
+
+        # Если империя стартует на истоке сред обитания, то у неё большая заинтересованность в увеличении космо-добычи.
+		modifier = {
+			factor = 0.8
+			OR = {
+				has_origin = origin_void_dwellers
+				has_origin = origin_shattered_ring
+			}
+		}
+        # Машины больше всех заинтересованы в оптимизации космо добычи
+		modifier = {
+			factor = 0.6
+			is_machine_empire = yes
+		}
+        # Хайв империи же наоборот, меньше заинтересованы в оптимизации космо добычи
+		modifier = {
+			factor = 1.5
+			is_hive_empire = yes
+		}
+        # Если империя имеет майнинг гильдии машинные и не только, то у неё большая заинтересованность в увеличении космо-добычи.
+		modifier = {
+			factor = 0.8
+			OR = {
+				has_valid_civic = civic_machine_rockbreakers
+				has_valid_civic = civic_mining_guilds
+			}
+		}
+        # Т.к это космо-добыча, то влияние на природу планеты меньше, а следовательно империи что заинтересованы в сохранении природы на планете
+		# так же заинтересованы в этой резолюции
+		modifier = {
+			factor = 1
+			has_valid_civic = civic_environmentalist
+		}
+
+		modifier = {
+			factor = 1.2
+			has_valid_civic = civic_agrarian_idyll
+		}
+	}
+}
+
+asp_agr_resolution_space_mining_repeal_2 = {
+	icon = "GFX_repeal_orange"
+
+	resources = {
+		category = resolutions
+		cost = {
+			influence = @resolution_cost_t3
+		}
+	}
+	target = no
+	fire_and_forget = yes
+
+	effect = {
+		custom_tooltip = asp_agr_resolution_space_mining_repeal_2_effect_success
+		hidden_effect = {
+			cancel_resolution = "asp_agr_resolution_space_mining_2"
+			set_timed_country_flag = { flag = galactic_community_resolution_passed_space_mining_repeal days = @resolution_flag_timer }
+			add_modifier = {
+				modifier = resolution_passed_diplomatic_weight
+				days = 2200
+			}
+		}
+	}
+
+	fail_effects = {
+		hidden_effect = {
+			set_timed_country_flag = { flag = galactic_community_resolution_failed_space_mining_repeal days = @resolution_flag_timer }
+			add_modifier = {
+				modifier = resolution_failed_diplomatic_weight
+				days = 2200
+			}
+		}
+	}
+
+	potential = {
+		is_active_resolution = "asp_agr_resolution_space_mining_2"
+	}
+    # Т.к это обратный результат, то тут вес уходит в непопулярное русло у тех империй, что хотел выбрать эту резу.
+	ai_weight = {
+		weight = @resolution_weight_unpopular
+
+        # Если империя стартует на истоке сред обитания, то у неё большая заинтересованность в увеличении космо-добычи.
+		modifier = {
+			factor = 0.8
+			OR = {
+				has_origin = origin_void_dwellers
+				has_origin = origin_shattered_ring
+			}
+		}
+        # Машины больше всех заинтересованы в оптимизации космо добычи
+		modifier = {
+			factor = 0.6
+			is_machine_empire = yes
+		}
+        # Хайв империи же наоборот, меньше заинтересованы в оптимизации космо добычи
+		modifier = {
+			factor = 1.5
+			is_hive_empire = yes
+		}
+        # Если империя имеет майнинг гильдии машинные и не только, то у неё большая заинтересованность в увеличении космо-добычи.
+		modifier = {
+			factor = 0.8
+			OR = {
+				has_valid_civic = civic_machine_rockbreakers
+				has_valid_civic = civic_mining_guilds
+			}
+		}
+        # Т.к это космо-добыча, то влияние на природу планеты меньше, а следовательно империи что заинтересованы в сохранении природы на планете
+		# так же заинтересованы в этой резолюции
+		modifier = {
+			factor = 1
+			has_valid_civic = civic_environmentalist
+		}
+
+		modifier = {
+			factor = 1.2
 			has_valid_civic = civic_agrarian_idyll
 		}
 	}
