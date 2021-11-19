@@ -215,15 +215,46 @@ asp_agr.11.desc:0 "这个综合设施不仅富集处理了宇宙中所有的资�
 asp_agr.12.name:0 "§Y数据分析综合体 - 准备服务§!"
 asp_agr.12.desc:0 "这个科研设施提高了宇宙中所有科研单位的科研效率，范围从 §Y科研站§! 一直到 §Y科研船§!。"
 
-habs_mineral_output_4:0 "REPLACE_ME"
-habs_mineral_output_4_desc:0 "REPLACE_ME"
-habs_mineral_output_3:0 "REPLACE_ME"
-habs_mineral_output_3_desc:0 "REPLACE_ME"
-habs_mineral_output_2:0 "REPLACE_ME"
-habs_mineral_output_2_desc:0 "REPLACE_ME"
-habs_mineral_output_1:0 "REPLACE_ME"
-habs_mineral_output_1_desc:0 "REPLACE_ME"
+###############################################
+### New content that does not have a Chinese translation
+################################################
 
-asp_agr_habitat_mineral_production_boost:0 "REPLACE_ME"
-asp_agr_habitat_mineral_production_boost_desc:0 "REPLACE_ME"
-asp_agr_habitat_mineral_production_boost_short:0 "COCK_City"
+###################################
+### Starbase buildings| modules ###
+###################################
+sm_asp_agr_space_resource_enrichment:0 "System-resource complex"
+sm_asp_agr_space_resource_enrichment_desc:0 "All the resources extracted in the system are processed and enriched here, as well as any data from scientific stations are filtered and sorted here.\n"
+
+mod_station_gatherers_upkeep_mult:0 "Upkeep £job_maintenance_drone£ cost of space production stations"
+
+mod_starbase_constructions_upkeep_mult:0 "Starbase modules upkeep £job_maintenance_drone£ cost"
+mod_starbase_constructions_produces_mult:0 "Starbase modules production"
+
+##############################################
+### Resolutions and the galactic community ###
+##############################################
+resolution_category_asp_agr_space_industry:0 "Space industry"
+
+asp_agr_space_industry:0 "Space stations"
+
+asp_agr_resolution_space_mining_0:0 "General manifesto of space mining"
+asp_agr_resolution_space_mining_0_desc:0 "Through closer collaboration and the development of common templates, we will be able to optimize the production of all our space stations."
+
+asp_agr_resolution_space_mining_1:0 "Rare resources processing"
+asp_agr_resolution_space_mining_1_desc:0 "If you increase the budget of the stations that are engaged in the extraction of rare resources, then their efficiency can significantly increase."
+
+asp_agr_resolution_space_mining_2:0 "Optimizing space-resources processing"
+asp_agr_resolution_space_mining_2_desc:0 "To ensure the most efficient processing of both raw resources and unfiltered data from science stations, a local-system starbase structure should be developed for the corresponding needs."
+asp_agr_resolution_space_mining_2_tooltip:0 "Grants access to the §Yunique building§! at space stations."
+
+asp_agr_resolution_space_mining_repeal_0:0 "§RRepeal $asp_agr_resolution_space_mining_0$§!"
+asp_agr_resolution_space_mining_repeal_0_desc:0 "[global_event_country.GetGalCommunityOrGalImperium] have no reason to interfere with the space industry. We will not impose our point of view on other states."
+asp_agr_resolution_space_mining_repeal_0_effect_success:0 "Repeals the §Y$asp_agr_resolution_space_mining_0$§! resolution."
+
+asp_agr_resolution_space_mining_repeal_1:0 "§RRepeal $asp_agr_resolution_space_mining_1$§!"
+asp_agr_resolution_space_mining_repeal_1_desc:0 "$asp_agr_resolution_space_mining_repeal_0_desc$"
+asp_agr_resolution_space_mining_repeal_1_effect_success:0 "Repeals the §Y$asp_agr_resolution_space_mining_1$§!, leaving §Y$asp_agr_resolution_space_mining_0$§! as galactic law."
+
+asp_agr_resolution_space_mining_repeal_2:0 "§RRepeal $asp_agr_resolution_space_mining_2$§!"
+asp_agr_resolution_space_mining_repeal_2_desc:0 "$asp_agr_resolution_space_mining_repeal_0_desc$"
+asp_agr_resolution_space_mining_repeal_2_effect_success:0 "Repeals the §Y$asp_agr_resolution_space_mining_2$§!, leaving §Y$asp_agr_resolution_space_mining_1$§! as galactic law."

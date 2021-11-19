@@ -5,6 +5,8 @@
 # Written and edited by Agress0r Komarov
 ##########################################
 
+# Last update - 19.11.2021
+
 # For the most part I used machine translation - if you have suggestions for improvement, please write it on mod page or in steam profile.
 
 #############################################
@@ -28,6 +30,12 @@ asp_agr_mining_station_2:0 "Advanced Complex Resource Processing"
 asp_agr_mining_station_2_DESC:0 "This complex not only enriches and processes all the resources that have been mined in space, but also provides all §Yconstruction ships§! with more advanced technologies of template building."
 requires_no_existing_asp_agr_mining_station:0 "$TRIGGER_FAIL$You cannot build more than one Resource Processing Complex."
 
+###################################
+### Starbase buildings| modules ###
+###################################
+sm_asp_agr_space_resource_enrichment:0 "System-resource complex"
+sm_asp_agr_space_resource_enrichment_desc:0 "All the resources extracted in the system are processed and enriched here, as well as any data from scientific stations are filtered and sorted here.\n"
+
 ##############################################
 ### Variables of cost, service, production ###
 ##############################################
@@ -35,13 +43,18 @@ mod_station_researchers_cost_mult:0 "Science station construction cost:"
 mod_shipclass_research_station_build_speed_mult:0 "Science station construction speed:"
 mod_shipclass_mining_station_build_speed_mult:0 "Mining station construction speed:"
 
-mod_station_gatherers_exotic_gases_produces_mult:0 "Mining stations - exotic gases extraction"
-mod_station_gatherers_rare_crystals_produces_mult:0 "Mining stations - rare crystals extraction"
-mod_station_gatherers_volatile_motes_produces_mult:0 "Mining stations - volatile motes extraction"
+mod_station_gatherers_exotic_gases_produces_mult:0 "Mining stations - £exotic_gases£ exotic gases extraction"
+mod_station_gatherers_rare_crystals_produces_mult:0 "Mining stations - £rare_crystals£ rare crystals extraction"
+mod_station_gatherers_volatile_motes_produces_mult:0 "Mining stations - £volatile_motes£ volatile motes extraction"
 
 mod_station_researchers_engineering_research_produces_mult:0 "Engineering Research points production by science stations"
 mod_station_researchers_society_research_produces_mult:0 "Society Research points production by science stations"
 mod_station_researchers_physics_research_produces_mult:0 "Physics Research points production by science stations"
+
+mod_station_gatherers_upkeep_mult:0 "Upkeep £job_maintenance_drone£ cost of space production stations"
+
+mod_starbase_constructions_upkeep_mult:0 "Starbase modules upkeep £job_maintenance_drone£ cost"
+mod_starbase_constructions_produces_mult:0 "Starbase modules production"
 
 #############
 ### Edicts ##
@@ -102,6 +115,35 @@ tech_asp_agr_mining_station_1_desc:0 "$asp_agr_mining_station_0_MEGASTRUCTURE_DE
 
 tech_asp_agr_mining_station_2:0 "$asp_agr_mining_station_2$"
 tech_asp_agr_mining_station_2_desc:0 "$asp_agr_mining_station_0_MEGASTRUCTURE_DETAILS$"
+
+##############################################
+### Resolutions and the galactic community ###
+##############################################
+resolution_category_asp_agr_space_industry:0 "Space industry"
+
+asp_agr_space_industry:0 "Space stations"
+
+asp_agr_resolution_space_mining_0:0 "General manifesto of space mining"
+asp_agr_resolution_space_mining_0_desc:0 "Through closer collaboration and the development of common templates, we will be able to optimize the production of all our space stations."
+
+asp_agr_resolution_space_mining_1:0 "Rare resources processing"
+asp_agr_resolution_space_mining_1_desc:0 "If you increase the budget of the stations that are engaged in the extraction of rare resources, then their efficiency can significantly increase."
+
+asp_agr_resolution_space_mining_2:0 "Optimizing space-resources processing"
+asp_agr_resolution_space_mining_2_desc:0 "To ensure the most efficient processing of both raw resources and unfiltered data from science stations, a local-system starbase structure should be developed for the corresponding needs."
+asp_agr_resolution_space_mining_2_tooltip:0 "Grants access to the §Yunique building§! at space stations."
+
+asp_agr_resolution_space_mining_repeal_0:0 "§RRepeal $asp_agr_resolution_space_mining_0$§!"
+asp_agr_resolution_space_mining_repeal_0_desc:0 "[global_event_country.GetGalCommunityOrGalImperium] have no reason to interfere with the space industry. We will not impose our point of view on other states."
+asp_agr_resolution_space_mining_repeal_0_effect_success:0 "Repeals the §Y$asp_agr_resolution_space_mining_0$§! resolution."
+
+asp_agr_resolution_space_mining_repeal_1:0 "§RRepeal $asp_agr_resolution_space_mining_1$§!"
+asp_agr_resolution_space_mining_repeal_1_desc:0 "$asp_agr_resolution_space_mining_repeal_0_desc$"
+asp_agr_resolution_space_mining_repeal_1_effect_success:0 "Repeals the §Y$asp_agr_resolution_space_mining_1$§!, leaving §Y$asp_agr_resolution_space_mining_0$§! as galactic law."
+
+asp_agr_resolution_space_mining_repeal_2:0 "§RRepeal $asp_agr_resolution_space_mining_2$§!"
+asp_agr_resolution_space_mining_repeal_2_desc:0 "$asp_agr_resolution_space_mining_repeal_0_desc$"
+asp_agr_resolution_space_mining_repeal_2_effect_success:0 "Repeals the §Y$asp_agr_resolution_space_mining_2$§!, leaving §Y$asp_agr_resolution_space_mining_1$§! as galactic law."
 
 ###########################
 ### All possible events ###
