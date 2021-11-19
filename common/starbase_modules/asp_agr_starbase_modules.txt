@@ -1,0 +1,139 @@
+# possible section models:
+# SHIPYARD_STARBASE_SECTION
+# REFINERY_STARBASE_SECTION
+# SCIENCE_STARBASE_SECTION
+# HANGAR_STARBASE_SECTION
+# ASSEMBLYYARD_STARBASE_SECTION
+#
+
+asp_agr_asteroid_drones = {
+	icon = "GFX_solar_panel_network" # Не забыть про иконку, желательно с дроном
+	section = "REFINERY_STARBASE_SECTION"
+	construction_days = 200
+
+    # Будет ли отображаться в списке модулей - после техи следует сделать отображение
+	potential = {
+		exists = owner
+	}
+    # Будет отображаться но при каких условиях стоит строить?
+
+    # # # Добавить проверку на ледянные астероиды!!!
+	possible = {
+		solar_system = {
+			custom_tooltip = {
+				fail_text = "asp_agr_requires_asteroids_in_system"
+				OR = {
+					AND = {
+							count_system_planet = {
+								limit = { is_asteroid = yes }
+								count >= 1
+						}
+						starbase = {
+							count_starbase_modules = {
+								type = asp_agr_asteroid_drones
+								count <= 0
+							}
+						}
+					}
+					AND = {
+						count_system_planet = {
+							limit = { is_asteroid = yes }
+							count >= 2
+					}
+					starbase = {
+						count_starbase_modules = {
+							type = asp_agr_asteroid_drones
+							count <= 1
+						}
+					}
+				 }
+				 AND = {
+					count_system_planet = {
+						limit = { is_asteroid = yes }
+						count >= 3
+				}
+				starbase = {
+					count_starbase_modules = {
+						type = asp_agr_asteroid_drones
+						count <= 2
+					}
+				}
+			}
+			AND = {
+				count_system_planet = {
+					limit = { is_asteroid = yes }
+					count >= 4
+			}
+			starbase = {
+				count_starbase_modules = {
+					type = asp_agr_asteroid_drones
+					count <= 3
+				}
+			}
+		}
+		AND = {
+			count_system_planet = {
+				limit = { is_asteroid = yes }
+				count >= 5
+		}
+		starbase = {
+			count_starbase_modules = {
+				type = asp_agr_asteroid_drones
+				count <= 4
+			}
+		}
+	}
+	AND = {
+		count_system_planet = {
+			limit = { 
+				is_asteroid = yes
+				asp_agr_icy_asteroid = yes
+			 }
+			count >= 6
+	}
+	starbase = {
+		count_starbase_modules = {
+			type = asp_agr_asteroid_drones
+			count <= 5
+		}
+	}
+    }
+	}
+	}
+	}
+ }
+
+	#show_in_tech = "tech_solar_panel_network"
+
+	resources = {
+		category = starbase_modules
+		cost = {
+			alloys = 50
+		}
+
+		produces = {
+			energy = 6
+		}
+
+		produces = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_galactic_community_member = yes
+				}
+				OR = {
+					is_active_resolution = "resolution_galacticstudies_astral_studies_network"
+					is_active_resolution = "resolution_galacticstudies_advanced_xenostudies"
+					is_active_resolution = "resolution_galacticstudies_ethical_guideline_refactoring"
+					is_active_resolution = "resolution_galacticstudies_extradimensional_experimentation"
+				}
+			}
+			energy = 6
+		}
+	}
+
+	ai_build_at_chokepoint = no
+	ai_weight = {
+		weight = 15
+	}
+}
