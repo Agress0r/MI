@@ -14,4 +14,9 @@ spriteType = {
     name = "GFX_asp_agr_space_resource_enrichment"
     textureFile = "gfx/interface/icons/modules/asp_agr_space_resource_enrichment.dds"
   }
+  # Спрайт что отвечает за иконку добывающих дронов на станции
+  spriteType = {
+    name = "GFX_asp_agr_asteroid_drones"
+    textureFile = "gfx/interface/icons/modules/asp_agr_asteroid_drones.dds"
+  }
 }

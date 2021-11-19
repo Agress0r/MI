@@ -36,6 +36,10 @@ requires_no_existing_asp_agr_mining_station:0 "$TRIGGER_FAIL$You cannot build mo
 sm_asp_agr_space_resource_enrichment:0 "System-resource complex"
 sm_asp_agr_space_resource_enrichment_desc:0 "All the resources extracted in the system are processed and enriched here, as well as any data from scientific stations are filtered and sorted here.\n"
 
+sm_asp_agr_asteroid_drones:0 "Mining drones"
+sm_asp_agr_asteroid_drones_desc:0 "If the system contains asteroids, then why not use their presence to the fullest? With these automated units, you can safely handle and dispose of entire asteroids!\n"
+asp_agr_requires_asteroids_in_system:1 "For this module to be built, the system must have §Yregular§! or §Ycrystalline asteroids§!. To process one §Yasteroid§!, one module of the - §HMining Drone§! type is required.\n"
+
 ##############################################
 ### Variables of cost, service, production ###
 ##############################################

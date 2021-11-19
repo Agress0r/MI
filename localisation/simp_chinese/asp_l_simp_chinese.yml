@@ -230,6 +230,10 @@ mod_station_gatherers_upkeep_mult:0 "Upkeep £job_maintenance_drone£ cost of sp
 mod_starbase_constructions_upkeep_mult:0 "Starbase modules upkeep £job_maintenance_drone£ cost"
 mod_starbase_constructions_produces_mult:0 "Starbase modules production"
 
+sm_asp_agr_asteroid_drones:0 "Mining drones"
+sm_asp_agr_asteroid_drones_desc:0 "If the system contains asteroids, then why not use their presence to the fullest? With these automated units, you can safely handle and dispose of entire asteroids!\n"
+asp_agr_requires_asteroids_in_system:1 "For this module to be built, the system must have §Yregular§! or §Ycrystalline asteroids§!. To process one §Yasteroid§!, one module of the - §HMining Drone§! type is required.\n"
+
 ##############################################
 ### Resolutions and the galactic community ###
 ##############################################

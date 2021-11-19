@@ -7,17 +7,16 @@
 #
 
 asp_agr_asteroid_drones = {
-	icon = "GFX_solar_panel_network" # Не забыть про иконку, желательно с дроном
+	icon = "GFX_asp_agr_asteroid_drones"
 	section = "REFINERY_STARBASE_SECTION"
 	construction_days = 200
 
     # Будет ли отображаться в списке модулей - после техи следует сделать отображение
 	potential = {
 		exists = owner
+		#owner = { has_technology = tech_sensors_2 }
 	}
-    # Будет отображаться но при каких условиях стоит строить?
-
-    # # # Добавить проверку на ледянные астероиды!!!
+	
 	possible = {
 		solar_system = {
 			custom_tooltip = {
@@ -135,32 +134,70 @@ asp_agr_asteroid_drones = {
 	resources = {
 		category = starbase_modules
 		cost = {
-			alloys = 50
+			alloys = 120
 		}
 
 		produces = {
-			energy = 6
+			minerals = 5
 		}
-
-		produces = {
-			trigger = {
-				exists = owner
-				owner = {
-					is_galactic_community_member = yes
-				}
-				OR = {
-					is_active_resolution = "resolution_galacticstudies_astral_studies_network"
-					is_active_resolution = "resolution_galacticstudies_advanced_xenostudies"
-					is_active_resolution = "resolution_galacticstudies_ethical_guideline_refactoring"
-					is_active_resolution = "resolution_galacticstudies_extradimensional_experimentation"
-				}
-			}
-			energy = 6
+		
+		upkeep = {
+			energy = 2
 		}
 	}
+	triggered_station_modifier = {
+	# Можно сюда добавить какой-либо уникальный пр3кол для добычи - одна из мыслей, майнинг гильдии будут производить на этих модулях больше минералов.
+	}
 
+    # С весом поработаю, дабы бот строил эту вещь в системах где есть астероиды
 	ai_build_at_chokepoint = no
 	ai_weight = {
-		weight = 15
+		weight = 120
+        # Нету астероидов, нету смысла строить модуль. (а они не смогут энивей, кек)
+		modifier = {
+			factor = 0
+			solar_system = {
+				count_system_planet = {
+					limit = {
+						OR = {
+							is_planet_class = pc_asteroid
+							is_planet_class = pc_rare_crystal_asteroid
+						}
+					}
+					count = 0
+				}
+			}
+		}
+
+       # Есть 1-3 астера, смысла становится больше
+	   modifier = {
+		factor = 1.4
+		solar_system = {
+			count_system_planet = {
+				limit = {
+					OR = {
+						is_planet_class = pc_asteroid
+						is_planet_class = pc_rare_crystal_asteroid
+					}
+				}
+				count <= 3
+			}
+		}
+	}
+	    # Есть 1-5 астеров, приоритет постройки этого модулья огромный.
+		modifier = {
+			factor = 2.5
+			solar_system = {
+				count_system_planet = {
+					limit = {
+						OR = {
+							is_planet_class = pc_asteroid
+							is_planet_class = pc_rare_crystal_asteroid
+						}
+					}
+					count <= 5
+				}
+			}
+		}
 	}
 }
