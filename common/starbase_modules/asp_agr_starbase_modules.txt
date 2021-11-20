@@ -14,9 +14,9 @@ asp_agr_asteroid_drones = {
     # Будет ли отображаться в списке модулей - после техи следует сделать отображение
 	potential = {
 		exists = owner
-		#owner = { has_technology = tech_sensors_2 }
+		owner = { has_technology = tech_asp_agr_asteroid_processing }
 	}
-	
+
 	possible = {
 		solar_system = {
 			custom_tooltip = {
@@ -129,7 +129,7 @@ asp_agr_asteroid_drones = {
 	}
  }
 
-	#show_in_tech = "tech_solar_panel_network"
+	show_in_tech = "tech_asp_agr_asteroid_processing"
 
 	resources = {
 		category = starbase_modules

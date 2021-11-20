@@ -48,9 +48,9 @@ mod_station_gatherers_exotic_gases_produces_mult:0 "Добывающие ста�
 mod_station_gatherers_rare_crystals_produces_mult:0 "Добывающие станции — производство £rare_crystals£ кристалов"
 mod_station_gatherers_volatile_motes_produces_mult:0 "Добывающие станции — производство £volatile_motes£ пылинок"
 
-mod_station_researchers_engineering_research_produces_mult:0 "Производство очков инженерных исследований научными станциями"
-mod_station_researchers_society_research_produces_mult:0 "Производство очков физических исследований научными станциями"
-mod_station_researchers_physics_research_produces_mult:0 "Производство очков социологических исследований научными станциями"
+mod_station_researchers_engineering_research_produces_mult:0 "Производство очков £engineering£ инженерных исследований научными станциями"
+mod_station_researchers_society_research_produces_mult:0 "Производство очков £physics£ физических исследований научными станциями"
+mod_station_researchers_physics_research_produces_mult:0 "Производство очков £society£ социологических исследований научными станциями"
 
 mod_station_gatherers_upkeep_mult:0 "Стоимость £job_maintenance_drone£ обслуживания станций космо-добычи"
 
@@ -116,6 +116,12 @@ tech_asp_agr_mining_station_1_desc:0 "$asp_agr_mining_station_0_MEGASTRUCTURE_DE
 
 tech_asp_agr_mining_station_2:0 "$asp_agr_mining_station_2$"
 tech_asp_agr_mining_station_2_desc:0 "$asp_agr_mining_station_0_MEGASTRUCTURE_DETAILS$"
+
+tech_asp_agr_asteroid_processing:0 "Масштабная обработка астероидов"
+tech_asp_agr_asteroid_processing_desc:0 "Благодаря последним технологическим достижениям мы можем позволить себе создание специальных автономных модулей, с помощью которых можно осуществлять сбор и обработку ресурсов прямиком с астероидов."
+
+#option_starbase_buiding_unlocked:0 "§HМодуль космической базы:§! $sm_asp_agr_asteroid_drones$"
+#option_starbase_buiding_unlocked_desc:0 "REPLACE_ME"
 
 ############################################
 ### Резолюции и галактическое сообщество ###

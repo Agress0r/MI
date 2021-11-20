@@ -87,3 +87,56 @@ tech_asp_agr_mining_station_2 = {
 	}
 }
 
+ # Теха для открытия доступа к сооружению для обработки астероидов
+tech_asp_agr_asteroid_processing = {
+	cost = @tier3cost1
+	area = engineering
+	tier = 2
+	category = { voidcraft }
+	prerequisites = { "tech_space_mining_3" } # Сделаю зависимость от появления - базируется на 3 техе по добыче минералов из космоса
+	weight = @tier2weight2
+	is_rare = yes
+
+	#prereqfor_desc = {
+	#	custom = {
+	#		title = option_starbase_buiding_unlocked
+	#		desc = option_starbase_buiding_unlocked_desc
+	#	}
+	#}
+	
+	modifier = {
+		starbase_constructions_produces_mult = 0.05
+	}
+	weight_modifier = {
+		modifier = {
+			factor = 9
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = 1.2
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_maniacal"
+			}
+		}
+
+		modifier = {
+			factor = 1.35
+			years_passed = 25
+		}
+	}
+
+	ai_weight = {
+		modifier = {
+			factor = 1.15
+			research_leader = {
+				area = engineering
+				has_trait = "leader_trait_expertise_voidcraft"
+			}
+		}
+	}
+}
