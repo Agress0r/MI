@@ -118,7 +118,7 @@ tech_asp_agr_mining_station_2:0 "$asp_agr_mining_station_2$"
 tech_asp_agr_mining_station_2_desc:0 "$asp_agr_mining_station_0_MEGASTRUCTURE_DETAILS$"
 
 tech_asp_agr_asteroid_processing:0 "Масштабная обработка астероидов"
-tech_asp_agr_asteroid_processing_desc:0 "Благодаря последним технологическим достижениям мы можем позволить себе создание специальных автономных модулей, с помощью которых можно осуществлять сбор и обработку ресурсов прямиком с астероидов."
+tech_asp_agr_asteroid_processing_desc:0 "Благодаря последним технологическим достижениям мы можем позволить себе создание специальных автономных модулей, с помощью которых можно осуществлять сбор и обработку ресурсов прямиком с §Yастероидов§!."
 
 #option_starbase_buiding_unlocked:0 "§HМодуль космической базы:§! $sm_asp_agr_asteroid_drones$"
 #option_starbase_buiding_unlocked_desc:0 "REPLACE_ME"

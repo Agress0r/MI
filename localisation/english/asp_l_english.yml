@@ -120,6 +120,9 @@ tech_asp_agr_mining_station_1_desc:0 "$asp_agr_mining_station_0_MEGASTRUCTURE_DE
 tech_asp_agr_mining_station_2:0 "$asp_agr_mining_station_2$"
 tech_asp_agr_mining_station_2_desc:0 "$asp_agr_mining_station_0_MEGASTRUCTURE_DETAILS$"
 
+tech_asp_agr_asteroid_processing:0 "Large-scale processing of asteroids"
+tech_asp_agr_asteroid_processing_desc:0 "Thanks to the latest technological advances, we can afford the creation of special autonomous modules with which it is possible to collect and process resources straight from §Yasteroids§!."
+
 ##############################################
 ### Resolutions and the galactic community ###
 ##############################################

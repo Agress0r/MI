@@ -262,3 +262,7 @@ asp_agr_resolution_space_mining_repeal_1_effect_success:0 "Repeals the §Y$asp_a
 asp_agr_resolution_space_mining_repeal_2:0 "§RRepeal $asp_agr_resolution_space_mining_2$§!"
 asp_agr_resolution_space_mining_repeal_2_desc:0 "$asp_agr_resolution_space_mining_repeal_0_desc$"
 asp_agr_resolution_space_mining_repeal_2_effect_success:0 "Repeals the §Y$asp_agr_resolution_space_mining_2$§!, leaving §Y$asp_agr_resolution_space_mining_1$§! as galactic law."
+
+### New Tech
+tech_asp_agr_asteroid_processing:0 "Large-scale processing of asteroids"
+tech_asp_agr_asteroid_processing_desc:0 "Thanks to the latest technological advances, we can afford the creation of special autonomous modules with which it is possible to collect and process resources straight from §Yasteroids§!."
