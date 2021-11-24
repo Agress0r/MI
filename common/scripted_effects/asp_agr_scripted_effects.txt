@@ -1,0 +1,188 @@
+# Скрипты отдельным файлом, возможно я сюда когда-то все их перенесу.
+# # Скрипт ниже был написан не для этого мода ))
+force_spawn_guaranted_planet = {
+	capital_scope.solar_system = {
+		system_star = {
+			set_planet_flag = aRolfWorks # Проверку сделать если флаг есть то ивент запускается
+		}
+		   if = {
+			limit = {
+				any_system_planet = { # Лишние проверки но мб они нужны
+					is_ringworld = no
+					is_asteroid = no
+					is_star = no
+				}
+			}
+			random_system_planet = {
+				limit = {
+					is_colonizable = no
+					is_ringworld = no
+					is_asteroid = no
+					is_star = no
+				}
+				save_event_target_as = new_habitable_planet
+				if = {
+					limit = {
+						solar_system = {
+							any_system_planet = {
+									is_capital = yes
+									is_planet_class = pc_ocean
+							}
+						}
+					 }
+					 event_target:new_habitable_planet = {
+						change_pc = pc_ocean 
+					 }
+				 }
+				 else_if = {
+					limit = {
+						solar_system = {
+							any_system_planet = {
+									is_capital = yes
+									is_planet_class = pc_gaia
+							}
+						}
+					 }
+					 event_target:new_habitable_planet = {
+						change_pc = pc_gaia
+					 }
+				 }
+				 else_if = {
+					limit = {
+						solar_system = {
+							any_system_planet = {
+									is_capital = yes
+									is_planet_class = pc_tropical
+							}
+						}
+					 }
+					 event_target:new_habitable_planet = {
+						change_pc = pc_tropical
+					 }
+				 }
+				 else_if = {
+					limit = {
+						solar_system = {
+							any_system_planet = {
+									is_capital = yes
+									is_planet_class = pc_arid
+							}
+						}
+					 }
+					 event_target:new_habitable_planet = {
+						change_pc = pc_arid
+					 }
+				 }
+				 else_if = {
+					limit = {
+						solar_system = {
+							any_system_planet = {
+									is_capital = yes
+									is_planet_class = pc_continental
+							}
+						}
+					 }
+					 event_target:new_habitable_planet = {
+						change_pc = pc_continental 
+					 }
+				 }
+				 else_if = {
+					limit = {
+						solar_system = {
+							any_system_planet = {
+									is_capital = yes
+									is_planet_class = pc_tundra
+							}
+						}
+					 }
+					 event_target:new_habitable_planet = {
+						change_pc = pc_tundra
+					 }
+				 }
+				 else_if = {
+					limit = {
+						solar_system = {
+							any_system_planet = {
+									is_capital = yes
+									is_planet_class = pc_arctic
+							}
+						}
+					 }
+					 event_target:new_habitable_planet = {
+						change_pc = pc_arctic
+					 }
+				 }
+				 else_if = {
+					limit = {
+						solar_system = {
+							any_system_planet = {
+									is_capital = yes
+									is_planet_class = pc_alpine
+							}
+						}
+					 }
+					 event_target:new_habitable_planet = {
+						change_pc = pc_alpine
+					 }
+				 }
+				 else_if = {
+					limit = {
+						solar_system = {
+							any_system_planet = {
+									is_capital = yes
+									is_planet_class = pc_savannah
+							}
+						}
+					 }
+					 event_target:new_habitable_planet = {
+						change_pc = pc_savannah 
+					 }
+				 }
+				 else_if = {
+					limit = {
+						solar_system = {
+							any_system_planet = {
+									is_capital = yes
+									is_planet_class = pc_desert
+							}
+						}
+					 }
+					 event_target:new_habitable_planet = {
+						change_pc = pc_desert
+					 }
+				 }
+			 else = {
+				random_list = {
+					1 = { change_pc = pc_tropical }
+					1 = { change_pc = pc_arid }
+					1 = { change_pc = pc_continental }
+					1 = { change_pc = pc_ocean }
+					1 = { change_pc = pc_tundra }
+					1 = { change_pc = pc_arctic }
+					1 = { change_pc = pc_alpine }
+					1 = { change_pc = pc_savannah }
+					1 = { change_pc = pc_desert }
+				}
+			}
+			locked_random_list = {
+				22 = {
+					set_planet_size = 17
+				}
+				22 = {
+					set_planet_size = 18
+				}
+				22 = {
+					set_planet_size = 19
+				}
+				22 = {
+					set_planet_size = 20
+				}
+				22 = {
+					set_planet_size = 21
+				}
+			}
+			reroll_planet = yes
+		   }
+		}
+	}
+}
