@@ -1,0 +1,188 @@
+# # # Локальные переменные для быстрого контроля
+
+##################
+# CORVETTE DRONE
+##################
+
+@asp_agr_origin_ancient_corvette_collision_radius = 2.0
+@asp_agr_origin_ancient_corvette_formation_priority = 20
+
+@asp_agr_origin_ancient_corvette_hp = 300
+@asp_agr_origin_ancient_corvette_evasion = 60
+@asp_agr_origin_ancient_corvette_build_time = 60
+
+@asp_agr_origin_ancient_corvette_upkeep_energy = 0.3
+@asp_agr_origin_ancient_corvette_upkeep_alloys = 0.1
+@asp_agr_origin_ancient_corvette_upkeep_minerals = 0.2
+
+##################
+# DESTROYER DRONE
+##################
+
+@asp_agr_origin_ancient_destroyer_collision_radius = 2.5
+@asp_agr_origin_ancient_destroyer_formation_priority = 10
+
+@asp_agr_origin_ancient_destroyer_hp = 800
+@asp_agr_origin_ancient_destroyer_evasion = 35
+@asp_agr_origin_ancient_destroyer_build_time = 120
+
+@asp_agr_origin_ancient_destroyer_upkeep_energy = 0.6
+@asp_agr_origin_ancient_destroyer_upkeep_alloys = 0.2
+@asp_agr_origin_ancient_destroyer_upkeep_minerals = 0.4
+
+
+# Ивентовые дроны, но со своей росписью и локализацией.
+
+asp_agr_origin_ancient_corvette = {
+	entity = agr_asp_ancient_corvette_hull_entity
+	base_buildtime = @asp_agr_origin_ancient_corvette_build_time
+	construction_type = starbase_shipyard
+	is_listed = yes
+	graphical_culture = no
+	can_be_inspected = yes
+		
+	# Показатели корабля
+	max_speed = @speed_very_fast # Надо будет над скоростью подумать
+	rotation_speed = 0.20
+	acceleration = 0.35
+	modifier = {
+		#ship_armor_add = 2
+		ship_evasion_add = 50
+	}
+	max_hitpoints = 450
+	size_multiplier = 1
+	fleet_slot_size = 1
+
+	section_slots = { "mid" = { locator = "part1" } }
+	num_target_locators = 0
+	is_space_station = no
+	icon = ship_size_military_1
+	class = shipclass_military
+	is_designable = yes
+
+	can_have_federation_design = no
+	enable_default_design = no
+	enable_3dview_in_ship_browser = yes # Отображение (хуй пойми где, то ли в интерфейсе создания империи или же винтерфейсе создания корабля)
+
+	required_component_set = "power_core"
+	required_component_set = "ftl_components"
+	required_component_set = "thruster_components"
+	required_component_set = "sensor_components"
+	required_component_set = "combat_computers"
+	default_behavior = swarm
+
+	potential_country = {
+		is_scout_drone_getted = yes # Сюда идёт проверка на доступность корабля для постройки
+	}
+
+	potential_construction = {
+		is_scope_type = starbase
+	}
+
+	possible_construction = {
+		custom_tooltip = {
+			fail_text = requires_agr_asp_ancient_minig_drones
+			owner = {
+				has_origin = agr_asp_ancient_minig_drones
+			}
+		}
+	}
+
+	# Теоретически можно выдать ограничение на использование, но об этом можно подумать
+	#empire_limit = {
+		#base = 10
+		#show = {
+			#is_scope_valid = yes
+			#is_dragon_breeder_country = yes
+		#}
+	#}
+
+	components_add_to_cost = yes
+
+	resources = {
+		category = ships
+		upkeep = {
+			energy = 0.35
+			alloys = 0.11
+		}
+	}
+	min_upgrade_cost = { alloys = 1.5 }
+}
+
+asp_agr_origin_ancient_destroyer = {
+	entity = agr_asp_ancient_destroyer_hull_entity
+	base_buildtime = @asp_agr_origin_ancient_destroyer_build_time
+	construction_type = starbase_shipyard
+	is_listed = yes
+	graphical_culture = no
+	can_be_inspected = yes
+
+	# Показатели корабля
+	max_speed = @speed_very_fast # Надо будет над скоростью подумать
+	rotation_speed = 0.3
+	acceleration = 1.0
+	modifier = {
+		#ship_armor_add = 10
+		ship_evasion_add = 45
+	}
+	max_hitpoints = 900
+	size_multiplier = 2
+	fleet_slot_size = 2
+	combat_size_multiplier = 4
+
+	section_slots = { "mid" = { locator = "part1" } }
+	num_target_locators = 3
+	is_space_station = no
+	icon = ship_size_military_2
+
+	class = shipclass_military
+	is_designable = yes
+
+	can_have_federation_design = no
+	enable_default_design = no
+	enable_3dview_in_ship_browser = yes # Отображение (хуй пойми где, то ли в интерфейсе создания империи или же винтерфейсе создания корабля)
+
+	required_component_set = "power_core"
+	required_component_set = "ftl_components"
+	required_component_set = "thruster_components"
+	required_component_set = "sensor_components"
+	required_component_set = "combat_computers"
+	default_behavior = picket
+
+	potential_country = {
+		is_agr_asp_ancient_minig_drones_ogirin = yes # Сюда идёт проверка на доступность корабля для постройки
+	}
+
+	potential_construction = {
+		is_scope_type = starbase
+	}
+
+	possible_construction = {
+		custom_tooltip = {
+			fail_text = requires_agr_asp_ancient_minig_drones
+			owner = {
+				has_origin = agr_asp_ancient_minig_drones
+			}
+		}
+	}
+
+	# Теоретически можно выдать ограничение на использование, но об этом можно подумать
+	#empire_limit = {
+		#base = 10
+		#show = {
+			#is_scope_valid = yes
+			#is_dragon_breeder_country = yes
+		#}
+	#}
+
+	components_add_to_cost = yes
+
+	resources = {
+		category = ships	
+		upkeep = {
+			energy = 0.6
+			alloys = 0.2
+		}
+	}	
+	min_upgrade_cost = { alloys = 2 }
+}

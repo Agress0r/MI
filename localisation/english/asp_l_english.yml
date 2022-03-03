@@ -276,3 +276,112 @@ asp_agr_habitat_mineral_production_boost:0 "REPLACE_ME"
 asp_agr_habitat_mineral_production_boost_desc:0 "REPLACE_ME"
 #asp_agr_habitat_mineral_production_boost_effects:0 "COCK_city"
 asp_agr_habitat_mineral_production_boost_short:0 "COCK_City"
+
+### Есть в игре, надо доработать - component templates - section templates
+asp_agr_origin_ancient_corvette:0 "$ancient_corvette$"
+asp_agr_origin_ancient_corvette_plural:0 "$ancient_corvette_plural$"
+asp_agr_origin_ancient_destroyer:0 "$ancient_destroyer$"
+asp_agr_origin_ancient_destroyer_plural:0 "$ancient_destroyer_plural$"
+
+ASP_AGR_ANCIENT_CORVETTE_FISSION_REACTOR:1 "$FISSION_REACTOR$"
+ASP_AGR_ANCIENT_DESTROYER_FISSION_REACTOR:1 "$FISSION_REACTOR$"
+ASP_AGR_ANCIENT_CORVETTE_FUSION_REACTOR:1 "$FUSION_REACTOR$"
+ASP_AGR_ANCIENT_CORVETTE_COLD_FUSION_REACTOR:1 "$COLD_FUSION_REACTOR$"
+ASP_AGR_ANCIENT_DESTROYER_FUSION_REACTOR:1 "$FUSION_REACTOR$"
+ASP_AGR_ANCIENT_DESTROYER_COLD_FUSION_REACTOR:1 "$COLD_FUSION_REACTOR$"
+ASP_AGR_ANCIENT_CORVETTE_ANTIMATTER_REACTOR:1 "$ANTIMATTER_REACTOR$"
+ASP_AGR_ANCIENT_DESTROYER_ANTIMATTER_REACTOR:1 "$ANTIMATTER_REACTOR$"
+ASP_AGR_ANCIENT_CORVETTE_ZERO_POINT_REACTOR:1 "$ZERO_POINT_REACTOR$"
+ASP_AGR_ANCIENT_DESTROYER_ZERO_POINT_REACTOR:1 "$ZERO_POINT_REACTOR$"
+ASP_AGR_ANCIENT_CORVETTE_DARK_MATTER_REACTOR:1 "$DARK_MATTER_REACTOR$"
+ASP_AGR_ANCIENT_DESTROYER_DARK_MATTER_REACTOR:1 "$DARK_MATTER_REACTOR$"
+
+
+AGR_ASP_ANCIENT_CORVETTE_SHIP_THRUSTER_1:0 "$SHIP_THRUSTER_1$"
+AGR_ASP_ANCIENT_CORVETTE_SHIP_THRUSTER_2:0 "$SHIP_THRUSTER_2$"
+AGR_ASP_ANCIENT_CORVETTE_SHIP_THRUSTER_3:0 "$SHIP_THRUSTER_3$"
+AGR_ASP_ANCIENT_CORVETTE_SHIP_THRUSTER_4:0 "$SHIP_THRUSTER_4$"
+AGR_ASP_ANCIENT_CORVETTE_SHIP_THRUSTER_5:0 "$SHIP_THRUSTER_5$"
+
+AGR_ASP_ANCIENT_CORVETTE_SHIP_THRUSTER_1_DESC:0 "$SHIP_THRUSTER_1_DESC$"
+AGR_ASP_ANCIENT_CORVETTE_SHIP_THRUSTER_2_DESC:0 "$SHIP_THRUSTER_2_DESC$"
+AGR_ASP_ANCIENT_CORVETTE_SHIP_THRUSTER_3_DESC:0 "$SHIP_THRUSTER_3_DESC$"
+AGR_ASP_ANCIENT_CORVETTE_SHIP_THRUSTER_4_DESC:0 "$SHIP_THRUSTER_4_DESC$"
+AGR_ASP_ANCIENT_CORVETTE_SHIP_THRUSTER_5_DESC:0 "$SHIP_THRUSTER_5_DESC$"
+
+AGR_ASP_ANCIENT_DESTROYER_SHIP_THRUSTER_1:0 "$SHIP_THRUSTER_1$"
+AGR_ASP_ANCIENT_DESTROYER_SHIP_THRUSTER_2:0 "$SHIP_THRUSTER_2$"
+AGR_ASP_ANCIENT_DESTROYER_SHIP_THRUSTER_3:0 "$SHIP_THRUSTER_3$"
+AGR_ASP_ANCIENT_DESTROYER_SHIP_THRUSTER_4:0 "$SHIP_THRUSTER_4$"
+AGR_ASP_ANCIENT_DESTROYER_SHIP_THRUSTER_5:0 "$SHIP_THRUSTER_5$"
+
+AGR_ASP_ANCIENT_DESTROYER_SHIP_THRUSTER_1_DESC:0 "$SHIP_THRUSTER_1_DESC$"
+AGR_ASP_ANCIENT_DESTROYER_SHIP_THRUSTER_2_DESC:0 "$SHIP_THRUSTER_2_DESC$"
+AGR_ASP_ANCIENT_DESTROYER_SHIP_THRUSTER_3_DESC:0 "$SHIP_THRUSTER_3_DESC$"
+AGR_ASP_ANCIENT_DESTROYER_SHIP_THRUSTER_4_DESC:0 "$SHIP_THRUSTER_4_DESC$"
+AGR_ASP_ANCIENT_DESTROYER_SHIP_THRUSTER_5_DESC:0 "$SHIP_THRUSTER_5_DESC$"
+
+AGR_ASP_COMBAT_COMPUTER_DEFAULT:0 "$COMBAT_COMPUTER_DEFAULT$"
+AGR_ASP_COMBAT_COMPUTER_SWARM_DEFAULT:0 "$COMBAT_COMPUTER_DEFAULT$"
+AGR_ASP_COMBAT_COMPUTER_PICKET_DEFAULT:0 "$COMBAT_COMPUTER_DEFAULT$"
+AGR_ASP_COMBAT_COMPUTER_LINE_DEFAULT:0 "$COMBAT_COMPUTER_DEFAULT$"
+
+AGR_ASP_COMBAT_COMPUTER_SWARM_BASIC:0 "$COMBAT_COMPUTER_SWARM_BASIC$"
+AGR_ASP_COMBAT_COMPUTER_PICKET_BASIC:0 "$COMBAT_COMPUTER_PICKET_BASIC$"
+AGR_ASP_COMBAT_COMPUTER_LINE_BASIC:0 "$COMBAT_COMPUTER_LINE_BASIC$"
+AGR_ASP_COMBAT_COMPUTER_ARTILLERY_BASIC:0 "$COMBAT_COMPUTER_ARTILLERY_BASIC$"
+AGR_ASP_COMBAT_COMPUTER_CARRIER_BASIC:0 "$COMBAT_COMPUTER_CARRIER_BASIC$"
+
+AGR_ASP_COMBAT_COMPUTER_SWARM_ADVANCED:0 "$COMBAT_COMPUTER_SWARM_ADVANCED$"
+AGR_ASP_COMBAT_COMPUTER_PICKET_ADVANCED:0 "$COMBAT_COMPUTER_PICKET_ADVANCED$"
+AGR_ASP_COMBAT_COMPUTER_LINE_ADVANCED:0 "$COMBAT_COMPUTER_LINE_ADVANCED$"
+AGR_ASP_COMBAT_COMPUTER_CARRIER_ADVANCED:0 "$COMBAT_COMPUTER_CARRIER_ADVANCED$"
+AGR_ASP_COMBAT_COMPUTER_ARTILLERY_ADVANCED:0 "$COMBAT_COMPUTER_ARTILLERY_ADVANCED$"
+
+AGR_ASP_COMBAT_COMPUTER_SWARM_SAPIENT:0 "$COMBAT_COMPUTER_SWARM_SAPIENT$"
+AGR_ASP_COMBAT_COMPUTER_PICKET_SAPIENT:0 "$COMBAT_COMPUTER_PICKET_SAPIENT$"
+AGR_ASP_COMBAT_COMPUTER_LINE_SAPIENT:0 "$COMBAT_COMPUTER_LINE_SAPIENT$"
+AGR_ASP_COMBAT_COMPUTER_ARTILLERY_SAPIENT:0 "$COMBAT_COMPUTER_ARTILLERY_SAPIENT$"
+AGR_ASP_COMBAT_COMPUTER_CARRIER_SAPIENT:0 "$COMBAT_COMPUTER_CARRIER_SAPIENT$"
+
+AGR_ASP_COMBAT_COMPUTER_SWARM_AUTONOMOUS:0 "$COMBAT_COMPUTER_SWARM_AUTONOMOUS$"
+AGR_ASP_COMBAT_COMPUTER_PICKET_AUTONOMOUS:0 "$COMBAT_COMPUTER_PICKET_AUTONOMOUS$"
+AGR_ASP_COMBAT_COMPUTER_LINE_AUTONOMOUS:0 "$COMBAT_COMPUTER_LINE_AUTONOMOUS$"
+AGR_ASP_COMBAT_COMPUTER_ARTILLERY_AUTONOMOUS:0 "$COMBAT_COMPUTER_ARTILLERY_AUTONOMOUS$"
+AGR_ASP_COMBAT_COMPUTER_CARRIER_AUTONOMOUS:0 "$COMBAT_COMPUTER_CARRIER_AUTONOMOUS$"
+
+AGR_ASP_COMBAT_COMPUTER_SWARM_PRECOG:0 "$COMBAT_COMPUTER_SWARM_PRECOG$"
+AGR_ASP_COMBAT_COMPUTER_PICKET_PRECOG:0 "$COMBAT_COMPUTER_PICKET_PRECOG$"
+AGR_ASP_COMBAT_COMPUTER_LINE_PRECOG:0 "$COMBAT_COMPUTER_LINE_PRECOG$"
+AGR_ASP_COMBAT_COMPUTER_ARTILLERY_PRECOG:0 "$COMBAT_COMPUTER_ARTILLERY_PRECOG$"
+AGR_ASP_COMBAT_COMPUTER_CARRIER_PRECOG:0 "$COMBAT_COMPUTER_CARRIER_PRECOG$"
+
+NAME_Origin_Ancient_Combat_Drone:0 "$ancient_corvette$"
+NAME_Origin_Ancient_Destroyer:0 "$ancient_destroyer$"
+
+ANCIENT_CORVETTE_1M_1S_1T:0 "Мультифункциональные орудия"
+ANCIENT_DESTROYER_2M_2S:0 "Тяжёлые носовые орудия"
+
+requires_agr_asp_ancient_minig_drones:0 "Для строительства этих кораблей требуется исток "
+
+asp_agr_origin.2.name:0 "Обломки древнего дрона"
+asp_agr_origin.2.desc:0 "На планете §H[Root.Capital.GetName]§! были найдены обломки древнего объекта, больше всего похожего на древнего добывающего дрона. Хоть и на [Root.Capital.GetName] и раньше находились разные останки древних машин, конкретно эти останки выглядят довольно свежими, как будто этот объект разбился на планете недавно.\n\nБолее детальный осмотр и анализ дал понять что это не обычный дрон-добычтик т.к его базы данных содержат много зашифрованной информации. Было принято решение о создании §Yнескольких специальных проектов§! по извлечению и расшифровке данных."
+asp_agr_origin.2.A.tooltip:0 "Создано §Y2§! специальных проекта: §Y$ASP_AGR_ANCIENT_AI_ANALYSIS_SHIPS$§! и §Y$ASP_AGR_ANCIENT_AI_ANALYSIS_CONTACT$§!."
+
+ancient_combat_drone_section:0 "Корабельная секция боевого дрона"
+ancient_drone_destroyer_section:0 "Корабельная секция древнего эсминца"
+agr_asp_ancient_minig_drones:0 "Древние добывающие дроны"
+agr_asp_ancient_minig_drones_desc:0 "Из за сложившихся обстоятельств эта цивилизация смогла получить доступ к сети §Yдревних добывающих дронов§!, благодаря чему они имеют большие информации о галактике, а так же их возможности в плане исследования и познания добывающих дронов отличаются от других цивилизаций."
+agr_asp_ancient_minig_drones_effects:1 "— На старте игры вы получаете доступ к §H2§! специальным проектам по мере завершения которых вы сможете §Yвосстановить связь с дронами§!, а так же узнать больше о §Yшаблонах строительства§! их кораблей.\n— Производительность §Hнаучных§! и §Hдобывающих§! станций увеличена на §G10%§!.\n— Стоимость строительства и улучшения §Hкомплекса анализа данных§! и §Hкоомплекса обработки ресуров§! на §G20%§! меньше."
+
+agr_asp_origin_ancient_minig_drones:0 "Исток §H$agr_asp_ancient_minig_drones$§!"
+agr_asp_origin_ancient_minig_drones_buff:0 "— Производительность §Hнаучных§! и §Hдобывающих§! станций увеличена на §G10%§!.\n— Стоимость строительства и улучшения §Hкомплекса анализа данных§! и §Hкоомплекса обработки ресуров§! на §G20%§! меньше."
+
+megastructures_asp_mod_build:0 "Скорость строительства мегасооружений"
+megastructures_asp_mod:0 "Вы не должны этого видеть"
+
+ASP_AGR_ANCIENT_AI_ANALYSIS_SHIPS:0 "Анализ шаблонов строительства кораблей"
+ASP_AGR_ANCIENT_AI_ANALYSIS_SHIPS_DESC:0 "Учённые на планете §H[Root.Capital.GetName]§! попытаются расшифровать данные касающиеся шаблонов создания некоторых из кораблей дронов.\n\nЕсли данных будет достаточно, то скорее всего мы сможем воспроизвести несколько моделей кораблей."
+
+ASP_AGR_ANCIENT_AI_ANALYSIS_CONTACT:0 "Взлом системы связи дронов"
+ASP_AGR_ANCIENT_AI_ANALYSIS_CONTACT_DESC:0 "В серьёзно зашифрованном участке памяти хранится информация, которая вероятно имеет отношение к технологии связи дронов.\n\nЕсли взлом увенчается успехом, то скорее всего мы сможем проникнуть в выскоуровненые базы данных древних дронов и подчерпнуть от туда много полезной информации."

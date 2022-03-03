@@ -1,0 +1,316 @@
+# Icons set here are the ones show in the actual slot.
+
+@cost1 = 3
+@cost2 = 6
+@cost3 = 9
+@cost4 = 12
+@cost5 = 15
+
+@power_1 = -10
+@power_2 = -15
+@power_3 = -20
+@power_4 = -25
+@power_5 = -30
+
+@destroyer_power_1 = -20
+@destroyer_power_2 = -30
+@destroyer_power_3 = -40
+@destroyer_power_4 = -50
+@destroyer_power_5 = -60
+
+@destroyer_cost1 = 6
+@destroyer_cost2 = 12
+@destroyer_cost3 = 18
+@destroyer_cost4 = 24
+@destroyer_cost5 = 30
+
+###############################
+# Все типы игровых Двигателей #
+###############################
+
+### Химические двигатели - стартовые
+
+utility_component_template = {
+	key = "AGR_ASP_ANCIENT_CORVETTE_SHIP_THRUSTER_1"
+	size = small
+	icon = "GFX_ship_part_thruster_1"
+	icon_frame = 1
+	power = @power_1
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost1
+		}
+	}
+
+	modifier = {
+	}
+
+	prerequisites = { "tech_thrusters_1" }
+	component_set = "thruster_components"
+	size_restriction = { asp_agr_origin_ancient_corvette }
+	upgrades_to = "AGR_ASP_ANCIENT_CORVETTE_SHIP_THRUSTER_2"
+
+	ai_weight = {
+		weight = 1
+	}
+}
+
+utility_component_template = {
+	key = "AGR_ASP_ANCIENT_DESTROYER_SHIP_THRUSTER_1"
+	size = small
+	icon = "GFX_ship_part_thruster_1"
+	icon_frame = 1
+	power = @destroyer_power_1
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @destroyer_cost1
+		}
+	}
+
+	modifier = {
+	}
+
+	prerequisites = { "tech_thrusters_1" }
+	component_set = "thruster_components"
+	size_restriction = { asp_agr_origin_ancient_destroyer }
+	upgrades_to = "AGR_ASP_ANCIENT_DESTROYER_SHIP_THRUSTER_2"
+
+	ai_weight = {
+		weight = 1
+	}
+}
+
+### Ионные двигатели
+
+utility_component_template = {
+	key = "AGR_ASP_ANCIENT_CORVETTE_SHIP_THRUSTER_2"
+	size = small
+	icon = "GFX_ship_part_thruster_2"
+	icon_frame = 1
+	power = @power_2
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost2
+		}
+	}
+	modifier = {
+		ship_base_speed_mult = 0.29
+		ship_evasion_add = 8
+	}
+
+	prerequisites = { "tech_thrusters_2" }
+	component_set = "thruster_components"
+	size_restriction = { asp_agr_origin_ancient_corvette }
+	upgrades_to = "AGR_ASP_ANCIENT_CORVETTE_SHIP_THRUSTER_3"
+
+	ai_weight = {
+		weight = 2
+	}
+}
+
+utility_component_template = {
+	key = "AGR_ASP_ANCIENT_DESTROYER_SHIP_THRUSTER_2"
+	size = small
+	icon = "GFX_ship_part_thruster_2"
+	icon_frame = 1
+	power = @destroyer_power_2
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @destroyer_cost2
+		}
+	}
+
+	modifier = {
+		ship_base_speed_mult = 0.28
+		ship_evasion_add = 4.5
+	}
+
+	prerequisites = { "tech_thrusters_2" }
+	component_set = "thruster_components"
+	size_restriction = { asp_agr_origin_ancient_destroyer }
+	upgrades_to = "AGR_ASP_ANCIENT_DESTROYER_SHIP_THRUSTER_3"
+
+	ai_weight = {
+		weight = 2
+	}
+}
+
+### Плазменные двигатели
+
+utility_component_template = {
+	key = "AGR_ASP_ANCIENT_CORVETTE_SHIP_THRUSTER_3"
+	size = small
+	icon = "GFX_ship_part_thruster_3"
+	icon_frame = 1
+	power = @power_3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost3
+		}
+	}
+	modifier = {
+		ship_base_speed_mult = 0.55
+		ship_evasion_add = 11
+	}
+
+	prerequisites = { "tech_thrusters_3" }
+	component_set = "thruster_components"
+	size_restriction = { asp_agr_origin_ancient_corvette }
+	upgrades_to = "AGR_ASP_ANCIENT_CORVETTE_SHIP_THRUSTER_4"
+
+	ai_weight = {
+		weight = 3
+	}
+}
+
+utility_component_template = {
+	key = "AGR_ASP_ANCIENT_DESTROYER_SHIP_THRUSTER_3"
+	size = small
+	icon = "GFX_ship_part_thruster_3"
+	icon_frame = 1
+	power = @destroyer_power_3
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @destroyer_cost3
+		}
+	}
+	modifier = {
+		ship_base_speed_mult = 0.55
+		ship_evasion_add = 8
+	}
+
+	prerequisites = { "tech_thrusters_3" }
+	component_set = "thruster_components"
+	size_restriction = { asp_agr_origin_ancient_destroyer }
+	upgrades_to = "AGR_ASP_ANCIENT_DESTROYER_SHIP_THRUSTER_4"
+
+	ai_weight = {
+		weight = 3
+	}
+}
+
+### Импульсные двигатели
+
+utility_component_template = {
+	key = "AGR_ASP_ANCIENT_CORVETTE_SHIP_THRUSTER_4"
+	size = small
+	icon = "GFX_ship_part_thruster_4"
+	icon_frame = 1
+	power = @power_4
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost4
+		}
+	}
+	modifier = {
+		ship_base_speed_mult = 0.78
+		ship_evasion_add = 16.5
+	}
+
+	prerequisites = { "tech_thrusters_4" }
+	component_set = "thruster_components"
+	size_restriction = { asp_agr_origin_ancient_corvette }
+	upgrades_to = "AGR_ASP_ANCIENT_CORVETTE_SHIP_THRUSTER_5"
+
+	ai_weight = {
+		weight = 4
+	}
+}
+
+utility_component_template = {
+	key = "AGR_ASP_ANCIENT_DESTROYER_SHIP_THRUSTER_4"
+	size = small
+	icon = "GFX_ship_part_thruster_4"
+	icon_frame = 1
+	power = @destroyer_power_4
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @destroyer_cost4
+		}
+	}
+	modifier = {
+		ship_base_speed_mult = 0.78
+		ship_evasion_add = 12.5
+	}
+
+	prerequisites = { "tech_thrusters_4" }
+	component_set = "thruster_components"
+	size_restriction = { asp_agr_origin_ancient_destroyer }
+	upgrades_to = "AGR_ASP_ANCIENT_DESTROYER_SHIP_THRUSTER_5"
+
+	ai_weight = {
+		weight = 4
+	}
+}
+
+### Двигатели тёмной материи
+
+utility_component_template = {
+	key = "AGR_ASP_ANCIENT_CORVETTE_SHIP_THRUSTER_5"
+	size = small
+	icon = "GFX_ship_part_thruster_5"
+	icon_frame = 1
+	power = @power_5
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost4
+			sr_dark_matter = 1
+		}
+	}
+	modifier = {
+		ship_base_speed_mult = 1.25
+		ship_evasion_add = 20
+	}
+
+	prerequisites = { "tech_dark_matter_propulsion" }
+	component_set = "thruster_components"
+	size_restriction = { asp_agr_origin_ancient_corvette }
+
+	ai_weight = {
+		weight = 5
+		modifier = {
+			factor = 0.0
+			no_resource_for_component = { RESOURCE = sr_dark_matter }
+		}
+	}
+}
+
+utility_component_template = {
+	key = "AGR_ASP_ANCIENT_DESTROYER_SHIP_THRUSTER_5"
+	size = small
+	icon = "GFX_ship_part_thruster_5"
+	icon_frame = 1
+	power = @destroyer_power_5
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @destroyer_cost4
+			sr_dark_matter = 2
+		}
+	}
+	modifier = {
+		ship_base_speed_mult = 1.28
+		ship_evasion_add = 17
+	}
+
+	prerequisites = { "tech_dark_matter_propulsion" }
+	component_set = "thruster_components"
+	size_restriction = { asp_agr_origin_ancient_destroyer }
+
+	ai_weight = {
+		weight = 5
+		modifier = {
+			factor = 0.0
+			no_resource_for_component = { RESOURCE = sr_dark_matter }
+		}
+	}
+}

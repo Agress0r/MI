@@ -1,0 +1,90 @@
+namespace = asp_agr
+### Test event for Warrior Psix
+
+### Пробуем тестовый ивент
+country_event = {
+    id = asp_agr.1000
+    hide_window = yes
+    trigger = {
+        is_ai = no # Если с иишками будешь тестить, можешь убрать
+    }
+    fire_only_once = yes # Мейби проверку эту и убрать
+    is_triggered_only = yes
+    immediate = {
+		if = {
+			limit = {
+				any_playable_country = { has_federation = no not = { has_country_flag = already_in_federation } }
+				any_owned_pop = {
+					has_trait = trait_team1_mp #Проверка на трейт
+				}
+			}
+		random_country = { set_country_flag = Federation_Team1_Leader }
+
+		set_country_flag = Federation_Team_1_Member # Проверка запуска ивента, в общем нужно так же будет на каждое государство с трейтом навесить желательно флаг с проверкой по типу той что выше.
+		add_tradition = tr_diplomacy_adopt
+		add_tradition = tr_diplomacy_the_federation
+		set_country_flag = working_test_stage_1 # Проверка завершения процедуры первого ивента
+		}
+		country_event = { id = asp_agr.1010 } set_country_flag = working_test_stage_2 # Проверка запуска ивента второй стадии
+	 }
+}
+
+country_event = {
+    id = asp_agr.1010
+    hide_window = yes
+    trigger = {
+        is_ai = no # Если с иишками будешь тестить, можешь убрать
+    }
+    #fire_only_once = yes # Мейби проверку эту и убрать
+    is_triggered_only = yes
+	immediate = {
+			if = {
+				limit = {
+					any_playable_country = {
+						has_federation = no 
+						has_country_flag = Federation_Team1_Leader 
+						not = { has_country_flag = already_in_federation }
+					}
+					OR = {
+						any_owned_planet = {
+							pop_has_trait = trait_team1_mp
+						}
+						any_owned_pop = {
+							has_trait = trait_team1_mp #Проверка на трейт
+						}
+					}
+				}
+				# Вообще эту штуку можно очень детально настроить, но думаю ты сам разберёшься с этим.
+				federation = {
+					set_federation_type = hegemony_federation # Гегемонка
+					set_name = Federation_Team_1
+					set_federation_flag = non_aligned_league # Заглушку юзнул с флагом, мб можно рандомный юзать а мб нет - можешь попробовать через random
+					set_federation_leader = root
+				}
+			}
+			hidden_effect = {
+				every_playable_country = {
+					limit = {
+						NOT = { is_same_value = root }
+						is_ai = no
+						has_federation = no
+						NOT = { has_country_flag = already_in_federation }
+						has_country_flag = Federation_Team_1_Member # Важная проверка
+						OR = {
+								any_owned_planet = {
+									pop_has_trait = trait_team1_mp #Проверка на трейт
+								}
+								any_owned_pop = {
+									has_trait = trait_team1_mp #Проверка на трейт
+								}
+							}
+						}
+						join_alliance = {
+							who = root
+							name = Federation_Team_1
+							override_requirements = yes
+						}
+				}
+			}
+	}
+}

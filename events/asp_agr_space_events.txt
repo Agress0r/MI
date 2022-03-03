@@ -22,7 +22,7 @@ ship_event = {
 		owner = {
 			is_ai = no
 			NOT = {
-				has_country_flag = asp_agr_leader_event_happened
+				has_country_flag = asp_agr_leader_event_initit
 			}
 		}
 	}
@@ -30,8 +30,7 @@ ship_event = {
 	
 		option = {
 			name = asp_agr.1.a
-			owner = { set_country_flag = asp_agr_leader_event_happened
-				country_event = { id = asp_agr.2 } }
+			owner = { country_event = { id = asp_agr.2 } set_country_flag = asp_agr_leader_event_initit }
 		}
 
 	    option = {
@@ -52,7 +51,7 @@ ship_event = {
 			add_resource = {
 				alloys = 350
 			}
-			set_country_flag = asp_agr_leader_event_happened
+			set_country_flag = asp_agr_leader_event_initit
 		}
 	}
 }

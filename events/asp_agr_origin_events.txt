@@ -1,0 +1,821 @@
+namespace = asp_agr_origin
+
+##########################################
+# All origin events from the ASP mod
+# Written and edited by Agress0r Komarov
+##########################################
+# Все события из стандартных и уникальных ивентов
+# Написал и отредактировал Agress0r Komarov
+##########################################
+
+### Все события что будут связаны с истоком будут находится здесь
+# Начальная настройка ивента
+country_event = {
+	id = asp_agr_origin.1
+	is_triggered_only = yes
+	hide_window = yes
+	fire_only_once = yes
+
+	# Настраиваю все определители, по которым потом можно навести ивент - можно через исток после вписать обязательство запуска этого ивента.
+	immediate = {
+		if = {
+			limit = { any_playable_country = { has_origin = agr_asp_ancient_minig_drones } }
+			owner = {
+				country_event = {
+					id = asp_agr_origin.2 days = 5 random = 5
+				}
+				add_modifier = { modifier = agr_asp_origin_ancient_minig_drones } # Тест
+			}
+		}
+	}
+}
+# # # Уведомление о наличии специальный кораблей (или уведомление о запуске ивента с будущей возможностью строительства таких кораблей.
+country_event = {
+	id = asp_agr_origin.2
+	title = asp_agr_origin.2.name
+	desc = asp_agr_origin.2.desc
+	location = root.capital_scope
+	picture = GFX_asp_agr_ancient_ai_analysis_ships
+	show_sound = event_ancient_drone
+	is_triggered_only = yes
+
+	# На счёт проверок хазе, мб так и оставить для машин или сделать для всех - даже не знаю.
+	trigger = {
+		owner = {
+			is_machine_empire = yes
+		}
+		has_origin = agr_asp_ancient_minig_drones
+	}
+
+
+	option = {
+		name = ACKNOWLEDGED
+
+		custom_tooltip = asp_agr_origin.2.A.tooltip # Уведомление о найденном дроне на планете
+		hidden_effect = {
+			save_event_target_as = ancient_minig_drones_origin_owner
+			begin_event_chain = {
+				event_chain = "asp_agr_mining_drones_chain"
+				target = ROOT
+			}
+			capital_scope = {
+				enable_special_project = {
+					name = "ASP_AGR_ANCIENT_AI_ANALYSIS_SHIPS" # Взлом ИИ
+					location = this
+					owner = root
+				}
+				enable_special_project = {
+					name = "ASP_AGR_ANCIENT_AI_ANALYSIS_CONTACT" # Анализ данных корабля
+					location = this
+					owner = root
+				}
+			}
+		}
+		# Для ии желательно бы этот исток отключить, но тут как получится.
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+# # # Выходной результат с технологией дрона-разведчика
+country_event = {
+	id = asp_agr_origin.3
+	title = asp_agr_origin.3.name
+	desc = asp_agr_origin.3.desc
+	location = root.capital_scope
+	picture = GFX_asp_agr_ancient_ai_analysis_ships 
+	show_sound = event_ancient_drone
+	is_triggered_only = yes
+
+	# На счёт проверок хазе, мб так и оставить для машин или сделать для всех - даже не знаю.
+	trigger = {
+		owner = {
+			is_machine_empire = yes
+		}
+		has_origin = agr_asp_ancient_minig_drones
+	}
+
+
+	option = {
+		name = ASTOUNDING
+
+		custom_tooltip = asp_agr_origin.3.A.tooltip # Уведомление о зачислении доступа к дрону на верфи
+		hidden_effect = {
+			set_country_flag = agr_asp_ancient_minig_drones_origin_scout_drone_getted # Разблокировка доступа к дрону-разведчику
+			create_ship_design = { design = Ancient_Battle_Drone }
+			add_ship_design = last_created_design
+		}
+		add_monthly_resource_mult = {
+			resource = engineering_research
+			value = @tier1researchreward
+			min = @tier1researchmin
+			max = @tier2researchmax
+		}
+		# Для ии желательно бы этот исток отключить, но тут как получится.
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+# # # Предписания для событий связанных с дронами -> create_drone_country = yes, все начинается тут drone_country - global event target
+# establish_communications_no_message = root
+
+# # # Создаю страну с фракцией дрона - ивент ниже надо запустить для создания такой фракции, а уже после с помощью кнопки можно будет связаться.
+country_event = {
+	id = asp_agr_origin.4
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		create_country = {
+			name = "NAME_Mineral_Extraction_Main_Computer"
+			type = asp_agr_drone_faction
+			flag = {
+				icon = {
+					category = "zoological"
+					file = "flag_zoological_1.dds"
+				}
+				background= {
+					category = "backgrounds"
+					file = "00_solid.dds"
+				}
+				colors={
+					"black"
+					"black"
+					"null"
+					"null"
+				}
+			}
+		}
+		last_created_country = {
+			establish_communications_no_message = root
+			save_global_event_target_as = mining_drones_cpu_main
+		}
+		save_global_event_target_as = asp_agr_mining_drones_main_cpu_owner
+		set_country_flag = asp_agr_main_cpu_access_gained # Этот флаг ещё как проверку можно поставить но в ивент который откроется после взлома ИИ.
+		set_country_flag = asp_agr_main_cpu_access_lvl_1
+	}
+}
+
+# # # Этот ивент как и последующие запускается онли через окно дипломатии
+country_event = {
+	id = asp_agr_origin.5
+	title = "asp_agr_origin.5.title"
+	# Все что снизу - рандомные слова в текстовом окне, что будет говорить главное ядро процессора.
+	desc = {
+		trigger = {
+			switch = {
+				trigger = has_country_flag
+				# Теоретически планирую 5 уровней доступа, но как оно будет на самом деле - поживём увидим.
+				asp_agr_main_cpu_access_lvl_1 = { text = "asp_agr_origin.5.desc.lvl1" }
+				asp_agr_main_cpu_access_lvl_2 = { text = "asp_agr_origin.5.desc.lvl2" }
+				asp_agr_main_cpu_access_lvl_3 = { text = "asp_agr_origin.5.desc.lvl3" }
+				asp_agr_main_cpu_access_lvl_4 = { text = "asp_agr_origin.5.desc.lvl4" }
+				asp_agr_main_cpu_access_lvl_5 = { text = "asp_agr_origin.5.desc.lvl5" }
+			}
+		}
+	}
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = asp_agr_cpu_portrait
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			from = { is_country_type = asp_agr_drone_faction }
+			is_same_value = event_target:asp_agr_mining_drones_main_cpu_owner
+			has_country_flag = asp_agr_origin_dialogue_started
+		}
+		NOT = { has_country_flag = asp_agr_mining_drones_country_diplomacy_engaged }
+		has_country_flag = asp_agr_main_cpu_access_gained
+		NOR = {
+			# Тут теоретически можно запретить общение если что то будет нарушено, но поживём-увидим, надо оно или нет.
+		}
+	}
+
+	immediate = {
+		set_country_flag = asp_agr_mining_drones_country_diplomacy_engaged
+		set_country_flag = asp_agr_origin_dialogue_started
+	}
+
+	after = {
+		hidden_effect = { remove_country_flag = asp_agr_mining_drones_country_diplomacy_engaged }
+	}
+
+	# Разные варианты вопросов + ответов
+	option = { # Информационный раздел
+		name = asp_agr_origin.5.a
+		hidden_effect = {
+			country_event = { id = asp_agr_origin.6 } # На каждый ответ запускается событие с диалоговым окном.
+		}
+	}
+	option = { # Управление дополнительными параметрами
+		name = asp_agr_origin.5.b
+		allow = {
+			custom_tooltip = {
+				hidden_trigger = {
+					has_country_flag = asp_agr_main_cpu_access_lvl_2
+				}
+				fail_text = asp_agr_origin.lvl2.required #
+			}
+		}
+		hidden_effect = {
+			country_event = { id = asp_agr_origin.7 } # На каждый ответ запускается событие с диалоговым окном.
+		}
+	}
+	option = { # Основные параметры дронов
+		name = asp_agr_origin.5.c
+		hidden_effect = {
+			country_event = { id = asp_agr_origin.8 } # На каждый ответ запускается событие с диалоговым окном.
+		}
+	}
+	option = { # Протоколы связи и сенсорной информации
+	name = asp_agr_origin.5.d
+	hidden_effect = {
+		country_event = { id = asp_agr_origin.9 } # На каждый ответ запускается событие с диалоговым окном.
+	    }
+    }
+	option = {
+		name = asp_agr_origin.5.e # Завершить сеанс связи
+		default_hide_option = yes
+		hidden_effect = {
+			remove_country_flag = asp_agr_origin_dialogue_started
+		}
+	}
+}
+
+# # # Общий информационный раздел.
+country_event = {
+	id = asp_agr_origin.6
+	title = "asp_agr_origin.6.title"
+	desc = "asp_agr_origin.6.desc"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = asp_agr_cpu_portrait
+	}
+
+	is_triggered_only = yes
+	
+	trigger = {
+		#from = { is_country_type = asp_agr_drone_faction }
+		#is_same_value = event_target:asp_agr_mining_drones_main_cpu_owner
+		#NOT = { has_country_flag = asp_agr_mining_drones_country_diplomacy_engaged }
+		NOR = {
+			# Тут теоретически можно запретить общение если что то будет нарушено, но поживём-увидим, надо оно или нет.
+		}
+	}
+
+	immediate = {
+		set_country_flag = asp_agr_mining_drones_country_diplomacy_engaged
+	}
+
+	after = {
+		hidden_effect = { remove_country_flag = asp_agr_mining_drones_country_diplomacy_engaged }
+	}
+
+	# Можно к каждому из них прикрепить награду за первое прочтение, но это уже как получится.
+	option = {
+		name = asp_agr_origin.6.a
+		response_text = asp_agr_origin.6.a.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = asp_agr_origin.6.b
+		response_text = asp_agr_origin.6.b.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = asp_agr_origin.6.c
+		response_text = asp_agr_origin.6.c.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = asp_agr_origin.6.d
+		response_text = asp_agr_origin.6.d.response
+		is_dialog_only = yes
+	}
+	# Вроде шото-насрал но хз, надо проверить как оно будет отображатся в игре.
+	option = {
+		name = asp_agr_origin.6.e
+		allow = {
+			custom_tooltip = {
+				hidden_trigger = {
+					has_country_flag = asp_agr_main_cpu_access_lvl_2
+				}
+				fail_text = asp_agr_origin.6.lvl2.required
+			}
+		}
+		response_text = asp_agr_origin.6.e.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = asp_agr_origin.6.f # Завершить сеанс связи - или же вернутся назад
+		hidden_effect = {
+			country_event = { id = asp_agr_origin.5 }
+		}
+	}
+}
+
+# # #  Управление дополнительными параметрами
+country_event = {
+	id = asp_agr_origin.7
+	title = "TRANSMISSION"
+	desc = "asp_agr_origin.7.desc"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = asp_agr_cpu_portrait
+	}
+
+	is_triggered_only = yes
+
+	trigger = {
+		#from = { is_country_type = asp_agr_drone_faction }
+		#is_same_value = event_target:asp_agr_mining_drones_main_cpu_owner
+		#NOT = { has_country_flag = asp_agr_mining_drones_country_diplomacy_engaged }
+		NOR = {
+			# Тут теоретически можно запретить общение если что то будет нарушено, но поживём-увидим, надо оно или нет.
+		}
+	}
+
+	immediate = {
+		set_country_flag = asp_agr_mining_drones_country_diplomacy_engaged
+	}
+
+	after = {
+		hidden_effect = { remove_country_flag = asp_agr_mining_drones_country_diplomacy_engaged }
+	}
+	# Можно к каждому из них прикрепить награду за первое прочтение, но это уже как получится.
+	option = {
+		name = asp_agr_origin.7.a
+		response_text = asp_agr_origin.7.a.response
+	}
+	option = {
+		name = asp_agr_origin.7.b
+		response_text = asp_agr_origin.7.b.response
+	}
+	option = {
+		name = asp_agr_origin.7.c
+		response_text = asp_agr_origin.7.c.response
+	}
+	option = {
+		name = asp_agr_origin.7.d
+		response_text = asp_agr_origin.7.d.response
+	}
+	option = {
+		name = asp_agr_origin.7.e
+		response_text = asp_agr_origin.7.e.response
+	}
+	option = {
+		name = asp_agr_origin.7.f # Завершить сеанс связи - или же вернутся назад
+		hidden_effect = {
+			country_event = { id = asp_agr_origin.5 }
+		}
+	}
+}
+
+# # #  Основные параметры дронов
+country_event = {
+	id = asp_agr_origin.8
+	title = "TRANSMISSION"
+	desc = "asp_agr_origin.8.desc"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = asp_agr_cpu_portrait
+	}
+
+	is_triggered_only = yes
+
+		trigger = {
+		#from = { is_country_type = asp_agr_drone_faction }
+		#is_same_value = event_target:asp_agr_mining_drones_main_cpu_owner
+		#NOT = { has_country_flag = asp_agr_mining_drones_country_diplomacy_engaged }
+		NOR = {
+			# Тут теоретически можно запретить общение если что то будет нарушено, но поживём-увидим, надо оно или нет.
+		}
+	}
+
+	immediate = {
+		set_country_flag = asp_agr_mining_drones_country_diplomacy_engaged
+	}
+
+	after = {
+		hidden_effect = { remove_country_flag = asp_agr_mining_drones_country_diplomacy_engaged }
+	}
+	# Можно к каждому из них прикрепить награду за первое прочтение, но это уже как получится.
+	option = {
+		name = asp_agr_origin.8.a
+		response_text = asp_agr_origin.8.a.response
+	}
+	option = {
+		name = asp_agr_origin.8.b
+		response_text = asp_agr_origin.8.b.response
+	}
+	option = {
+		name = asp_agr_origin.8.c
+		response_text = asp_agr_origin.8.c.response
+	}
+	option = {
+		name = asp_agr_origin.8.d
+		response_text = asp_agr_origin.8.d.response
+	}
+	option = {
+		name = asp_agr_origin.8.e
+		response_text = asp_agr_origin.8.e.response
+	}
+	option = {
+		name = asp_agr_origin.8.f # Завершить сеанс связи - или же вернутся назад
+		hidden_effect = {
+			country_event = { id = asp_agr_origin.5 }
+		}
+	}
+}
+
+# Протоколы связи и сенсорной информации
+country_event = {
+	id = asp_agr_origin.9
+	title = "TRANSMISSION"
+	desc = "asp_agr_origin.9.desc"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = asp_agr_cpu_portrait
+	}
+
+	is_triggered_only = yes
+
+		trigger = {
+		#from = { is_country_type = asp_agr_drone_faction }
+		#is_same_value = event_target:asp_agr_mining_drones_main_cpu_owner
+		#NOT = { has_country_flag = asp_agr_mining_drones_country_diplomacy_engaged }
+		NOR = {
+			# Тут теоретически можно запретить общение если что то будет нарушено, но поживём-увидим, надо оно или нет.
+		}
+	}
+
+	immediate = {
+		set_country_flag = asp_agr_mining_drones_country_diplomacy_engaged
+	}
+
+	after = {
+		hidden_effect = { remove_country_flag = asp_agr_mining_drones_country_diplomacy_engaged }
+	}
+	# Можно к каждому из них прикрепить награду за первое прочтение, но это уже как получится.
+	option = {
+		name = asp_agr_origin.9.a
+		response_text = asp_agr_origin.9.a.response
+	}
+	option = {
+		name = asp_agr_origin.9.b
+		response_text = asp_agr_origin.9.b.response
+	}
+	option = {
+		name = asp_agr_origin.9.c
+		response_text = asp_agr_origin.9.c.response
+	}
+	option = {
+		name = asp_agr_origin.9.d
+		response_text = asp_agr_origin.9.d.response
+	}
+	option = {
+		name = asp_agr_origin.9.e
+		response_text = asp_agr_origin.9.e.response
+	}
+	option = {
+		name = asp_agr_origin.9.f # Завершить сеанс связи - или же вернутся назад
+		default_hide_option = yes
+		hidden_effect = {
+			country_event = { id = asp_agr_origin.5 }
+		}
+	}
+}
+
+# Main Menu (Governor)
+country_event = {
+	id = graygoo.501
+	title = "graygoo.500.title"
+	desc = "graygoo.501.a.desc"
+	desc = "graygoo.501.b.desc"
+	desc = "graygoo.501.c.desc"
+	desc = "graygoo.501.d.desc"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = event_target:gray_governor
+		planet_background = event_target:gray_governor_planet
+		room = root
+	}
+
+	is_triggered_only = yes
+
+	trigger = {
+		from = { is_country_type = gray }
+		is_same_value = event_target:gray_owner
+		has_country_flag = gray_governor_active
+		NOT = { has_country_flag = gray_reforming }
+		NOT = { has_country_flag = gray_diplomacy_engaged }
+		exists = event_target:gray_governor
+	}
+
+	immediate = {
+		set_country_flag = gray_diplomacy_engaged
+		if = {
+			limit = {
+				any_owned_planet = {
+					leader = { is_same_value = event_target:gray_governor }
+				}
+			}
+			random_owned_planet = {
+				limit = {
+					leader = { is_same_value = event_target:gray_governor }
+				}
+				save_event_target_as = gray_governor_planet
+			}
+		}
+		else = {
+			capital_scope = { save_event_target_as = gray_governor_planet }
+		}
+	}
+
+	after = {
+		hidden_effect = { remove_country_flag = gray_diplomacy_engaged }
+	}
+
+	option = { # Warship
+		name = graygoo.500.b
+		response_text = graygoo.501.b.response
+		allow = {
+			hidden_trigger = { exists = event_target:gray_governor } # To prevent exploit
+		}
+		hidden_effect = {
+			create_gray_warship = yes
+		}
+	}
+	option = { # Army
+		name = graygoo.500.c
+		response_text = graygoo.501.c.response
+		allow = {
+			hidden_trigger = { exists = event_target:gray_governor }
+		}
+		hidden_effect = {
+			create_gray_army = yes
+		}
+	}
+	option = {
+		name = graygoo.500.d
+		default_hide_option = yes
+	}
+}
+
+# Main Menu (Warship)
+country_event = {
+	id = graygoo.502
+	title = "graygoo.500.title"
+	desc = "graygoo.502.a.desc"
+	desc = "graygoo.502.b.desc"
+	desc = "graygoo.502.c.desc"
+	desc = "graygoo.502.d.desc"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	trigger = {
+		from = { is_country_type = gray }
+		is_same_value = event_target:gray_owner
+		has_country_flag = gray_warship_active
+		NOT = { has_country_flag = gray_reforming }
+		NOT = { has_country_flag = gray_diplomacy_engaged }
+		exists = event_target:gray_warship
+		any_owned_fleet = { is_same_value = event_target:gray_warship }
+		event_target:gray_warship = { num_ships > 0 }
+	}
+
+	immediate = {
+		set_country_flag = gray_diplomacy_engaged
+	}
+
+	after = {
+		hidden_effect = { remove_country_flag = gray_diplomacy_engaged }
+	}
+
+	option = { # Governor
+		name = graygoo.500.a
+		response_text = graygoo.502.a.response
+		allow = {
+			hidden_trigger = { # To prevent exploit
+				event_target:gray_warship = { num_ships > 0 }
+			}
+			custom_tooltip = {
+				fail_text = graygoo.500.allow.a
+				event_target:gray_warship = { is_in_combat = no }
+			}
+			custom_tooltip = {
+				fail_text = graygoo.500.allow.b
+				event_target:gray_warship = { NOT = { has_hp_percentage < 1.0 } }
+			}
+		}
+		hidden_effect = {
+			create_gray_governor = yes
+		}
+	}
+	option = { # Army
+		name = graygoo.500.c
+		response_text = graygoo.502.c.response
+		allow = {
+			hidden_trigger = {
+				event_target:gray_warship = { num_ships > 0 }
+			}
+			custom_tooltip = {
+				fail_text = graygoo.500.allow.a
+				event_target:gray_warship = { is_in_combat = no }
+			}
+			custom_tooltip = {
+				fail_text = graygoo.500.allow.b
+				event_target:gray_warship = { NOT = { has_hp_percentage < 1.0 } }
+			}
+		}
+		hidden_effect = {
+			create_gray_army = yes
+		}
+	}
+	option = {
+		name = graygoo.500.d
+		default_hide_option = yes
+	}
+}
+
+# Main Menu (Army)
+country_event = {
+	id = graygoo.503
+	title = "graygoo.500.title"
+	desc = "graygoo.503.a.desc"
+	desc = "graygoo.503.b.desc"
+	desc = "graygoo.503.c.desc"
+	desc = "graygoo.503.d.desc"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
+
+	is_triggered_only = yes
+
+	trigger = {
+		from = { is_country_type = gray }
+		has_country_flag = gray_army_active
+		NOT = { has_country_flag = gray_reforming }
+		NOT = { has_country_flag = gray_diplomacy_engaged }
+		is_same_value = event_target:gray_owner
+		any_owned_army = {
+			army_type = gray_army
+			OR = {
+				exists = planet
+				AND = {
+					exists = fleet
+					fleet = { num_ships > 0 }
+				}
+			}
+		}
+	}
+
+	immediate = {
+		set_country_flag = gray_diplomacy_engaged
+	}
+
+	after = {
+		hidden_effect = { remove_country_flag = gray_diplomacy_engaged }
+	}
+
+	option = { # Governor
+		name = graygoo.500.a
+		response_text = graygoo.503.a.response
+		allow = {
+			hidden_trigger = { # To prevent exploit
+				any_owned_army = {
+					army_type = gray_army
+					OR = {
+						exists = planet
+						AND = {
+							exists = fleet
+							fleet = { num_ships > 0 }
+						}
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = graygoo.500.allow.a
+				any_owned_army = {
+					army_type = gray_army
+					if = {
+						limit = { exists = planet }
+						planet = { has_ground_combat = no }
+					}
+				}
+			}
+		}
+		allow = {
+			hidden_trigger = {
+				any_owned_army = {
+					army_type = gray_army
+					OR = {
+						exists = planet
+						AND = {
+							exists = fleet
+							fleet = { num_ships > 0 }
+						}
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = graygoo.500.allow.a
+				any_owned_army = {
+					army_type = gray_army
+					if = {
+						limit = { exists = fleet }
+						fleet = { is_in_combat = no }
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			create_gray_governor = yes
+		}
+	}
+	option = { # Warship
+		name = graygoo.500.b
+		response_text = graygoo.503.b.response
+		allow = {
+			hidden_trigger = {
+				any_owned_army = {
+					army_type = gray_army
+					OR = {
+						exists = planet
+						AND = {
+							exists = fleet
+							fleet = { num_ships > 0 }
+						}
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = graygoo.500.allow.a
+				any_owned_army = {
+					army_type = gray_army
+					if = {
+						limit = { exists = planet }
+						planet = { has_ground_combat = no }
+					}
+				}
+			}
+		}
+		allow = {
+			hidden_trigger = {
+				any_owned_army = {
+					army_type = gray_army
+					OR = {
+						exists = planet
+						AND = {
+							exists = fleet
+							fleet = { num_ships > 0 }
+						}
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = graygoo.500.allow.a
+				any_owned_army = {
+					army_type = gray_army
+					if = {
+						limit = { exists = fleet }
+						fleet = { is_in_combat = no }
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			create_gray_warship = yes
+		}
+	}
+	option = {
+		name = graygoo.500.d
+		default_hide_option = yes
+	}
+}

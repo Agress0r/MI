@@ -1,0 +1,13 @@
+# # # Основная задача этого файла - просто хранить в себе темплейт для туррели, дабы она становилась невидимой.
+agr_asp_invisible_medium_turret = {
+	size = medium
+	component = weapon
+	is_fixed = yes
+	entities = {
+		weapon_type_kinetic = "agr_asp_invisible_medium_turret"
+		weapon_type_energy = "agr_asp_invisible_medium_turret"
+		weapon_type_explosive = "agr_asp_invisible_medium_turret"
+		weapon_type_strike_craft = "agr_asp_invisible_medium_turret" # Тест
+		weapon_type_point_defense = "agr_asp_invisible_medium_turret" # Тест
+	}
+}

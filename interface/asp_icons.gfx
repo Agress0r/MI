@@ -1,5 +1,5 @@
 spriteTypes = {
-
+  # Спрайт что отвечает за placeholder модельки стоимости строительства корабля - отображается на мегасооружении.
 spriteType = {
 	name = "GFX_mod_cost_mult"
 	texturefile = "gfx/interface/icons/modifiers/mod_starbase_ship_build_cost_mult.dds"
@@ -19,4 +19,17 @@ spriteType = {
     name = "GFX_asp_agr_asteroid_drones"
     textureFile = "gfx/interface/icons/modules/asp_agr_asteroid_drones.dds"
   }
+  # Спрайт что отвечает за картинку проекта в Situation Log'е - маска и прозрачность дабы за окошки не вылезала картинка ивента
+  spriteType = {
+    name = "GFX_asp_agr_ancient_ai_analysis_ships"
+    textureFile = "gfx/event_pictures/asp_agr_ancient_ai_analysis.dds"
+    masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+  }
+  # Спрайт заставки истока древних добывающих дронов
+  spriteType = {	
+		name = "GFX_origin_agr_asp_ancient_minig_drones"
+		texturefile = "gfx/event_pictures/origins/agr_asp_ancient_minig_drones.dds"
+		alwaystransparent = yes
+	}
 }

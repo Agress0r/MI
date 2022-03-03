@@ -30,6 +30,10 @@ tech_asp_agr_research_station_1 = {
 				has_trait = "leader_trait_maniacal"
 			}
 		}
+		modifier = {
+			factor = 1.5
+			has_origin = agr_asp_ancient_minig_drones
+		}
 	}
 
 	ai_weight = {
@@ -70,6 +74,10 @@ tech_asp_agr_research_station_2 = {
 				area = physics
 				has_trait = "leader_trait_maniacal"
 			}
+		}
+		modifier = {
+			factor = 1.5
+			has_origin = agr_asp_ancient_minig_drones
 		}
 	}
 

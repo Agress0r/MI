@@ -30,3 +30,28 @@ starbase_constructions = {
 		upkeep
 	}
 }
+
+megastructures_asp_mod = {
+	use_for_ai_budget = yes
+	parent = megastructures
+	#use_parent_icon = yes
+	ai_use_parent_for_resources_upkeep = {
+		energy
+		consumer_goods
+	}
+
+	generate_mult_modifiers = {
+		cost
+        produces
+        upkeep
+	}
+    generate_add_modifiers = {
+		cost
+        produces
+        upkeep
+	}
+
+	triggered_cost_modifier = {		key = megastructures_asp_mod_build	modifier_types = { mult } }
+    triggered_produces_modifier = {	key = megastructures_asp_mod		modifier_types = { mult } }
+    triggered_upkeep_modifier = {	key = megastructures_asp_mod		modifier_types = { mult } }
+}

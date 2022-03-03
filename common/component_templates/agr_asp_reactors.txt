@@ -1,0 +1,357 @@
+# Icons set here are the ones show in the actual slot. The reason is so that we can support different icons for different sizes.
+#############
+#  ЭНЕРГИЯ	#
+#############
+# Эти отвечают за дрон-корвет и его мощность
+@corvette_power_1 = 75
+@corvette_power_2 = 100
+@corvette_power_3 = 130
+@corvette_power_4 = 170
+@corvette_power_5 = 220
+@corvette_power_6 = 285
+# Эти отвечают за дрон-эсминец и его мощность
+@destroyer_power_1 = 140
+@destroyer_power_2 = 180
+@destroyer_power_3 = 240
+@destroyer_power_4 = 320
+@destroyer_power_5 = 430
+@destroyer_power_6 = 550
+
+#############
+#	ЦЕНА	#
+#############
+# Эти отвечают за дрон-корвет и его цены
+@corvette_cost_1 = 10
+@corvette_cost_2 = 13
+@corvette_cost_3 = 17
+@corvette_cost_4 = 22
+@corvette_cost_5 = 28
+@corvette_cost_6 = 37
+# Эти отвечают за дрон-эсминец и его цены
+@destroyer_cost_1 = 20
+@destroyer_cost_2 = 26
+@destroyer_cost_3 = 34
+@destroyer_cost_4 = 44
+@destroyer_cost_5 = 56
+@destroyer_cost_6 = 74
+
+# # # Нужно будет ещё так же глобальную переменную добавить для обслуживания.
+
+##############################################################
+# Ниже будет список реакторов для кораблей дронов из истока. #
+##############################################################
+
+########################
+# Обычные ядерные реакторы что доступны сразу
+########################
+utility_component_template = {
+	key = "ASP_AGR_ANCIENT_CORVETTE_FISSION_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_1"
+	icon_frame = 1
+	power = @corvette_power_1
+	
+	resources = {
+		category = ship_components
+		cost = { alloys = @corvette_cost_1 }	
+		upkeep = {
+			energy = 0.15
+			alloys = 0.02
+		}
+	}
+	
+	prerequisites = { "tech_fission_power" }
+	component_set = "power_core"
+	size_restriction = { asp_agr_origin_ancient_corvette }
+	upgrades_to = "ASP_AGR_ANCIENT_CORVETTE_FISSION_REACTOR"
+	
+	ai_weight = { weight = 1 }
+}
+
+utility_component_template = {
+	key = "ASP_AGR_ANCIENT_DESTROYER_FISSION_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_1"
+	icon_frame = 1
+	power = @destroyer_power_1
+	
+	resources = {
+		category = ship_components
+		cost = { alloys = @destroyer_cost_1 }	
+		upkeep = {
+			energy = 0.22
+			alloys = 0.03
+		}
+	}
+	
+	prerequisites = { "tech_fission_power" }
+	component_set = "power_core"
+	size_restriction = { asp_agr_origin_ancient_destroyer }
+	upgrades_to = "ASP_AGR_ANCIENT_DESTROYER_FISSION_REACTOR"
+	
+	ai_weight = { weight = 1 }
+}
+
+#############################
+### Термоядерные реакторы ###
+#############################
+utility_component_template = {
+	key = "ASP_AGR_ANCIENT_CORVETTE_FUSION_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_2"
+	icon_frame = 1
+	power = @corvette_power_2
+	
+	resources = {
+		category = ship_components
+		cost = { alloys = @corvette_cost_2 }	
+		upkeep = {
+			energy = 0.17
+			alloys = 0.024
+		}
+	}
+	
+	prerequisites = { "tech_fusion_power" }
+	component_set = "power_core"
+	size_restriction = { asp_agr_origin_ancient_corvette }
+	upgrades_to = "ASP_AGR_ANCIENT_CORVETTE_COLD_FUSION_REACTOR"
+	
+	ai_weight = { weight = 2 }
+}
+
+utility_component_template = {
+	key = "ASP_AGR_ANCIENT_DESTROYER_FUSION_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_2"
+	icon_frame = 1
+	power = @destroyer_power_2
+	
+	resources = {
+		category = ship_components
+		cost = { alloys = @destroyer_cost_2 }	
+		upkeep = {
+			energy = 0.28
+			alloys = 0.032
+		}
+	}
+	
+	prerequisites = { "tech_fusion_power" }
+	component_set = "power_core"
+	size_restriction = { asp_agr_origin_ancient_destroyer }
+	upgrades_to = "ASP_AGR_ANCIENT_DESTROYER_COLD_FUSION_REACTOR"
+	
+	ai_weight = { weight = 2 }
+}
+
+#################################
+### Реактор холодного синтеза ###
+#################################
+utility_component_template = {
+	key = "ASP_AGR_ANCIENT_CORVETTE_COLD_FUSION_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_3"
+	icon_frame = 1
+	power = @corvette_power_3
+	
+	resources = {
+		category = ship_components
+		cost = { alloys = @corvette_cost_3 }	
+		upkeep = {
+			energy = 0.19
+			alloys = 0.025
+		}
+	}
+	
+	prerequisites = { "tech_cold_fusion_power" }
+	component_set = "power_core"
+	size_restriction = { asp_agr_origin_ancient_corvette }
+	upgrades_to = "ASP_AGR_ANCIENT_CORVETTE_ANTIMATTER_REACTOR"
+	
+	ai_weight = { weight = 3 }
+}
+
+utility_component_template = {
+	key = "ASP_AGR_ANCIENT_DESTROYER_COLD_FUSION_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_3"
+	icon_frame = 1
+	power = @destroyer_power_3
+	
+	resources = {
+		category = ship_components
+		cost = { alloys = @destroyer_cost_3 }	
+		upkeep = {
+			energy = 0.35
+			alloys = 0.036
+		}
+	}
+	
+	prerequisites = { "tech_cold_fusion_power" }
+	component_set = "power_core"
+	size_restriction = { asp_agr_origin_ancient_destroyer }
+	upgrades_to = "ASP_AGR_ANCIENT_DESTROYER_ANTIMATTER_REACTOR"
+	
+	ai_weight = { weight = 3 }
+}
+
+###########################
+### Реактор антиматерии ###
+###########################
+utility_component_template = {
+	key = "ASP_AGR_ANCIENT_CORVETTE_ANTIMATTER_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_4"
+	icon_frame = 1
+	power = @corvette_power_4
+	
+	resources = {
+		category = ship_components
+		cost = { alloys = @corvette_cost_4 }	
+		upkeep = {
+			energy = 0.24
+			alloys = 0.027
+		}
+	}
+	
+	prerequisites = { "tech_antimatter_power" }
+	component_set = "power_core"
+	size_restriction = { asp_agr_origin_ancient_corvette }
+	upgrades_to = "ASP_AGR_ANCIENT_CORVETTE_ZERO_POINT_REACTOR"
+	
+	ai_weight = { weight = 4 }
+}
+
+utility_component_template = {
+	key = "ASP_AGR_ANCIENT_DESTROYER_ANTIMATTER_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_4"
+	icon_frame = 1
+	power = @destroyer_power_4
+	
+	resources = {
+		category = ship_components
+		cost = { alloys = @destroyer_cost_4 }	
+		upkeep = {
+			energy = 0.46
+			alloys = 0.046
+		}
+	}
+	
+	prerequisites = { "tech_antimatter_power" }
+	component_set = "power_core"
+	size_restriction = { asp_agr_origin_ancient_destroyer }
+	upgrades_to = "ASP_AGR_ANCIENT_DESTROYER_ZERO_POINT_REACTOR"
+	
+	ai_weight = { weight = 4 }
+}
+
+#############################
+### Реактор нулевой точки ###
+#############################
+utility_component_template = {
+	key = "ASP_AGR_ANCIENT_CORVETTE_ZERO_POINT_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_5"
+	icon_frame = 1
+	power = @corvette_power_5
+	
+	resources = {
+		category = ship_components
+		cost = { alloys = @corvette_cost_5 }	
+		upkeep = {
+			energy = 0.3
+			alloys = 0.03
+		}
+	}
+	
+	prerequisites = { "tech_zero_point_power" }
+	component_set = "power_core"
+	size_restriction = { asp_agr_origin_ancient_corvette }
+	upgrades_to = "ASP_AGR_ANCIENT_CORVETTE_DARK_MATTER_REACTOR"
+	
+	ai_weight = { weight = 5 }
+}
+
+utility_component_template = {
+	key = "ASP_AGR_ANCIENT_DESTROYER_ZERO_POINT_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_5"
+	icon_frame = 1
+	power = @destroyer_power_5
+	
+	resources = {
+		category = ship_components
+		cost = { alloys = @destroyer_cost_5 }	
+		upkeep = {
+			energy = 0.6
+			alloys = 0.06
+		}
+	}
+	
+	prerequisites = { "tech_zero_point_power" }
+	component_set = "power_core"
+	size_restriction = { asp_agr_origin_ancient_destroyer }
+	upgrades_to = "ASP_AGR_ANCIENT_DESTROYER_DARK_MATTER_REACTOR"
+	
+	ai_weight = { weight = 5 }
+}
+##############################
+### Реактор тёмной материи ###
+##############################
+utility_component_template = {
+	key = "ASP_AGR_ANCIENT_CORVETTE_DARK_MATTER_REACTOR"
+	size = small
+	icon = "GFX_ship_part_dark_matter_power_core"
+	icon_frame = 1
+	power = @corvette_power_6
+	
+	resources = {
+		category = ship_components
+		cost = { alloys = @corvette_cost_6 	sr_dark_matter = 1 }
+		upkeep = {
+			energy = 0.4
+			alloys = 0.04
+		}
+	}
+	
+	prerequisites = { "tech_dark_matter_power_core" }
+	component_set = "power_core"
+	size_restriction = { asp_agr_origin_ancient_corvette }
+	
+	ai_weight = {
+		weight = 6
+		modifier = {
+			factor = 0.0
+			no_resource_for_component = { RESOURCE = sr_dark_matter }
+		}
+	}
+}
+
+utility_component_template = {
+	key = "ASP_AGR_ANCIENT_DESTROYER_DARK_MATTER_REACTOR"
+	size = small
+	icon = "GFX_ship_part_dark_matter_power_core"
+	icon_frame = 1
+	power = @destroyer_power_6
+	
+	resources = {
+		category = ship_components
+		cost = { alloys = @destroyer_cost_6 sr_dark_matter = 1 }
+		upkeep = {
+			energy = 0.78
+			alloys = 0.078
+		}
+	}
+	
+	prerequisites = { "tech_dark_matter_power_core" }
+	component_set = "power_core"
+	size_restriction = { asp_agr_origin_ancient_destroyer }
+	
+	ai_weight = {
+		weight = 6
+		modifier = {
+			factor = 0.0
+			no_resource_for_component = { RESOURCE = sr_dark_matter }
+		}
+	}
+}

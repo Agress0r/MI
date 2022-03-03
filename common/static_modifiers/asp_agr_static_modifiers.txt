@@ -27,6 +27,14 @@ asp_agr_resolution_space_mining_2 = {
 	station_gatherers_upkeep_mult = 0.1 # Вроде как повышает на 8% обслуживание в энергии (и не только в энергии) у всех станций.
 	starbase_constructions_upkeep_mult = 0.1
 }
+agr_asp_origin_ancient_minig_drones = {
+	icon = "gfx/interface/icons/modifiers/mod_shipclass_military_station_build_cost_mult.dds"
+	show_only_custom_tooltip = yes
+	custom_tooltip = agr_asp_origin_ancient_minig_drones_buff
+	station_gatherers_produces_mult = 0.10 
+	station_researchers_produces_mult = 0.1
+	megastructures_asp_mod_cost_mult = -0.2 
+}
 
 habs_mineral_output_1 = {
 	icon = "gfx/interface/icons/planet_modifiers/asp_space_mining_drones.dds"

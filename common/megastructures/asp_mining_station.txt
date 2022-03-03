@@ -40,9 +40,9 @@ asp_agr_mining_station_0 = {
 
 	entity_offset = { x = -7 y = -7 }
 
-	build_time = 2100
+	build_time = 2100 # Пробую добавить костыль
 	resources = {
-		category = megastructures
+		category = megastructures_asp_mod
 		cost = {
 			alloys = 5000
 			influence = 150
@@ -57,6 +57,7 @@ asp_agr_mining_station_0 = {
 		alloys = 50
 		}
 	}
+	
 	country_modifier = {
 		station_gatherers_produces_mult = 0.15
 		station_gatherers_cost_mult = -0.15
@@ -132,7 +133,7 @@ asp_agr_mining_station_2 = {
 	entity_offset = { x = -7 y = -7 }
 	build_time = 2800
 	resources = {
-		category = megastructures
+		category = megastructures_asp_mod
 		cost = {
 			alloys = 10000
 			minerals = 15000

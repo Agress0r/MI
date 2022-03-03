@@ -44,7 +44,7 @@ asp_agr_research_station_0 = {
 
 	build_time = 2200
 	resources = {
-		category = megastructures
+		category = megastructures_asp_mod
 		cost = {
 			alloys = 4400
 			influence = 150
@@ -139,7 +139,7 @@ asp_agr_research_station_2 = {
 	}
 	build_time = 2800
 	resources = {
-		category = megastructures
+		category = megastructures_asp_mod
 		cost = {
 			alloys = 9000
 			minerals = 6700

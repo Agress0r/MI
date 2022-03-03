@@ -1,0 +1,28 @@
+# # # Переписываю 2 фракции дронов под свои нужды - если все пойдёт по пизде, то просто создам новую фракцию и дам ей возможность повлиять на эти 2 фракции ниже
+# Миша, всё хуйня, давай по новой - легче и проще без нарушения совместимости создать отдельную страну, а уже через неё настроить все пункты взаимодействий.
+# # Все скопировал с Gray.
+asp_agr_drone_faction = {
+	show_in_contacts_list = yes
+	minimalist_contacts_list_profile = yes
+	share_communications = no
+	default_ships = no
+	government = no
+	uses_origins = no
+	ai = {
+		enabled = no
+	}
+	faction = {
+		hostile = no
+		needs_border_access = no
+		generate_borders = no
+		needs_colony = no
+		auto_delete = no
+	}
+	custom_diplomacy = yes
+	modules = {
+		basic_technology_module = {}
+		exclusive_diplomacy_module = {
+			contact_rule = on_action_only
+		}
+	}
+}

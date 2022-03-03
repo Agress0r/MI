@@ -1,0 +1,23 @@
+objectTypes = {
+	# Orange
+	pdxmesh = {
+		name = "ai_crisis_room_orange_background_mesh"
+		file = "gfx/models/portraits/origin_portraits/ai_crisis_room_orange_background.mesh"
+		
+		animation = { id = "idle"	type = "ai_crisis_room_idle_animation" }
+	}
+
+	pdxmesh = {
+		name = "ai_crisis_room_orange_mesh"
+		file = "gfx/models/portraits/origin_portraits/ai_crisis_room_orange.mesh"
+		
+		animation = { id = "idle"	type = "ai_crisis_room_idle_animation" }
+	}
+
+	pdxmesh = {
+		name = "ai_crisis_room_orange_foreground_mesh"
+		file = "gfx/models/portraits/origin_portraits/ai_crisis_room_foreground_orange.mesh"
+			
+	}
+	
+}

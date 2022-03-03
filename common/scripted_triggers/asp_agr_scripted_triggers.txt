@@ -1,5 +1,14 @@
 
 # Триггеры для проверки
+
+# # # Этот триггер отвечает за общую выдачу доступа к 2ум шаблонам кораблей дронов.
+is_agr_asp_ancient_minig_drones_ogirin = {
+	has_country_flag = agr_asp_ancient_minig_drones_origin_getted
+}
+# # # Этот триггер отвечает за выдачу доступа к шаблону дрона-равездчика.
+is_scout_drone_getted = {
+	has_country_flag = agr_asp_ancient_minig_drones_origin_scout_drone_getted
+}
 enough_minerals_in_system_1 = {
 		any_system_planet = {
 			has_resource = {

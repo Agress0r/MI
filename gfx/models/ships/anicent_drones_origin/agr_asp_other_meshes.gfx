@@ -1,0 +1,45 @@
+# # # Переписываю под себя все приколы связанные с дронами, а то параходы могут и тронуть и все полетит к чертям.
+objectTypes = {
+
+	pdxmesh = {
+
+		name = "agr_asp_ancient_drone_mesh"
+		file = "gfx/models/ships/anicent_drones_origin/ancient_drone.mesh"
+		
+		animation = { id = "idle"			type = "ancient_drone_idle_animation" }
+		animation = { id = "moving"			type = "ancient_drone_moving_animation" }
+		animation = { id = "death"			type = "ancient_drone_death_animation" }
+		
+		scale = 1.0
+	}
+	
+	pdxmesh = {
+		name = "agr_asp_ancient_destroyer_mesh"
+		file = "gfx/models/ships/anicent_drones_origin/ancient_destroyer.mesh"
+		scale = 5.0
+		
+		animation = { id = "idle"			type = "molluscoid_01_corvette_frame_idle_animation" }
+		animation = { id = "death3"			type = "molluscoid_01_corvette_frame_death3_animation" }
+
+		meshsettings = {
+			name = "lp4Shape"
+			index = 0
+			texture_diffuse = "ancient_destroyer_diffuse.dds"
+			texture_normal = "ancient_destroyer_normal.tga"
+			texture_specular = "ancient_destroyer_specular.tga"
+			shader = "PdxMeshShip"
+		}
+	}
+	
+		pdxmesh = {
+
+		name = "agr_asp_ancient_drone_mining_mesh"
+		file = "gfx/models/ships/anicent_drones_origin/ancient_drone_mining.mesh"
+		
+		animation = { id = "idle"			type = "molluscoid_01_corvette_frame_idle_animation" }
+		animation = { id = "death"			type = "molluscoid_01_corvette_frame_death_animation" }
+
+		scale = 1.0
+	}	
+
+}

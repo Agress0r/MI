@@ -1,0 +1,86 @@
+# # # Папка, где будут хранится секции для древних дронов
+# # # # Желательно придумать разные секции, в районе 2-3 секций максимум, возможно даже попробовать что-то уникальное по оружию сделать.
+
+### Секция для дрона-корветчика - нужны разные варианты
+ship_section_template = {
+	key = "ANCIENT_CORVETTE_1M_1S_1T"
+	ship_size = asp_agr_origin_ancient_corvette
+	fits_on_slot = mid
+	should_draw_components = yes
+	entity = agr_asp_ancient_corvette_hull_entity
+	icon = "GFX_ship_part_core_mid"
+
+	#prerequisites = { tech_missiles_1 }
+
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		template = "invisible_medium_turret"
+		locatorname = "medium_gun_01_1"
+	}
+
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "invisible_medium_turret"
+		locatorname = "medium_gun_01_2"
+	}
+
+	component_slot = {
+		name = "TORPEDO_01"
+		template = "invisible_missile_turret" # invisible_missile_turret
+		locatorname = "medium_gun_01_1"
+	}
+
+	small_utility_slots = 4
+	aux_utility_slots = 2
+
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = 30
+		}
+	}
+}
+### Секция для дрона-дестроера - c PD-шками ещё можно создать такой же прикол
+ship_section_template = {
+	key = "ANCIENT_DESTROYER_2M_2S"
+	ship_size = asp_agr_origin_ancient_destroyer
+	fits_on_slot = mid
+	should_draw_components = yes
+	entity = agr_asp_ancient_destroyer_hull_entity
+	icon = "GFX_ship_part_core_mid"
+
+	#prerequisites = { tech_missiles_1 }
+
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		template = "invisible_medium_turret"
+		locatorname = "medium_gun_02_1"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		template = "invisible_medium_turret"
+		locatorname = "medium_gun_02_2"
+	}
+
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "invisible_small_turret"
+		locatorname = "medium_gun_01_1"
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "invisible_small_turret"
+		locatorname = "medium_gun_01_2"
+	}
+
+	medium_utility_slots = 3
+	large_utility_slots = 1
+	aux_utility_slots = 2
+
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = 30
+		}
+	}
+}

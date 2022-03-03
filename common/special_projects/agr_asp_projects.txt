@@ -1,0 +1,50 @@
+
+# Анализ технологий дронов по созданию кораблей
+special_project = {
+	key = "ASP_AGR_ANCIENT_AI_ANALYSIS_SHIPS"
+	event_chain = "asp_agr_mining_drones_chain"
+	cost = 6500 # Надо посмотреть что будет по цене
+	tech_department = engineering_technology
+	icon = "gfx/interface/icons/situation_log/situation_log_engineering.dds"
+	picture = GFX_asp_agr_ancient_ai_analysis_ships
+
+	event_scope = planet_event
+
+	requirements = {
+	}
+
+	on_success = {
+		# use event target so a capital-conquering country is not affected
+		event_target:ancient_minig_drones_origin_owner = {
+			country_event = { id = asp_agr_origin.3 }
+		}
+	}
+
+	on_fail = {
+	}
+}
+
+# Анализ ИИ - связь с добывающими дронами
+special_project = {
+	key = "ASP_AGR_ANCIENT_AI_ANALYSIS_CONTACT"
+	event_chain = "asp_agr_mining_drones_chain"
+	cost = 6500 # Надо посмотреть что будет по цене
+	tech_department = physics_technology
+	icon = "gfx/interface/icons/situation_log/situation_log_ai.dds"
+	picture = GFX_evt_ancient_databank
+
+	event_scope = planet_event
+
+	requirements = {
+	}
+
+	on_success = {
+		# use event target so a capital-conquering country is not affected
+		event_target:ancient_minig_drones_origin_owner = {
+			country_event = { id = asp_agr_origin.4 } # тут идёт инициализация но не запуск самого ивента, для этого надо будет запустить его через дипломатию
+		}
+	}
+
+	on_fail = {
+	}
+}
