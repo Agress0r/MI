@@ -34,6 +34,11 @@ tech_asp_agr_research_station_1 = {
 			factor = 1.5
 			has_origin = agr_asp_ancient_minig_drones
 		}
+
+		modifier = {
+			factor = 3
+			years_passed > 25
+		}
 	}
 
 	ai_weight = {
@@ -78,6 +83,10 @@ tech_asp_agr_research_station_2 = {
 		modifier = {
 			factor = 1.5
 			has_origin = agr_asp_ancient_minig_drones
+		}
+		modifier = {
+			factor = 6
+			years_passed > 75
 		}
 	}
 

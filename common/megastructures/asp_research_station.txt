@@ -4,6 +4,29 @@ asp_agr_research_station_0 = {
 	entity = "ancient_research_station_entity"
 	construction_entity = "ancient_research_station_entity"
 	portrait = "GFX_megastructure_construction_background" # Мб заменить, ибо на неё игрок будет натыкаться иногда
+	show_prereqs = yes
+	victory_score = 1600
+
+	build_time = 2200
+
+	resources = {
+		category = megastructures_asp_mod
+		cost = {
+			alloys = 4400
+			unity = 1550
+			minerals = 2500
+		}
+		upkeep = {
+			energy = 45
+			exotic_gases = 3
+		}
+		produces = {
+		society_research = 50
+		engineering_research = 50
+		physics_research = 50
+		}
+	}
+
 	prerequisites = { "tech_asp_agr_research_station_1" }		# Нужно добавить зависимость от технологии
 
 	possible = {
@@ -33,42 +56,9 @@ asp_agr_research_station_0 = {
 		}
 	}
 
-	show_prereqs = yes
-	victory_score = 1600
-	
+	construction_blocked_by_others = yes
 	place_entity_on_planet_plane = no
 
-	construction_blocks_others = no
-
-	entity_offset = { x = -7 y = -7 }
-
-	build_time = 2200
-	resources = {
-		category = megastructures_asp_mod
-		cost = {
-			alloys = 4400
-			influence = 150
-			minerals = 2500
-		}
-		upkeep = {
-			energy = 45
-			exotic_gases = 3
-		}
-		produces = {
-		society_research = 50
-		engineering_research = 50
-		physics_research = 50
-		}
-	}
-	country_modifier = {
-	station_researchers_produces_mult = 0.15
-	station_researchers_cost_mult = -0.15
-	shipclass_research_station_build_speed_mult = 0.30 # С каждым уровнем можно по 20 накидывать - работает
-	science_ship_survey_speed = 0.15
-	ship_anomaly_generation_chance_mult = 0.05
-	}
-
-    # Добавить возможность постройки только там, где есть наука над планетой ИЛИ только там где есть больше N-ого количества науки на планете
 	placement_rules = {
 		planet_possible = {
 			custom_tooltip = {
@@ -97,21 +87,39 @@ asp_agr_research_station_0 = {
 			custom_tooltip = {
 				fail_text = "requires_not_ring_world"
 				is_ringworld = no
-			}
-			custom_tooltip = {
-				fail_text = "requires_no_existing_megastructure"
-				NOR = {
-					has_planet_flag = megastructure
-					has_planet_flag = has_megastructure
-					solar_system = { has_star_flag = ring_world_built }
-				}
 			}	
 		}
 	}
 
-	construction_blocked_by_others = yes
+	ai_weight = {
+		factor = 15
 
-	ai_weight = { factor = 8 } # Тут надо подумать т.к иишка тоже будет строить эту дичь
+		modifier = {
+			factor = 0.1
+			starbase = { NOT = { has_starbase_size >= starbase_starfortress } }
+		}
+
+		modifier = {
+			factor = 0.1
+			any_neighbor_system = {
+				exists = owner
+				NOT = {
+					owner = { is_same_value = from }
+				}
+			}
+		}
+	}
+
+	entity_offset = { x = -7 y = -7 }
+
+	country_modifier = {
+	station_researchers_produces_mult = 0.15
+	station_researchers_cost_mult = -0.15
+	shipclass_research_station_build_speed_mult = 0.30 # С каждым уровнем можно по 20 накидывать - работает
+	science_ship_survey_speed = 0.15
+	ship_anomaly_generation_chance_mult = 0.05
+	}
+
 	on_build_start = {}
 	on_build_cancel = {}
 	on_build_complete = {
@@ -130,18 +138,16 @@ asp_agr_research_station_2 = {
 	entity = "ancient_research_station_2_entity"
 	construction_entity = "ancient_research_station_2_entity"
 	portrait = "GFX_megastructure_construction_background" # Мб заменить, ибо на неё игрок будет натыкаться иногда
-	prerequisites = { "tech_asp_agr_research_station_2" }		# Нужно добавить зависимость от технологии
+	show_prereqs = yes
 	place_entity_on_planet_plane = no
 	entity_offset = { x = -7 y = -7 }
 
-	upgrade_from = {
-		asp_agr_research_station_0
-	}
 	build_time = 2800
 	resources = {
 		category = megastructures_asp_mod
 		cost = {
 			alloys = 9000
+			unity = 1990
 			minerals = 6700
 		}
 		upkeep = {
@@ -154,7 +160,13 @@ asp_agr_research_station_2 = {
 		physics_research = 100
 		}
 	}
-	show_prereqs = yes
+
+	upgrade_from = {
+		asp_agr_research_station_0
+	}
+
+	prerequisites = { "tech_asp_agr_research_station_2" }		# Нужно добавить зависимость от технологии
+	
 	country_modifier = {
 		station_researchers_produces_mult = 0.30
 		station_researchers_cost_mult = -0.30

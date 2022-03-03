@@ -1,32 +1,33 @@
 # # # Пробую добавить новый исток - старт на машинном разуме, что ранее был как-то связан с добывающими дронами.
-agr_asp_ancient_minig_drones = {
-	is_origin = yes
-	icon = "gfx/interface/icons/origins/origins_agr_asp_ancient_minig_drones.dds" # Пока заглушка от ocean paradise
-	picture = GFX_origin_agr_asp_ancient_minig_drones # Прописать картинку для фона в меню создании империи.
-	flags = { }
-
-	# Проверка на DLC, ибо без работать не будет т.к доступа к машинам нет.
-	playable = {
-		host_has_dlc = "Synthetic Dawn Story Pack"
-	}
-	# Проверка на машинный разум
-	possible = {
-		authority = { value = auth_machine_intelligence }
-		civics = {
-			NOR = {
-				value = civic_machine_servitor # Пока сервиторам отключу эту возможность.
-			}
-		}
-	}
-
-	description = agr_asp_ancient_minig_drones_effects # Описание для истока
-
-	traits = {
-	}
-
-	advanced_start = yes
-
-	random_weight = {
-		base = 1
-	}
-}
+# # # Пока данный исток не доработан и не будет доступен.
+#agr_asp_ancient_minig_drones = {
+#	is_origin = yes
+#	icon = "gfx/interface/icons/origins/origins_agr_asp_ancient_minig_drones.dds" # Пока заглушка от ocean paradise
+#	picture = GFX_origin_agr_asp_ancient_minig_drones # Прописать картинку для фона в меню создании империи.
+#	flags = { }
+#
+#	# Проверка на DLC, ибо без работать не будет т.к доступа к машинам нет.
+#	playable = {
+#		host_has_dlc = "Synthetic Dawn Story Pack"
+#	}
+#	# Проверка на машинный разум
+#	possible = {
+#		authority = { value = auth_machine_intelligence }
+#		civics = {
+#			NOR = {
+#				value = civic_machine_servitor # Пока сервиторам отключу эту возможность.
+#			}
+#		}
+#	}
+#
+#	description = agr_asp_ancient_minig_drones_effects # Описание для истока
+#
+#	traits = {
+#	}
+#
+#	advanced_start = yes
+#
+#	random_weight = {
+#		base = 1
+#	}
+#}
