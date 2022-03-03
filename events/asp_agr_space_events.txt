@@ -9,6 +9,7 @@ namespace = asp_agr
 ##########################################
 
 ### Событие с лидером - роботом - инициализатор
+# # # √ - Работает в патче 3.3
 ship_event = {
 	id = asp_agr.1
 	title = "asp_agr.1.name"
@@ -57,6 +58,7 @@ ship_event = {
 }
 
 # Само событие с лидером Роботом
+# # # √ - Работает в патче 3.3
 country_event = {
 	id = asp_agr.2
 	title = "asp_agr.2.name"
@@ -251,6 +253,7 @@ immediate = {
 }
 
 # Событие с дополнительными редкими ресурсами
+# # # √ - Работает в патче 3.3
 ship_event = {
 	id = asp_agr.4
 	title = "asp_agr.4.name"
@@ -297,13 +300,14 @@ ship_event = {
 			}
 		}
 		owner = {
-			set_timed_country_flag = { flag = asp_agr_rare_resources_event_cooldown days = 540 }
+			set_timed_country_flag = { flag = asp_agr_rare_resources_event_cooldown days = 360 }
 		}
 	}
 }
 
 # Событие с найденными артефактами на астероиде
 # Ancrel це Ancient Relics т.е проверка длс - зачем кому-то релики если нету длс?
+# # # √ - Работает в патче 3.3
 ship_event = {
 	id = asp_agr.5
 	title = "asp_agr.5.name"
@@ -338,11 +342,12 @@ ship_event = {
 					owner = { medium_artifact_reward = yes }
 				}
 			}
-			set_timed_country_flag = { flag = asp_agr_artifact_event_cooldown days = 540 }
+			set_timed_country_flag = { flag = asp_agr_artifact_event_cooldown days = 360 }
 		}
 	}
 }
 # Событие с увелчинием производства энергии на объекте
+# # # √ - Работает в патче 3.3
 ship_event = {
 	id = asp_agr.6
 	title = "asp_agr.6.name"
@@ -352,6 +357,7 @@ ship_event = {
 	show_sound = event_construction
 	is_triggered_only = yes
 	location = from
+
 	trigger = {
 		from.planet = {
 			has_resource = {
@@ -384,11 +390,12 @@ ship_event = {
 			}
 		} 
 		owner = {
-			set_timed_country_flag = { flag = asp_agr_energy_event_cooldown days = 540 }
+			set_timed_country_flag = { flag = asp_agr_energy_event_cooldown days = 360 }
 		}
 	}
 }
 # Событие с найденной раскопкой - раскопку же нужно продумать
+# # # √ - Работает в патче 3.3
 ship_event = {
 	id = asp_agr.7
 	title = "asp_agr.7.name"
@@ -432,6 +439,7 @@ ship_event = {
 	}
 }
 ### Потерянный корабль угасшей империи - нужны границы рядом с угашкой
+# # # √ - Работает в патче 3.3 - повысил на 50% шанс появления
 ship_event = {
 	id = asp_agr.8
 	title = "asp_agr.8.name"
@@ -447,36 +455,40 @@ ship_event = {
 		owner = {
 			is_ai = no
 		}
-		closest_system = {
-			max_steps = 1
-			limit = {
-				exists = owner
-				owner = {
-					OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
+		from = {
+			closest_system = {
+				max_steps = 1
+				limit = {
+					exists = owner
+					owner = {
+						OR = {
+						is_country_type = fallen_empire
+						is_country_type = awakened_fallen_empire
+						}
+						NOT = {
+							has_country_flag = asp_agr_ancrel_site
+							  }
 					}
-					NOT = {
-						has_country_flag = asp_agr_ancrel_site
-						  }
 				}
 			}
 		}
 	}
 
 	immediate = {
-		closest_system = {
-			max_steps = 1
-			limit = {
-				exists = owner
-				owner = {
-					OR = {
-					is_country_type = fallen_empire
-					is_country_type = awakened_fallen_empire
+		from = {
+			closest_system = {
+				max_steps = 1
+				limit = {
+					exists = owner
+					owner = {
+						OR = {
+						is_country_type = fallen_empire
+						is_country_type = awakened_fallen_empire
+						}
 					}
 				}
+				this.owner = { save_event_target_as = asp_agr_fe_empire }
 			}
-			this.owner = { save_event_target_as = asp_agr_fe_empire }
 		}
 		create_fleet = {
 			settings = {
@@ -528,6 +540,7 @@ ship_event = {
 	}
 }
 # Событие с увелчинием производства минералов на объекте
+# # # √ - Работает в патче 3.3
 ship_event = {
 	id = asp_agr.9
 	title = "asp_agr.9.name"
@@ -570,11 +583,12 @@ ship_event = {
 			}
 		}
 		owner = {
-			set_timed_country_flag = { flag = asp_agr_mineral_event_cooldown days = 540 }
+			set_timed_country_flag = { flag = asp_agr_mineral_event_cooldown days = 360 }
 		}
 	}
 }
 # Событие с увелчинием производства редкого ресурса на объекте
+# # # √ - Работает в патче 3.3
 ship_event = {
 	id = asp_agr.10
 	title = "asp_agr.10.name"
@@ -587,27 +601,22 @@ ship_event = {
 
 	trigger = {
 		from.planet = {
-			has_resource = {
-				type = rare_crystals
-				amount > 0
-			}
-			has_resource = {
-				type = exotic_gases
-				amount > 0
-			}
-			has_resource = {
-				type = volatile_motes
-				amount > 0
+			OR = {
+				has_resource = {
+					type = rare_crystals
+					amount > 0
+				}
+				has_resource = {
+					type = exotic_gases
+					amount > 0
+				}
+				has_resource = {
+					type = volatile_motes
+					amount > 0
+				}
 			}
 		}
-		owner = {
-		NOT = {
-			has_country_flag = asp_agr_rare_resource_cooldown
-		      }
-			}
 	}
-
-	#mean_time_to_happen = { days = 40 }
 
 	option = {
 		name = MAKE_IT_SO
@@ -639,9 +648,6 @@ ship_event = {
 					add_deposit = d_volatile_motes_1
 				  }
 			}
-		}
-		owner = {
-			set_timed_country_flag = { flag = asp_agr_rare_resource_cooldown days = 680 }
 		}
 	}
 }
@@ -677,6 +683,7 @@ country_event = {
 	}
 }
 ### Ивент с научной станкой
+# # # √ - Работает в патче 3.3 - сильно повысил шанс на появление, убрал временный флаг что ограничивал появление.
 ship_event = {
 	id = asp_agr.13
 	title = "asp_agr.13.name"
@@ -689,19 +696,22 @@ ship_event = {
 
 	trigger = {
 		from.planet = {
-			has_resource = {
-				type = engineering_research
-				amount > 0
+			OR = {
+				has_resource = {
+					type = engineering_research
+					amount > 0
+				}
+				has_resource = {
+					type = physics_research
+					amount > 0
+				}
+				has_resource = {
+					type = society_research
+					amount > 0
+				}
 			}
 		}
-		owner = { 
-		NOT = {
-			has_country_flag = asp_agr_engineering_research_event_cooldown
-		      }
-			}
 	}
-
-	#mean_time_to_happen = { days = 40 }
 
 	option = {
 		name = asp_agr.13.a
@@ -738,19 +748,16 @@ ship_event = {
 		 }
 		 owner = {
 			add_resource = { energy = -175 }
-			set_timed_country_flag = { flag = asp_agr_engineering_research_event_cooldown days = 540 }
 		 }
 	}
 
 	option = {
 		name = NOTIME
-		owner = {
-			set_timed_country_flag = { flag = asp_agr_engineering_research_event_cooldown days = 540 }
-		}
 	}
 }
 
 ### Уничтожение минеральной станции - инициализатор
+# # # √ - Работает в патче 3.3
 ship_event = {
 	id = asp_agr.14
 	hide_window = yes
@@ -816,13 +823,14 @@ ship_event = {
 			save_event_target_as = asp_agr_planet_station_destroy
 		}
 		owner = {
-			set_timed_country_flag = { flag = asp_agr_mining_station_destroy_event_cooldown days = 1801 }
+			set_timed_country_flag = { flag = asp_agr_mining_station_destroy_event_cooldown days = 1805 }
 			country_event = { id = asp_agr.15 days = 1400 random = 400 } # 1400 400
 		}
 	}
 }
 
 ### Уничтожение минеральной станции - само событие
+# # # √ - Работает в патче 3.3
 country_event = {
 	id = asp_agr.15
 	title = "asp_agr.15.name"
@@ -861,6 +869,7 @@ country_event = {
 
 }
 ### Уничтожение научной станции - инициализатор
+# # # √ - Работает в патче 3.3
 ship_event = {
 	id = asp_agr.16
 	hide_window = yes
@@ -904,6 +913,7 @@ ship_event = {
 	}
 }
 ### Уничтожение научной станции - само событие
+# # # √ - Работает в патче 3.3
 country_event = {
 	id = asp_agr.17
 	title = "asp_agr.17.name"
@@ -942,6 +952,7 @@ country_event = {
 
 }
 ### Бафф на темп исследований от станции - инициализатор
+# # # √ - Работает в патче 3.3 - повысил шансы на появление, снизил кулдаун на выпадение события
 ship_event = {
 	id = asp_agr.18
 	hide_window = yes
@@ -952,15 +963,15 @@ ship_event = {
 			OR = {
 			has_resource = {
 				type = engineering_research
-				amount > 2
+				amount > 1
 			}
 			has_resource = {
 				type = society_research
-				amount > 2
+				amount > 1
 			}
 			has_resource = {
 				type = physics_research
-				amount > 2
+				amount > 1
 			}
 			}
 		}
@@ -976,12 +987,13 @@ ship_event = {
 			save_event_target_as = asp_agr_science_buff_planet
 		}
 		owner = {
-			set_timed_country_flag = { flag = asp_agr_science_buff_event_cooldown days = 2801 }
-			country_event = { id = asp_agr.19 days = 1400 random = 1400 } # 1400 1400
+			set_timed_country_flag = { flag = asp_agr_science_buff_event_cooldown days = 1805 }
+			country_event = { id = asp_agr.19 days = 1000 random = 800 } # 1400 1400
 		}
 	}
 }
 ### Бафф на темп исследований от станции - сам ивент
+# # # √ - Работает в патче 3.3 - повысил шансы на появление, снизил кулдаун на выпадение события
 country_event = {
 	id = asp_agr.19
 	title = "asp_agr.19.name"
@@ -1018,6 +1030,7 @@ country_event = {
 	}
 }
 ### Научный представитель со станции - инициализатор
+# # # √ - Работает в патче 3.3
 ship_event = {
 	id = asp_agr.20
 	hide_window = yes
@@ -1052,6 +1065,7 @@ ship_event = {
 	}
 }
 ### Сам ивент с учёным - одноразовый запуск
+# # # √ - Работает в патче 3.3 - проблем не обнаружено
 country_event = {
 	id = asp_agr.21
 	title = "asp_agr.21.name"
