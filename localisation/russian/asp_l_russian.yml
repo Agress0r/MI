@@ -49,8 +49,8 @@ mod_station_gatherers_rare_crystals_produces_mult:0 "Добывающие ста
 mod_station_gatherers_volatile_motes_produces_mult:0 "Добывающие станции — производство £volatile_motes£ пылинок"
 
 mod_station_researchers_engineering_research_produces_mult:0 "Производство очков £engineering£ инженерных исследований научными станциями"
-mod_station_researchers_society_research_produces_mult:0 "Производство очков £physics£ физических исследований научными станциями"
-mod_station_researchers_physics_research_produces_mult:0 "Производство очков £society£ социологических исследований научными станциями"
+mod_station_researchers_society_research_produces_mult:0 "Производство очков £society£ социологических исследований научными станциями"
+mod_station_researchers_physics_research_produces_mult:0 "Производство очков £physics£ физических исследований научными станциями"
 
 mod_station_gatherers_upkeep_mult:0 "Стоимость £job_maintenance_drone£ обслуживания станций космо-добычи"
 

@@ -68,7 +68,7 @@ asp_agr_station_researchers_policy = {
 		}
 
 		AI_weight = {
-			factor = 0
+			factor = 3
 		}
 	}
 
@@ -82,7 +82,7 @@ asp_agr_station_researchers_policy = {
 		}
 
 		AI_weight = {
-			factor = 0
+			factor = 3
 		}
 	}
 
@@ -96,7 +96,7 @@ asp_agr_station_researchers_policy = {
 		}
 
 		AI_weight = {
-			factor = 0
+			factor = 3
 		}
 	}
 }
